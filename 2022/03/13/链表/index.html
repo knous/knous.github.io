@@ -206,7 +206,7 @@
 
 <p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p> 我们直接拿到第二个结构体的地址，然后销毁第一个结构体，随后将地址重新赋值即可，看效果：</p>
-<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659935.png" alt="img">(data:image&#x2F;gif;base64,R0lGODlhAQABAPABAP&#x2F;&#x2F;&#x2F;wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw&#x3D;&#x3D;)</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659935.png" alt="img"></p>
 <h3 id="删除指定位置的值"><a href="#删除指定位置的值" class="headerlink" title="删除指定位置的值"></a>删除指定位置的值</h3><p>这个实现其实就是一个复合，我们先找到位置，这里可以参考指定位置插入，然后删除结构体，删除我们也可以参考尾删，我们将其结合：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">void SListEraseAfter(SListNode**pphead, size_t pos)</span><br><span class="line">&#123;</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode*cur = *pphead;</span><br><span class="line">	if (pos)</span><br><span class="line">	&#123;</span><br><span class="line">		while (pos--)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur-&gt;next == NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;位置错误\n&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		SListNode*nex = cur-&gt;next;</span><br><span class="line">		cur-&gt;next = nex-&gt;next;</span><br><span class="line">		free(nex);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = (*pphead)-&gt;next;</span><br><span class="line">		free(cur);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -242,10 +242,10 @@
 
 <p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p>演示效果：</p>
-<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659393.png" alt="img">(data:image&#x2F;gif;base64,R0lGODlhAQABAPABAP&#x2F;&#x2F;&#x2F;wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw&#x3D;&#x3D;)</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200722614.png" alt="img"></p>
 <p>如果是pos–，那就会先运行一次再修改，也就是说位置会不一样，这里看图：</p>
 <p>这里是pos–，可以看到修改的是第二个值</p>
-<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659375.png" alt="img">(data:image&#x2F;gif;base64,R0lGODlhAQABAPABAP&#x2F;&#x2F;&#x2F;wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw&#x3D;&#x3D;)</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200722994.png" alt="img"></p>
 <p> 同样的代码，这里是–pos，修改的是第一个值，注意一下就好<img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200700016.png" alt="img"></p>
 <p>-————</p>
 <h2 id="带头双向循环链表"><a href="#带头双向循环链表" class="headerlink" title="带头双向循环链表"></a>带头双向循环链表</h2><p>1、如何开辟新的节点和初始化链表</p>
@@ -438,7 +438,6 @@
 <p><strong>9. 给定一个链表，判断链表中是否有环。</strong></p>
 <p><strong>10. 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 NULL。</strong></p>
 <p><strong>11.链表相加</strong></p>
-<p><strong>12、</strong></p>
 <p><strong>————</strong></p>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><strong>正文</strong></h2><h3 id="1-删除链表中等于给定值-val-的所有节点。"><a href="#1-删除链表中等于给定值-val-的所有节点。" class="headerlink" title="1. 删除链表中等于给定值 val 的所有节点。"></a>1. 删除链表中等于给定值 val 的所有节点。</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-linked-list-elements/description/" title="203. 移除链表元素 - 力扣（LeetCode） (leetcode-cn.com)">203. 移除链表元素 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200709573.png"></p>
