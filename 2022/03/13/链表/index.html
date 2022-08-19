@@ -1,0 +1,510 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >链表</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200655205.png" alt="img"></p>
+<p>这张图是我们待会要实现的功能，我会尽可能的将每一步都说的很详细，方便理解。</p>
+<p><strong>链表的概念及结构</strong> </p>
+<p>概念：链表是一种<strong>物理存储结构上非连续</strong>、非顺序的存储结构，数据元素的<strong>逻辑顺序</strong>是通过链表中的<strong>指针链****接</strong>次序实现的 。 </p>
+<p>这是较为书面的解释，这里我画个图解释一下：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200656825.png" alt="img"></p>
+<p>1的位置是当前链表的起始位置，我们称之为表头，它里面放着的是第一个数据的地址（2），而2里面不仅有数据还有p2，p2指向的是第二个数据的位置，第二个数据里面不仅有2，同时里面放着p3，p3指向下一个数据的位置，而4这里最后的指针指向的是NULL，也就是说链表就到这里结束。</p>
+<p>就像一条火车，里面的数据就是我们的车厢，而指针就是将数据链接起来的链条，所以我们称之为链表。</p>
+<p>我们如何实现链表？</p>
+<p>跟顺序表一样，我们要用到跟顺序表（我的专栏也写过结构体）类似的结构体，但是我们顺序表里面是这么写的：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200656963.png" alt="img"></p>
+<p>我们拿一个指针指向一块连续的空间，然后有一个size记录当前有效数据，capicity记录容量，这样好处是我们可以通过下标来访问其中每一个数据，但缺点是当我们开辟数组的时候，第一个数组容量可能是10，然后我们放11个元素进去，这个时候空间不够，我们就重新开辟空间，一般我们开辟空间都是直接将原空间翻倍，但这里20个空间只放11个元素，空间就有些浪费了。</p>
+<p>那我们链表是怎么写的呢？</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200658387.png" alt="img"></p>
+<p>同样，我们先来一个结构体，data就是我们除非囊的数据，而第二个参数是next，也就是下一个结构体的地址，当我们需要放11个数据的时候，顺序表我们可能直接创建了一整块数组然后往里面放，但链表则是一次放一个数据到里面，然后根据需求再开辟一空间放下一个数据。</p>
+<h3 id="尾插"><a href="#尾插" class="headerlink" title="尾插"></a>尾插</h3><p>因为打印需要先有内容，所以我们先冲尾插开始写：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200657416.png" alt="img"></p>
+<p>尾插还没写完，我们就发现一个问题，就是当我们每次插入的时候都需要开辟一块空间，但开辟空间的代码又比较长，每次写起来会很麻烦，所以我们可以将其封装为一个函数 ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">SListNode* BuySLisenode(SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode*newnode = (SListNode*)malloc(sizeof(SListNode));</span><br><span class="line">	if (newnode == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;malloc fail\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		newnode-&gt;data = x;</span><br><span class="line">		newnode-&gt;next = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	return newnode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>我们拿到要插入的数据，先计算空间大小，然后进行判断，如果指针为空指针我们就打印开括失败，如果成功，我们就将数据放到新开括空间的里面，然后将其下一个指针指向空，并返回这个这一块空间的地址。</p>
+<p> 然后我们直接调用这个函数即可，尾插我们看代码分析：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void SListPushBack(SListNode** pphead, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SLTDateType* newnode = BuySLisenode(x);</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		SListNode*cur=*pphead;</span><br><span class="line">		while (cur-&gt;next != NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			cur = cur-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		cur-&gt;next = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>尾插分两种情况，第一种，目前什么都没有，我们直接将新创建好的结构体地址给原本指针即可。</p>
+<p>第二种，是目前里面已经有了结构体，我们就得找到数组的最后一个结构体，而最后的一个结构体它的指针肯定为空，然后将这个结构体的指针指向变成我们新创建的结构体地址。</p>
+<p>为了看效果，我们再写一个打印函数，这个函数实现也很简单，我们进行判断，如果结构体指针不为空，我们就打印里面的内容，如果为空我们就停下：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200657852.png" alt="img"></p>
+<p><strong>头插</strong></p>
+<p> 既然实现了尾插，那我们再实现一个头插，相较于顺序表的头插还要移动数据，链表就简单一点看图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200658118.png" alt="img"></p>
+<p>原本我的1指向2，现在我中间插入一个5，我只需要将1指向的位置变成5，然后5的指针指向2即可：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200658823.png" alt="img"></p>
+<p> 看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void SListPushFront(SListNode** pphead, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode* newnode = BuySLisenode(x);</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		newnode-&gt;next = *pphead;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>同样，我们先创建一个新的结构体，然后给它赋值，随后我们还是先判断当前链表有没有数据，没有就直接赋值，如果有，那就将我们新创建的结构体的下一个地址赋值为之前的第一个数据的地址，也就是我们传进来的那个地址解引用，然后我们再将原本的指向第一个元素的地址指向我们新创建的节点。</p>
+<p>实现效果如下：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200658810.png" alt="img"></p>
+<h3 id="指定位置插入"><a href="#指定位置插入" class="headerlink" title="指定位置插入"></a><strong>指定位置插入</strong></h3><p>然后我们来一个难一点的，在指定位置插入，这里说难一点是因为我们要先找到指定的位置，然后再插入数据，但如果熟练适用以上两个插入，那这里其实也没那么难：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200658428.png" alt="img"></p>
+<p>我原本是这样的结构，我现在要在2的位置插入一个结构，是不是要先找到2数据的位置，然后将它原本指向3的地址赋给我的新节点，然后将新节点的地址给它：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200658766.png" alt="img"></p>
+<p> 然后我们就可以开始写代码了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInsert(SListNode** pphead, size_t pos, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode* newnode = BuySLisenode(x);</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		SListNode*cur = *pphead;</span><br><span class="line">		while (pos--)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur == NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;位置错误\n&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		newnode-&gt;next = cur-&gt;next;</span><br><span class="line">		cur-&gt;next = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>这里是拿while循环来找的位置，实现的效果是这样的：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659839.png" alt="img"></p>
+<p> ——————</p>
+<p>解决了插入，那我们来解决一下删除</p>
+<h3 id="尾删"><a href="#尾删" class="headerlink" title="尾删"></a>尾删</h3><p>尾删就是将倒数第二个结构体的指针置为空指针<img src="https://img-blog.csdnimg.cn/b53afcd35c654d1ab3dce4130a12c4d7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAS25vdXM=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p>我们直接进行判断语句即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">void SListPopBack(SListNode** pphead)</span><br><span class="line">&#123;</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode*cur = (*pphead)-&gt;next;</span><br><span class="line">	SListNode*perv = *pphead;</span><br><span class="line">	if (cur == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		free(*pphead);</span><br><span class="line">		*pphead = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		while (cur-&gt;next)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur-&gt;next != NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">				perv = perv-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		perv-&gt;next = NULL;</span><br><span class="line">		free(cur);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> 同样，一进来我们先判断传进来的地址是否有内容，如果没有内容我们就可以直接打印链表为空，随后我们拿两个指针，第一个从第二个结构体开始，第二个从起始位置，因为我们要靠第一个来判断结构体指针是否为空，如果结构体不为空，我们就让第一个和第二个分别指向下一个结构体，如果第一个结构体走到指针为空的结构体，那第二个正好是它的前一个，我们将第二个的指针置为空，然后释放第一个指针的位置即可，演示效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659692.png" alt="img"></p>
+<h3 id="头删"><a href="#头删" class="headerlink" title="头删"></a>头删</h3><p>头删说来也很简单，原本传进来的地址放着的是第一个结构体的地址，我们可以直接将第二个结构体的位置传给起始地址即可：</p>
+<p><img src="https://img-blog.csdnimg.cn/500daa0c8608407cbecaa671786a43a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAS25vdXM=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p>代码实现如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void SListPopFront(SListNode** pphead)</span><br><span class="line">&#123;</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		SListNode*cur = (*pphead)-&gt;next;</span><br><span class="line">		free(*pphead);</span><br><span class="line">		*pphead = cur;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> 我们直接拿到第二个结构体的地址，然后销毁第一个结构体，随后将地址重新赋值即可，看效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659935.png" alt="img">(data:image&#x2F;gif;base64,R0lGODlhAQABAPABAP&#x2F;&#x2F;&#x2F;wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw&#x3D;&#x3D;)</p>
+<h3 id="删除指定位置的值"><a href="#删除指定位置的值" class="headerlink" title="删除指定位置的值"></a>删除指定位置的值</h3><p>这个实现其实就是一个复合，我们先找到位置，这里可以参考指定位置插入，然后删除结构体，删除我们也可以参考尾删，我们将其结合：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">void SListEraseAfter(SListNode**pphead, size_t pos)</span><br><span class="line">&#123;</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode*cur = *pphead;</span><br><span class="line">	if (pos)</span><br><span class="line">	&#123;</span><br><span class="line">		while (pos--)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur-&gt;next == NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;位置错误\n&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		SListNode*nex = cur-&gt;next;</span><br><span class="line">		cur-&gt;next = nex-&gt;next;</span><br><span class="line">		free(nex);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = (*pphead)-&gt;next;</span><br><span class="line">		free(cur);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>同样，一进来我们就可以判断是否为空指针，如果为空我们打印错误，如果不为空，我们就创建一个结构体变量来帮助我们找指定位置的数据，找到了数据之后我们在删除之前要先借助它找到它之后结构体的地址，所以我们才有</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SListNode*nex = cur-&gt;next;</span><br><span class="line">cur-&gt;next = nex-&gt;next;</span><br><span class="line">free(nex);</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>因为一旦你先删除，那这之后的所有结构体就再也找不到了，一定要先留下地址，再删除。</p>
+<p>如果要删除0地址，那我们直接将第二个结构体的地址给地起始地址即可，别忘了释放创建的临时结构体。</p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>查找可能是最简单的，我们直接遍历，如果找到了数据我们就返回，没找到就返回-1，看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SListNode* SListFind(SListNode* phead, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	if (phead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;空链表\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode* cur = phead;</span><br><span class="line">	while (cur != NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		if (cur-&gt;data == x)</span><br><span class="line">		&#123;</span><br><span class="line">			return cur;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			cur = cur-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h3 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void SListDestory(SListNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode*cur = phead;</span><br><span class="line">	SListNode*nex = phead;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">		free(nex);</span><br><span class="line">		nex = cur;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>我们先创建两个结构体，第一个指向第二个数据，第二个指向第一个数据，我们先删除第一个数据，然后将第一个的值赋给第二个，再销毁第二个，循环到最后为空指针就可以结束了。</p>
+<p>-——————</p>
+<p>这里放上所有代码，有需要可以直接复制：</p>
+<p>SList.h</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define SLTDateType int</span><br><span class="line"></span><br><span class="line">typedef struct SListNode</span><br><span class="line">&#123;</span><br><span class="line">	int data;</span><br><span class="line">	struct SListNode* next;</span><br><span class="line">&#125; SListNode;</span><br><span class="line"></span><br><span class="line">void SListPrint(SListNode* phead); //打印</span><br><span class="line">void SListPushBack(SListNode** pphead, SLTDateType x);  //尾插</span><br><span class="line">void SListPushFront(SListNode** pphead, SLTDateType x); //头插</span><br><span class="line">void SeqListInsert(SListNode** psl, size_t pos, SLTDateType x);//在指定位置插入</span><br><span class="line">void SListPopBack(SListNode** pphead);// 单链表的尾删</span><br><span class="line">void SListPopFront(SListNode** pphead);// 单链表头删</span><br><span class="line">void SListEraseAfter(SListNode**pphead, size_t pos);//删除pos之后的值</span><br><span class="line">SListNode* SListFind(SListNode* phead, SLTDateType x);//单链表的查找</span><br><span class="line">void SListDestory(SListNode* phead);//销毁链表</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>SList.c</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br></pre></td><td class="code"><pre><span class="line">#include&quot;SList.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void SListPrint(SListNode* plist)</span><br><span class="line">&#123;</span><br><span class="line">	if (plist == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;单链表已空!\n&quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode*cur = plist;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d -&gt; &quot;, cur-&gt;data);</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;NULL\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SListNode* BuySLisenode(SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode*newnode = (SListNode*)malloc(sizeof(SListNode));</span><br><span class="line">	if (newnode == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;malloc fail\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">		newnode-&gt;data = x;</span><br><span class="line">		newnode-&gt;next = NULL;</span><br><span class="line">	return newnode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SListPushBack(SListNode** pphead, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SLTDateType* newnode = BuySLisenode(x);</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		SListNode*cur = *pphead;</span><br><span class="line">		while (cur-&gt;next)</span><br><span class="line">		&#123;</span><br><span class="line">			cur = cur-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		cur-&gt;next = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SListPushFront(SListNode** pphead, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode* newnode = BuySLisenode(x);</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		newnode-&gt;next = *pphead;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void SeqListInsert(SListNode** pphead, size_t pos, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode* newnode = BuySLisenode(x);</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		SListNode*cur = *pphead;</span><br><span class="line">		while (pos--)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur == NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;位置错误\n&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		newnode-&gt;next = cur-&gt;next;</span><br><span class="line">		cur-&gt;next = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SListPopBack(SListNode** pphead)</span><br><span class="line">&#123;</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode*cur = (*pphead)-&gt;next;</span><br><span class="line">	SListNode*perv = *pphead;</span><br><span class="line">	if (cur == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		free(*pphead);</span><br><span class="line">		*pphead = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		while (cur-&gt;next)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur-&gt;next != NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">				perv = perv-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		perv-&gt;next = NULL;</span><br><span class="line">		free(cur);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SListPopFront(SListNode** pphead)</span><br><span class="line">&#123;</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		SListNode*cur = (*pphead)-&gt;next;</span><br><span class="line">		free(*pphead);</span><br><span class="line">		*pphead = cur;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SListEraseAfter(SListNode**pphead, size_t pos)</span><br><span class="line">&#123;</span><br><span class="line">	if (*pphead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode*cur = *pphead;</span><br><span class="line">	if (pos)</span><br><span class="line">	&#123;</span><br><span class="line">		while (pos--)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur-&gt;next == NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;位置错误\n&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		SListNode*nex = cur-&gt;next;</span><br><span class="line">		cur-&gt;next = nex-&gt;next;</span><br><span class="line">		free(nex);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		*pphead = (*pphead)-&gt;next;</span><br><span class="line">		free(cur);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SListNode* SListFind(SListNode* phead, SLTDateType x)</span><br><span class="line">&#123;</span><br><span class="line">	if (phead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;空链表\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SListNode* cur = phead;</span><br><span class="line">	while (cur != NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		if (cur-&gt;data == x)</span><br><span class="line">		&#123;</span><br><span class="line">			return cur;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			cur = cur-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SListDestory(SListNode* phead)</span><br><span class="line">&#123;</span><br><span class="line">	SListNode*cur = phead;</span><br><span class="line">	SListNode*nex = phead;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">		free(nex);</span><br><span class="line">		nex = cur;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>主函数我就不放了，因为操作函数都在上面，也需要直接调用即可。</p>
+<p>-———-</p>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p>更新，多一个修改函数，能将指定位置的值修改，原理就是找到位置然后修改，原理没变：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">void SListrevise(SListNode* phead, size_t pos, int x)</span><br><span class="line">&#123;</span><br><span class="line">	if (phead == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;链表为空\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		SListNode*cur = phead;</span><br><span class="line">		while (--pos)</span><br><span class="line">		&#123;</span><br><span class="line">			if (cur == NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				printf(&quot;位置错误\n&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				cur = cur-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cur-&gt;data = x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>演示效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659393.png" alt="img">(data:image&#x2F;gif;base64,R0lGODlhAQABAPABAP&#x2F;&#x2F;&#x2F;wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw&#x3D;&#x3D;)</p>
+<p>如果是pos–，那就会先运行一次再修改，也就是说位置会不一样，这里看图：</p>
+<p>这里是pos–，可以看到修改的是第二个值</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200659375.png" alt="img">(data:image&#x2F;gif;base64,R0lGODlhAQABAPABAP&#x2F;&#x2F;&#x2F;wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw&#x3D;&#x3D;)</p>
+<p> 同样的代码，这里是–pos，修改的是第一个值，注意一下就好<img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200700016.png" alt="img"></p>
+<p>-————</p>
+<h2 id="带头双向循环链表"><a href="#带头双向循环链表" class="headerlink" title="带头双向循环链表"></a>带头双向循环链表</h2><p>1、如何开辟新的节点和初始化链表</p>
+<p>2、双向链表的打印</p>
+<p>3、双向链表尾插</p>
+<p>4、双向链表尾删</p>
+<p>5、双向链表头插</p>
+<p>6、双向链表头删</p>
+<p>7、双向链表查找</p>
+<p>8、双向链表在pos的前面进行插入</p>
+<p>9、双向链表删除pos位置的节点</p>
+<p>10、双向链表的销毁</p>
+<p>-——-</p>
+<p>事前准备：</p>
+<p>我们需要一个创建一个结构体类型，并将里面的一些类型重定义名字，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedef int LTDataType;</span><br><span class="line">typedef struct ListNode</span><br><span class="line">&#123;</span><br><span class="line">	LTDataType _data;</span><br><span class="line">	struct ListNode* next;</span><br><span class="line">	struct ListNode* prev;</span><br><span class="line">&#125;ListNode;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>我们还要知道双向带头循环链表是什么样的：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200700848.png" alt="img"></p>
+<p>-——–</p>
+<h3 id="如何开辟新的节点和初始化链表"><a href="#如何开辟新的节点和初始化链表" class="headerlink" title="如何开辟新的节点和初始化链表"></a>如何开辟新的节点和初始化链表</h3><p>我们知道，在链表中尾插，或者头插，你都必须先创建一个结构体，因为是双向带头循环的链表，所以这个链表必须有以下几条：</p>
+<p><strong>1、我们存放的内容</strong></p>
+<p><strong>2、下一个结构体的地址</strong></p>
+<p><strong>3、上一个结构体的地址</strong></p>
+<p><strong>4、如果链表仅有表头，那么表头的下一个元素和上一个元素必须指向自己</strong> </p>
+<p>了解了条件，我们就来初始化我们链表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void ListInit(ListNode** pphead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pphead);</span><br><span class="line">	*pphead = BuyLTNode(0);</span><br><span class="line">	(*pphead)-&gt;next = *pphead;</span><br><span class="line">	(*pphead)-&gt;prev = *pphead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> -———-</p>
+<p>然后我们来看看如何创建新的节点：</p>
+<p>跟单链表一样，我们开辟一块空间，将里面的值改成我们需要插入的值，然后再将其指针置为NULL，返回即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ListNode* BuyListNode(int x)</span><br><span class="line">&#123;</span><br><span class="line">	ListNode* newnode = (ListNode*)malloc(sizeof(ListNode));</span><br><span class="line">	if (newnode == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;malloc false\n&quot;);</span><br><span class="line">		exit(-1);</span><br><span class="line">	&#125;</span><br><span class="line">		newnode-&gt;_data = x;</span><br><span class="line">		newnode-&gt;prev = NULL;</span><br><span class="line">		newnode-&gt;next = NULL;</span><br><span class="line">		return newnode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>-———–</p>
+<p>但是问题来，在初始化函数的时候，我们需不需要传入二级指针呢？</p>
+<p>在单向不循环的链表时，我们是传入的链表的地址，因为如果我们要头插或者尾插，有可能会改变我们链表的表头位置</p>
+<p>比方说：</p>
+<p>ListNode* list &#x3D; NULL;</p>
+<p>尾插;</p>
+<p>如果是单链表，这里list原本指向的空指针就应该被改成尾插的元素，但是如果我们传一级指针，</p>
+<p>形参的改变不会影响形参，list出了尾插的函数它任然还是一个空指针，我们要改变的是链表头的指向的地址，所以我们传二级指针过去。</p>
+<p>这里呢？</p>
+<p><strong>要改变什么，我们就传什么。</strong></p>
+<p>这里需不需要传二级指针过去呢？</p>
+<p>我们会不会修改到这个头节点呢？</p>
+<p>不会，我们只需要修改的是头节点里面指向下一个元素和上一个元素的地址，我们返回的还是头节点的位置，所以我们可以不用传二级指针过去。</p>
+<p>所以我们可以将初始化函数这么写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ListNode* ListCreate()</span><br><span class="line">&#123;</span><br><span class="line">	ListNode* newnode = BuyListNode(0);</span><br><span class="line">	newnode-&gt;prev = newnode;</span><br><span class="line">	newnode-&gt;next = newnode;</span><br><span class="line">	return newnode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>我们直接创建一个节点，将里面的数据记为0即可。</p>
+<p>-———–</p>
+<h3 id="双向链表的打印"><a href="#双向链表的打印" class="headerlink" title="双向链表的打印"></a>双向链表的打印</h3><p>我们如何打印这个链表？</p>
+<p>跟单链表一样，单链表我们什么时候停下来？</p>
+<p>当遇到空，也就是说链表走完了一遍就可以停下来，那双向带头循环链表呢？</p>
+<p>我们从表头的下一个元素走，比方说：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200700941.png" alt="img"></p>
+<p>我们让一个指针cur开从表头往后走，每遇到一个值就打印，正因为循环，所以它到 5 的时候会回到表头，也就是 0 的位置，然后我们判断，如果 cur &#x3D;&#x3D; 表头，那我们就可以停下来。</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200700559.png" alt="img"></p>
+<p> 我们的代码就这么写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void ListPrint(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* cur = pHead-&gt;next;</span><br><span class="line">	while (cur!= pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d-&gt;&quot;, cur-&gt;_data);</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;end\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>-———</p>
+<h3 id="双向链表尾插"><a href="#双向链表尾插" class="headerlink" title="双向链表尾插"></a>双向链表尾插</h3><p>我们知道这是一个双向循环链表，我们尾插的时候还需要注意几点；</p>
+<p>1、最后的结构体的下一个指针应该指向表头</p>
+<p>2、表头的上一个结构体指针应该指向最后一个结构体</p>
+<p>我们尾插的时候，先要找到没修改前的最后一个结构体，然后得到它的地址，再让它的下一个元素指向新的结构体地址，然后再将新结构体的上一个结构体指针指向它，再修改新节点的next，头节点的prev。</p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void ListPushBack(ListNode* pHead, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* newnode = BuyListNode(x);</span><br><span class="line">	ListNode* prev = pHead-&gt;prev;</span><br><span class="line">	prev-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = prev;</span><br><span class="line"></span><br><span class="line">	newnode-&gt;next = pHead;</span><br><span class="line">	pHead-&gt;prev = newnode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>别忘了断言。</p>
+<p><strong>具体文字操作解释：</strong></p>
+<p><strong>我们先让prev指向头节点的上一个元素，这里正是我们尾节点的位置，然后我们原本尾节点的下一个指针指向我们新节点，我们新节点的上一个指针指向我们原本的尾节点。</strong></p>
+<p><strong>我们新节点的下一个指针应该指向表头，也就是pHead，而pHead表头的上一个结构体应该是尾节点，我们同样赋值过去。</strong></p>
+<p>-—————</p>
+<h3 id="双向链表尾删"><a href="#双向链表尾删" class="headerlink" title="双向链表尾删"></a>双向链表尾删</h3><p>单链表的尾删我们拿两个指针遍历数组找最后一个元素，双向链表就不需要遍历了，因为表头的上一个结构体正是我们的尾节点，我们拿一个指针记录尾戒点的上一个结构体，然后释放尾节点，再将尾节点释放，代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void ListPopBack(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* prev = pHead-&gt;prev-&gt;prev;</span><br><span class="line">	ListNode* cur = pHead-&gt;prev;</span><br><span class="line">	if (pHead-&gt;next == cur)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;NULL&quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		prev-&gt;next = pHead;</span><br><span class="line">		pHead-&gt;prev = prev;</span><br><span class="line">		free(cur);</span><br><span class="line">		cur = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>具体文字解释：</strong></p>
+<p><strong>两个指针，一个指向尾节点，一个指向尾节点的上一个结构体，因为靠尾节点我们才找得到倒数第二个。</strong></p>
+<p><strong>先判断链表有没有值，没有就返回，有就继续，我们让倒数第二个节点的下一个指针指向我们的表头， next &#x3D; pHead，再将表头的上一个结构体指针指向倒数第二个元素，也就是pHead-&gt;prev &#x3D; prev，不需要返回值。</strong></p>
+<p><strong>————–</strong></p>
+<h3 id="双向链表头插"><a href="#双向链表头插" class="headerlink" title="双向链表头插"></a>双向链表头插</h3><p>就跟单链表的头插一样，只不过我们多加了个prev（链表的上一个结构体指针）而已，多赋一个值即可，但是要注意顺序，别死循环了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void ListPushFront(ListNode* pHead, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* newnode = BuyListNode(x);</span><br><span class="line">	ListNode* next = pHead-&gt;next;</span><br><span class="line">	pHead-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = pHead;</span><br><span class="line">	newnode-&gt;next = next;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>具体文字解释：</strong></p>
+<p><strong>先创建一个指针指向原本第一个结构体，因为要在它之前插入新的结构体，所以地址先存一下</strong></p>
+<p><strong>新结构体的下一个结构体指针指向原本的第一个结构体</strong></p>
+<p><strong>表头的下一个结构体指针指向新开辟的节点</strong></p>
+<p><strong>新开辟的节点的下一个结构体指针指向原本的第一个结构体</strong></p>
+<p><strong>—————</strong></p>
+<h3 id="双向链表头删"><a href="#双向链表头删" class="headerlink" title="双向链表头删"></a>双向链表头删</h3><p>既然你知道头插，也知道尾删，那头删就已经掌握了大半，看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void ListPopFront(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	if (pHead-&gt;next == pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;NULL\n&quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	ListNode* cur = pHead-&gt;next;</span><br><span class="line">	ListNode* next = cur-&gt;next;</span><br><span class="line">	free(cur);</span><br><span class="line">	cur = NULL;</span><br><span class="line">	pHead-&gt;next = next;</span><br><span class="line">	next-&gt;prev = pHead;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>具体文字解释：</strong></p>
+<p><strong>新创建的结构体指针cur指向原本的第一个结构体，</strong></p>
+<p><strong>next指向第二个结构体</strong></p>
+<p><strong>释放cur（第一个结构体）</strong></p>
+<p><strong>头节点的下一个结构体指针指向next（原本的第二个元素）</strong></p>
+<p><strong>next的上一个结构体指针指向头节点</strong></p>
+<p><strong>————–</strong></p>
+<h3 id="双向链表查找"><a href="#双向链表查找" class="headerlink" title="双向链表查找"></a>双向链表查找</h3><p>跟单链表一样，我们找链表里面的值判断，如果不是就继续走，如果走到了表头，我们就停下。看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ListNode* ListFind(ListNode* pHead, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	if (pHead-&gt;next == pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;NULL\n&quot;);</span><br><span class="line">		return NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	ListNode* cur = pHead-&gt;next;</span><br><span class="line">	while (cur != pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		if (cur-&gt;_data == x)</span><br><span class="line">		&#123;</span><br><span class="line">			return cur;</span><br><span class="line">		&#125;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	return NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>具体文字解释：</strong></p>
+<p><strong>新创建的节点cur指向表头的下一个结构体</strong></p>
+<p><strong>遍历整个链表判断，如果cur不等于pHead，也就是说链表还有元素，就执行</strong></p>
+<p><strong>我们比较cur里面的值，是就返回当前结构体的地址，不是就指向下一个结构体</strong></p>
+<p><strong>如果遍历完还没找到，那就返回空指针</strong></p>
+<p><strong>————-</strong></p>
+<h3 id="双向链表在pos的前面进行插入"><a href="#双向链表在pos的前面进行插入" class="headerlink" title="双向链表在pos的前面进行插入"></a><strong>双向链表在pos的前面进行插入</strong></h3><p>创建新的节点，再将这个节点与之前的节点链接起来即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void ListInsert(ListNode* pos, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos);</span><br><span class="line">	ListNode* prev = pos-&gt;prev;</span><br><span class="line">	ListNode* newnode = BuyListNode(x);</span><br><span class="line"></span><br><span class="line">	newnode-&gt;prev = prev;</span><br><span class="line">	pos-&gt;prev = newnode;</span><br><span class="line">	newnode-&gt;next = pos;</span><br><span class="line">	prev-&gt;next = newnode;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>具体文字解释：</strong></p>
+<p><strong>新创建的节点prev指向我们插入节点的前一个元素</strong></p>
+<p><strong>我们先让新节点的上一个元素指向prev</strong></p>
+<p><strong>再将插入节点位置的pos的上一个指针指向新节点</strong></p>
+<p><strong>新节点的下一个指针指向pos</strong></p>
+<p><strong>prev的下一个指针指向新节点</strong></p>
+<p><strong>————</strong></p>
+<h3 id="删除指定节点"><a href="#删除指定节点" class="headerlink" title="删除指定节点"></a><strong>删除指定节点</strong></h3><p><strong>如果说上面的都能理解，那这是很简单的代码：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void ListErase(ListNode* pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos);</span><br><span class="line">	ListNode* prev = pos-&gt;prev;</span><br><span class="line">	ListNode* next = pos-&gt;next;</span><br><span class="line">	free(pos);</span><br><span class="line">	pos = NULL;</span><br><span class="line">	prev-&gt;next = next;</span><br><span class="line">	next-&gt;prev = prev;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>文字详细解释：</strong></p>
+<p><strong>prev指向删除节点的前一个元素</strong></p>
+<p><strong>next指向删除节点的后一个元素</strong></p>
+<p><strong>释放删除节点</strong></p>
+<p><strong>链接prev和next</strong></p>
+<p><strong>————-</strong></p>
+<h3 id="销毁链表"><a href="#销毁链表" class="headerlink" title="销毁链表"></a><strong>销毁链表</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void ListDestory(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	ListNode*cur = pHead;</span><br><span class="line">	ListNode*nex = pHead;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">		free(nex);</span><br><span class="line">		nex = cur;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>跟单链表一样，每次删除一个并保留下一个的地址，如果为空就删完了。</strong></p>
+<p><strong>————</strong></p>
+<p><strong>这里放上所有代码，有需要可复制：</strong></p>
+<p><strong>List.h</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">typedef int LTDataType;</span><br><span class="line">typedef struct ListNode</span><br><span class="line">&#123;</span><br><span class="line">	LTDataType _data;</span><br><span class="line">	struct ListNode* next;</span><br><span class="line">	struct ListNode* prev;</span><br><span class="line">&#125;ListNode;</span><br><span class="line"></span><br><span class="line">//开辟一个新的节点并返回</span><br><span class="line">ListNode* BuyListNode(int x);</span><br><span class="line"></span><br><span class="line">// 创建返回链表的头结点.</span><br><span class="line">ListNode* ListCreate();</span><br><span class="line">// 双向链表销毁</span><br><span class="line">void ListDestory(ListNode* pHead);</span><br><span class="line">// 双向链表打印</span><br><span class="line">void ListPrint(ListNode* pHead);</span><br><span class="line">// 双向链表尾插</span><br><span class="line">void ListPushBack(ListNode* pHead, LTDataType x);</span><br><span class="line">// 双向链表尾删</span><br><span class="line">void ListPopBack(ListNode* pHead);</span><br><span class="line">// 双向链表头插</span><br><span class="line">void ListPushFront(ListNode* pHead, LTDataType x);</span><br><span class="line">// 双向链表头删</span><br><span class="line">void ListPopFront(ListNode* pHead);</span><br><span class="line">// 双向链表查找</span><br><span class="line">ListNode* ListFind(ListNode* pHead, LTDataType x);</span><br><span class="line">// 双向链表在pos的前面进行插入</span><br><span class="line">void ListInsert(ListNode* pos, LTDataType x);</span><br><span class="line">// 双向链表删除pos位置的节点</span><br><span class="line">void ListErase(ListNode* pos);</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>List.c</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">#include&quot;Lt.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ListNode* BuyListNode(int x)</span><br><span class="line">&#123;</span><br><span class="line">	ListNode* newnode = (ListNode*)malloc(sizeof(ListNode));</span><br><span class="line">	if (newnode == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;malloc false\n&quot;);</span><br><span class="line">		exit(-1);</span><br><span class="line">	&#125;</span><br><span class="line">		newnode-&gt;_data = x;</span><br><span class="line">		newnode-&gt;prev = NULL;</span><br><span class="line">		newnode-&gt;next = NULL;</span><br><span class="line">		return newnode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ListNode* ListCreate()</span><br><span class="line">&#123;</span><br><span class="line">	ListNode* newnode = BuyListNode(0);</span><br><span class="line">	newnode-&gt;prev = newnode;</span><br><span class="line">	newnode-&gt;next = newnode;</span><br><span class="line">	return newnode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void ListPrint(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* cur = pHead-&gt;next;</span><br><span class="line">	while (cur!= pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d-&gt;&quot;, cur-&gt;_data);</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;end\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void ListPushBack(ListNode* pHead, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* newnode = BuyListNode(x);</span><br><span class="line">	ListNode* prev = pHead-&gt;prev;</span><br><span class="line">	prev-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = prev;</span><br><span class="line"></span><br><span class="line">	newnode-&gt;next = pHead;</span><br><span class="line">	pHead-&gt;prev = newnode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void ListPopBack(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* prev = pHead-&gt;prev-&gt;prev;</span><br><span class="line">	ListNode* cur = pHead-&gt;prev;</span><br><span class="line">	if (pHead-&gt;next == cur)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;NULL&quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		prev-&gt;next = pHead;</span><br><span class="line">		pHead-&gt;prev = prev;</span><br><span class="line">		free(cur);</span><br><span class="line">		cur = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void ListPushFront(ListNode* pHead, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	ListNode* newnode = BuyListNode(x);</span><br><span class="line">	ListNode* next = pHead-&gt;next;</span><br><span class="line">	pHead-&gt;next = newnode;</span><br><span class="line">	newnode-&gt;prev = pHead;</span><br><span class="line">	newnode-&gt;next = next;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line">void ListPopFront(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	if (pHead-&gt;next == pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;NULL\n&quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	ListNode* cur = pHead-&gt;next;</span><br><span class="line">	ListNode* next = cur-&gt;next;</span><br><span class="line">	free(cur);</span><br><span class="line">	cur = NULL;</span><br><span class="line">	pHead-&gt;next = next;</span><br><span class="line">	next-&gt;prev = pHead;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ListNode* ListFind(ListNode* pHead, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pHead);</span><br><span class="line">	if (pHead-&gt;next == pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;NULL\n&quot;);</span><br><span class="line">		return NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	ListNode* cur = pHead-&gt;next;</span><br><span class="line">	while (cur != pHead)</span><br><span class="line">	&#123;</span><br><span class="line">		if (cur-&gt;_data == x)</span><br><span class="line">		&#123;</span><br><span class="line">			return cur;</span><br><span class="line">		&#125;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	return NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void ListInsert(ListNode* pos, LTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos);</span><br><span class="line">	ListNode* prev = pos-&gt;prev;</span><br><span class="line">	ListNode* newnode = BuyListNode(x);</span><br><span class="line"></span><br><span class="line">	newnode-&gt;prev = prev;</span><br><span class="line">	pos-&gt;prev = newnode;</span><br><span class="line">	newnode-&gt;next = pos;</span><br><span class="line">	prev-&gt;next = newnode;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void ListErase(ListNode* pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pos);</span><br><span class="line">	ListNode* prev = pos-&gt;prev;</span><br><span class="line">	ListNode* next = pos-&gt;next;</span><br><span class="line">	free(pos);</span><br><span class="line">	pos = NULL;</span><br><span class="line">	prev-&gt;next = next;</span><br><span class="line">	next-&gt;prev = prev;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void ListDestory(ListNode* pHead)</span><br><span class="line">&#123;</span><br><span class="line">	ListNode*cur = pHead;</span><br><span class="line">	ListNode*nex = pHead;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">		free(nex);</span><br><span class="line">		nex = cur;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p><strong>—————</strong> </p>
+<p><strong>感谢您的观看，希望下篇文章还能与您相见</strong></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/03/13/%E9%93%BE%E8%A1%A8/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/03/13/%E9%93%BE%E8%A1%A8/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

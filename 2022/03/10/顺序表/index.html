@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >顺序表</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p>我们先来看看顺序表的概念和结构：</p>
+<p>顺序表是用一段<strong>物理地址连续</strong>的存储单元依次存储数据元素的线性结构，一般情况下采用数组存储。在数组上完成数据的增删查改。</p>
+<p>顺序表一般可以分为：</p>
+<ol>
+<li><strong>静态顺序表：使用定长数组存储元素。</strong></li>
+</ol>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200650973.png"></p>
+<p>这里我们就直接开辟了一个数组，但因为是一次性开辟的，就会有几种情况：</p>
+<p>第一种，数组开小了，要放的数据放不下，比如我们要放100个数据，而数组只有10个位置。</p>
+<p>第二种，数组开大了，要放的数组没那么多，我只要放10个数据，但你有100个位置，那不就浪费了吗。</p>
+<p>所以这里就有第二种顺序表，要用到realloc函数。</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200650762.png"></p>
+<p>我们先malloc一个数组，这个数组不用很大，我们先用着，然后我们那size记录要放的数据，然后capicty记录还能放多少进去，如果size &#x3D; capicity，那就说明我们放满了，放满了那就要扩容。</p>
+<p><strong>接口实现</strong></p>
+<p>静态顺序表只适用于确定知道需要存多少数据的场景。静态顺序表的定长数组导致N定大了，空间开多了浪费，开少了不够用。所以现实中基本都是使用动态顺序表，根据需要动态的分配空间大小，所以下面我们实现动态顺序表。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#define MAX 100</span><br><span class="line">//静态</span><br><span class="line">//struct SeqList        </span><br><span class="line">//&#123;</span><br><span class="line">//	int arr[MAX];</span><br><span class="line">//	int size;// 记录存储个数</span><br><span class="line">//&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">struct SeqList</span><br><span class="line">&#123;</span><br><span class="line">	int *a;</span><br><span class="line">	int size;</span><br><span class="line">	int capaity;//数组容量</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>那我们学数据结构，就是为了对这些顺序表进行管理，那管理，通常就是增删查改，那我们就来写函数来模拟实现一下。</p>
+<p>在这些操作前，我们得先初始化，在操作完，我们也要销毁，所以我们写两个函数：</p>
+<p>初始化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInit(SeqList s)</span><br><span class="line">&#123;</span><br><span class="line">	s.a = NULL;</span><br><span class="line">	s.size = 0;</span><br><span class="line">	s.capicity = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们写出这样一个函数的时候，我们就要注意这里是传了一个形参过去，我们知道，对形参的操作不会影响到实参，所以我们要传址过去：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInit(SeqList* psl)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	psl-&gt;a = NULL;</span><br><span class="line">	psl-&gt;size = 0;</span><br><span class="line">	psl-&gt;capicity = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序调试：<img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200651069.png"></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200651965.png"></p>
+<p>可以看到我们成功将s初始化，那我们下一步就先不销毁，先写另外一个函数：</p>
+<p>尾插</p>
+<p>当我们想实现一个尾插的时候，就是在开辟空间的最后一个位置放进我们要输入的值，而我们的size就可以帮我们实现这个功能，当初始化完成的时候，我们size &#x3D; 0，这个时候尾插就相当于在size 的位置放进一个数字，然后size++，第二次尾插同样是在size的位置放进数字，所以我们直接找到空间里面下标为size的那个地址将数字放进去即可。</p>
+<p>但是还有一个问题是，如果我们size &#x3D;&#x3D; capicity，那就说明我们没位置了，要扩容了，这里我们还得写一个扩容的函数，我们先判断capicity &#x3D;&#x3D; 0，如果它等于0，说明这里一点空间没有，我们给它一个常数值好方便下一次扩容，如果它是一个常数值，那我们可以直接乘2，然后我们开辟新capicity*sizeof（SeqList）的空间再赋给tmp，这里是为了判断开辟成功与否，如果开辟失败，它会返回一个空指针，那我们就可以判断如果为空指针就打印开辟失败，如果开辟成功我们再给a赋值，具体代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPushBack(SeqList* psl, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	if (psl-&gt;capicity == psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		size_t newcapicity = psl-&gt;capicity == 0 ? 4 : psl-&gt;capicity * 2;</span><br><span class="line">		SLDataType* tmp = (SLDataType*)realloc(psl-&gt;a, sizeof(SLDataType)*newcapicity);</span><br><span class="line">		if (tmp == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;realloc fail\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			psl-&gt;a = tmp;</span><br><span class="line">			psl-&gt;capicity = newcapicity;</span><br><span class="line">		&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	psl-&gt;a[psl-&gt;size] = x;</span><br><span class="line">	psl-&gt;size++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同时，为了方便我们看效果，我们可以写一个打印函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPrint(SeqList* psl)</span><br><span class="line">&#123;</span><br><span class="line">	for (int i = 0; i &lt; psl-&gt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;, psl-&gt;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调试结果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200651486.png"></p>
+<p>那我们再来写一个尾删：</p>
+<p>当我们插入数据成功的时候，size++指向的是下一个空间的位置，我们尾删是不是将最后一个元素的位置重新赋值，然后size–就可以，但如果我们重新赋的那个值就是原本的值呢？那不就相当于没有赋值吗，所以我们可以直接将size–。</p>
+<p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPopBack(SeqList *psl)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	psl-&gt;size -= 1;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200651263.png"></p>
+<p>但是我们还有一个要注意的问题是，如果我们尾删删多了，size减到负数去了，那就出现问题了，所以我们最好加一个判断条件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPopBack(SeqList *psl)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	if (psl-&gt;size &gt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;size -= 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200651086.png"></p>
+<p>然后我们就来看看头插和头删：</p>
+<p>我们这里发现如果头插也需要检查一下数组容量，但如果将刚刚检查容量的代码也复制一遍就不太美观，所以我们可以封装一个函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void SeqListCheckCapacity(SeqList* psl)</span><br><span class="line">&#123;</span><br><span class="line">	if (psl-&gt;capicity == psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		size_t newcapicity = psl-&gt;capicity == 0 ? 4 : psl-&gt;capicity * 2;</span><br><span class="line">		SLDataType* tmp = (SLDataType*)realloc(psl-&gt;a, sizeof(SLDataType)*newcapicity);</span><br><span class="line">		if (tmp == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;realloc fail\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			psl-&gt;a = tmp;</span><br><span class="line">			psl-&gt;capicity = newcapicity;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200651962.png"></p>
+<p>我们让end指向数组的最后一个数字，然后我们在end+1的位置放上end数据，将数组整体右移一位，然后在原本1的位置放上数字：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200651053.png">当end指向1的时候，就说明它已经将数组移动完了，我们就只用放进数字即可：</p>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPushFront(SeqList* psl, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	SeqListCheckCapacity(psl);</span><br><span class="line">	int end = psl-&gt;size - 1;</span><br><span class="line">	while (end &gt;= 0)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[end + 1] = psl-&gt;a[end];</span><br><span class="line">		end--;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;a[0] = x;</span><br><span class="line">	psl-&gt;size++;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>头删我们只需要将头插右移的数字再移回来，我们用begin指向第一个元素，然后begin &#x3D; begin+1，直到begin &gt;size就停下，代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void SeqListPopFront(SeqList *psl)</span><br><span class="line">&#123;</span><br><span class="line">	int begin = 0;</span><br><span class="line">	while (begin &lt;= psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[begin] = psl-&gt;a[begin + 1];</span><br><span class="line">		begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;size--;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到这一步，头插头删，尾插尾删都已经解决了，那我们就来考虑一下中间入和中间删除的情况。</p>
+<p>中间插入跟头插很像，只不过我们头插是将数组全部内容右移，而中间插入只需要将目标后面的数字右移，这里我们看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void SeqListInsert(SeqList* psl, int pos, SLDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	if (pos &gt; psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;error，crossed\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SeqListCheckCapacity(psl);</span><br><span class="line">	int end = psl-&gt;size;</span><br><span class="line">	while (end &gt; pos)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[end + 1] = psl-&gt;a[end];</span><br><span class="line">		end--;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;a[pos] = x;</span><br><span class="line">	psl-&gt;size++;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>至于中间删除，那也跟头删没什么区别，还是看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void SeqListErase(SeqList* psl, size_t pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	int begin = pos+1;</span><br><span class="line">	while (begin &lt;=psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[begin- 1] = psl-&gt;a[begin];</span><br><span class="line">		begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;size--;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>至于查找，那就更简单了，我们遍历整个数组，然后找到的返回下标即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int SeqListFind(SeqList* psl, SLDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	for (int i = 0; i &lt; psl-&gt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (psl-&gt;a[i] == x)</span><br><span class="line">		&#123;</span><br><span class="line">			return i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有一个是修改功能，这里有两种：</p>
+<p>第一，是直接在数组里面找下标，然后通过下标修改</p>
+<p>第二，是在数组里面找数字，然后修改数字</p>
+<p>这两种都挺好实现的，这里放上代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//通过下标修改</span><br><span class="line">void SeqListModfy(SeqList* psl, int pos, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	assert(pos &lt; psl-&gt;size);</span><br><span class="line">	psl-&gt;a[pos] = x;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//通过找数字修改</span><br><span class="line">void SeqListModfy(SeqList* psl, int pos, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	assert(pos &lt; psl-&gt;size);</span><br><span class="line">	int poss = SeqListFind(psl, pos);</span><br><span class="line">	psl-&gt;a[poss] = x;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后，给大家放上全部代码：</p>
+<p>SeqList.h</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//顺序表要求数据从0开始，依次存储</span><br><span class="line">#define MAX 100</span><br><span class="line">typedef int SLDataType;</span><br><span class="line">//静态</span><br><span class="line">//struct SeqList        </span><br><span class="line">//&#123;</span><br><span class="line">//	int arr[MAX];</span><br><span class="line">//	int size;// 记录存储个数</span><br><span class="line">//&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">typedef struct SeqList</span><br><span class="line">&#123;</span><br><span class="line">	SLDataType *a;</span><br><span class="line">	int size;</span><br><span class="line">	int capicity;</span><br><span class="line">&#125;SeqList;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void SeqListPrint(SeqList* psl);</span><br><span class="line">void SeqListCheckCapacity(SeqList* psl);</span><br><span class="line"></span><br><span class="line">void SeqListInit(SeqList *psl);</span><br><span class="line">void SeqListDestroy(SeqList *psl);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void SeqListPushBack(SeqList* psl,int x);//尾插</span><br><span class="line">void SeqListPopBack(SeqList *psl);  // 尾删</span><br><span class="line"></span><br><span class="line">void SeqListPushFront(SeqList* psl, int x);//头插</span><br><span class="line">void SeqListPopFront(SeqList *psl);  // 头删</span><br><span class="line"></span><br><span class="line">void SeqListInsert(SeqList* psl, int pos, SLDataType x);//在指定位置插入</span><br><span class="line">void SeqListErase(SeqList* psl, size_t pos);//删除指定位置元素</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int SeqListFind(SeqList* psl, SLDataType x);//查找元素</span><br><span class="line">void SeqListModfy(SeqList* psl, int pos, SLDataType x);//修改元素```-</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>SeqList.c</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line">#include&quot;SeqList.h&quot;</span><br><span class="line"></span><br><span class="line">void SeqListPrint(SeqList* psl)</span><br><span class="line">&#123;</span><br><span class="line">	for (int i = 0; i &lt; psl-&gt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;, psl-&gt;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqListCheckCapacity(SeqList* psl)</span><br><span class="line">&#123;</span><br><span class="line">	if (psl-&gt;capicity == psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		size_t newcapicity = psl-&gt;capicity == 0 ? 4 : psl-&gt;capicity * 2;</span><br><span class="line">		SLDataType* tmp = (SLDataType*)realloc(psl-&gt;a, sizeof(SLDataType)*newcapicity);</span><br><span class="line">		if (tmp == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;realloc fail\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			psl-&gt;a = tmp;</span><br><span class="line">			psl-&gt;capicity = newcapicity;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void SeqListInit(SeqList* psl)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	psl-&gt;a = NULL;</span><br><span class="line">	psl-&gt;size = 0;</span><br><span class="line">	psl-&gt;capicity = 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqListPushBack(SeqList* psl, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	SeqListCheckCapacity(psl);</span><br><span class="line">	psl-&gt;a[psl-&gt;size] = x;</span><br><span class="line">	psl-&gt;size++;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">void SeqListPopBack(SeqList *psl)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	if (psl-&gt;size &gt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;size -= 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqListPushFront(SeqList* psl, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	SeqListCheckCapacity(psl);</span><br><span class="line">	int end = psl-&gt;size - 1;</span><br><span class="line">	while (end &gt;= 0)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[end + 1] = psl-&gt;a[end];</span><br><span class="line">		end--;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;a[0] = x;</span><br><span class="line">	psl-&gt;size++;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqListPopFront(SeqList *psl)</span><br><span class="line">&#123;</span><br><span class="line">	int begin = 0;</span><br><span class="line">	while (begin &lt;= psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[begin] = psl-&gt;a[begin + 1];</span><br><span class="line">		begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;size--;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqListInsert(SeqList* psl, int pos, SLDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	if (pos &gt; psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;error，crossed\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	SeqListCheckCapacity(psl);</span><br><span class="line">	int end = psl-&gt;size;</span><br><span class="line">	while (end &gt; pos)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[end + 1] = psl-&gt;a[end];</span><br><span class="line">		end--;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;a[pos] = x;</span><br><span class="line">	psl-&gt;size++;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqListErase(SeqList* psl, size_t pos)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	int begin = pos+1;</span><br><span class="line">	while (begin &lt;=psl-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		psl-&gt;a[begin- 1] = psl-&gt;a[begin];</span><br><span class="line">		begin++;</span><br><span class="line">	&#125;</span><br><span class="line">	psl-&gt;size--;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int SeqListFind(SeqList* psl, SLDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	for (int i = 0; i &lt; psl-&gt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (psl-&gt;a[i] == x)</span><br><span class="line">		&#123;</span><br><span class="line">			return i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void SeqListModfy(SeqList* psl, int pos, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(psl);</span><br><span class="line">	assert(pos &lt; psl-&gt;size);</span><br><span class="line">	int poss = SeqListFind(psl, pos);</span><br><span class="line">	psl-&gt;a[poss] = x;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主程序就不放出来了，因为没什么好说的，所有用到的函数都在上面，要用直接调用即可，感谢您的观看，我们下次链表再见。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/03/10/%E9%A1%BA%E5%BA%8F%E8%A1%A8/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/03/10/%E9%A1%BA%E5%BA%8F%E8%A1%A8/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
