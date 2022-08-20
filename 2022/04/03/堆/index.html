@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >堆</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<p><strong>建议先明白二叉树的基本概念之后来看这个，二叉树我会单独另写一篇专栏。</strong></p>
+<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200927615.png"></p>
+<p>这个看着比较麻烦，不好理解，不过可以直接解释为：</p>
+<p><strong>用数组的形式存储一个完全二叉树，这个二叉树是大根或者小根</strong></p>
+<hr>
+<p>如果明白顺序表的增删查改，那这个会很好理解，对顺序表有兴趣可以点开我的另一篇专栏</p>
+<p>我们先从Heap.h文件开始：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//包含头文件</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//创建结构体和自定义类型，方便之后如果存储类型有变化</span><br><span class="line">typedef int HeapDataType;</span><br><span class="line"></span><br><span class="line">typedef struct Heap</span><br><span class="line">&#123;</span><br><span class="line">	HeapDataType* arr;</span><br><span class="line">	int size;</span><br><span class="line">	int capacity;</span><br><span class="line">&#125;Heap;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//之后会实现的函数</span><br><span class="line"></span><br><span class="line">//交换</span><br><span class="line">void swap(HeapDataType* pa, HeapDataType* pb);</span><br><span class="line"></span><br><span class="line">//打印</span><br><span class="line">void HeapPrintf(Heap* hp);</span><br><span class="line"></span><br><span class="line">//向上调整</span><br><span class="line">void AdjustUp(HeapDataType* a, size_t child);</span><br><span class="line"></span><br><span class="line">//向下调整</span><br><span class="line">void AdjustDown(Heap* hp);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 堆的初始化</span><br><span class="line">void HeapInit(Heap* hp);</span><br><span class="line"></span><br><span class="line">// 堆的销毁</span><br><span class="line">void HeapDestory(Heap* hp);</span><br><span class="line"></span><br><span class="line">// 堆的插入</span><br><span class="line">void HeapPush(Heap* hp, HeapDataType x);</span><br><span class="line"></span><br><span class="line">// 堆的删除</span><br><span class="line">void HeapPop(Heap* hp);</span><br><span class="line"></span><br><span class="line">// 取堆顶的数据</span><br><span class="line">HeapDataType HeapTop(Heap* hp);</span><br><span class="line"></span><br><span class="line">// 堆的数据个数</span><br><span class="line">int HeapSize(Heap* hp);</span><br><span class="line"></span><br><span class="line">// 堆的判空</span><br><span class="line">bool HeapEmpty(Heap* hp);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Heap.c：</p>
+<h2 id="堆的初始化"><a href="#堆的初始化" class="headerlink" title="堆的初始化"></a>堆的初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 堆的构建</span><br><span class="line">void HeapInit(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">    //判断传进来的指针</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">    //一些初始的赋值</span><br><span class="line">	hp-&gt;arr = NULL;</span><br><span class="line">	hp-&gt;capacity = 0;</span><br><span class="line">	hp-&gt;size = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="堆的销毁"><a href="#堆的销毁" class="headerlink" title="堆的销毁"></a>堆的销毁</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 堆的销毁</span><br><span class="line">void HeapDestory(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">     //跟初始化差不多</span><br><span class="line">	free(hp-&gt;arr);</span><br><span class="line">	hp-&gt;arr = NULL;</span><br><span class="line">	hp-&gt;capacity = 0;</span><br><span class="line">	hp-&gt;size = 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="堆的插入"><a href="#堆的插入" class="headerlink" title="堆的插入"></a>堆的插入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 堆的插入</span><br><span class="line">void HeapPush(Heap* hp, HeapDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">    //扩容</span><br><span class="line">	if (hp-&gt;capacity == hp-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		int newcapacity = hp-&gt;capacity == 0 ? 4 : hp-&gt;capacity * 2;</span><br><span class="line">		hp-&gt;arr = (HeapDataType*)realloc(hp-&gt;arr, sizeof(HeapDataType)* newcapacity);</span><br><span class="line">		if (hp-&gt;arr == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;Realloc Fail\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		hp-&gt;capacity = newcapacity;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    //插入</span><br><span class="line">	hp-&gt;arr[hp-&gt;size] = x;	</span><br><span class="line">	hp-&gt;size++;</span><br><span class="line"></span><br><span class="line">    //调整</span><br><span class="line">	AdjustUp(hp-&gt;arr, hp-&gt;size-1);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里注意的是我们要调整，假设我们这是一个小根，比如是</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200927284.png"></p>
+<p>这是我们目前的数组的逻辑结构，假设我们现在要插入一个0，0肯定比这上面的所有数字都小，那我们就要调整，调整到它是根位置。</p>
+<p>这是它的物理结构</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200927444.png"></p>
+<p>我们知道二叉树的父子节点的关系是：</p>
+<p>假设父节点是0，那它的左子节点就是 0*2+1 &#x3D; 1，就是下标为1的元素</p>
+<p>它的右子节点就是0*2+2 &#x3D; 2。</p>
+<p>…</p>
+<p>我们插入的时候是在尾部插入，那这就是子节点，我们要拿它跟父节点比较，如果它比父节点小，那我们就交换</p>
+<p>既然插入要调整，那删除肯定也要调整，所以我们可以写一个交换函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//交换</span><br><span class="line">void swap(HeapDataType* pa, HeapDataType* pb)</span><br><span class="line">&#123;</span><br><span class="line">	HeapDataType data = *pa;</span><br><span class="line">	*pa = *pb;</span><br><span class="line">	*pb = data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//向上调整</span><br><span class="line">void AdjustUp(HeapDataType* arr, size_t child)</span><br><span class="line">&#123;</span><br><span class="line">	assert(arr);</span><br><span class="line"></span><br><span class="line">    //算父节点大小</span><br><span class="line">	size_t parents = (child - 1) / 2;</span><br><span class="line">	while (child &gt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">        //比较</span><br><span class="line">		if (arr[parents] &gt; arr[child])</span><br><span class="line">		&#123;</span><br><span class="line">			swap(&amp;arr[parents], &amp;arr[child]);</span><br><span class="line">            //别忘了重置父子节点继续往下走</span><br><span class="line">			child = parents;</span><br><span class="line">			parents = (child - 1) / 2;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">            //不大我们就可以退出了。</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>插入我们明白了，那我们写一个删除：</p>
+<h2 id="堆的删除"><a href="#堆的删除" class="headerlink" title="堆的删除"></a>堆的删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 堆的删除</span><br><span class="line">void HeapPop(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	assert(hp-&gt;size &gt; 0);</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    //将第一个元素跟最后一个换位置，然后将size（元素个数-1）</span><br><span class="line">	hp-&gt;arr[0] = hp-&gt;arr[hp-&gt;size - 1];</span><br><span class="line">	hp-&gt;size--;</span><br><span class="line">    //向下调整</span><br><span class="line">	AdjustDown(hp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200927122.png"></p>
+<p>我们让8跟1，也就是根换位置，然后让size–，那就好像：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200927317.png"></p>
+<p>然后让8跟2 3比较 ，找到它们之中小的那个交换位置，如果它子节点还是比它大，那就再换：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//向下调整</span><br><span class="line">void AdjustDown(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	size_t parents = 0;</span><br><span class="line">	size_t child = parents * 2 + 1;</span><br><span class="line">	while (child &lt; hp-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		if (hp-&gt;arr[child + 1] &lt; hp-&gt;arr[child])</span><br><span class="line">		&#123;</span><br><span class="line">			child++;</span><br><span class="line">		&#125;</span><br><span class="line">		if (hp-&gt;arr[parents]&gt;hp-&gt;arr[child])</span><br><span class="line">		&#123;</span><br><span class="line">			swap(&amp;hp-&gt;arr[parents], &amp;hp-&gt;arr[child]);</span><br><span class="line">			parents = child;</span><br><span class="line">			child = parents * 2 + 1;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取堆顶数据"><a href="#获取堆顶数据" class="headerlink" title="获取堆顶数据"></a>获取堆顶数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 取堆顶的数据</span><br><span class="line">HeapDataType HeapTop(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	assert(hp-&gt;size &gt; 0);</span><br><span class="line"></span><br><span class="line">	return hp-&gt;arr[0];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="判断堆是否为空"><a href="#判断堆是否为空" class="headerlink" title="判断堆是否为空"></a>判断堆是否为空</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 堆的判空</span><br><span class="line">bool HeapEmpty(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">	return hp-&gt;size == 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="查看元素个数"><a href="#查看元素个数" class="headerlink" title="查看元素个数"></a>查看元素个数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int HeapSize(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">	return hp-&gt;size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="这里放上全部代码方便复制："><a href="#这里放上全部代码方便复制：" class="headerlink" title="这里放上全部代码方便复制："></a>这里放上全部代码方便复制：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">Heap.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">typedef int HeapDataType;</span><br><span class="line"></span><br><span class="line">typedef struct Heap</span><br><span class="line">&#123;</span><br><span class="line">	HeapDataType* arr;</span><br><span class="line">	int size;</span><br><span class="line">	int capacity;</span><br><span class="line">&#125;Heap;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//交换</span><br><span class="line">void swap(HeapDataType* pa, HeapDataType* pb);</span><br><span class="line"></span><br><span class="line">//打印</span><br><span class="line">void HeapPrintf(Heap* hp);</span><br><span class="line"></span><br><span class="line">//向上调整</span><br><span class="line">void AdjustUp(HeapDataType* a, size_t child);</span><br><span class="line"></span><br><span class="line">//向下调整</span><br><span class="line">void AdjustDown(Heap* hp);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 堆的构建</span><br><span class="line">void HeapInit(Heap* hp);</span><br><span class="line">// 堆的销毁</span><br><span class="line">void HeapDestory(Heap* hp);</span><br><span class="line">// 堆的插入</span><br><span class="line">void HeapPush(Heap* hp, HeapDataType x);</span><br><span class="line">// 堆的删除</span><br><span class="line">void HeapPop(Heap* hp);</span><br><span class="line">// 取堆顶的数据</span><br><span class="line">HeapDataType HeapTop(Heap* hp);</span><br><span class="line">// 堆的数据个数</span><br><span class="line">int HeapSize(Heap* hp);</span><br><span class="line">// 堆的判空</span><br><span class="line">bool HeapEmpty(Heap* hp);</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line">Heap.c</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Heap.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//交换</span><br><span class="line">void swap(HeapDataType* pa, HeapDataType* pb)</span><br><span class="line">&#123;</span><br><span class="line">	HeapDataType data = *pa;</span><br><span class="line">	*pa = *pb;</span><br><span class="line">	*pb = data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//打印</span><br><span class="line">void HeapPrintf(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	for (int i = 0; i &lt; hp-&gt;size; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;, hp-&gt;arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//向上调整</span><br><span class="line">void AdjustUp(HeapDataType* arr, size_t child)</span><br><span class="line">&#123;</span><br><span class="line">	assert(arr);</span><br><span class="line"></span><br><span class="line">	size_t parents = (child - 1) / 2;</span><br><span class="line">	while (child &gt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">		if (arr[parents] &gt; arr[child])</span><br><span class="line">		&#123;</span><br><span class="line">			swap(&amp;arr[parents], &amp;arr[child]);</span><br><span class="line">			child = parents;</span><br><span class="line">			parents = (child - 1) / 2;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 堆的构建</span><br><span class="line">void HeapInit(Heap* hp, HeapDataType* a, int n)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	hp-&gt;arr = NULL;</span><br><span class="line">	hp-&gt;capacity = 0;</span><br><span class="line">	hp-&gt;size = 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 堆的销毁</span><br><span class="line">void HeapDestory(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	free(hp-&gt;arr);</span><br><span class="line">	hp-&gt;arr = NULL;</span><br><span class="line">	hp-&gt;capacity = 0;</span><br><span class="line">	hp-&gt;size = 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">// 堆的插入</span><br><span class="line">void HeapPush(Heap* hp, HeapDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">	if (hp-&gt;capacity == hp-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		int newcapacity = hp-&gt;capacity == 0 ? 4 : hp-&gt;capacity * 2;</span><br><span class="line">		hp-&gt;arr = (HeapDataType*)realloc(hp-&gt;arr, sizeof(HeapDataType)* newcapacity);</span><br><span class="line">		if (hp-&gt;arr == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;Realloc Fail\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		hp-&gt;capacity = newcapacity;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	hp-&gt;arr[hp-&gt;size] = x;	</span><br><span class="line">	hp-&gt;size++;</span><br><span class="line">	AdjustUp(hp-&gt;arr, hp-&gt;size-1);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//向下调整</span><br><span class="line">void AdjustDown(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	size_t parents = 0;</span><br><span class="line">	size_t child = parents * 2 + 1;</span><br><span class="line">	while (child &lt; hp-&gt;size)</span><br><span class="line">	&#123;</span><br><span class="line">		if (hp-&gt;arr[child + 1] &lt; hp-&gt;arr[child])</span><br><span class="line">		&#123;</span><br><span class="line">			child++;</span><br><span class="line">		&#125;</span><br><span class="line">		if (hp-&gt;arr[parents]&gt;hp-&gt;arr[child])</span><br><span class="line">		&#123;</span><br><span class="line">			swap(&amp;hp-&gt;arr[parents], &amp;hp-&gt;arr[child]);</span><br><span class="line">			parents = child;</span><br><span class="line">			child = parents * 2 + 1;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 堆的删除</span><br><span class="line">void HeapPop(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	assert(hp-&gt;size &gt; 0);</span><br><span class="line"></span><br><span class="line">	hp-&gt;arr[0] = hp-&gt;arr[hp-&gt;size - 1];</span><br><span class="line">	hp-&gt;size--;</span><br><span class="line">	AdjustDown(hp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 取堆顶的数据</span><br><span class="line">HeapDataType HeapTop(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line">	assert(hp-&gt;size &gt; 0);</span><br><span class="line"></span><br><span class="line">	return hp-&gt;arr[0];</span><br><span class="line">&#125;</span><br><span class="line">// 堆的数据个数</span><br><span class="line">int HeapSize(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">	return hp-&gt;size;</span><br><span class="line">&#125;</span><br><span class="line">// 堆的判空</span><br><span class="line">bool HeapEmpty(Heap* hp)</span><br><span class="line">&#123;</span><br><span class="line">	assert(hp);</span><br><span class="line"></span><br><span class="line">	return hp-&gt;size == 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>堆的应用：</p>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>我们已知这是一个小根，每次堆顶的元素都是最小的元素，那每次都拿出堆顶的元素，然后再删除，再拿出，再删除，一直到堆没有即可：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200927162.png"></p>
+<hr>
+<h2 id="TOP-K"><a href="#TOP-K" class="headerlink" title="TOP K"></a>TOP K</h2><p>假设现在要从100w个数据中选最大的前K个，三种办法：</p>
+<p>1、排序：时间复杂度:O（N*logN）,空间复杂度：O（1），如果优化可能会更快</p>
+<p>2、建堆：然后每次取堆顶的再删除，时间复杂度:O（N<em>logN</em>K），空间复杂度：O（1）</p>
+<p>3、用前K个建小堆，如果后面的数字比堆顶大，我们就调整，这样的好处是时间复杂度为：O（K+logK*（N-K）），看上去很多，但实际上因为K很小，而N很大，所以几乎可以越等为O（N），但空间复杂度就是O（K）</p>
+<p>这里主要说的就是第三种</p>
+<p>先说思路，我们拿到数据，然后根据需求建堆，再遍历调整，因为代码都是之前写过的，所以这里只在代码内部标上注释方便阅读</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">//最大前top个</span><br><span class="line">#define top 5</span><br><span class="line">//交换</span><br><span class="line">void swap(int* a, int* b)</span><br><span class="line">&#123;</span><br><span class="line">	int tmp = *a;</span><br><span class="line">	*a = *b;</span><br><span class="line">	*b = tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//向下调整</span><br><span class="line">void AdjustDown(int* arr, int root, int end)</span><br><span class="line">&#123;</span><br><span class="line">	int parent = root;</span><br><span class="line">	int child = parent * 2+1;</span><br><span class="line">	while (child &lt; end)</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		if (arr[child + 1] &lt; arr[child] &amp;&amp; (child + 1) &lt; end)</span><br><span class="line">		&#123;</span><br><span class="line">			child++;</span><br><span class="line">		&#125;</span><br><span class="line">		if (arr[parent] &gt; arr[child])</span><br><span class="line">		&#123;</span><br><span class="line">			swap(&amp;(arr[parent]), &amp;(arr[child]));</span><br><span class="line">			parent = child;</span><br><span class="line">			child = parent * 2+1;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int* topk(int* brr,int end , int len)</span><br><span class="line">&#123;</span><br><span class="line">	int* arr = (int*)malloc(sizeof(int)*len);</span><br><span class="line">	//初始化</span><br><span class="line">	for (int i = 0; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		arr[i] = brr[i];</span><br><span class="line">	&#125;</span><br><span class="line">	//建小堆</span><br><span class="line">	for (int i = (len - 2)/2; i &gt;= 0; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		AdjustDown(arr, i, top);</span><br><span class="line">	&#125;</span><br><span class="line">	//如果比根大就交换，再调整</span><br><span class="line">	for (int i = len; i &lt; end; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (brr[i] &gt; arr[0])</span><br><span class="line">		&#123;</span><br><span class="line">			arr[0] = brr[i];</span><br><span class="line">			AdjustDown(arr, 0, top);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//主函数测试用</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int arr[10000];</span><br><span class="line">	for (int i = 0; i &lt; 10000; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		arr[i] = 100;</span><br><span class="line">	&#125;</span><br><span class="line">	arr[10] = 10001;</span><br><span class="line">	arr[100] = 10002;</span><br><span class="line">	arr[1000] = 10003;</span><br><span class="line">	arr[2000] = 10004;</span><br><span class="line">	arr[3000] = 10005;</span><br><span class="line">	/*int arr[] = &#123; 6, 5, 4, 3, 2, 1, 9, 8, 7 &#125;;*/</span><br><span class="line">	int len = sizeof(arr) / sizeof(arr[0]);</span><br><span class="line">	int* a = topk(&amp;arr,len, top);</span><br><span class="line">	for (int i = 0; i &lt; top; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%d &quot;, a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	system(&quot;pause&quot;);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>感谢您的观看，我们下次再见</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/04/03/%E5%A0%86/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/04/03/%E5%A0%86/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

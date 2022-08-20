@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >二叉树的练习题</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<p> 做的时候总感觉自己掌握的不够深，所以在这里写一篇博客来加深理解。</p>
+<hr>
+<h2 id="单值二叉树"><a href="#单值二叉树" class="headerlink" title="单值二叉树"></a>单值二叉树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/univalued-binary-tree/" title="965. 单值二叉树 - 力扣（LeetCode） (leetcode-cn.com)">965. 单值二叉树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929934.png"></p>
+<p>二叉树肯定是递归的，但原函数给我们的却是：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929496.png"></p>
+<p>这个函数的参数却只有一个root，我们判断是否为单值还需要其中一个节点的值，如果这个值跟其他值不一样，那我们就返回false，如果节点为空、或者是值一样，我们返回真</p>
+<p>那我们就自己建一个函数，然后递归这个创建的函数即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//递归判断</span><br><span class="line">bool fun(struct TreeNode* root,size_t val)</span><br><span class="line">&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    if(root-&gt;val != val)</span><br><span class="line">    &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return fun(root-&gt;left,val)&amp;&amp;fun(root-&gt;right,val);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool isUnivalTree(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    size_t val = root-&gt;val;</span><br><span class="line"></span><br><span class="line">    return fun(root,val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>二叉树的最大深度</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929205.png"></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/" title="104. 二叉树的最大深度 - 力扣（LeetCode） (leetcode-cn.com)">104. 二叉树的最大深度 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p>我们先看题目给我们的条件：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929855.png"></p>
+<p>已知根节点，求最大深度</p>
+<p>我们拿两个值，一个记录左节点深度，一个记录右节点深度，然后我们比较返回大的那个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int maxDepth(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /如果不为空，这里就要返回1</span><br><span class="line">    size_t left = maxDepth(root-&gt;left)+1;</span><br><span class="line">    size_t right = maxDepth(root-&gt;right)+1;</span><br><span class="line"></span><br><span class="line">    return left&gt;right?left:right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="二叉树的前序构造："><a href="#二叉树的前序构造：" class="headerlink" title="二叉树的前序构造："></a>二叉树的前序构造：</h2><p>我们先来创建一个二叉树的结构体，再定义里面的数据类型：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef char BTDataType;</span><br><span class="line"> </span><br><span class="line">typedef struct BinaryTreeNode</span><br><span class="line">&#123;</span><br><span class="line">	BTDataType _data;</span><br><span class="line">	struct BinaryTreeNode* _left;</span><br><span class="line">	struct BinaryTreeNode* _right;</span><br><span class="line">&#125;BTNode;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>前序，我们知道是：根 左节点、右节点，我们拿到一串数据，就可以按照这样的顺序递归下去</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//一个参数是我们要放进去的数据，另一个指针记录放了几个，每放一个就++</span><br><span class="line">BTNode* BinaryTreeCreate(BTDataType* a, int* n)</span><br><span class="line">&#123;</span><br><span class="line">    //如果这个地方是&#x27;#&#x27;，就说明这里是空指针，我们让指针++，返回空</span><br><span class="line">	if (a[*n] == &#x27;#&#x27;)</span><br><span class="line">	&#123;</span><br><span class="line">		++(*n);</span><br><span class="line">		return NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">        //先开辟节点，这个就是根</span><br><span class="line">		BTNode* root = (BTNode*)malloc(sizeof(BTNode));</span><br><span class="line">        //放数据</span><br><span class="line">		root-&gt;data = a[*n];</span><br><span class="line">        让指针++</span><br><span class="line">		++(*n);</span><br><span class="line">        先左节点</span><br><span class="line">		root-&gt;left = BinaryTreeCreate(a, n);</span><br><span class="line">        //右节点</span><br><span class="line">		root-&gt;right = BinaryTreeCreate(a, n);</span><br><span class="line">        </span><br><span class="line">        //返回这个的地址</span><br><span class="line">		return root;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="销毁二叉树"><a href="#销毁二叉树" class="headerlink" title="销毁二叉树"></a>销毁二叉树</h2><p>如果理解了如何构造，那这个应该不难</p>
+<p>我们拿到一个节点，开始判断这个节点是不是空，如果是空，那我们就直接返回，如果不是空，那我们就继续找这个节点的子节点，直到我们找到叶子，然后free</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 二叉树销毁</span><br><span class="line">void BinaryTreeDestory(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">    //判断节点</span><br><span class="line">	if (root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">        //往下找</span><br><span class="line">		BinaryTreeDestory(root-&gt;left);</span><br><span class="line">		BinaryTreeDestory(root-&gt;right);</span><br><span class="line">        //释放</span><br><span class="line">		free(root);</span><br><span class="line">	&#125;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="二叉树的节点（叶子）个数"><a href="#二叉树的节点（叶子）个数" class="headerlink" title="二叉树的节点（叶子）个数"></a>二叉树的节点（叶子）个数</h2><p>思路跟销毁二叉树差不多，我们拿到根节点，然后判断它是否为空，为空就返回0，不为空就继续往下找，找到根节点后开始返回1</p>
+<p>如果是判断叶子节点，那我们就把判断条件改一下，如果这个节点的左右节点指针都为空，返回1，然后我们返回值调用这个函数，把根的左指针和右指针给它即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 二叉树节点个数</span><br><span class="line">int BinaryTreeSize(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">	if (root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	return 1 + BinaryTreeSize(root-&gt;left)</span><br><span class="line">			 + BinaryTreeSize(root-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 二叉树叶子节点个数</span><br><span class="line">int BinaryTreeLeafSize(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">	if (root-&gt;left == NULL &amp;&amp; root-&gt;right == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return BinaryTreeLeafSize(root-&gt;left) + BinaryTreeLeafSize(root-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二叉树第K层的节点个数"><a href="#二叉树第K层的节点个数" class="headerlink" title="二叉树第K层的节点个数"></a><strong>二叉树第K层的节点个数</strong></h2><p>我们找K层，实际是找K-1层，因为只有它可以拿到K层的地址，如果我们找第3层，那实际上我们找的是第2层，我们拿到第二层根的节点，，然后把它的左右指针传进去，如果 k &#x3D;&#x3D; 1（我们每次传进去k都-1），如果传进去的节点为空，就返回0，如K&#x3D;&#x3D;1，那就说明是这一层，我们返回1，把两个值加起来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 二叉树第k层节点个数</span><br><span class="line">int BinaryTreeLevelKSize(BTNode* root, int k)</span><br><span class="line">&#123;</span><br><span class="line">	if (root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	if (k == 1)</span><br><span class="line">	&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	return BinaryTreeLevelKSize(root-&gt;left,k-1) + BinaryTreeLevelKSize(root-&gt;right,k-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="查找二叉树里面值为X的节点"><a href="#查找二叉树里面值为X的节点" class="headerlink" title="查找二叉树里面值为X的节点"></a>查找二叉树里面值为X的节点</h2><p>结束两件有两个：</p>
+<p>1、找到了，返回这个节点</p>
+<p>2、没找到，返回空</p>
+<p>其他情况下继续递归即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//二叉树查找值为x的节点</span><br><span class="line"></span><br><span class="line">BTNode* BinaryTreeFind(BTNode* root, BTDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	if (root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	if (root-&gt;data == x)</span><br><span class="line">	&#123;</span><br><span class="line">		return root;</span><br><span class="line">	&#125;</span><br><span class="line">    //创建临时指针开始找左边</span><br><span class="line">	BTNode* tmp = BinaryTreeFind(root-&gt;left, x);</span><br><span class="line">    //为空就是没找到，找右边</span><br><span class="line">	if (tmp == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		tmp = BinaryTreeFind(root-&gt;right, x);</span><br><span class="line">	&#125;</span><br><span class="line">    //不为空就是找到了，返回</span><br><span class="line">	if (tmp != NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return tmp;</span><br><span class="line">	&#125;</span><br><span class="line">    //右边找完也为空那就返回空</span><br><span class="line">	return NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="二叉树的前、中、后序遍历"><a href="#二叉树的前、中、后序遍历" class="headerlink" title="二叉树的前、中、后序遍历"></a>二叉树的前、中、后序遍历</h2><p>如果这个节点是空，我们可以打印出来，或者是直接返回</p>
+<p>一开始传进来的是根节点，然后我们打印根节点，再打印左节点，同时左节点又作为子树的根，所以用递归，左边递归完再递归右边：</p>
+<p>改变顺序即可改变遍历方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// 二叉树前序遍历 </span><br><span class="line">void BinaryTreePrevOrder(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">	if (root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;null &quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;%c &quot;, root-&gt;data);</span><br><span class="line">	BinaryTreePrevOrder(root-&gt;left);</span><br><span class="line">	BinaryTreePrevOrder(root-&gt;right);</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 二叉树中序遍历</span><br><span class="line">void BinaryTreeInOrder(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">	if (root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;null &quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	BinaryTreeInOrder(root-&gt;left);</span><br><span class="line">	printf(&quot;%c &quot;, root-&gt;data);</span><br><span class="line">	BinaryTreeInOrder(root-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line">// 二叉树后序遍历</span><br><span class="line">void BinaryTreePostOrder(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">	if (root == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;null &quot;);</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	BinaryTreeInOrder(root-&gt;left);</span><br><span class="line">	BinaryTreeInOrder(root-&gt;right);</span><br><span class="line">	printf(&quot;%c &quot;, root-&gt;data);</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h2><p>这可能是最难的一部分，我们需要用到之前的队列</p>
+<p>具体操作如下：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200930774.png"></p>
+<p>假设我们现在的队列是这样的，那我们层序打印的时候就应该是：</p>
+<p>A B C D E F G</p>
+<p>如何用队列实现？</p>
+<p>我们创建一个队列并初始化：</p>
+<p>这里有两种实现队列的方式</p>
+<p>第一种用数组，这种方式简单、好理解，但缺点是不能合适的开辟空间</p>
+<p>第二种用链表，之后会更新实现</p>
+<p>之后我们就要考虑如何在队列里面插入数据了：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200930977.png"></p>
+<p>我们先将A插进去并打印出来，之后判断：如果队列不为空（此时队列应该有A），我们就继续插入数据，插入的是A的子节点（B、C）</p>
+<p>我们再删除A的数据，因为删除了A的数据，而如果刚刚插入成功的话，那下一个到的就是B，再将B的子节点放进去，打印B的节点，再删除，循环</p>
+<p>这是我们会用到的关于队列的函数（如果看不懂的话可以点开专栏看看我以前写的顺序表和队列）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">#include&lt;stdbool.h&gt;</span><br><span class="line"></span><br><span class="line">//二叉树里面的类型</span><br><span class="line">typedef char BTDataType;</span><br><span class="line"></span><br><span class="line">//二叉树节点个数</span><br><span class="line">#define MaxSize 100</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//二叉树的结构体</span><br><span class="line">typedef struct BinaryTreeNode</span><br><span class="line">&#123;</span><br><span class="line">	BTDataType data;</span><br><span class="line">	struct BinaryTreeNode* left;</span><br><span class="line">	struct BinaryTreeNode* right;</span><br><span class="line">&#125;BTNode;</span><br><span class="line"></span><br><span class="line">//队列的结构体</span><br><span class="line">typedef struct Queue</span><br><span class="line">&#123;</span><br><span class="line">	struct BinaryTreeNode* arr[MaxSize];</span><br><span class="line">	int front;</span><br><span class="line">	int end;</span><br><span class="line">&#125;Queue;</span><br><span class="line"></span><br><span class="line">// 初始化队列</span><br><span class="line">void QueueInit(Queue* q);</span><br><span class="line">// 队尾入队列</span><br><span class="line">void QueuePush(Queue* q, struct BinaryTreeNode* data);</span><br><span class="line">// 队头出队列</span><br><span class="line">void QueuePop(Queue* q);</span><br><span class="line">// 获取队列头部元素</span><br><span class="line">struct BinaryTreeNode* QueueFront(Queue* q);</span><br><span class="line">// 检测队列是否为空，如果为空返回非零结果，如果非空返回0 </span><br><span class="line">bool QueueEmpty(Queue* q);</span><br><span class="line"></span><br><span class="line">// 层序遍历</span><br><span class="line">void BinaryTreeLevelOrder(BTNode* root);</span><br><span class="line">// 判断二叉树是否是完全二叉树</span><br><span class="line">bool BinaryTreeComplete(BTNode* root);</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">.c</span><br><span class="line"></span><br><span class="line">//初始化</span><br><span class="line">void QueueInit(Queue* q)</span><br><span class="line">&#123;</span><br><span class="line">	assert(q);</span><br><span class="line">	q-&gt;end = q-&gt;head = 0;</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//插入元素</span><br><span class="line">void QueuePush(Queue* q, struct BinaryTreeNode* x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(q);</span><br><span class="line">	q-&gt;arr[q-&gt;end++] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//删除元素并返回元素</span><br><span class="line">struct BinaryTreeNode* QueuePop(Queue* q)</span><br><span class="line">&#123;</span><br><span class="line">	assert(q);</span><br><span class="line">	struct BinaryTreeNode* tmp = q-&gt;arr[q-&gt;head];</span><br><span class="line">	q-&gt;head++;</span><br><span class="line">	return tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//判断队列是否为空</span><br><span class="line">bool QueueEmpty(Queue* q)</span><br><span class="line">&#123;</span><br><span class="line">	assert(q);</span><br><span class="line">	return q-&gt;end == q-&gt;head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>写完了队列的操作，那我们就可以正式开始写层序了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">void BinaryTreeLevelOrder(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">    //创建并初始化</span><br><span class="line">	Queue q;</span><br><span class="line">	QueueInit(&amp;q);</span><br><span class="line">    //插入</span><br><span class="line">	QueuePush(&amp;q, root);</span><br><span class="line">    //开始走</span><br><span class="line">	while (!QueueEmpty(&amp;q))</span><br><span class="line">	&#123;</span><br><span class="line">        //当前节点数据方便我们使用</span><br><span class="line">		BTNode* node = QueueFront(&amp;q);</span><br><span class="line">        //打印</span><br><span class="line">		printf(&quot;%c &quot;, node-&gt;data);</span><br><span class="line">        //如果它有子节点就插入</span><br><span class="line">		if (node-&gt;left)</span><br><span class="line">		&#123;</span><br><span class="line">			QueuePush(&amp;q, node-&gt;left);</span><br><span class="line">		&#125;</span><br><span class="line">		if (node-&gt;right)</span><br><span class="line">		&#123;</span><br><span class="line">			QueuePush(&amp;q, node-&gt;right);</span><br><span class="line">		&#125;</span><br><span class="line">        //记得删除</span><br><span class="line">		QueuePop(&amp;q);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="是否为完全二叉树"><a href="#是否为完全二叉树" class="headerlink" title="是否为完全二叉树"></a>是否为完全二叉树</h2><p>如果知道如何层序遍历，那判断完全，就很简单了</p>
+<p>我们还是一样遍历插入，但是如果我们插入过程中遇到了空节点，那就跳出循环，不再插入，这个时候我们就开始判断</p>
+<p>如果这个空节点后面还有数据，那它将不是完全二叉树</p>
+<p>如果这个空节点之后都是空，那它就是完全二叉树</p>
+<p>我们只需要将层序的改一下就好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">// 判断二叉树是否是完全二叉树</span><br><span class="line">bool BinaryTreeComplete(BTNode* root)</span><br><span class="line">&#123;</span><br><span class="line">	Queue q;</span><br><span class="line">	QueueInit(&amp;q);</span><br><span class="line">	QueuePush(&amp;q, root);</span><br><span class="line">    //同样插入遍历</span><br><span class="line">	while (!QueueEmpty(&amp;q))</span><br><span class="line">	&#123;</span><br><span class="line">		BTNode* node = QueueFront(&amp;q);</span><br><span class="line">        //如果这个节点为空就跳出</span><br><span class="line">		if (node == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">        //不为空就插入</span><br><span class="line">		QueuePush(&amp;q, node-&gt;left);</span><br><span class="line">		QueuePush(&amp;q, node-&gt;right);</span><br><span class="line">		QueuePop(&amp;q);</span><br><span class="line">	&#125;</span><br><span class="line">    //开始判断队列里剩下元素</span><br><span class="line">	while (!QueueEmpty(&amp;q))</span><br><span class="line">	&#123;</span><br><span class="line">		BTNode* node = QueueFront(&amp;q);</span><br><span class="line">		QueuePop(&amp;q);</span><br><span class="line">        //如果有元素，那就是false</span><br><span class="line">		if (node)</span><br><span class="line">		&#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    //走到这里队列就应该走完了，那就返回真</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="相同的树"><a href="#相同的树" class="headerlink" title="相同的树"></a>相同的树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree/" title="100. 相同的树 - 力扣（LeetCode） (leetcode-cn.com)">100. 相同的树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200930336.png"></p>
+<p>我们拿到两棵树的根，开始比较，如果都是空、或者值一样，就递归下去到左节点，左节点递归完再右节点</p>
+<p>过程中如果有不对的地方直接返回false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bool isSameTree(struct TreeNode* p, struct TreeNode* q)&#123;</span><br><span class="line">    //都是空，为真</span><br><span class="line">    if(q == NULL &amp;&amp; p == NULL)</span><br><span class="line">    return true;</span><br><span class="line">    //其中一个为空或者值不一样，为假</span><br><span class="line">    if(q == NULL || p == NULL || p-&gt;val != q-&gt;val )</span><br><span class="line">    return false;</span><br><span class="line">    return isSameTree(q-&gt;left,p-&gt;left) &amp;&amp; isSameTree(q-&gt;right,p-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="二叉树是否对称"><a href="#二叉树是否对称" class="headerlink" title="二叉树是否对称"></a>二叉树是否对称</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree/" title="101. 对称二叉树 - 力扣（LeetCode） (leetcode-cn.com)">101. 对称二叉树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200931287.png"></p>
+<p>确实是有点简单了，根节点不需要比较，我们把左边看成一棵树，右边看成一棵树，然后比较的左边的左子节点和右边的右子节点即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">bool isSameTree(struct TreeNode* p, struct TreeNode* q)&#123;</span><br><span class="line">    if(q == NULL &amp;&amp; p == NULL)</span><br><span class="line">    return true;</span><br><span class="line">    if(q == NULL || p == NULL || q-&gt;val != p-&gt;val)</span><br><span class="line">    return false;</span><br><span class="line">    //注意传过去的是左、右，不要都传一样的</span><br><span class="line">    return isSameTree(q-&gt;left,p-&gt;right) &amp;&amp; isSameTree(q-&gt;right,p-&gt;left);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool isSymmetric(struct TreeNode* root)&#123;</span><br><span class="line">    //空肯定对称</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    return true;</span><br><span class="line">    //递归即可</span><br><span class="line">    return isSameTree(root-&gt;left,root-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="另一颗树的子树"><a href="#另一颗树的子树" class="headerlink" title="另一颗树的子树"></a>另一颗树的子树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subtree-of-another-tree/" title="572. 另一棵树的子树 - 力扣（LeetCode） (leetcode-cn.com)">572. 另一棵树的子树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200931111.png"></p>
+<p>我们拿到节点之后，每一个节点都对比一次，就用上面的是否相同函数，如果不同，我们就递归下去，直到左边的全部节点都走完一遍</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bool isSameTree(struct TreeNode* p, struct TreeNode* q)&#123;</span><br><span class="line">    if(q == NULL &amp;&amp; p == NULL)</span><br><span class="line">    return true;</span><br><span class="line">    if(q == NULL || p == NULL || p-&gt;val != q-&gt;val )</span><br><span class="line">    return false;</span><br><span class="line">    return isSameTree(q-&gt;left,p-&gt;left) &amp;&amp; isSameTree(q-&gt;right,p-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool isSubtree(struct TreeNode* root, struct TreeNode* subRoot)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    return false;</span><br><span class="line">            //当前节点开始判断、左子树判断、右子树判断</span><br><span class="line">    return isSameTree(root,subRoot)</span><br><span class="line">        || isSubtree(root-&gt;left,subRoot)</span><br><span class="line">        || isSubtree(root-&gt;right,subRoot);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree/" title="226. 翻转二叉树 - 力扣（LeetCode） (leetcode-cn.com)">226. 翻转二叉树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200931707.png"></p>
+<p>拿到节点开始判断，如果这个节点为空，我们就返回，如果不为空，我们就直接把它左右子树交换，然后继续递归下去</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct TreeNode* invertTree(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    //交换</span><br><span class="line">    struct TreeNode* tmp = root-&gt;left;</span><br><span class="line">    root-&gt;left = root-&gt;right;</span><br><span class="line">    root-&gt;right = tmp;</span><br><span class="line">    //递归下去，返回值就不用接收了</span><br><span class="line">    invertTree(root-&gt;left);</span><br><span class="line">    invertTree(root-&gt;right);</span><br><span class="line">    return root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>感谢观看</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/04/11/%E4%BA%8C%E5%8F%89%E6%A0%91/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/04/11/%E4%BA%8C%E5%8F%89%E6%A0%91/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

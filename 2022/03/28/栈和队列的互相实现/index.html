@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >栈和队列的互相实现</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200922988.png"></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-stack-using-queues/" title="225. 用队列实现栈 - 力扣（LeetCode） (leetcode-cn.com)">225. 用队列实现栈 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p>先看题目要求，用两个队列实现栈，我们先把之前写过的队列相关的一些函数拿来：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">typedef int QDataType;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">typedef struct QNode</span><br><span class="line">&#123;</span><br><span class="line">	QDataType data;</span><br><span class="line">	struct queue* next;</span><br><span class="line">&#125;QNode;</span><br><span class="line"></span><br><span class="line">typedef struct Queue</span><br><span class="line">&#123;</span><br><span class="line">	QNode* head;</span><br><span class="line">	QNode* tail;</span><br><span class="line">&#125;Queue;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void QueueInit(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	pq-&gt;head = pq-&gt;tail = NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueueDestory(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	QNode* cur = pq-&gt;head;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		QNode* next = cur-&gt;next;</span><br><span class="line">		free(cur);</span><br><span class="line">		cur = next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	pq-&gt;head = pq-&gt;tail = NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueuePush(Queue* pq, QDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	QNode* newnode = (QNode*)malloc(sizeof(QNode));</span><br><span class="line">	assert(newnode);</span><br><span class="line"></span><br><span class="line">	newnode-&gt;data = x;</span><br><span class="line">	newnode-&gt;next = NULL;</span><br><span class="line"></span><br><span class="line">	if (pq-&gt;tail == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		assert(pq-&gt;head == NULL);</span><br><span class="line">		pq-&gt;head = pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		pq-&gt;tail-&gt;next = newnode;</span><br><span class="line">		pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueuePop(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	assert(pq-&gt;head &amp;&amp; pq-&gt;tail);</span><br><span class="line"></span><br><span class="line">	if (pq-&gt;head-&gt;next == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = pq-&gt;tail = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		QNode* next = pq-&gt;head-&gt;next;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool QueueEmpty(Queue* q)</span><br><span class="line">&#123;</span><br><span class="line">	assert(q);</span><br><span class="line"></span><br><span class="line">	return q-&gt;head == NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">size_t QueueSize(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	QNode* cur = pq-&gt;head;</span><br><span class="line">	size_t size = 0;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		size++;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">QDataType QueueFront(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	assert(pq-&gt;head);</span><br><span class="line"></span><br><span class="line">	return pq-&gt;head-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">QDataType QueueBack(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	assert(pq-&gt;tail);</span><br><span class="line"></span><br><span class="line">	return pq-&gt;tail-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里用两个队列实现，所以我们创建一个结构体：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct MYStack</span><br><span class="line">&#123;</span><br><span class="line">	Queue q1;</span><br><span class="line">	Queue q2;</span><br><span class="line">&#125;MyStack;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>结构体里面两个指针，每一个指针对应一个队列，然后我们正式开始写这道题</p>
+<hr>
+<h2 id="先从初始化函数开始："><a href="#先从初始化函数开始：" class="headerlink" title="先从初始化函数开始："></a>先从初始化函数开始：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MyStack* myStackCreate() &#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>单看函数，它需要返回一致MyStack* 的指针，既然要返回指针，那我们就得用malloc开辟空间，然后开辟好的MyStack结构体其中的Queue结构体，我们可以直接调用其初始化函数，然后即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">MyStack* myStackCreate() &#123;</span><br><span class="line">    //开辟空间</span><br><span class="line">	MYStack* obj = (MYStack*)malloc(sizeof(MyStack));</span><br><span class="line">    //最好判断一下开辟成功没    </span><br><span class="line">    assert(obj);</span><br><span class="line"></span><br><span class="line">    //初始化obj结构体里面的Queue结构体</span><br><span class="line">    QueueInit(&amp;obj-&gt;q1);</span><br><span class="line">    QueueInit(&amp;obj-&gt;q2);</span><br><span class="line">    </span><br><span class="line">    //返回初始化好的结构体</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="将元素X压入栈顶："><a href="#将元素X压入栈顶：" class="headerlink" title="将元素X压入栈顶："></a>将元素X压入栈顶：</h2><p>先说说思路：</p>
+<p>我们现在有两个队列，两个队列分别有头尾指针，假设现在要将 1 2压入栈，那我们找其中一个不是空的队列压进去：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200922769.png"></p>
+<p>这样方便我们之后的一系列操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void myStackPush(MyStack* obj, int x) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line"></span><br><span class="line">    //判断obj-&gt;q1是否为空，不为空压q1</span><br><span class="line">    if(!QueueEmpty(&amp;obj-&gt;q1))</span><br><span class="line">    &#123;</span><br><span class="line">        QueuePush(&amp;obj-&gt;q1,x);</span><br><span class="line">    &#125;</span><br><span class="line">    //其他情况压q2</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        QueuePush(&amp;obj-&gt;q2,x);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="移除并返回栈顶元素："><a href="#移除并返回栈顶元素：" class="headerlink" title="移除并返回栈顶元素："></a>移除并返回栈顶元素：</h2><p>还是先看思路，我们要移除并且返回栈顶的元素，因为栈是先后后出，所以我们刚刚压进来的 1 2出的时候就应该是 2 1。</p>
+<p>按照之前玩单链表的思路，我们就应该是先找到最后一个节点，保存里面的值，然后释放掉最后节点，但是这题要用到第二个队列，所以这样做就有点跑题，这里我们换一种办法。</p>
+<p>已知 q1 里面有 1 2，我们要返回 2</p>
+<p>我们拿q2来接收q1里面的值，直到q1 里面只剩一个值位置，然后我们保存这个值再将其释放掉，下一次压栈压的就是q2的位置，如果还要移除的话就把q2的值移到q1里面。</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200922605.png"></p>
+<p>将q1的1拿过来：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200922041.png"></p>
+<p>然后返回q1里面的值，再将其置为空：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200922114.png"></p>
+<p>假设现在要尾插 3 4 5：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200922722.png"></p>
+<p>然后再出来就把1 3 4 移到q1里面：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200922642.png"></p>
+<p>重复即可，然后我们就来实现代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">int myStackPop(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    Queue* empty = &amp;obj-&gt;q1;</span><br><span class="line">    Queue* noempty = &amp;obj-&gt;q2;</span><br><span class="line"></span><br><span class="line">    if(!QueueEmpty(&amp;obj-&gt;q1))</span><br><span class="line">    &#123;</span><br><span class="line">        noempty = &amp;obj-&gt;q1;</span><br><span class="line">        empty = &amp;obj-&gt;q2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    while(QueueSize(noempty) &gt; 1)</span><br><span class="line">    &#123;</span><br><span class="line">        QueuePush(empty,QueueFront(noempty));</span><br><span class="line">        QueuePop(noempty);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int data = QueueFront(noempty);</span><br><span class="line">    QueuePop(noempty);</span><br><span class="line">    return data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一行一行看：</p>
+<p>先判断obj不为空指针，然后假设空的那个队列是q1，非空的是q2，然后判断，如果q1是非空的，那就让非空的指向q1，空的指向q2</p>
+<p>如果非空链表里面留下的节点数量大于1，说明我们还要移动</p>
+<p>我们在空链表的后面尾插，尾插的是非空链表的元素</p>
+<p>比方说刚刚的 1 2</p>
+<p>那我们就把1移过去</p>
+<p>每次移完记得删掉原本节点，不然程序会死循环</p>
+<p>当循环结束，就意味着非空队列里面只有一个元素了，我们获取到这个元素之后再将这个节点也删掉，返回我们获得的元素。</p>
+<h2 id="返回栈顶元素："><a href="#返回栈顶元素：" class="headerlink" title="返回栈顶元素："></a>返回栈顶元素：</h2><p>返回栈顶元素，也就是返回我们最后压进去的元素，正因为我们每次压栈都是在非空队列尾插，所以我们可以直接返回非空节点的最后一个元素即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int myStackTop(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    if(!QueueEmpty(&amp;obj-&gt;q1))</span><br><span class="line">    &#123;</span><br><span class="line">        return QueueBack(&amp;obj-&gt;q1);</span><br><span class="line">    &#125;</span><br><span class="line">    return QueueBack(&amp;obj-&gt;q2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="判断栈是否为空："><a href="#判断栈是否为空：" class="headerlink" title="判断栈是否为空："></a>判断栈是否为空：</h2><p>我们只需要判断两个队列即可，调用一下我们之前写的判断队列的函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ibool myStackEmpty(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    return QueueEmpty(&amp;obj-&gt;q1)&amp;&amp; QueueEmpty(&amp;obj-&gt;q2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="销毁栈："><a href="#销毁栈：" class="headerlink" title="销毁栈："></a>销毁栈：</h2><p>这个更是简单，我们还是直接调用销毁队列的两个函数，最后释放掉我们的obj即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void myStackFree(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    QueueDestory(&amp;obj-&gt;q1);</span><br><span class="line">    QueueDestory(&amp;obj-&gt;q2);</span><br><span class="line">    free(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里放上全部代码，有需要可以复制：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line">typedef int QDataType;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">typedef struct QNode</span><br><span class="line">&#123;</span><br><span class="line">	QDataType data;</span><br><span class="line">	struct queue* next;</span><br><span class="line">&#125;QNode;</span><br><span class="line"></span><br><span class="line">typedef struct Queue</span><br><span class="line">&#123;</span><br><span class="line">	QNode* head;</span><br><span class="line">	QNode* tail;</span><br><span class="line">&#125;Queue;</span><br><span class="line"></span><br><span class="line">typedef struct MYStack</span><br><span class="line">&#123;</span><br><span class="line">	Queue q1;</span><br><span class="line">	Queue q2;</span><br><span class="line">&#125;MyStack;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void QueueInit(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	pq-&gt;head = pq-&gt;tail = NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueueDestory(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	QNode* cur = pq-&gt;head;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		QNode* next = cur-&gt;next;</span><br><span class="line">		free(cur);</span><br><span class="line">		cur = next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	pq-&gt;head = pq-&gt;tail = NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueuePush(Queue* pq, QDataType x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	QNode* newnode = (QNode*)malloc(sizeof(QNode));</span><br><span class="line">	assert(newnode);</span><br><span class="line"></span><br><span class="line">	newnode-&gt;data = x;</span><br><span class="line">	newnode-&gt;next = NULL;</span><br><span class="line"></span><br><span class="line">	if (pq-&gt;tail == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		assert(pq-&gt;head == NULL);</span><br><span class="line">		pq-&gt;head = pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		pq-&gt;tail-&gt;next = newnode;</span><br><span class="line">		pq-&gt;tail = newnode;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueuePop(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	assert(pq-&gt;head &amp;&amp; pq-&gt;tail);</span><br><span class="line"></span><br><span class="line">	if (pq-&gt;head-&gt;next == NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = pq-&gt;tail = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		QNode* next = pq-&gt;head-&gt;next;</span><br><span class="line">		free(pq-&gt;head);</span><br><span class="line">		pq-&gt;head = next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool QueueEmpty(Queue* q)</span><br><span class="line">&#123;</span><br><span class="line">	assert(q);</span><br><span class="line"></span><br><span class="line">	return q-&gt;head == NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">size_t QueueSize(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	QNode* cur = pq-&gt;head;</span><br><span class="line">	size_t size = 0;</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		size++;</span><br><span class="line">		cur = cur-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">QDataType QueueFront(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	assert(pq-&gt;head);</span><br><span class="line"></span><br><span class="line">	return pq-&gt;head-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">QDataType QueueBack(Queue* pq)</span><br><span class="line">&#123;</span><br><span class="line">	assert(pq);</span><br><span class="line">	assert(pq-&gt;tail);</span><br><span class="line"></span><br><span class="line">	return pq-&gt;tail-&gt;data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MyStack* myStackCreate() &#123;</span><br><span class="line">	MyStack* obj = (MyStack*)malloc(sizeof(MyStack));</span><br><span class="line">    assert(obj);</span><br><span class="line"></span><br><span class="line">    QueueInit(&amp;obj-&gt;q1);</span><br><span class="line">    QueueInit(&amp;obj-&gt;q2);</span><br><span class="line"></span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myStackPush(MyStack* obj, int x) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line"></span><br><span class="line">    if(!QueueEmpty(&amp;obj-&gt;q1))</span><br><span class="line">    &#123;</span><br><span class="line">        QueuePush(&amp;obj-&gt;q1,x);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        QueuePush(&amp;obj-&gt;q2,x);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int myStackPop(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    Queue* empty = &amp;obj-&gt;q1;</span><br><span class="line">    Queue* noempty = &amp;obj-&gt;q2;</span><br><span class="line"></span><br><span class="line">    if(!QueueEmpty(&amp;obj-&gt;q1))</span><br><span class="line">    &#123;</span><br><span class="line">        noempty = &amp;obj-&gt;q1;</span><br><span class="line">        empty = &amp;obj-&gt;q2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    while(QueueSize(noempty) &gt; 1)</span><br><span class="line">    &#123;</span><br><span class="line">        QueuePush(empty,QueueFront(noempty));</span><br><span class="line">        QueuePop(noempty);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int data = QueueFront(noempty);</span><br><span class="line">    QueuePop(noempty);</span><br><span class="line">    return data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int myStackTop(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    if(!QueueEmpty(&amp;obj-&gt;q1))</span><br><span class="line">    &#123;</span><br><span class="line">        return QueueBack(&amp;obj-&gt;q1);</span><br><span class="line">    &#125;</span><br><span class="line">    return QueueBack(&amp;obj-&gt;q2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool myStackEmpty(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    return QueueEmpty(&amp;obj-&gt;q1)&amp;&amp; QueueEmpty(&amp;obj-&gt;q2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void myStackFree(MyStack* obj) &#123;</span><br><span class="line">    assert(obj);</span><br><span class="line">    QueueDestory(&amp;obj-&gt;q1);</span><br><span class="line">    QueueDestory(&amp;obj-&gt;q2);</span><br><span class="line">    free(obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h1><p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200924631.png"></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-queue-using-stacks/" title="232. 用栈实现队列 - 力扣（LeetCode） (leetcode-cn.com)">232. 用栈实现队列 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p>在答题之前，我们先把之前写的栈函数都拿过来用，我看C++代码几十行写完我写了一大堆，泪目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">typedef int STDataType;</span><br><span class="line"> </span><br><span class="line">typedef struct Stack</span><br><span class="line">&#123;</span><br><span class="line">	STDataType* arr;</span><br><span class="line">	int top;</span><br><span class="line">	int capacity;</span><br><span class="line">&#125;Stack;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void StackInit(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	ps-&gt;arr = NULL;</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">	ps-&gt;top = 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void StackPush(Stack* ps, STDataType data)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	if (ps-&gt;top == ps-&gt;capacity)</span><br><span class="line">	&#123;</span><br><span class="line">		int newcapacity = ps-&gt;capacity == 0 ? 4 : (ps-&gt;capacity) * 2;</span><br><span class="line">		ps-&gt;arr = (Stack*)realloc(ps-&gt;arr, sizeof(Stack)* newcapacity);</span><br><span class="line">		if (ps-&gt;arr == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;realloc fail\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		ps-&gt;capacity = newcapacity;</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;arr[ps-&gt;top++] = data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void StackPop(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	assert(ps-&gt;top &gt; 0);</span><br><span class="line">	ps-&gt;top--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">STDataType StackTop(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	return ps-&gt;arr[ps-&gt;top-1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int StackSize(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	return ps-&gt;top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int StackEmpty(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	return ps-&gt;top == 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void StackDestroy(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	free(ps-&gt;arr);</span><br><span class="line">	ps-&gt;arr = NULL;</span><br><span class="line">	ps-&gt;top = 0;</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>正式开始答题；</p>
+<h2 id="初始化并返回创建好的指针"><a href="#初始化并返回创建好的指针" class="headerlink" title="初始化并返回创建好的指针"></a>初始化并返回创建好的指针</h2><p>我们先创建好结构体，结构体里面有两个栈：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">    Stack s1;</span><br><span class="line">    Stack s2;</span><br><span class="line">&#125; MyQueue;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后我们还是判断一下是否为空</p>
+<p>初始化还是用我们的栈初始化函数即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MyQueue* myQueueCreate()</span><br><span class="line">&#123;</span><br><span class="line">	MyQueue* obj = (MyQueue*)malloc(sizeof(MyQueue));</span><br><span class="line">	assert(obj);</span><br><span class="line">    </span><br><span class="line">	StackInit(&amp;obj-&gt;s1);</span><br><span class="line">	StackInit(&amp;obj-&gt;s2);</span><br><span class="line"></span><br><span class="line">	return obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="将元素X推入队列的末尾"><a href="#将元素X推入队列的末尾" class="headerlink" title="将元素X推入队列的末尾"></a>将元素X推入队列的末尾</h2><p>我们知道栈是先进后出，而队列是先进先出，假设现在有 1 2 3 4 四个元素要进队列，我们将其全部尾插到 s1 里面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void myQueuePush(MyQueue* obj, int x)</span><br><span class="line">&#123;</span><br><span class="line">	assert(obj);</span><br><span class="line">	StackPush(&amp;obj-&gt;s1, x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="返回队列开头元素并将其移除"><a href="#返回队列开头元素并将其移除" class="headerlink" title="返回队列开头元素并将其移除"></a>返回队列开头元素并将其移除</h2><p>我们知道现在全部元素都在s1里面，我们最好判断一下：</p>
+<p>第一种情况：</p>
+<p>s1有元素，s2为空，我们将s1的元素压到s2里面，因为是栈，所以每次操作都是从尾部（图里从右向左）</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200924102.png"></p>
+<p>压s2就变成了：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200924487.png"></p>
+<p>我们最后再把s1里面的删掉，返回s2最后的值即可；</p>
+<p>第二种情况：</p>
+<p>如果s2里面已经有元素，那我们直接返回即可；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int myQueuePop(MyQueue* obj)</span><br><span class="line">&#123;</span><br><span class="line">	assert(obj);</span><br><span class="line"></span><br><span class="line">	if (StackEmpty(&amp;obj-&gt;s2))</span><br><span class="line">	&#123;</span><br><span class="line">		while (!StackEmpty(&amp;obj-&gt;s1))</span><br><span class="line">		&#123;</span><br><span class="line">			StackPush(&amp;obj-&gt;s2, StackTop(&amp;obj-&gt;s1));</span><br><span class="line">			StackPop(&amp;obj-&gt;s1);</span><br><span class="line">		&#125;</span><br><span class="line">		int data = StackTop(&amp;obj-&gt;s2);</span><br><span class="line">		StackPop(&amp;obj-&gt;s2);</span><br><span class="line">		return data;</span><br><span class="line">	&#125;</span><br><span class="line">	int data = StackTop(&amp;obj-&gt;s2);</span><br><span class="line">	StackPop(&amp;obj-&gt;s2);</span><br><span class="line">	return data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/%22%E7%82%B9%E5%87%BB%E5%B9%B6%E6%8B%96%E6%8B%BD%E4%BB%A5%E7%A7%BB%E5%8A%A8%22"></p>
+<h2 id="返回队列开头的元素；"><a href="#返回队列开头的元素；" class="headerlink" title="返回队列开头的元素；"></a>返回队列开头的元素；</h2><p>同样，如果s2里面有元素，我们就返回s2尾部，但如果s2为空。那就返回s1，这里要注意：</p>
+<p><strong>s2的尾部是s1的头，如果s2为空，那我们返回s1的位置就应该是s1数组下标为0的位置</strong></p>
+<p><strong>比方说：压进去 1  2   3  4</strong></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200924922.png"></p>
+<p>**上面我们的操作是把s1的值压到s2里面，根据图示，1的位置是s2的尾部和s1的头，一定注意 **</p>
+<h2 id="看栈是否为空；"><a href="#看栈是否为空；" class="headerlink" title="看栈是否为空；"></a>看栈是否为空；</h2><p>判断obj里面的s1 和 s2 即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bool myQueueEmpty(MyQueue* obj)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	return StackEmpty(&amp;obj-&gt;s1) &amp;&amp; StackEmpty(&amp;obj-&gt;s2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="释放栈："><a href="#释放栈：" class="headerlink" title="释放栈："></a>释放栈：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void myQueueFree(MyQueue* obj)</span><br><span class="line">&#123;</span><br><span class="line">	assert(obj);</span><br><span class="line">	StackDestroy(&amp;obj-&gt;s1);</span><br><span class="line">	StackDestroy(&amp;obj-&gt;s2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/03/28/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E4%BA%92%E7%9B%B8%E5%AE%9E%E7%8E%B0/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/03/28/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E4%BA%92%E7%9B%B8%E5%AE%9E%E7%8E%B0/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

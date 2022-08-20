@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >栈</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="栈的概念及结构"><a href="#栈的概念及结构" class="headerlink" title="栈的概念及结构"></a>栈的概念及结构</h1><p>在学习栈前，我们先看一下栈的正式解释：</p>
+<p>栈：一种特殊的线性表，其只允许在固定的一端进行插入和删除元素操作。<strong>进行数据插入和删除操作的一端****称为栈顶，另一端称为栈底。</strong>栈中的数据元素遵守后进先出LIFO（Last In First Out）的原则。</p>
+<p>压栈：栈的插入操作叫做进栈&#x2F;压栈&#x2F;入栈，<strong>入数据在栈顶</strong>。</p>
+<p>出栈：栈的删除操作叫做出栈。<strong>出数据也在栈顶</strong>。</p>
+<p>来看图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200917417.png"></p>
+<p><strong>栈底就是我们栈的开头位置，我们放数据进去，就是以一种往上叠的感觉， 现在栈底已经有a1、a2两个数据，我们现在放a3进去，它就应该在a2的上面。</strong></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918395.png"></p>
+<p><strong>现在a3已经进栈，我们现在要拿出数据，就从栈顶开始拿，也就是说a3回先被我们拿出来</strong></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918113.png"></p>
+<p>**然后出栈的顺序就是：a3、a2、a1 **</p>
+<p><strong>这就是栈的后进先出，但是我们没必要全部放进去了再一起拿出来，我们也可以放一个数据拿一个数据出来，比方说；</strong></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918245.png"></p>
+<p><strong>现在有a3、a4要进栈，我们让a3先进栈：</strong></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918825.png"></p>
+<p><strong>但是我们又要用到a3这个数据，我们就直接把a3拿出去，然后把a4压进去：</strong></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918103.png"></p>
+<p><strong>那我们出数据的时候，就变成了：</strong></p>
+<p><strong>a3、a4、a2、a1</strong></p>
+<hr>
+<p><strong>我们来看两道题加深理解：</strong></p>
+<p>*<em>1.一个栈的初始状态为空。现将元素1、2、3、4、5、A、B、C、D、E依次入栈，然后再依次出栈，则元素出</em>***栈的顺序是（ ）。 **</p>
+<p>**A 12345ABCDE **</p>
+<p>**B EDCBA54321 **</p>
+<p>**C ABCDE12345 **</p>
+<p>**D 54321EDCBA **</p>
+<hr>
+<p>想到答案了吗？</p>
+<p><strong>B，题目里面说依次进栈，那它出栈的时候也就是以此出栈，我们把放进去的数据反一遍就好。</strong></p>
+<p><strong>下一题：</strong></p>
+<p>2.若进栈序列为 1,2,3,4 ，进栈过程中可以出栈，则下列不可能的一个出栈序列是（）</p>
+<p>A 1,4,3,2</p>
+<p>B 2,3,4,1</p>
+<p>C 3,1,4,2</p>
+<p>D 3,4,2,1</p>
+<hr>
+<p>我们一个一个看，依次分析；</p>
+<p>A，如果是1、4、3、2，那它的进栈顺序就是：</p>
+<p>先放1，再把1拿出来，然后依次放进2、3、4，最后出栈的时候反着出</p>
+<p>–</p>
+<p>B、2、3、4、1</p>
+<p>先压一个1，然后2、3、4直接拿出来，最后拿1</p>
+<p>–</p>
+<p>C，我们看这里最先出来的是3，也就是说底下压着的是 2 1，如果是出栈的话那2后进栈应该显出，但这里3后面是1，很明显错误</p>
+<p>–</p>
+<p>D就不分析了，有兴趣可以自己分析一下。</p>
+<hr>
+<h2 id="栈的实现"><a href="#栈的实现" class="headerlink" title="**栈的实现 **"></a>**栈的实现 **</h2><p>我们之前学过数组、链表，这两种都可以用在栈上，栈只需要在栈顶进行操作，我们来看看两种分别怎么实现：</p>
+<p>数组：可以把数组首元素地址看作栈底，而数组之后的位置看作栈顶，这样数组的栈压栈即是在尾补插入数据，也就是top的位置</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918447.png"></p>
+<p>链表：</p>
+<p>我们如果把数组第一个节点认为是栈底，那压栈就是在它后面尾插，尾插不难，但是我们要如何出栈呢？</p>
+<p>如果是双向的链表就可以解决这个问题，但未免有些麻烦</p>
+<p>如果是单链表，我们首插就简单一点。</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918325.png"></p>
+<p>这里我们就来实现一下数组的栈：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 初始化栈</span><br><span class="line">void StackInit(Stack* ps); </span><br><span class="line">// 入栈</span><br><span class="line">void StackPush(Stack* ps, STDataType data); </span><br><span class="line">// 出栈</span><br><span class="line">void StackPop(Stack* ps); </span><br><span class="line">// 获取栈顶元素</span><br><span class="line">STDataType StackTop(Stack* ps); </span><br><span class="line">// 获取栈中有效元素个数</span><br><span class="line">int StackSize(Stack* ps); </span><br><span class="line">// 检测栈是否为空，如果为空返回非零结果，如果不为空返回0 </span><br><span class="line">int StackEmpty(Stack* ps); </span><br><span class="line">// 销毁栈</span><br><span class="line">void StackDestroy(Stack* ps);</span><br></pre></td></tr></table></figure>
+
+<p>在实现之前，我们要做几件事：</p>
+<p>头文件，就不多说了</p>
+<p>类型最好定义一下，用typedef，这样我们之后修改存储类型直接在这里修改就好</p>
+<p>定义一个结构体</p>
+<p>声明我们要实现的函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">typedef int STDataType;</span><br><span class="line"></span><br><span class="line">typedef struct Stack</span><br><span class="line">&#123;</span><br><span class="line">	STDataType* arr;</span><br><span class="line">	int top;</span><br><span class="line">	int capacity;</span><br><span class="line">&#125;Stack;</span><br><span class="line"></span><br><span class="line">// 初始化栈</span><br><span class="line">void StackInit(Stack* ps);</span><br><span class="line">// 入栈</span><br><span class="line">void StackPush(Stack* ps, STDataType data);</span><br><span class="line">// 出栈</span><br><span class="line">void StackPop(Stack* ps);</span><br><span class="line">// 获取栈顶元素</span><br><span class="line">STDataType StackTop(Stack* ps);</span><br><span class="line">// 获取栈中有效元素个数</span><br><span class="line">int StackSize(Stack* ps);</span><br><span class="line">// 检测栈是否为空，如果为空返回非零结果，如果不为空返回0 </span><br><span class="line">int StackEmpty(Stack* ps);</span><br><span class="line">// 销毁栈</span><br><span class="line">void StackDestroy(Stack* ps);</span><br></pre></td></tr></table></figure>
+
+<p>然后我们一个一个来实现：</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void StackInit(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	ps-&gt;arr = NULL;</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">	ps-&gt;top = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>很简单，我们让指针指向NULL，然后数据为0即可，这里要注意的是：</p>
+<p>top位置，如果top的位置是0开始的话，也就是说以下标位置为栈顶</p>
+<p>当放 1 2 3 4 5数据的时候，top的下标就是5，也就是下一个数据的位置</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918569.png"></p>
+<p>当top为-1开始的时候，放1 2 3 4 5的时候，top的下标为4，也就是当前数据的位置</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918844.png"></p>
+<h2 id="入栈"><a href="#入栈" class="headerlink" title="入栈"></a>入栈</h2><p>入栈也就是我们数组top的位置放上要存储的数据，看代码实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void StackPush(Stack* ps, STDataType data)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	if (ps-&gt;top == ps-&gt;capacity)</span><br><span class="line">	&#123;</span><br><span class="line">		int newcapacity = ps-&gt;capacity == 0 ? 4 : (ps-&gt;capacity) * 2;</span><br><span class="line">		ps-&gt;arr = (Stack*)realloc(ps-&gt;arr, sizeof(Stack)* newcapacity);</span><br><span class="line">		if (ps-&gt;arr == NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;realloc fail\n&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		ps-&gt;capacity = newcapacity;</span><br><span class="line">	&#125;</span><br><span class="line">	ps-&gt;arr[ps-&gt;top++] = data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一进函数，先判断ps是否空指针，其次判断是否还有空间，如果没有空间我们就开辟一个新空间，开辟失败就退出并打印错误信息，如果开辟成功并有空间，我们就放数据进去。</p>
+<h2 id="出栈"><a href="#出栈" class="headerlink" title="出栈"></a>出栈</h2><p>就跟顺序表一样，如果出栈，我们就直接将top–即可，不需要销毁什么空间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void StackPop(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	assert(ps-&gt;top &gt; 0);</span><br><span class="line">	ps-&gt;top--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取栈顶元素"><a href="#获取栈顶元素" class="headerlink" title="获取栈顶元素"></a>获取栈顶元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STDataType StackTop(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	return ps-&gt;arr[ps-&gt;top-1];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我们直接返回即可，不过要注意这里top，top是0和top是-1的返回值课不一样，别搞错了。</p>
+<h2 id="获取栈的有效数据个数"><a href="#获取栈的有效数据个数" class="headerlink" title="获取栈的有效数据个数"></a>获取栈的有效数据个数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int StackSize(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	return ps-&gt;top;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>直接返回top即可。</p>
+<h2 id="看看栈是否为空"><a href="#看看栈是否为空" class="headerlink" title="看看栈是否为空"></a>看看栈是否为空</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int StackEmpty(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	return ps-&gt;top == 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>直接在返回里面判断即可</p>
+<p>销毁栈</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void StackDestroy(Stack* ps)</span><br><span class="line">&#123;</span><br><span class="line">	assert(ps);</span><br><span class="line">	free(ps-&gt;arr);</span><br><span class="line">	ps-&gt;arr = NULL;</span><br><span class="line">	ps-&gt;top = 0;</span><br><span class="line">	ps-&gt;capacity = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>跟初始化一样，主要是注销里面的指针，然后将其他置零。</p>
+<hr>
+<h2 id="栈的练习"><a href="#栈的练习" class="headerlink" title="栈的练习"></a>栈的练习</h2><p>我们知道并了解了栈，做一道题看看：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918756.png"></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/" title="20. 有效的括号 - 力扣（LeetCode） (leetcode-cn.com)">20. 有效的括号 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p>这里就可以用到我们刚刚学会的栈。</p>
+<p>先说思路：</p>
+<p>我们将得到的字符进行判断，如果是左半边，就压栈，如果就右半边就取出来然后配对，配对错就返回false。</p>
+<p>看代码实现：</p>
+<p>我们先把上面的函数都拿过来用，先复制过来，下面的是主程序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">bool isValid(char * s)</span><br><span class="line">&#123;</span><br><span class="line">    Stack arr;</span><br><span class="line">    StackInit(&amp;arr);</span><br><span class="line">    while(*s)</span><br><span class="line">    &#123;</span><br><span class="line">        //压栈</span><br><span class="line">        if(*s == &#x27;(&#x27;||*s == &#x27;[&#x27;||*s == &#x27;&#123;&#x27;)</span><br><span class="line">        &#123;</span><br><span class="line">            StackPush(&amp;arr,*s);</span><br><span class="line">            ++s;</span><br><span class="line">        &#125;</span><br><span class="line">        //*s是右半边，我们开始配对</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            //如果取不出来直接就返回false</span><br><span class="line">            if(StackEmpty(&amp;arr))</span><br><span class="line">            &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            //取出来开始判断</span><br><span class="line">            char data = StackTop(&amp;arr);</span><br><span class="line">            //取出来顶上一个我们就删一个，方便下一次配对</span><br><span class="line">            StackPop(&amp;arr);</span><br><span class="line">            if((*s ==&#x27;&#125;&#x27;  &amp;&amp; data != &#x27;&#123;&#x27;)</span><br><span class="line">              || (*s == &#x27;)&#x27; &amp;&amp; data != &#x27;(&#x27;)</span><br><span class="line">              || (*s == &#x27;]&#x27; &amp;&amp; data != &#x27;[&#x27;))</span><br><span class="line">               &#123;</span><br><span class="line">                   StackDestroy(&amp;arr);</span><br><span class="line">                   return false;</span><br><span class="line">               &#125;</span><br><span class="line">            //配对成功继续走</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                ++s;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //看栈里面还有没有括号</span><br><span class="line">    int ret = StackEmpty(&amp;arr);</span><br><span class="line">    StackDestroy(&amp;arr);</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>感谢您的观看，我们下次再见</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/03/25/%E6%A0%88/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/03/25/%E6%A0%88/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
