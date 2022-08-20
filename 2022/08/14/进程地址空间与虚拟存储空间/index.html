@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >进程地址空间与虚拟存储空间</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<p>前言：</p>
+<p>在之前学编程的时候，我们就知道了数据的几个存储位置，大概是这样的一个图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205866.png" alt="img"></p>
+<p> 然后我们运行程序：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205145.png" alt="img"></p>
+<p> 我们可以看到内存分布确实是按照左边的表来分配的</p>
+<h1 id="———–-感知地址空间"><a href="#———–-感知地址空间" class="headerlink" title="———–  感知地址空间"></a>———–  感知地址空间</h1><p> 现在，我们写了这样一段代码：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205068.png" alt="img"></p>
+<p>很简单的代码，创建一个子进程，然后打印pid\ppid，同时再打印父进程的pid\ppid</p>
+<p>看看效果：</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205425.png" alt="img"></p>
+<p>这些都没问题，但是刚刚代码里面我又多定义了一个变量，假设现在我要看看这个变量，我就直接打印嘛，如下图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205575.png" alt="img"></p>
+<p>运行：</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205871.png" alt="img"></p>
+<p>还是没问题嘛，那你演示这些有什么用吗？</p>
+<p>现在val的值是100，没变，父子进程读到的值都是一样的，地址也是一样的，但是如果在进程里面修改了值呢？</p>
+<p>再看：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205285.png" alt="img"></p>
+<p> 运行：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205885.png" alt="img"></p>
+<p> 这就是一个问题了，我们学过编程，知道一个地址只会有一个确定的值，但是上面父子进程打印的val怎么不一样呢？</p>
+<p>很明显是地址的问题，C&#x2F;C++里面，我们使用的地址，绝对不是物理地址，就是真实地址，如果是真实地址，这种一个地址两个值是不可能出现的。</p>
+<p>那这是什么？</p>
+<p>可以理解为，虚拟地址。</p>
+<p>-———-</p>
+<p>那为什么操作系统不让直接看到物理地址呢？</p>
+<p>因为内存其本身是一个硬件，只能被动的写入读取，这里我举个例子：</p>
+<p>这里有一块地，你跟邻居说好一人分一半，然后你在地上种玉米什么的植物，你跟邻居划分的很明确，不会出现什么我种你那边去了之类的情况，但是有一天，又来一个人，他也要种地，然后你跟邻居一商量，行，分了一块地给他。</p>
+<p>但是这个人不会种，也不知道什么界限，他就在地上随便种，你去看自己的玉米的时候发现玉米已经被拔掉了，邻居肯定不会做这种事，但是那个新来的会不会做呢？</p>
+<p>系统也是如此，早期的系统分配空间是直接分配的，但是这就很依靠程序员自身掌控能力，如果程序员写错了一个地方，修改了一块本不该被修改的空间，那就会出现错误。</p>
+<p>为了解决这种问题，就有人想了个办法，这样，你要空间，可以，我给你开，但是这块空间的真实地址跟你看到的地址可能会有偏差，可以看下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/39a25343ab784dad80105c3ac4b4b513.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动">编辑</p>
+<p> 这么看地址空间可能有点抽象，那我们是这样子呢：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205474.png" alt="img"></p>
+<p>每一个虚拟地址都映射了一个在内存中真实存在的物理地址，而这个，我们叫做页表 。</p>
+<p>系统先将程序加载到内存，然后将其变为进程，每一个进程，操作系统都会为其构建一个页表结构。</p>
+<p>通过这个页表的映射，就可以通过虚拟地址找到真实的物理地址。</p>
+<p>那为什么这里的val会有两个值？</p>
+<p>不知道你还记不记得，进程的几大特效里面，有一条叫做：独立性</p>
+<p>这个独立性是怎么确保的呢？</p>
+<p>页表，通过这个，虚拟地址映射的物理地址不一样，这里可以看下面的图。</p>
+<p>原本不修改时，他们指向的同一块空间：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205805.png" alt="img"></p>
+<p>但是如果修改了，那就要出写时拷贝，怎么理解？</p>
+<p>就是将修改的那个值重新分配一块空间，然后将原本指向val的指针指向新的空间：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201205712.png" alt="img"></p>
+<p>所以这里就回答一下fork的两个返回值，pid_t id同一个变量为什么会有两个值。</p>
+<p>pid_t本质是父进程定义的变量，fork内部，return会被执行两次，return的本质是将值写到接收返回值的变量中。</p>
+<p>所以当id &#x3D; fork(）的时候，谁先返回，谁就要发生写时拷贝，就跟上面一样，这就说明了为什么地址是一样的，但是值不一样。</p>
+<p>因为其本质是一个虚拟地址，真实对应的物理地址是不一样的。</p>
+<p>-—–</p>
+<p>为什么要有虚拟地址空间，就有一下几个原因：</p>
+<p>1、保护了内存，就好像上面说的，当你的程序出现了错误，非法访问之类的，它就可以审核之后将其拦截。</p>
+<p>2、进程管理，你的进程运行到哪一部分，我加载哪一部分，就不会出现你占了一大块内存，但是又不用的情况。</p>
+<p>3、当程序运行起来，变成进程之后，操作系统是随机分配的一块空间，这样就会出现程序运行的地址是不确定的情况，如果用了页表，进行统一管理，就可以直接找到对应的地址来编译加载所有程序，简化了进程的设计和实现。</p>
+<p>-——-</p>
+<p>感谢观看，希望对你有所帮助</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/08/14/%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/08/14/%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

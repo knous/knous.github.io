@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >继承</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h1 id="继承的概念及定义"><a href="#继承的概念及定义" class="headerlink" title="继承的概念及定义"></a>继承的概念及定义</h1><h2 id="继承的概念"><a href="#继承的概念" class="headerlink" title="继承的概念"></a>继承的概念</h2><blockquote>
+<p>继承(inheritance)机制是面向对象程序设计使代码可以复用的最重要的手段，它允许程序员在保持原有类特性的基础上进行扩展，增加功能，这样产生新的类，称派生类。继承呈现了面向对象程序设计的层次结构，体现了由简单到复杂的认知过程。以前我们接触的复用都是函数复用，继承是类设计层次的复用。</p>
+</blockquote>
+<p>其实也很好理解，拿下图举例</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151344.png" alt="img"></p>
+<p>假设现在是两个类，但我们可以发现其中大部分类容是可以一样的，我们就可以把这部分提取出来，取名新类，然后让老师和学生分别继承这个类</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201153623.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void Print()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;name:&quot; &lt;&lt; _name &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; &quot;age:&quot; &lt;&lt; _age &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">protected:</span><br><span class="line">	string _name = &quot;knous&quot;;</span><br><span class="line">	int _age = 18; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Student : public Person</span><br><span class="line">&#123;</span><br><span class="line">protected:</span><br><span class="line">	int _stuid; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>这就是一个继承，现在Student就有了Person的参数，比如一个打印函数，两个被保护起来的对象，一个_name，一个_age，我们可以按照平时调用类里面函数一样调用这个打印函数</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151862.png" alt="img"></p>
+<p>-—- </p>
+<h2 id="继承的定义"><a href="#继承的定义" class="headerlink" title="继承的定义"></a>继承的定义</h2><h3 id="定义格式"><a href="#定义格式" class="headerlink" title="定义格式"></a>定义格式</h3><p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201153860.png" alt="img"><img src="/" alt="点击并拖拽以移动"></p>
+<h3 id="继承关系与访问限定符"><a href="#继承关系与访问限定符" class="headerlink" title="继承关系与访问限定符"></a>继承关系与访问限定符</h3><p>我们知道访问限定符有三种：</p>
+<p>public（公开）</p>
+<p>protected（保护）</p>
+<p>private（私人）</p>
+<p>同样，继承方式也有三种：</p>
+<p>public（公开）</p>
+<p>protected（保护）</p>
+<p>private（私人）</p>
+<h3 id="继承基类成员访问方式的变化"><a href="#继承基类成员访问方式的变化" class="headerlink" title="继承基类成员访问方式的变化"></a>继承基类成员访问方式的变化</h3><table>
+<thead>
+<tr>
+<th>类成员&#x2F;继承方式</th>
+<th>public继承</th>
+<th>protected继承</th>
+<th>private继承</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基类的public成员</td>
+<td>派生类的public成员</td>
+<td>派生类的protected  		成员</td>
+<td>派生类的private  		成员</td>
+</tr>
+<tr>
+<td>基类的protected  		成员</td>
+<td>派生类的protected  		成员</td>
+<td>派生类的protected  		成员</td>
+<td>派生类的private  		成员</td>
+</tr>
+<tr>
+<td>基类的private成  		员</td>
+<td>在派生类中不可见</td>
+<td>在派生类中不可见</td>
+<td>在派生类中不可</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>总结：</p>
+<p>基类的不可见不是指的没有被继承，本质是继承了，但是不让用，不管是类里面还是外面。</p>
+<p>如果是想在类外面不让使用，类里面可以用，可以用protected继承</p>
+<p>class默认是private，struct默认是public，跟类访问限定符那里是一样的。</p>
+<p>一般都是public继承，protected和private继承都比较少</p>
+<p>基类的成员在被继承的时候取权限小为准，如果是公开继承原本公开的，那不变，如果是公开保护继承，那就是保护成员</p>
+</blockquote>
+<h1 id="基类和派生类对象赋值转换"><a href="#基类和派生类对象赋值转换" class="headerlink" title="基类和派生类对象赋值转换"></a>基类和派生类对象赋值转换</h1><blockquote>
+<p>派生类对象 可以赋值给 基类的对象 &#x2F; 基类的指针 &#x2F; 基类的引用。这里有个形象的说法叫切片<br> 或者切割。寓意把派生类中父类那部分切来赋值过去。<br> 基类对象不能赋值给派生类对象。<br> 基类的指针或者引用可以通过强制类型转换赋值给派生类的指针或者引用。但是必须是基类<br> 的指针是指向派生类对象时才是安全的。这里基类如果是多态类型，可以使用RTTI(RunTime Type Information)的dynamic_cast 来进行识别后进行安全转换。</p>
+</blockquote>
+<p>怎么理解这话呢，看下面的图：</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151453.png" alt="img"></p>
+<p>现在要将学生赋值给人，学生里面四个参数，但是人里面只有两个，那编译器在处理的时候会将学生里面多的两个不要，这就叫切片（切割），将多的部分舍弃。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void Print()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;name:&quot; &lt;&lt; _name &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; &quot;age:&quot; &lt;&lt; _age &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">protected:</span><br><span class="line">	string _name = &quot;knous&quot;;</span><br><span class="line">	int _age = 18; // </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Student : public Person</span><br><span class="line">&#123;</span><br><span class="line">protected:</span><br><span class="line">	int _stuid; // 学号</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Student s;</span><br><span class="line">	Person p = s;	//将s对象直接赋值给p</span><br><span class="line">	Person&amp; rp = s; //将s对象取个别名叫rp</span><br><span class="line">	Person* ptrp = &amp;s; //让s对象的地址给p的指针</span><br><span class="line"></span><br><span class="line">	s = p;				//这种会报错，基类不能赋值给派生类</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h1 id="继承的作用域"><a href="#继承的作用域" class="headerlink" title="继承的作用域"></a>继承的作用域</h1><blockquote>
+<p>\1. 在继承体系中基类和派生类都有独立的作用域。<br> \2. 子类和父类中有同名成员，子类成员将屏蔽父类对同名成员的直接访问，这种情况叫隐藏，也叫重定义。（在子类成员函数中，可以使用 基类::基类成员 显示访问）<br> \3. 需要注意的是如果是成员函数的隐藏，只需要函数名相同就构成隐藏。<br> \4. 注意在实际中在继承体系里面最好不要定义同名的成员。</p>
+</blockquote>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151691.png" alt="img"></p>
+<p>从图里面可以看到，我创建了b，然后调用B里面的fun，B又继承的A，按理来说里面应该有两个fun，但直接调用的是B里面自身的fun，假设我一定要调用A的fun呢？</p>
+<p>指定类，像下图：</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151536.png" alt="img"></p>
+<p>这样就可以了</p>
+<h1 id="派生类的默认成员函数"><a href="#派生类的默认成员函数" class="headerlink" title="派生类的默认成员函数"></a>派生类的默认成员函数</h1><p> 这里更是重量级，头疼的地方来了</p>
+<p>派生类也是类，里面也有六个默认函数，这里就要了解一下这几个成员函数怎么生成的：</p>
+<h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151132.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>初始化对象s的时候，它先调用了Person的初始化构造，然后才是自己，可以这么理解，子类继承的父类被当成了一个自定义类型，会调用自定义类型的构造函数，然后才是自己，如果没有合适的默认构造，就要在初始化列表里面显示调用：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151879.png" alt="img"></p>
+<h2 id="拷贝构造"><a href="#拷贝构造" class="headerlink" title="拷贝构造"></a>拷贝构造</h2><p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201151722.png" alt="img"></p>
+<p>如果写出了这种代码，就要注意了，这里的问题是之前说的，operator &#x3D;的运算符重载问题，因为person里面有一个，student也有一个，这里s里面有基类成员，所以必须用基类的拷贝构造，但是直接写的话就会出现死循环，因为studet里面也有一个拷贝构造，就会出现自己调用自己：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152621.png" alt="img"></p>
+<p>直接报错，位了解决问题，我们必须指定用的是基类的拷贝构造：</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152833.png" alt="img"></p>
+<p>这样就没问题了。 </p>
+<h2 id="析构"><a href="#析构" class="headerlink" title="析构"></a>析构</h2><p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152980.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>可以看到，基类先构造，但后析构，这里说一句，哪怕是手动先析构基类，但后面还是会再析构一次，因为编译器一定会保持先子后父的顺序</p>
+<h1 id="继承与友元"><a href="#继承与友元" class="headerlink" title="继承与友元"></a>继承与友元</h1><p>友元不继承，基类友元不能访问子类私有和保护</p>
+<h1 id="继承与静态成员"><a href="#继承与静态成员" class="headerlink" title="继承与静态成员"></a>继承与静态成员</h1><p>基类定义的static成员，则继承的整个体系里面都只会有一个这样的成员，无论派生了多少，都只有一个</p>
+<h1 id="复杂的菱形继承及菱形虚拟继承"><a href="#复杂的菱形继承及菱形虚拟继承" class="headerlink" title="复杂的菱形继承及菱形虚拟继承"></a>复杂的菱形继承及菱形虚拟继承</h1><p>继承又分为两种：</p>
+<p>单继承：每次只继承一个</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152096.png" alt="img"></p>
+<p>多继承：一个子类有多个父类</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152272.png" alt="img"></p>
+<p>菱形继承：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152179.png" alt="img"></p>
+<p>当出现菱形继承，会发现什么、</p>
+<p>类4里面有两个类1 </p>
+<p> 因为类2里面有类1，类3里面有类1，但类4又继承了类2和类3，假设类1很小，十几个字节还好，但是如果类1很大，几万、甚至几十万字节呢？</p>
+<p>出大问题。</p>
+<p>这句是菱形继承的问题：形继承有数据冗余和二义性。</p>
+<p>如何解决？</p>
+<h2 id="虚拟继承"><a href="#虚拟继承" class="headerlink" title="虚拟继承"></a>虚拟继承</h2><p>这里举个例子</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152705.png" alt="img"></p>
+<p> 这就是很明显的菱形继承，Person被Student和Teacher继承，Assistant又继承了Student和Teacher</p>
+<p>虚拟进程是这样的，在继承方式的前面多加上关键词：virtual（虚拟）</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152112.png" alt="img"></p>
+<p>这就算虚拟继承了，那虚拟继承是如何解决数据冗余和二义性的呢？</p>
+<p>这里就直接说结论吧，过程较为复杂。</p>
+<p>这里看图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152264.png" alt="img"></p>
+<p>假设现在是普通继承，那此时的D里面就是这样；</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152445.png" alt="img"></p>
+<p>但如果是虚拟继承，就会是这样：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201152468.png" alt="img"></p>
+<p>此时的B、C里面就不再是直接放A的地址，而是放一个指针，这个指针称之为虚基表指针，虚基表指针指向的这块空间称之为虚基表，虚基表里面存放的是偏移量，通过偏移量就可以找到下面的A。</p>
+<p>-–</p>
+<p>感谢您的观看，希望对您学习继承有帮助</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/07/18/%E7%BB%A7%E6%89%BF/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/07/18/%E7%BB%A7%E6%89%BF/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

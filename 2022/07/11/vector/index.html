@@ -1,0 +1,479 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >vector</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h1 id="vector的介绍和使用"><a href="#vector的介绍和使用" class="headerlink" title="vector的介绍和使用"></a>vector的介绍和使用</h1><h2 id="vector的介绍"><a href="#vector的介绍" class="headerlink" title="vector的介绍"></a>vector的介绍</h2><blockquote>
+<p>vector是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C%2B%2B" title="C++">C++</a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93" title="标准模板库">标准模板库</a>中的部分内容，中文偶尔译作“容器”，但并不准确。它是一个多功能的，能够操作多种数据结构和算法的模板类和函数库。vector之所以被认为是一个容器，是因为它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84" title="动态数组">动态数组</a>，能够增加和压缩数据。 [1]<a href=""> </a></p>
+</blockquote>
+<p>如何理解这段话呢，可以把它想像成一个数组，这里面可以放任意类型的数据</p>
+<p>如果是int，那就是一个整型数组</p>
+<p>如果是char，那就有点类似string</p>
+<p>它还可以是vecto类似，这就相当于是一个二维数组了…</p>
+<h2 id="vector的使用"><a href="#vector的使用" class="headerlink" title="vector的使用"></a>vector的使用</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/vector/vector/" title="vector - C++ Reference (cplusplus.com)">vector - C++ Reference (cplusplus.com)</a></p>
+<p>虽然是全英文，但有的游览器会自带翻译，这里说个大概用法：跟string差不多，创建类后用.函数名来使用</p>
+<h3 id="vector的定义"><a href="#vector的定义" class="headerlink" title="vector的定义"></a>vector的定义</h3><p>有以下几种：</p>
+<table>
+<thead>
+<tr>
+<th>vector()</th>
+<th>无参构造</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vector（size_type n, const value_type&amp; val &#x3D; value_type()）</td>
+<td>构造并初始化n个val</td>
+</tr>
+<tr>
+<td>vector (const vector&amp; x);</td>
+<td>拷贝构造</td>
+</tr>
+<tr>
+<td>vector (InputIterator first, InputIterator last);</td>
+<td>使用迭代器进行初始化构造</td>
+</tr>
+</tbody></table>
+<p>一般常用的是无参和拷贝，因为数据的插入和删除也算比较简单的，所以构造并初始化和使用迭代器进行构造的也算比较少</p>
+<h3 id="vector-iterator"><a href="#vector-iterator" class="headerlink" title="vector iterator"></a>vector iterator</h3><p>这个在string里面是迭代器，用来遍历string用的，在vector里面使用的办法也一样，用来遍历vector</p>
+<p>这里可以看图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201142041.png"></p>
+<p>就是一个正向一个反向，其实这里用法跟string一样，不过还是演示一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; v;</span><br><span class="line">	v.push_back(1);</span><br><span class="line">	v.push_back(2);</span><br><span class="line">	v.push_back(3);</span><br><span class="line">	v.push_back(4);</span><br><span class="line">	vector&lt;int&gt;::iterator it = v.begin();</span><br><span class="line">	while (it != v.end())</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; *it &lt;&lt;&quot; &quot;;</span><br><span class="line">		++it;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	return 0;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如上代码。创建了一个vector<int>并插入了1234，并用迭代器进行打印，这里要记得++it，不然会死循环，打印效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201142038.png"></p>
+<p>这里要提一下，迭代器有两种，第一种是没有const的，这种是可以遍历的时候修改的，另一种带const的就是单纯的遍历</p>
+<p>如果对应的vector是带有const修饰的，那编译器会自动调用带const的迭代器</p>
+<p>不过这里要注意，如果是带有const的vector，那在迭代前面也要加上const，像这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt;::const_iterator it = v.begin();</span><br><span class="line">	while (it != v.end())</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; *it &lt;&lt; &quot; &quot;;</span><br><span class="line">		++it;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>不然会出现这样的错误；</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201143718.png"></p>
+<p>因为普通的it的不带const的，它可以修改对应的值，而const的修饰就是为了不让修改，所以出现了权限放大的问题，这里要注意，带上const就好了，下面是效果的演示</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201143964.png"></p>
+<p>vector的空间</p>
+<p>这里大致看一下就好了，跟string其实很像，前面有不了解的可以去看前一篇我的string讲解</p>
+<table>
+<thead>
+<tr>
+<th>容量空间</th>
+<th>接口说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>size</td>
+<td>获取数据个数</td>
+</tr>
+<tr>
+<td>capacity</td>
+<td>获取容量大小</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>判断是否为空</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>改变vector的size</td>
+</tr>
+<tr>
+<td>reserve</td>
+<td>改变vector放入capacity</td>
+</tr>
+</tbody></table>
+<p>这里的用法也跟string一样，直接对象名.函数名就可以了</p>
+<h3 id="vector的常用操作"><a href="#vector的常用操作" class="headerlink" title="vector的常用操作"></a>vector的常用操作</h3><table>
+<thead>
+<tr>
+<th>push_back</th>
+<th>尾插</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pop_back</td>
+<td>尾删</td>
+</tr>
+<tr>
+<td>find</td>
+<td>查找</td>
+</tr>
+<tr>
+<td>insert</td>
+<td>在position之前插入val</td>
+</tr>
+<tr>
+<td>erase</td>
+<td>删除position位置的数据</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>交换两个vector的数据空间</td>
+</tr>
+<tr>
+<td>operator[]</td>
+<td>像数组一样访问</td>
+</tr>
+</tbody></table>
+<p>其实用法也很简单，这里大致示范一下：</p>
+<h3 id="vector迭代器失效问题"><a href="#vector迭代器失效问题" class="headerlink" title="vector迭代器失效问题"></a>vector迭代器失效问题</h3><p>这个理解起来也很简单，这里可以先看图理解：</p>
+<p>第一种情况：迭代器指向原本被释放的空间</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201144740.png"></p>
+<p>一开始开创好了一块空间来放数据 ，假设这个时候我的放的数据又比较多，空间不够了，这里就要reserve调整一块空间，但是在遍历的时候，it还指向的是原空间，导致程序崩溃报错，这里看图</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201144985.png">****</p>
+<p>但此时，it还指向的是原空间，这就会导致出错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//开空间并初始化</span><br><span class="line">vector&lt;int&gt; v&#123;1,2,3,4,5,6&#125;;</span><br><span class="line"></span><br><span class="line">//创建it</span><br><span class="line">auto it = v.begin();</span><br><span class="line"></span><br><span class="line">//调整空间</span><br><span class="line">v.assign(100, 8);</span><br><span class="line"></span><br><span class="line">//打印</span><br><span class="line">while(it != v.end())</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt; *it &lt;&lt; &quot; &quot; ;</span><br><span class="line">++it;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>类似这里就会出现崩溃，因为v的begin和end已经变成了新的空间区域，但it还指向的是原本空间，而原本空间在开辟新空间后已经被释放掉，所以会崩溃报错</p>
+<p>解决办法：更新it的值即可</p>
+<p>第二种情况：迭代器的意义改变</p>
+<p>假设此时有一个vector里面有这样的几个数字：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201144900.png"></p>
+<p>此时，我要对这个vector进行如下操作：</p>
+<p>在所有偶数前面加上20，其实这样也算简单，因为按照我们以前写的代码逻辑，只需要将偶数的位置由它后一个替换，然后++在判断即可，但是，这样就会出现问题：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201144901.png"></p>
+<p>一开始it指向1，1不是偶数，所以不会动，但当it指向2的时候：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201144041.png">****</p>
+<p>我们知道it现在指向2，2是偶数，所以要在前面加上20：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201144347.png"></p>
+<p>假设it已经成功在2的前面加上20了，从逻辑上来讲，这里应该是没有问题的，但是这里就会出现这样的情况：</p>
+<p>原本it指向的是2，但此时2的位置已经变成了20，2的位置已经改变，但it却指向原空间</p>
+<p>所以就会出现第二种情况：迭代器所指向的意义变了</p>
+<p>解决办法：重新修改迭代器指向即可</p>
+<hr>
+<h1 id="模拟实现"><a href="#模拟实现" class="headerlink" title="模拟实现"></a>模拟实现</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">namespace knous</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	template&lt;class T&gt;</span><br><span class="line"></span><br><span class="line">	class vector</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">	public:</span><br><span class="line"></span><br><span class="line">		// Vector的迭代器是一个原生指针</span><br><span class="line"></span><br><span class="line">		typedef T* iterator;</span><br><span class="line"></span><br><span class="line">		typedef const T* const_iterator;</span><br><span class="line"></span><br><span class="line">		iterator begin();</span><br><span class="line"></span><br><span class="line">		iterator end();</span><br><span class="line"></span><br><span class="line">		const_iterator cbegin();</span><br><span class="line"></span><br><span class="line">		const_iterator cend() const;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		// construct and destroy</span><br><span class="line"></span><br><span class="line">		vector();</span><br><span class="line"></span><br><span class="line">		vector(int n, const T&amp; value = T());</span><br><span class="line"></span><br><span class="line">		template&lt;class InputIterator&gt;</span><br><span class="line"></span><br><span class="line">		vector(InputIterator first, InputIterator last);</span><br><span class="line"></span><br><span class="line">		vector&lt;T&gt;&amp; operator= (vector&lt;T&gt; v);</span><br><span class="line"></span><br><span class="line">		~vector();</span><br><span class="line"></span><br><span class="line">		// capacity</span><br><span class="line"></span><br><span class="line">		size_t size() const;</span><br><span class="line"></span><br><span class="line">		size_t capacity() const;</span><br><span class="line"></span><br><span class="line">		void reserve(size_t n);</span><br><span class="line"></span><br><span class="line">		void resize(size_t n, const T&amp; value = T());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		///////////////access///////////////////////////////</span><br><span class="line"></span><br><span class="line">		T&amp; operator[](size_t pos);</span><br><span class="line"></span><br><span class="line">		const T&amp; operator[](size_t pos)const;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		///////////////modify/////////////////////////////</span><br><span class="line"></span><br><span class="line">		void push_back(const T&amp; x);</span><br><span class="line"></span><br><span class="line">		void pop_back();</span><br><span class="line"></span><br><span class="line">		void swap(vector&lt;T&gt;&amp; v);</span><br><span class="line"></span><br><span class="line">		iterator insert(iterator pos, const T&amp; x);</span><br><span class="line"></span><br><span class="line">		iterator erase(iterator pos);</span><br><span class="line"></span><br><span class="line">	private:</span><br><span class="line"></span><br><span class="line">		iterator _start; // 指向数据块的开始</span><br><span class="line"></span><br><span class="line">		iterator _finish; // 指向有效数据的尾</span><br><span class="line"></span><br><span class="line">		iterator _endOfStorage; // 指向存储容量的尾</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>上面是之后会实现的东西，我们一点一点来，先将vector的类参数写出来：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">namespace knous</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	template&lt;class T&gt;</span><br><span class="line">	class vector</span><br><span class="line">	&#123;</span><br><span class="line">	public:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	private:</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>从上往下看，逐步分析：</p>
+<p>因为vector是一个容器，它可以放任意类型，所以这里我们单纯的用int、char指针来构造显然是错误的，这里就要用到之前学到的模板，T可以是任意类型的数据，在这里接收到类型之后它会自动替换下面所有T的地方</p>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>这里本来想给大家看一下源代码，但是觉得自己水平不够，所以就不献丑了</p>
+<p>我想说的是：vector里面的类型都是迭代器，没有之前在string里面的size、capacity之类的，它会有如下的三种指针：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">iterator _start; // 指向数据块的开始</span><br><span class="line"></span><br><span class="line">		iterator _finish; // 指向有效数据的尾</span><br><span class="line"></span><br><span class="line">		iterator _endOfStorage; // 指向存储容量的尾</span><br></pre></td></tr></table></figure>
+
+
+
+<p>既然我们要模拟实现，那这个iterator又是什么呢？</p>
+<p>其实是由我们typedef定义的类型，这里就简单定义一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">namespace knous</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	template&lt;class T&gt;</span><br><span class="line">	class vector</span><br><span class="line">	&#123;</span><br><span class="line">	public:</span><br><span class="line">		typedef T* iterator;</span><br><span class="line">		typedef const T* const_iterator;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	private:</span><br><span class="line">		iterator _start; // 指向数据块的开始</span><br><span class="line"></span><br><span class="line">		iterator _finish; // 指向有效数据的尾</span><br><span class="line"></span><br><span class="line">		iterator _endOfStorage; // 指向存储容量的尾</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这就是我们大致的模板，因为T是任意类型，所以T<em>就是任意类型的指针，让T</em>重定义为iterator方便我们之后好看，然后写一个const版本来应对其他情况</p>
+<p>一点一点来</p>
+<p>这里先写一个begin和end，因为比较简单：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">iterator begin()</span><br><span class="line">		&#123;</span><br><span class="line">			return _start;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator end()</span><br><span class="line">		&#123;</span><br><span class="line">			reruen _finish;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const_iterator cbegin()</span><br><span class="line">		&#123;</span><br><span class="line">			reruen _start;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const_iterator cend() const</span><br><span class="line">		&#123;</span><br><span class="line">			rerurn _finis;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>我们知道类里面会自动一个构造函数，这里就浅浅的写一个：</p>
+<p>无参的，直接让对应的迭代器指向空即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector()</span><br><span class="line">			:_start(nullptr)</span><br><span class="line">			, _finish(nullptr)</span><br><span class="line">			, _endOfStorage(nullptr)</span><br><span class="line">		&#123;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="opeartor-x3D"><a href="#opeartor-x3D" class="headerlink" title="opeartor&#x3D;"></a>opeartor&#x3D;</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;T&gt;&amp; operator=(vector&lt;T&gt; v)</span><br><span class="line">		&#123;</span><br><span class="line">			swap(v);</span><br><span class="line">			return *this;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这算一个现代写法，直接在形参那里构造一个，然后跟这个构造的交换空间，这里再写一个交换函数；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void swap(vector&lt;int&gt;&amp; v)</span><br><span class="line">		&#123;</span><br><span class="line">			std::swap(_start, v._start);</span><br><span class="line">			std::swap(_finish, v._finish);</span><br><span class="line">			std::swap(_endofstoage, v._endofstoage);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里因为交换函数标准头文件已经有了，就不用自己写了</p>
+<h3 id="给一个长度和一个初始值构造"><a href="#给一个长度和一个初始值构造" class="headerlink" title="给一个长度和一个初始值构造"></a>给一个长度和一个初始值构造</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vector(int n, const T&amp; value = T())</span><br><span class="line">			:_start(nullptr)</span><br><span class="line">			, _finish(nullptr)</span><br><span class="line">			, _endOfStorage(nullptr)</span><br><span class="line">		&#123;</span><br><span class="line">			reserve(n);</span><br><span class="line">			for (int i = 0; i &lt; n; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				push_back(value);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>先调整空间，然后插入即可</p>
+<h3 id="用一个迭代器区间来初始化另一个"><a href="#用一个迭代器区间来初始化另一个" class="headerlink" title="用一个迭代器区间来初始化另一个"></a>用一个迭代器区间来初始化另一个</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template &lt; class Iterator &gt;</span><br><span class="line">			vector(Iterator first,Iterator last)</span><br><span class="line">			:_start(nullptr)</span><br><span class="line">			, _finish(nullptr)</span><br><span class="line">			, _endOfStorage(nullptr)</span><br><span class="line">		&#123;</span><br><span class="line">			while (first != end)</span><br><span class="line">			&#123;</span><br><span class="line">				push_back(*first);</span><br><span class="line">				++*first;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>因为无法确定这个迭代器区间类型，所以这里还是要用另一个模板来接收然后初始化尾插</p>
+<h2 id="基本的操作函数"><a href="#基本的操作函数" class="headerlink" title="基本的操作函数"></a>基本的操作函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//重载方括号</span><br><span class="line">     T&amp; operator[](size_t pos)；</span><br><span class="line"></span><br><span class="line">    const T&amp; operator[](size_t pos)const； </span><br><span class="line"></span><br><span class="line">   // capacity</span><br><span class="line"></span><br><span class="line">    size_t size() const ；</span><br><span class="line"></span><br><span class="line">    size_t capacity() const；</span><br><span class="line"></span><br><span class="line">    void reserve(size_t n)；</span><br><span class="line"></span><br><span class="line">    void resize(size_t n, const T&amp; value = T())；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    void push_back(const T&amp; x);</span><br><span class="line"></span><br><span class="line">    void pop_back();</span><br><span class="line"></span><br><span class="line">    iterator insert(iterator pos, const T&amp; x);</span><br><span class="line"></span><br><span class="line">    iterator erase(Iterator pos);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>顺着来：</p>
+<h3 id="opeartor"><a href="#opeartor" class="headerlink" title="opeartor[]"></a>opeartor[]</h3><p>两个版本是因为如果只要遍历就可以调用const防止修改，如果要修改就会调用另外一个：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">T&amp; operator[](size_t pos)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt; size());</span><br><span class="line">			return _start[pos];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const T&amp; operator[](size_t pos)const</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt; size());</span><br><span class="line">			return _start[pos];</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="size、capacity、resize、reserve"><a href="#size、capacity、resize、reserve" class="headerlink" title="size、capacity、resize、reserve"></a>size、capacity、resize、reserve</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">size_t capacity() const</span><br><span class="line">		&#123;</span><br><span class="line">			_endOfStorage - _start;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void reserve(size_t n)</span><br><span class="line">		&#123;</span><br><span class="line">			size_t size = size();</span><br><span class="line"></span><br><span class="line">			if (n &gt; capacity())</span><br><span class="line">			&#123;</span><br><span class="line">				if (_start)</span><br><span class="line">				&#123;</span><br><span class="line">					T* tmp = new T[n];</span><br><span class="line">					for (size_t i = ; i &lt; size(); i++)</span><br><span class="line">					&#123;</span><br><span class="line">						tmp[i] = _start[i];</span><br><span class="line">					&#125;</span><br><span class="line">					delete[] _start;</span><br><span class="line">				&#125;</span><br><span class="line">				_start = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">			_finish = _start + size;</span><br><span class="line">			_endOfStorage = _start + n;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void resize(size_t n, const T&amp; value = T())</span><br><span class="line">		&#123;</span><br><span class="line">			if (n&gt;capacity())</span><br><span class="line">			&#123;</span><br><span class="line">				reserve(n);</span><br><span class="line">			&#125;</span><br><span class="line">			else if (n&gt;size())</span><br><span class="line">			&#123;</span><br><span class="line">					while (_finish &lt; _start + n)</span><br><span class="line">					&#123;</span><br><span class="line">						*_finish = value;</span><br><span class="line">						++_finish;</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				_finish = _start + n;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="尾插和尾删"><a href="#尾插和尾删" class="headerlink" title="尾插和尾删"></a>尾插和尾删</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void push_back(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			if (capacity() == 0)</span><br><span class="line">			&#123;</span><br><span class="line">				int new_capacity = capacity() == 0 ? 4 : capacity() * 2;</span><br><span class="line">				reserve(new_capacity);</span><br><span class="line">			&#125;</span><br><span class="line">			*_finsh = x;</span><br><span class="line">			_finish++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void pop_back()</span><br><span class="line">		&#123;</span><br><span class="line">			if (_finish)</span><br><span class="line">				_finish--;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>先判断容量，然后直接插入或者删除</p>
+<p>随机插入和删除:</p>
+<p>这里算是比较重要的地方，插入我们要先记住pos的位置，防止开新空间后pos指向旧空间出现迭代器失效的问题</p>
+<p>删除就直接替换就可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">iterator insert(iterator pos, const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt;= _finish &amp;&amp; pos &gt;= _start);</span><br><span class="line"></span><br><span class="line">			//看容量</span><br><span class="line">			if (_finish == _endOfStorage)</span><br><span class="line">			&#123;</span><br><span class="line"></span><br><span class="line">				//记录pos</span><br><span class="line">				size_t size = pos - _start;</span><br><span class="line">				size_t new_capacity = capacity() == 0 ? 4 : capacity() * 2;</span><br><span class="line">				reserve(new_capacity);</span><br><span class="line"></span><br><span class="line">				pos = _start + size;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			//挪数据</span><br><span class="line">			iterator it = _finish;</span><br><span class="line">			while (it != pos)</span><br><span class="line">			&#123;</span><br><span class="line">				*(it) = *(it-1);</span><br><span class="line">				it--;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//填数据</span><br><span class="line">			*pos = x;</span><br><span class="line">			_finish++;</span><br><span class="line">			return pos;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator erase(iterator pos)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt;= _finish &amp;&amp; pos &gt;= _start);</span><br><span class="line"></span><br><span class="line">			iterator it = pos;</span><br><span class="line">			while (it + 1 != _finish)</span><br><span class="line">			&#123;</span><br><span class="line">				*it = *(it+1);</span><br><span class="line">				it++;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			--_finish;</span><br><span class="line">			return pos;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>这里放上全部代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br></pre></td><td class="code"><pre><span class="line">namespace knous</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	template&lt;class T&gt;</span><br><span class="line">	class vector</span><br><span class="line">	&#123;</span><br><span class="line">	public:</span><br><span class="line">		typedef T* iterator;</span><br><span class="line">		typedef const T* const_iterator;</span><br><span class="line"></span><br><span class="line">		iterator begin()</span><br><span class="line">		&#123;</span><br><span class="line">			return _start;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator end()</span><br><span class="line">		&#123;</span><br><span class="line">			return _finish;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const_iterator cbegin()</span><br><span class="line">		&#123;</span><br><span class="line">			reruen _start;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const_iterator cend() const</span><br><span class="line">		&#123;</span><br><span class="line">			rerurn _finis;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void swap(vector&lt;int&gt;&amp; v)</span><br><span class="line">		&#123;</span><br><span class="line">			std::swap(_start, v._start);</span><br><span class="line">			std::swap(_finish, v._finish);</span><br><span class="line">			std::swap(_endofstoage, v._endofstoage);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		vector()</span><br><span class="line">			:_start(nullptr)</span><br><span class="line">			, _finish(nullptr)</span><br><span class="line">			, _endOfStorage(nullptr)</span><br><span class="line">		&#123;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		vector(int n, const T&amp; value = T())</span><br><span class="line">			:_start(nullptr)</span><br><span class="line">			, _finish(nullptr)</span><br><span class="line">			, _endOfStorage(nullptr)</span><br><span class="line">		&#123;</span><br><span class="line">			reserve(n);</span><br><span class="line">			for (int i = 0; i &lt; n; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				push_back(value);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		template &lt; class Iterator &gt;</span><br><span class="line">			vector(Iterator first,Iterator last)</span><br><span class="line">			:_start(nullptr)</span><br><span class="line">			, _finish(nullptr)</span><br><span class="line">			, _endOfStorage(nullptr)</span><br><span class="line">		&#123;</span><br><span class="line">			while (first != end)</span><br><span class="line">			&#123;</span><br><span class="line">				push_back(*first);</span><br><span class="line">				++*first;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			~vector()</span><br><span class="line">			&#123;</span><br><span class="line">				delete[] _start;</span><br><span class="line">				_start = _finish = _endOfStorage = nullptr;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		vector&lt;T&gt;&amp; operator=(vector&lt;T&gt; v)</span><br><span class="line">		&#123;</span><br><span class="line">			swap(v);</span><br><span class="line">			return *this;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		// capacity</span><br><span class="line"></span><br><span class="line">		size_t size() const</span><br><span class="line">		&#123;</span><br><span class="line">			return _finish - _start;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		size_t capacity() const</span><br><span class="line">		&#123;</span><br><span class="line">			return _endOfStorage - _start;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void reserve(size_t n)</span><br><span class="line">		&#123;</span><br><span class="line">			size_t sz = size();</span><br><span class="line"></span><br><span class="line">			if (n &gt; capacity())</span><br><span class="line">			&#123;</span><br><span class="line">				T* tmp = new T[n];</span><br><span class="line">				if (_start)</span><br><span class="line">				&#123;</span><br><span class="line">					for (size_t i = 0; i &lt; size(); i++)</span><br><span class="line">					&#123;</span><br><span class="line">						tmp[i] = _start[i];</span><br><span class="line">					&#125;</span><br><span class="line">					delete[] _start;</span><br><span class="line">				&#125;</span><br><span class="line">				_start = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">			_finish = _start + sz;</span><br><span class="line">			_endOfStorage = _start + n;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void resize(size_t n, const T&amp; value = T())</span><br><span class="line">		&#123;</span><br><span class="line">			if (n&gt;capacity())</span><br><span class="line">			&#123;</span><br><span class="line">				reserve(n);</span><br><span class="line">			&#125;</span><br><span class="line">			else if (n&gt;size())</span><br><span class="line">			&#123;</span><br><span class="line">					while (_finish &lt; _start + n)</span><br><span class="line">					&#123;</span><br><span class="line">						*_finish = value;</span><br><span class="line">						++_finish;</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				_finish = _start + n;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		T&amp; operator[](size_t pos)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt; size());</span><br><span class="line">			return _start[pos];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const T&amp; operator[](size_t pos)const</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt; size());</span><br><span class="line">			return _start[pos];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		void push_back(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			if (_finish == _endOfStorage)</span><br><span class="line">			&#123;</span><br><span class="line">				int new_capacity = capacity() == 0 ? 4 : capacity() * 2;</span><br><span class="line">				reserve(new_capacity);</span><br><span class="line">			&#125;</span><br><span class="line">			*_finish = x;</span><br><span class="line">			_finish++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void pop_back()</span><br><span class="line">		&#123;</span><br><span class="line">			if (_finish)</span><br><span class="line">				_finish--;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator insert(iterator pos, const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt;= _finish &amp;&amp; pos &gt;= _start);</span><br><span class="line"></span><br><span class="line">			//看容量</span><br><span class="line">			if (_finish == _endOfStorage)</span><br><span class="line">			&#123;</span><br><span class="line"></span><br><span class="line">				//记录pos</span><br><span class="line">				size_t size = pos - _start;</span><br><span class="line">				size_t new_capacity = capacity() == 0 ? 4 : capacity() * 2;</span><br><span class="line">				reserve(new_capacity);</span><br><span class="line"></span><br><span class="line">				pos = _start + size;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			//挪数据</span><br><span class="line">			iterator it = _finish;</span><br><span class="line">			while (it != pos)</span><br><span class="line">			&#123;</span><br><span class="line">				*(it) = *(it-1);</span><br><span class="line">				it--;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//填数据</span><br><span class="line">			*pos = x;</span><br><span class="line">			_finish++;</span><br><span class="line">			return pos;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator erase(iterator pos)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos &lt;= _finish &amp;&amp; pos &gt;= _start);</span><br><span class="line"></span><br><span class="line">			iterator it = pos;</span><br><span class="line">			while (it + 1 != _finish)</span><br><span class="line">			&#123;</span><br><span class="line">				*it = *(it+1);</span><br><span class="line">				it++;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			--_finish;</span><br><span class="line">			return pos;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	private:</span><br><span class="line">		iterator _start; // 指向数据块的开始</span><br><span class="line"></span><br><span class="line">		iterator _finish; // 指向有效数据的尾</span><br><span class="line"></span><br><span class="line">		iterator _endOfStorage; // 指向存储容量的尾</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>望这篇文章对您有所帮助</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/07/11/vector/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/07/11/vector/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

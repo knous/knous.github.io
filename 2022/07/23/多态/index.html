@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >多态</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h1 id="多态的概念"><a href="#多态的概念" class="headerlink" title="多态的概念"></a>多态的概念</h1><p>简单来说，就是去执行某个函数，但是不同对象去执行有不同的结果。</p>
+<p>就好比买票，我拿纸币买票要六块，但是用支付宝可以九折，不同的方式去买票要付的钱不一样，这句是一种多态、</p>
+<h1 id="多态的定义和实现"><a href="#多态的定义和实现" class="headerlink" title="多态的定义和实现"></a>多态的定义和实现</h1><h2 id="多态的构成条件"><a href="#多态的构成条件" class="headerlink" title="多态的构成条件"></a>多态的构成条件</h2><p>1、必须用基类的指针或者引用调用虚函数</p>
+<p>2、被调用的函数必须是虚函数且必须对基类的虚函数进行过重写</p>
+<p>这里可以参考下图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201154178.png" alt="img"></p>
+<p>第一个对象调用Func函数的时候，函数参数接收类型的ali（父类），但是传过去的参数是子类，所以调用的是子类的虚函数</p>
+<p>第二个参数就是父类调用它父类的虚函数 </p>
+<h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>被virtual修饰的称之为虚拟函数，如上图，在函数返回值前面加一个virtual（虚拟）。</p>
+<h2 id="虚函数的重写"><a href="#虚函数的重写" class="headerlink" title="虚函数的重写"></a>虚函数的重写</h2><p> 虚函数的充血（也叫覆盖）：指在派生类里面有一个跟基类完全相同（返回值、函数名、参数）的虚函数，称之为子类的虚函数重写了基类的虚函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class ali</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void BuyTicker()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;九折&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class me :public ali</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual void BuyTicker()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;原价&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="虚函数重写的例外"><a href="#虚函数重写的例外" class="headerlink" title="虚函数重写的例外"></a>虚函数重写的例外</h2><h3 id="1、协变（基类和反派生的返回值类型不同）"><a href="#1、协变（基类和反派生的返回值类型不同）" class="headerlink" title="1、协变（基类和反派生的返回值类型不同）"></a>1、协变（基类和反派生的返回值类型不同）</h3><blockquote>
+<p>派生类重写基类虚函数时，与基类虚函数返回值类型不同。即基类虚函数返回基类对象的指<br> 针或者引用，派生类虚函数返回派生类对象的指针或者引用时，称为协变。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class a&#123;&#125;;</span><br><span class="line"></span><br><span class="line">class b :public a&#123;&#125;;</span><br><span class="line"></span><br><span class="line">class ali</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual a* BuyTicker()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;九折&quot; &lt;&lt; endl;</span><br><span class="line">		return new a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class me :public ali</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual b* BuyTicker()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;原价&quot; &lt;&lt; endl;</span><br><span class="line">		return new b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>就像这样，了解一下就好了。</p>
+<h3 id="2-析构函数的重写-基类与派生类析构函数的名字不同"><a href="#2-析构函数的重写-基类与派生类析构函数的名字不同" class="headerlink" title="2. 析构函数的重写(基类与派生类析构函数的名字不同)"></a>2. 析构函数的重写(基类与派生类析构函数的名字不同)</h3><blockquote>
+<p><strong>如果基类的析构函数为虚函数，此时派生类析构函数只要定义，无论是否加virtual关键字，都与基类的析构函数构成重写，虽然基类与派生类析构函数名字不同。虽然函数名不相同，看起来违背了重写的规则，其实不然，这里可以理解为编译器对析构函数的名称做了特殊处理，编译后析构函数的名称统一处理成destructor。</strong></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class ali</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual ~ali()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;~ali()&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class me :public ali</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual ~me()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;~me()&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//只有派生类的析构函数重写了父类的析构函数，才能构成多态，确保p1、p2指向的对象正确调用了虚构函数</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ali* p1 = new ali;</span><br><span class="line">	ali* p2 = new me;</span><br><span class="line"></span><br><span class="line">	delete p1;</span><br><span class="line">	delete p2;</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="override-和-final"><a href="#override-和-final" class="headerlink" title="override 和 final"></a>override 和 final</h2><p>从虚函数的重写条件来看是比较严格的，但是有的时候就会出现函数名写错一点无法构成重载，这种时候因为不会报错，所以很难发现，慢慢调试过于折磨，就出现了这个个关键字：</p>
+<h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><p>修饰虚函数，表示这个虚函数不能重写</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201155224.png" alt="img"></p>
+<h3 id="override"><a href="#override" class="headerlink" title="override"></a>override</h3><p>检查派生类是否重写，如果没有重写就会报错</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201155834.png" alt="img"></p>
+<h2 id="重载、覆盖、隐藏（重定义）的对比"><a href="#重载、覆盖、隐藏（重定义）的对比" class="headerlink" title="重载、覆盖、隐藏（重定义）的对比"></a>重载、覆盖、隐藏（重定义）的对比</h2><p> <strong>重载：两个函数在同一个作用域，函数名相同但是参数略有不同</strong></p>
+<p><strong>重写：两个函数分别在基类和子类，返回类型、函数名、参数都必须相同且是虚函数</strong></p>
+<p><strong>重定义：两个函数分别在基类和派生类，函数名相同但不构成重写</strong></p>
+<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><h2 id="抽象类的概念"><a href="#抽象类的概念" class="headerlink" title="抽象类的概念"></a>抽象类的概念</h2><p>在了解抽象类之前，要先理解什么是纯虚函数</p>
+<blockquote>
+<p>在基类中仅仅给出声明，不对虚函数实现定义，而是在派生类中实现。这个虚函数称为纯虚函数。普通函数如果仅仅给出它的声明而没有实现它的函数体，这是编译不过的。纯虚函数没有函数体。</p>
+<p>纯虚函数需要在声明之后加个&#x3D;0。</p>
+</blockquote>
+<blockquote>
+<p>含有纯虚函数的类被称为抽象类。抽象类只能作为派生类的基类，不能定义对象，但可以定义指针。在派生类实现该纯虚函数后，定义抽象类对象的指针，并指向或引用子类对象。</p>
+</blockquote>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201155537.png" alt="img"></p>
+<p>在父类Buy里面，我声明了一个Ticket的纯虚函数，同时在继承的两个子类里面重写，然后调用即可得到对应的结果。</p>
+<h3 id="接口继承和实现继承"><a href="#接口继承和实现继承" class="headerlink" title="接口继承和实现继承"></a>接口继承和实现继承</h3><p>普通函数的继承是一种实现继承，可以直接使用函数。</p>
+<p>虚函数的继承是接口继承，只是继承了对应的接口，实际内容需要重写。</p>
+<p>如果不实现多态，不要把函数定义为虚函数。</p>
+<h1 id="多态的原理"><a href="#多态的原理" class="headerlink" title="多态的原理"></a>多态的原理</h1><h2 id="虚函数表"><a href="#虚函数表" class="headerlink" title="虚函数表"></a>虚函数表</h2><p>存在虚函数的类都有一个虚函数表，称之为虚表。</p>
+<p>虚表由类对象里面指向虚表的指针所指，这个指针称之为虚指针（vptr，一般是类里面的第一个成员）。</p>
+<p>虚表里面放着的是类里面成员函数指针。</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201155501.png" alt="img"></p>
+<p>上图，一般来说Base类里面只有一个int，而函数会放到公共区不算大小，应该是4，但是这里是8，可见Fun1占了四个字节的大小，为了看的清晰一点，创建一个对象出来</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201155559.png" alt="img"></p>
+<p>在监视里面可以看到正如刚刚所说多了应该vptr，这就是虚表指针，指向的是虚表的地址，而虚表里面放着的正是虚函数的地址。</p>
+<p>这里就直接说结论吧，证明过程网上都传烂了。</p>
+<blockquote>
+<p><strong>1、派生类也有一个虚表，如果虚函数完成了重写，那么虚表里面函数的地址是重写后的地址，也就是说两个虚表里面如果完成了重写，那么同名函数的函数指针地址是不一样的，所以重写也叫做覆盖。</strong></p>
+<p><strong>2、如果继承下来的函数是虚函数，就会被放进虚表，如果不是，则不会进入虚表，但是会放在后面。</strong></p>
+<p><strong>3、虚表的本质是一个存放虚函数指针的数组，由最后的nullptr结尾。</strong></p>
+<p><strong>4、虚函数的生成：派生类先拷贝父类的虚表，如果派生类自己重写了虚函数，则在对应位置覆盖，如果派生类有新增的虚函数，会被放到最后。</strong></p>
+<p><strong>5、虚函数存在虚表里面，虚表存在对象里面。</strong></p>
+<p><strong>6、虚表存的是指针，不是函数。</strong></p>
+</blockquote>
+<h2 id="多态的原理-1"><a href="#多态的原理-1" class="headerlink" title="多态的原理"></a>多态的原理</h2><p>当指针指向某一个对象的时候，这个指针会在对象的虚表里面找到对应的虚函数。</p>
+<p>这样就可以解释为什么要完成虚函数的覆盖和为什么要用指针和引用调用。</p>
+<h2 id="动态绑定与静态绑定"><a href="#动态绑定与静态绑定" class="headerlink" title="动态绑定与静态绑定"></a>动态绑定与静态绑定</h2><p>静态绑定（前期绑定）可以理解为在编译的时候就确定了调用哪个函数，比如说函数重载，虽然看上去调用是函数名一样，但是底层（函数名）是不一样的。</p>
+<p>动态绑定（后期绑定）是程序在运行的时候，根据拿到的类型来确定行为的，比如上面的多态，先要在虚表里面找到确切的虚函数地址再进行调用。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/07/23/%E5%A4%9A%E6%80%81/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/07/23/%E5%A4%9A%E6%80%81/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

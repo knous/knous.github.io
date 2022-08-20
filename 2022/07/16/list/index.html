@@ -1,0 +1,543 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >list</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h1 id="list"><a href="#list" class="headerlink" title="list"></a>list</h1><h1 id="list的介绍及使用"><a href="#list的介绍及使用" class="headerlink" title="list的介绍及使用"></a>list的介绍及使用</h1><h2 id="list的介绍"><a href="#list的介绍" class="headerlink" title="list的介绍"></a>list的介绍</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/list/list/?kw=list" title="list - C++ Reference (cplusplus.com)">list - C++ Reference (cplusplus.com)</a></p>
+<p>list的详细介绍可以看上面的网站，这里只说一下重点地方</p>
+<blockquote>
+<ol>
+<li>list是可以在常数范围内在任意位置进行插入和删除的序列式容器，并且该容器可以前后双向迭代。</li>
+<li>list的底层是双向链表结构，双向链表中每个元素存储在互不相关的独立节点中，在节点中通过指针指其前一个元素和后一个元素。</li>
+<li>list与forward_list非常相似：最主要的不同在于forward_list是单链表，只能朝前迭代，已让其更简单高效。</li>
+<li>与其他的序列式容器相比(array，vector，deque)，list通常在任意位置进行插入、移除元素的执行效率更好。</li>
+<li>与其他序列式容器相比，list和forward_list最大的缺陷是不支持任意位置的随机访问，比如：要访问list的第6个元素，必须从已知的位置(比如头部或者尾部)迭代到该位置，在这段位置上迭代需要线性的时间开销；list还需要一些额外的空间，以保存每个节点的相关联信息(对于存储类型较小元素的大list来说这可能是一个重要的因素)</li>
+</ol>
+</blockquote>
+<p>（ 这里如果看的不是很明白，可以去看我之前写过的链表的文章，里面先从单链表介绍，后面就介绍了带头的双向循环链表）</p>
+<hr>
+<h2 id="list的使用"><a href="#list的使用" class="headerlink" title="list的使用"></a>list的使用</h2><table>
+<thead>
+<tr>
+<th>构造函数（ (constructor)）</th>
+<th>接口说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>list()</td>
+<td>构造空的list</td>
+</tr>
+<tr>
+<td>list (size_type n, const value_type&amp; val &#x3D; value_type())</td>
+<td>构造的list中包含n个值为val的元素</td>
+</tr>
+<tr>
+<td>list (const list&amp; x)</td>
+<td>拷贝构造函数</td>
+</tr>
+<tr>
+<td>list (InputIterator first, InputIterator last)</td>
+<td>用[first, last)区间中的元素构造list</td>
+</tr>
+</tbody></table>
+<p>经典的几个构造：</p>
+<p>无参</p>
+<p>开辟n个空间并初始化为val，如果没有val的值，默认为0</p>
+<p>用一个list初始化另一个list</p>
+<p>用一个迭代器区间初始化另一个list</p>
+<p>具体可以看下面</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201145231.png"></p>
+<hr>
+<h2 id="list-iterator的使用"><a href="#list-iterator的使用" class="headerlink" title="list iterator的使用"></a>list iterator的使用</h2><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>接口说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin +</td>
+<td></td>
+</tr>
+<tr>
+<td>end</td>
+<td>返回第一个元素的迭代器+返回最后一个元素下一个位置的迭代器</td>
+</tr>
+<tr>
+<td>rbegin +</td>
+<td></td>
+</tr>
+<tr>
+<td>rend</td>
+<td>返回第一个元素的reverse_iterator,即end位置，返回最后一个元素下一个位置的</td>
+</tr>
+<tr>
+<td>reverse_iterator,即begin位置</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>这个其实跟vector的差不了多少，暂且可以理解为是一个指针指向list的某一个节点，这里的演示可以看上面的l3，遍历就是用的begin和end，同时范围for（auto）的底层实际上也是调用的迭代器</p>
+<h2 id="list-capacity"><a href="#list-capacity" class="headerlink" title="list capacity"></a>list capacity</h2><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>接口说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>empty</td>
+<td>检测list是否为空，是返回true，否则返回false</td>
+</tr>
+<tr>
+<td>size</td>
+<td>返回list中有效节点的个数</td>
+</tr>
+</tbody></table>
+<h2 id="list-element-access"><a href="#list-element-access" class="headerlink" title="list element access"></a>list element access</h2><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>接口说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>front</td>
+<td>返回list的第一个节点中值的引用</td>
+</tr>
+<tr>
+<td>back</td>
+<td>返回list的最后一个节点中值的引用</td>
+</tr>
+</tbody></table>
+<h2 id="list-modifiers"><a href="#list-modifiers" class="headerlink" title="list modifiers"></a>list modifiers</h2><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>接口说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>push_front</td>
+<td>在list首元素前插入值为val的元素</td>
+</tr>
+<tr>
+<td>pop_front</td>
+<td>删除list中第一个元素</td>
+</tr>
+<tr>
+<td>push_back</td>
+<td>在list尾部插入值为val的元素</td>
+</tr>
+<tr>
+<td>pop_back</td>
+<td>删除list中最后一个元素</td>
+</tr>
+<tr>
+<td>insert</td>
+<td>在list position 位置中插入值为val的元素</td>
+</tr>
+<tr>
+<td>erase</td>
+<td>删除list position位置的元素</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>交换两个list中的元素</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>清空list中的有效元素</td>
+</tr>
+</tbody></table>
+<p>基本的函数操作就是这么多，实际上这些如果之前看明白了vector和string的话，这些即使不演示也能想个大概…</p>
+<h2 id="list的迭代器失效"><a href="#list的迭代器失效" class="headerlink" title="list的迭代器失效"></a>list的迭代器失效</h2><p>这里说一下，之前的迭代器失效为非是两种情况：</p>
+<p>1、迭代器指向错误空间</p>
+<p>2、迭代器指向错误数据</p>
+<p>但是在list这里迭代器失效只会有一种问题，就是所指向的位置被释放（delete），因为list的底层实际上是一个带头的双向循环链表，所以插入的时候不会引发迭代器失效，只有删除的时候才会，同时失效的只有被删除的那个节点的迭代器，其他迭代器是不会失效的</p>
+<hr>
+<h1 id="模拟实现list"><a href="#模拟实现list" class="headerlink" title="模拟实现list"></a>模拟实现list</h1><p>首先我们定一个命名空间：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">namespace knous</span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一开始，这里面什么都没有，这里就快速构造一个list，跟vector一样，这里我们要用模板，因为不确定接收的是什么类似的数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">    	struct list_node</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		list_node* next;</span><br><span class="line">		list_node* prev;</span><br><span class="line">		T _data;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	template&lt;class T&gt;</span><br><span class="line">	class list</span><br><span class="line">	&#123;</span><br><span class="line">		typedef list_node Node;</span><br><span class="line">	public:</span><br><span class="line"></span><br><span class="line">	private:</span><br><span class="line">		Node* _head;</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>首先list里面只有一个Node*的指针，这个Node是被重命名过后的，它是list_node的一个结构体，这个结构体就是我们的节点，里面放着上一个节点和下一个节点的地址，还有数据</p>
+<p>因为Node是我们自定义类型，所以这里得写一个默认构造，这个构造也很简单，list里面放着的是我们的头节点，头节点在没有数据的时候它的上一个指针和下一个指针都应该指向自己，里面的数据就用默认的构造即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">list()</span><br><span class="line">		&#123;</span><br><span class="line">			_head = new node;</span><br><span class="line">			_head-&gt;next = _head;</span><br><span class="line">			_head-&gt;prev = _head;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后来实现与一个尾插：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void push_back(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			Node* newnode = new Node(x);</span><br><span class="line">			Node* tail = _head-&gt;_prev;</span><br><span class="line">			tail-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_prev = tail;</span><br><span class="line">			newnode-&gt;_next = _head;</span><br><span class="line">			_head-&gt;_prev = newnode;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里用了Node的构造函数，所以这里要写一下Node（list_node）的默认构造：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list_node(const T&amp; val = T())</span><br><span class="line">			:_next(nullptr)</span><br><span class="line">			, _prev(nullptr)</span><br><span class="line">			, _data(val)</span><br><span class="line">		&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里给了一个缺省值，这个是调用T类型的默认构造，假设是int，那int的默认构造就是0</p>
+<p>然后我们既然已经可以插入数据了，那我们是不是就要能够打印出来看看？</p>
+<p>如何打印？</p>
+<p>我们知道vector的打印可以用下标，可以用迭代器，但是list呢？</p>
+<p>vector的底层实际上是一块连续的空间，是一块数组，所以它能直接++、–，list的底层是带头的双向循环链表，里面的成员是某一个节点的指针，我们拿到这个指针所指向的地址，可以直接++吗？</p>
+<p>不能，但是我们有没有办法可以让它能直接++呢？</p>
+<p>可以，我们重新定义一个类出来，这个类的名字就叫iterator</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">	class __list_iteartor</span><br><span class="line">	&#123;</span><br><span class="line">		typedef list_node&lt;T&gt; Node;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		Node* _node;</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这个类里面也只有一个参数，就是Node*的指针，它的本质其实跟list一样，都是指向某一个节点的指针，但是我们可以通过对它的重载，来让它具备++、–的功能，所以我们先写一个构造出来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__list_iteartor(Node* Node)</span><br><span class="line">			:_node(Node)</span><br><span class="line">		&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>它的构造需要一个Node*的指针，然后我们直接赋值上去即可</p>
+<p>然后我们写一个begin和end函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">iterator begin()</span><br><span class="line">   		&#123;</span><br><span class="line">			return iterator(_head-&gt;_next);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator end()</span><br><span class="line">		&#123;</span><br><span class="line">			return iterator(_head);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>写好了如上迭代器，我们还要解决的一个问题是，迭代器本身是一个指针，我们要通过<em>解引用来获得这里的数据，但是iterator里面也是一个指针，指针指向的位置是一个节点的地址，我们要的不是地址，而是那个地址的数据，所以这里我们要重载一下</em>运算符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">T operator*()</span><br><span class="line">		&#123;</span><br><span class="line">			return _node-&gt;_data;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>while的判断条件的！&#x3D;，所以重载！&#x3D;运算符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bool operator!=(const self&amp; it)</span><br><span class="line">		&#123;</span><br><span class="line">			return _node != it._node;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>打印了这里的数据完了我们还要让it指向下一个位置，所以重载++运算符</p>
+<p>因为每次都写__list_iteartor<T>实在过于麻烦，这里重命名为self</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self operator++(int)</span><br><span class="line">		&#123;</span><br><span class="line">			_node = _node-&gt;_next;</span><br><span class="line">			return _node;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>因为是后置++，所以在接收里面要加上一个int，这里既然后置++都写了，那就再写一个前置++，前置–和后置–</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">self operator++()</span><br><span class="line">		&#123;</span><br><span class="line">			Node* tmp(*this);</span><br><span class="line">			_node = _node-&gt;_next;</span><br><span class="line">			return tmp;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		self operator--(int)</span><br><span class="line">		&#123;</span><br><span class="line">			_node = _node-&gt;_prev;</span><br><span class="line">			return _node;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		self operator--()</span><br><span class="line">		&#123;</span><br><span class="line">			Node* tmp(*this);</span><br><span class="line">			_node = _node-&gt;_prev;</span><br><span class="line">			return tmp;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>至此，看一下效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201146630.png"></p>
+<p>没有问题</p>
+<p>既然尾插有了，那我们把剩下几个也写一下：</p>
+<p>尾删</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void pop_back()</span><br><span class="line">		&#123;</span><br><span class="line">			Node* tail = _head-&gt;_prev;</span><br><span class="line">			_head-&gt;_prev = tail-&gt;_prev;</span><br><span class="line">			tail-&gt;_prev-&gt;_next = _head;</span><br><span class="line">			delete tail;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>头插</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void push_front(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			Node* newnode = new Node(x);</span><br><span class="line">			Node* next = _head-&gt;_next;</span><br><span class="line">			_head-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_next = next;</span><br><span class="line">			next-&gt;_prev = newnode;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>头删</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void pop_front()</span><br><span class="line">		&#123;</span><br><span class="line">			Node* next = _head-&gt;_next;</span><br><span class="line">			_head-&gt;_next = next-&gt;_next;</span><br><span class="line">			next-&gt;_next-&gt;_prev = _head;</span><br><span class="line">			delete next;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>至此，再看一遍前面写的效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201146729.png"></p>
+<p>写到这里基本也就差不多了，最后再写中间插入删除就可以结束了，至于size和capacity，这里大家可以自己尝试写一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">iterator insert(iterator pos, const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			Node* newnode = new Node(x);</span><br><span class="line">			Node* cur = pos._node;</span><br><span class="line">			Node* prev = cur-&gt;_prev;</span><br><span class="line"></span><br><span class="line">			prev-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_next = cur;</span><br><span class="line">			newnode-&gt;_prev = prev;</span><br><span class="line">			cur-&gt;_prev = newnode;</span><br><span class="line"></span><br><span class="line">			return iterator(newnode);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">iterator erase(iterator pos)</span><br><span class="line">		&#123;</span><br><span class="line">			Node* cur = pos-&gt;_node;</span><br><span class="line">			Node* prev = cur-&gt;_prev;</span><br><span class="line">			Node* next = cur-&gt;_next;</span><br><span class="line"></span><br><span class="line">			prev-&gt;_next = next;</span><br><span class="line">			next-&gt;_prev = prev;</span><br><span class="line">			delete cur;</span><br><span class="line"></span><br><span class="line">			return iterator(next);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意这里为什么删除为什么要返回的是下一个节点的地址，是为了防止出现迭代器失效的问题，可以参考上面讲的迭代器的部分，因为失效的只有当前被删除的节点，而之后节点的迭代器是没有问题的，所以返回的是下一个节点的迭代器。</p>
+<p>写到这里，我们可以考虑优化一下，头插头删 尾插尾删，是不是都可以复用insert和erase？</p>
+<p>然后就写出第二版：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">void push_back(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* newnode = new Node(x);</span><br><span class="line">			Node* tail = _head-&gt;_prev;</span><br><span class="line">			tail-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_prev = tail;</span><br><span class="line">			newnode-&gt;_next = _head;</span><br><span class="line">			_head-&gt;_prev = newnode;*/</span><br><span class="line">			insert(end(), x);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void pop_back()</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* tail = _head-&gt;_prev;</span><br><span class="line">			_head-&gt;_prev = tail-&gt;_prev;</span><br><span class="line">			tail-&gt;_prev-&gt;_next = _head;</span><br><span class="line">			delete tail;*/</span><br><span class="line">			erase(--end());</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void push_front(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* newnode = new Node(x);</span><br><span class="line">			Node* next = _head-&gt;_next;</span><br><span class="line">			_head-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_next = next;</span><br><span class="line">			next-&gt;_prev = newnode;*/</span><br><span class="line">			insert(begin(), x);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void pop_front()</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* next = _head-&gt;_next;</span><br><span class="line">			_head-&gt;_next = next-&gt;_next;</span><br><span class="line">			next-&gt;_next-&gt;_prev = _head;</span><br><span class="line">			delete next;*/</span><br><span class="line"></span><br><span class="line">			erase(begin());</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>结束了吗？</p>
+<p>没有，这里还要考虑一个其他问题，就是解引用的部分，因为解引用会有两种情况：</p>
+<p>第一种：我只读，打印</p>
+<p>第二种：我不仅要读末尾还要修改</p>
+<p>所以这里就会出现一个问题，const的迭代器怎么处理？</p>
+<p>为了const迭代器专门写一个类也过于繁琐不堪，所以这里就有一个写法是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedef __list_iteartor&lt;T,T&amp;,T*&gt; iterator;</span><br><span class="line">		typedef __list_iteartor&lt;T, const T&amp;, const T*&gt; const_iterator;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>两个模板，第一个模板是普通类型，传过去的是引用和别名，第二个模板是加了const的，传过去的就是加了const修改的版本</p>
+<p>所以最后再将list完善一下功能：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const_iterator begin() const</span><br><span class="line">		&#123;</span><br><span class="line">			return const_iterator(_head-&gt;_next);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const_iterator end() const</span><br><span class="line">		&#123;</span><br><span class="line">			return const_iterator(_head);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后构造的时候也有用一个区间构造另一个，&#x3D;号的重载，这里就一起写了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void empty_Init()</span><br><span class="line">		&#123;</span><br><span class="line">			_head = new Node();</span><br><span class="line">			_head-&gt;_next = _head;</span><br><span class="line">			_head-&gt;_prev = _head;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		template&lt;class InputIterator&gt;</span><br><span class="line">		list(InputIterator first, InputIterator last)</span><br><span class="line">		&#123;</span><br><span class="line">			empty_Init();</span><br><span class="line">			while (first != last)</span><br><span class="line">			&#123;</span><br><span class="line">				push_back(*first);</span><br><span class="line">				++first;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>因为迭代器区间是一个不肯定类型，所以要用模板，这里在用区间插入的时候最好先初始化一下，所以这里调用了一个空初始化的函数，跟无参构造的时候是一样的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">void swap(list&lt;T&gt; it)</span><br><span class="line">		&#123;</span><br><span class="line">			std::swap(it._head, _head);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		list(const T&amp; it)</span><br><span class="line">		&#123;</span><br><span class="line">			empty_Init();</span><br><span class="line">			list&lt;T&gt; tmp(it.begin(), it.end());</span><br><span class="line">			swap(tmp);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		list&lt;T&gt;&amp; operator=(list&lt;T&gt; it)</span><br><span class="line">		&#123;</span><br><span class="line">			swap(it);</span><br><span class="line">			return *this;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里用的是现代写法，因为带头链表的交换拷贝构造完了只需要交换头节点，因为形参是实参的临时拷贝，所以这里直接用形参然后交换，然后因为形参出了作用域就销毁，所以它会自动释放</p>
+<p>最后放上全部代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br></pre></td><td class="code"><pre><span class="line">#pragma once</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;assert.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">namespace knous</span><br><span class="line">&#123;</span><br><span class="line">	template&lt;class T&gt;</span><br><span class="line">	struct list_node</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		list_node(const T&amp; val = T())</span><br><span class="line">			:_next(nullptr)</span><br><span class="line">			, _prev(nullptr)</span><br><span class="line">			, _data(val)</span><br><span class="line">		&#123;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		list_node* _next;</span><br><span class="line">		list_node* _prev;</span><br><span class="line">		T _data;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	template&lt;class T, class Ref,class Ptr &gt;</span><br><span class="line">	struct __list_iteartor</span><br><span class="line">	&#123;</span><br><span class="line">		typedef list_node&lt;T&gt; Node;</span><br><span class="line">		typedef __list_iteartor&lt;T, Ref, Ptr &gt; self;</span><br><span class="line"></span><br><span class="line">		__list_iteartor(Node* Node)</span><br><span class="line">			:_node(Node)</span><br><span class="line">		&#123;&#125;</span><br><span class="line"></span><br><span class="line">		Ref operator*()</span><br><span class="line">		&#123;</span><br><span class="line">			return _node-&gt;_data;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Ptr operator-&gt;()</span><br><span class="line">		&#123;</span><br><span class="line">			//return &amp;(operator*());</span><br><span class="line">			return &amp;_node-&gt;_data;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		bool operator!=(const self&amp; it)</span><br><span class="line">		&#123;</span><br><span class="line">			return _node != it._node;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		self operator++(int)</span><br><span class="line">		&#123;</span><br><span class="line">			_node = _node-&gt;_next;</span><br><span class="line">			return _node;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		self operator++()</span><br><span class="line">		&#123;</span><br><span class="line">			Node* tmp(*this);</span><br><span class="line">			_node = _node-&gt;_next;</span><br><span class="line">			return tmp;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		self operator--(int)</span><br><span class="line">		&#123;</span><br><span class="line">			_node = _node-&gt;_prev;</span><br><span class="line">			return _node;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		self operator--()</span><br><span class="line">		&#123;</span><br><span class="line">			_node = _node-&gt;_prev;</span><br><span class="line">			return _node;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Node* _node;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	template&lt;class T&gt;</span><br><span class="line">	class list</span><br><span class="line">	&#123;</span><br><span class="line">		typedef list_node&lt;T&gt; Node;</span><br><span class="line">		typedef __list_iteartor&lt;T,T&amp;,T*&gt; iterator;</span><br><span class="line">		typedef __list_iteartor&lt;T, const T&amp;, const T*&gt; const_iterator;</span><br><span class="line"></span><br><span class="line">	public:</span><br><span class="line"></span><br><span class="line">		list()</span><br><span class="line">		&#123;</span><br><span class="line">			_head = new Node();</span><br><span class="line">			_head-&gt;_next = _head;</span><br><span class="line">			_head-&gt;_prev = _head;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void empty_Init()</span><br><span class="line">		&#123;</span><br><span class="line">			_head = new Node();</span><br><span class="line">			_head-&gt;_next = _head;</span><br><span class="line">			_head-&gt;_prev = _head;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		template&lt;class InputIterator&gt;</span><br><span class="line">		list(InputIterator first, InputIterator last)</span><br><span class="line">		&#123;</span><br><span class="line">			empty_Init();</span><br><span class="line">			while (first != last)</span><br><span class="line">			&#123;</span><br><span class="line">				push_back(*first);</span><br><span class="line">				++first;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void swap(list&lt;T&gt; it)</span><br><span class="line">		&#123;</span><br><span class="line">			std::swap(it._head, _head);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		list(const T&amp; it)</span><br><span class="line">		&#123;</span><br><span class="line">			empty_Init();</span><br><span class="line">			list&lt;T&gt; tmp(it.begin(), it.end());</span><br><span class="line">			swap(tmp);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		list&lt;T&gt;&amp; operator=(list&lt;T&gt; it)</span><br><span class="line">		&#123;</span><br><span class="line">			swap(it);</span><br><span class="line">			return *this;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator begin()</span><br><span class="line">		&#123;</span><br><span class="line">			return iterator(_head-&gt;_next);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const_iterator begin() const</span><br><span class="line">		&#123;</span><br><span class="line">			return const_iterator(_head-&gt;_next);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator end()</span><br><span class="line">		&#123;</span><br><span class="line">			return iterator(_head);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		const_iterator end() const</span><br><span class="line">		&#123;</span><br><span class="line">			return const_iterator(_head);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void push_back(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* newnode = new Node(x);</span><br><span class="line">			Node* tail = _head-&gt;_prev;</span><br><span class="line">			tail-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_prev = tail;</span><br><span class="line">			newnode-&gt;_next = _head;</span><br><span class="line">			_head-&gt;_prev = newnode;*/</span><br><span class="line">			insert(end(), x);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void pop_back()</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* tail = _head-&gt;_prev;</span><br><span class="line">			_head-&gt;_prev = tail-&gt;_prev;</span><br><span class="line">			tail-&gt;_prev-&gt;_next = _head;</span><br><span class="line">			delete tail;*/</span><br><span class="line">			erase(--end());</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void push_front(const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* newnode = new Node(x);</span><br><span class="line">			Node* next = _head-&gt;_next;</span><br><span class="line">			_head-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_next = next;</span><br><span class="line">			next-&gt;_prev = newnode;*/</span><br><span class="line">			insert(begin(), x);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		void pop_front()</span><br><span class="line">		&#123;</span><br><span class="line">			/*Node* next = _head-&gt;_next;</span><br><span class="line">			_head-&gt;_next = next-&gt;_next;</span><br><span class="line">			next-&gt;_next-&gt;_prev = _head;</span><br><span class="line">			delete next;*/</span><br><span class="line"></span><br><span class="line">			erase(begin());</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator insert(iterator pos, const T&amp; x)</span><br><span class="line">		&#123;</span><br><span class="line">			Node* newnode = new Node(x);</span><br><span class="line">			Node* cur = pos._node;</span><br><span class="line">			Node* prev = cur-&gt;_prev;</span><br><span class="line"></span><br><span class="line">			prev-&gt;_next = newnode;</span><br><span class="line">			newnode-&gt;_next = cur;</span><br><span class="line">			newnode-&gt;_prev = prev;</span><br><span class="line">			cur-&gt;_prev = newnode;</span><br><span class="line"></span><br><span class="line">			return iterator(newnode);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		iterator erase(iterator pos)</span><br><span class="line">		&#123;</span><br><span class="line">			assert(pos != end());</span><br><span class="line">			Node* cur = pos._node;</span><br><span class="line">			Node* prev = cur-&gt;_prev;</span><br><span class="line">			Node* next = cur-&gt;_next;</span><br><span class="line"></span><br><span class="line">			prev-&gt;_next = next;</span><br><span class="line">			next-&gt;_prev = prev;</span><br><span class="line">			delete cur;</span><br><span class="line"></span><br><span class="line">			return iterator(next);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	private:</span><br><span class="line">		Node* _head;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>至此，list大部分功能都实现完了，希望这篇list看完你对list会有更深的理解</p>
+<p>Thanks for watching</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/07/16/list/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/07/16/list/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

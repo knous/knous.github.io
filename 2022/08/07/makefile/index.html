@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >makefile</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<p> 这里简单用Linux写第一个程序和用这个程序来帮我们理解make&#x2F;Makefile</p>
+<p>-–</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%d\n&quot;,xxx);</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>简单的第一个小程序，首先我们要了解\r和\n的区别：</p>
+<p>\n：直接向下移动一行，并不移动左右</p>
+<p>\r：回到当前行的最左边</p>
+<p>假设我们要打印9-1</p>
+<p>用\n，就会出现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">9</span><br><span class="line">8</span><br><span class="line">7</span><br><span class="line">6</span><br><span class="line">5</span><br><span class="line">4</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>但是如果用\r，就会出现在一个位置一直变化数字，从9变到1，这个不太好演示，但之后可以直接看效果。</p>
+<p>另外要说的一个就是缓冲区的概念</p>
+<p>假设我们要打印一个变量，它应该是这样的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%d\n&quot;,xxx)</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>这里的\n就起到了一个刷新缓冲区的效果，如果没有这个\n，那这个变量会先放到缓冲区，如果在这个过程中有什么sleep之类的暂停，那这个变量就不会被拿出来，直到暂停结束。</p>
+<p>假设我们用了sleep（)，但是又想点让屏幕显示</p>
+<p>可以用fflush（stdout），直接刷新</p>
+<p>-———</p>
+<p>这里就正式开始写</p>
+<p>首先我们要用到上面提到的函数：</p>
+<p>usleep（以微秒为单位暂停一段时间）</p>
+<p>fflush（刷新流中的信息）</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203105.png" alt="img"></p>
+<p> 编译一下；</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203037.png" alt="img"><img src="/" alt="点击并拖拽以移动"></p>
+<p> 运行：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203279.png" alt="img"></p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203611.png" alt="img"></p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203318.png" alt="img"></p>
+<p> 可以看到效果不错，但是刚刚我们是用gcc编译的，而这篇文章标题的另一部分是makefile，这个makefile又是什么东西？</p>
+<p>-——-</p>
+<p>Makefile</p>
+<blockquote>
+<p>会不会写makefile，从一个侧面说明了一个人是否具备完成大型工程的能力<br> makefile的效果就是，当一个工程的文件很多，有的文件要先编译，有的要后编译，有的要重新编译，而这些如果要手动，是相当麻烦的事</p>
+<p>makefile的好处就是，只要写好，它只需要一个make即可完成编译</p>
+</blockquote>
+<p>就拿我们刚刚写的代码，这里写一个示例：</p>
+<p>用makefile之前，我们要先建立一个makefile的文件</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203370.png" alt="img"></p>
+<p>随后这么写，这里说一下格式，第一个test是生成的文件名，一个冒号后面跟着的是这个生成的文件需要什么来生成，然后回车，用tab开头，写编译的方式 ，随后我们保存退出</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203454.png" alt="img"></p>
+<p>可以看到外面现在是有一个test的，这个时候我们输入make+回车：</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203336.png" alt="img"></p>
+<p>它会提示说test已经存在，不需要生成</p>
+<p>这个时候我们可以直接删除这个test吗，还可以用.PHONY来让它生成，这里先讲第一个，直接删除test</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203941.png" alt="img"></p>
+<p>再进行make</p>
+<p> <img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203273.png" alt="img"></p>
+<p>可以看到它自动调用了我们写的执行过程，然后生成了test文件</p>
+<p>这里说回第二种方式：.PHONY</p>
+<p>这个的意思就是，总是被执行的，可以这么理解，每个文件都有生成时间，这里如果你没有进行修改，那make是不会帮你生成新的，但是如果加上了.PHONY，make就不会管有没有修改更新，它会直接生成新的文件</p>
+<p>一般，我们还会写一个析构：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203621.png" alt="img"></p>
+<p> 如果调用的话，就这么调用：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203371.png" alt="img"></p>
+<p> 然后我们ls看一下文件</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201203033.png" alt="img"></p>
+<p>test已经不在了</p>
+<p>这里解释一下，make的原理：</p>
+<blockquote>
+<p>首先它会找名为makefile的文件，然后根据这个文件的内容来生成文件</p>
+<p>如果这个生成的文件在目录里面找不到，或者是更新时间比之前生成的新，它会生成一个新的，否则不会生成</p>
+</blockquote>
+<p>-——-</p>
+<p>以上就是本篇文章的全部内容，希望对你有所帮助 </p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/08/07/makefile/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/08/07/makefile/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

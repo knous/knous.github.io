@@ -1,0 +1,553 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >map/set</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<p>这篇文章主要是讲map、set的接口及应用，模拟实现在之后</p>
+<p>-——-</p>
+<h1 id="关联式容器"><a href="#关联式容器" class="headerlink" title="关联式容器"></a>关联式容器</h1><p>在之前，我们学过vector、list、deque，这些称之为序列式容器，因为其底层是线性的，里面存储的就是元素本身。</p>
+<p>关联式容器的区别就在于，里面存储的不再是单独的一个元素，它存储的是键值对（key，value），在检索的时候效率会更高。</p>
+<h1 id="键值对"><a href="#键值对" class="headerlink" title="键值对"></a>键值对</h1><p>那什么是键值对？</p>
+<p>可以这么理解，其本身是一个结构体，里面是这样的；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T1, class T2&gt;</span><br><span class="line">struct pair</span><br><span class="line">&#123;</span><br><span class="line">T1 first;</span><br><span class="line">T2 second;</span><br><span class="line">pair()</span><br><span class="line">: first(T1())</span><br><span class="line">, second(T2())</span><br><span class="line">&#123;&#125;</span><br><span class="line">pair(const T1&amp; a, const T2&amp; b)</span><br><span class="line">: first(a)</span><br><span class="line">, second(b)</span><br><span class="line">&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>在里面有两个元素，这两个元素都是模板类型，里面第一个类型的T1，这个就是键值对里面的键（Key），而T2，就是Key对应的值（Value）。</p>
+<p>我们在使用的时候，通过Key来找到对应的Value。</p>
+<p>这里面提供了两个默认构造看看就好，不算难理解。</p>
+<h2 id="树形结构的关联式容"><a href="#树形结构的关联式容" class="headerlink" title="树形结构的关联式容"></a>树形结构的关联式容</h2><p>根据应用场景不同，有以下几种：</p>
+<blockquote>
+<p>set</p>
+<p>muitiset</p>
+<p>map</p>
+<p>multimap</p>
+</blockquote>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/set/set/?kw=set">set - C++ Reference (cplusplus.com)</a></p>
+<p>模板参数：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158843.png" alt="img"><img src="/" alt="点击并拖拽以移动"></p>
+<p>这里简单概括一下其内容；</p>
+<blockquote>
+<p>set里面的内容是唯一的</p>
+<p>放进去就不能被修改，但可以插入或者删除</p>
+<p>set里面是排好序的（迭代器实现的是中序，打印出来是升序）</p>
+<p>底层是二叉搜索树（红黑树）实现</p>
+<p>跟map不同，map是&lt;Key,Value&gt;,set是&lt;Value,Value&gt;,Value就是对应的Key</p>
+<p>查找效率是logN</p>
+</blockquote>
+<p> 这里直接看它的接口：</p>
+<h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set (const Compare&amp; comp &#x3D; Compare(), const Allocator&amp;  		&#x3D; Allocator() );</td>
+<td>构造空的set</td>
+</tr>
+<tr>
+<td>set (InputIterator first, InputIterator last, const  		Compare&amp; comp &#x3D; Compare(), const Allocator&amp; &#x3D;  		Allocator() );</td>
+<td>用[first, last)区  		间中的元素构造  		set</td>
+</tr>
+<tr>
+<td>set ( const set&lt;Key,Compare,Allocator&gt;&amp; x);</td>
+<td>set的拷贝构造</td>
+</tr>
+</tbody></table>
+<p>用的最多的应该是第一个，其次是第二个，拷贝构造不算多 </p>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><table>
+<thead>
+<tr>
+<th>iterator begin()</th>
+<th>返回set中起始位置元素的迭代器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>iterator end()</th>
+<th>返回set中最后一个元素后面的迭代器</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>const_iterator cbegin()  		const</td>
+<td>返回set中起始位置元素的const迭代器</td>
+</tr>
+<tr>
+<td>const_iterator cend() const</td>
+<td>返回set中最后一个元素后面的const迭代器</td>
+</tr>
+<tr>
+<td>reverse_iterator rbegin()</td>
+<td>返回set第一个元素的反向迭代器，即end</td>
+</tr>
+<tr>
+<td>reverse_iterator rend()</td>
+<td>返回set最后一个元素下一个位置的反向迭代器，  		即rbegin</td>
+</tr>
+<tr>
+<td>const_reverse_iterator  		crbegin() const</td>
+<td>返回set第一个元素的反向const迭代器，即cend</td>
+</tr>
+<tr>
+<td>const_reverse_iterator  		crend() const</td>
+<td>返回set最后一个元素下一个位置的反向const迭  		代器，即crbegin</td>
+</tr>
+</tbody></table>
+<p> 迭代器用法都一样，这里跟list、vector的都没什么区别</p>
+<h3 id="容量"><a href="#容量" class="headerlink" title="容量"></a>容量</h3><table>
+<thead>
+<tr>
+<th>bool empty ( ) const</th>
+<th>检测set是否为空，空返回true，否则返回true</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>size_type size() const</td>
+<td>返回set中有效元素的个数</td>
+</tr>
+</tbody></table>
+<p>用的不多，看看就好</p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pair&lt;iterator,bool&gt; insert (  		const value_type&amp; x )</td>
+<td>在set中插入元素x，实际插入的是&lt;x, x&gt;构成的  		键值对，如果插入成功，返回&lt;该元素在set中的  		位置，true&gt;,如果插入失败，说明x在set中已经  		存在，返回&lt;x在set中的位置，false&gt;</td>
+</tr>
+<tr>
+<td>void erase ( iterator position )</td>
+<td>删除set中position位置上的元素</td>
+</tr>
+<tr>
+<td>size_type erase ( const  		key_type&amp; x )</td>
+<td>删除set中值为x的元素，返回删除的元素的个数</td>
+</tr>
+<tr>
+<td>void erase ( iterator first,  		iterator last )</td>
+<td>删除set中[first, last)区间中的元素</td>
+</tr>
+<tr>
+<td>void swap (  		set&lt;Key,Compare,Allocator&gt;&amp;  		st );</td>
+<td>交换set中的元素</td>
+</tr>
+<tr>
+<td>void clear ( )</td>
+<td>将set中的元素清空</td>
+</tr>
+<tr>
+<td>iterator find ( const  		key_type&amp; x ) const</td>
+<td>返回set中值为x的元素的位置</td>
+</tr>
+<tr>
+<td>size_type count ( const  		key_type&amp; x ) const</td>
+<td>返回set中值为x的元素的个数</td>
+</tr>
+</tbody></table>
+<p>怎么说呢，这些其实看看就可以知道其是干什么的，这里就做个简单的例子：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158118.png" alt="img"></p>
+<h2 id="multiset"><a href="#multiset" class="headerlink" title="multiset"></a>multiset</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/set/multiset/?kw=multiset">multiset - C++ Reference (cplusplus.com)</a></p>
+<p>一句话解决：这个其实就是可以重复的set，除此之外就没什么区别，其他都跟set保持一致</p>
+<p>以上面的图举例：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158529.png" alt="img"></p>
+<p>接口都保持了一直，会用了set，mulset也就会了</p>
+<p> -–</p>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/map/map/?kw=map">map - C++ Reference (cplusplus.com)</a></p>
+<p>简单概括一下：</p>
+<blockquote>
+<p>map是关联性容器，跟set一样按照特定次序（比较Key）来存储对应的Value值</p>
+<p>map的key是不能重复的</p>
+<p>map里面的key和value是关联在一起的，取名pair（参考上面）</p>
+<p>支持下标访问（重点）</p>
+<p>同样是二叉搜索树（红黑树）</p>
+</blockquote>
+<p>模板声明：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158061.png" alt="img"></p>
+<p> 这个跟set不同的是有两个参数</p>
+<p>key：比较那个</p>
+<p>value：key对应的值</p>
+<p>Compare：比较办法，默认是比较key</p>
+<p>Alloc：暂且不管</p>
+<p>-–</p>
+<h3 id="构造-1"><a href="#构造-1" class="headerlink" title="构造"></a>构造</h3><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>map()</td>
+<td>构造一个空的map</td>
+</tr>
+</tbody></table>
+<p>注意，没有用迭代器区间来构造了，因为map是要有key和value的键值对</p>
+<h3 id="迭代器-1"><a href="#迭代器-1" class="headerlink" title="迭代器"></a>迭代器</h3><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>功能介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>begin()和end()</td>
+<td>begin:首元素的位置，end最后一个元素的下一个位置</td>
+</tr>
+<tr>
+<td>cbegin()和cend()</td>
+<td>与begin和end意义相同，但cbegin和cend所指向的元素不  		能修改</td>
+</tr>
+<tr>
+<td>rbegin()和rend()</td>
+<td>反向迭代器，rbegin在end位置，rend在begin位置，其  		++和–操作与begin和end操作移动相反</td>
+</tr>
+<tr>
+<td>crbegin()和crend()</td>
+<td>与rbegin和rend位置相同，操作相同，但crbegin和crend所  		指向的元素不能修改</td>
+</tr>
+</tbody></table>
+<p>正向反向，const&#x2F;不带const，迭代器都差不多</p>
+<h3 id="容量-1"><a href="#容量-1" class="headerlink" title="容量"></a>容量</h3><table>
+<thead>
+<tr>
+<th>函数声明</th>
+<th>功能简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bool empty ( ) const</td>
+<td>检测map中的元素是否为空，是返回  		true，否则返回false</td>
+</tr>
+<tr>
+<td>size_type size() const</td>
+<td>返回map中有效元素的个数</td>
+</tr>
+<tr>
+<td>mapped_type&amp; operator[] (const  		key_type&amp; k)</td>
+<td>返回去key对应的value</td>
+</tr>
+</tbody></table>
+<h3 id="基本操作-1"><a href="#基本操作-1" class="headerlink" title="基本操作"></a>基本操作</h3><table>
+<thead>
+<tr>
+<th>数声明</th>
+<th>功能简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pair&lt;iterator,bool&gt; insert (  		const value_type&amp; x )</td>
+<td>在map中插入键值对x，注意x是一个键值  		对，返回值也是键值对：iterator代表新插入  		元素的位置，bool代表释放插入成功</td>
+</tr>
+<tr>
+<td>void erase ( iterator position )</td>
+<td>删除position位置上的元素</td>
+</tr>
+<tr>
+<td>size_type erase ( const  		key_type&amp; x )</td>
+<td>删除键值为x的元素</td>
+</tr>
+<tr>
+<td>void erase ( iterator first,  		iterator last )</td>
+<td>删除[first, last)区间中的元素</td>
+</tr>
+<tr>
+<td>void swap (  		map&lt;Key,T,Compare,Allocator&gt;&amp;  		mp )</td>
+<td>交换两个map中的元素</td>
+</tr>
+<tr>
+<td>void clear ( )</td>
+<td>将map中的元素清空</td>
+</tr>
+<tr>
+<td>iterator find ( const key_type&amp; x  		)</td>
+<td>在map中插入key为x的元素，找到返回该元  		素的位置的迭代器，否则返回end</td>
+</tr>
+<tr>
+<td>const_iterator find ( const  		key_type&amp; x ) const</td>
+<td>在map中插入key为x的元素，找到返回该元  		素的位置的const迭代器，否则返回cend</td>
+</tr>
+<tr>
+<td>size_type count ( const  		key_type&amp; x ) const</td>
+<td>返回key为x的键值在map中的个数，注意  		map中key是唯一的，因此该函数的返回值  		要么为0，要么为1，因此也可以用该函数来  		检测一个key是否在map中</td>
+</tr>
+</tbody></table>
+<p>这里比较重要的是[]的重载，这个比inset\find好用太多</p>
+<p>这里简单的示范一下：</p>
+<p>插入的几种方式：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158266.png" alt="img"></p>
+<p>这里说一下，find是找到对应的key，返回那个位置迭代器，但是如果没用就返回end位置的迭代器，所以在返回值里面还要判断，比较麻烦</p>
+<p>为什么说insert不好用，因为[]兼顾了find和insert的功能</p>
+<p>如果[x]，里面的x已经有了，那它返回的就是x对应的value</p>
+<p> ———–没用找到x，那它就会插入x，并返回second的别名，就可以直接对second操作，就好像上面我让up对应的secont &#x3D; “上”一样。</p>
+<h2 id="multimap"><a href="#multimap" class="headerlink" title="multimap"></a>multimap</h2><p>大体跟map一样，操作接口也都一样，只不过key是可以重复的，这里参考下图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158851.png" alt="img"></p>
+<p>最大的区别是，不支持[]，因为key可以重复，[]要找对应的值，产生冲突</p>
+<p>-—–</p>
+<p>几道练习题：</p>
+<p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/16f59b169d904f8898d70d81d4a140a0?tpId=94&tqId=31064&rp=1&ru=/activity/oj&qru=/ta/bit-kaoyan/question-ranking&tPage=2">单词识别_牛客题霸_牛客网 (nowcoder.com)</a></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158672.png" alt="img"></p>
+<p>非常简单</p>
+<p>首先我们接收到字符串，然后遍历，再将其加入到map里面计数即可</p>
+<p>参考代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    map&lt;string,int&gt; m;</span><br><span class="line">    //接收的字符串</span><br><span class="line">    string s;</span><br><span class="line">    //一次接收一行</span><br><span class="line">    while(getline(cin,s))</span><br><span class="line">    &#123;</span><br><span class="line">        //每次的子串</span><br><span class="line">        string _s;</span><br><span class="line">        //将大写字符串变为小写</span><br><span class="line">        transform(s.begin(),s.end(),s.begin(),::tolower);</span><br><span class="line">        //遍历这个字符串</span><br><span class="line">        for(int i = 0;i&lt;s.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            //如果这些，说明_s已经是一个单词了，将其放到map里面，计数++</span><br><span class="line">            if(s[i] == &#x27; &#x27;|| s[i] == &#x27;.&#x27;)</span><br><span class="line">            &#123;</span><br><span class="line">                m[_s]++;</span><br><span class="line">                _s = &quot;&quot;;</span><br><span class="line">            &#125;   </span><br><span class="line">            //说明单词没完，字串++</span><br><span class="line">            else</span><br><span class="line">                _s+=s[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //遍历这个</span><br><span class="line">    for(auto it : m)</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;it.first&lt;&lt;&quot;:&quot;&lt;&lt;it.second&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/top-k-frequent-words/description/">692. 前K个高频单词 - 力扣（LeetCode）</a></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201158589.png" alt="img"></p>
+<p>首先，我们把出现的单词用map保存起来，随后将其放到vector里面排序 ，排好了就用另一个vector接收即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line"></span><br><span class="line">    //map迭代器</span><br><span class="line">    typedef map&lt;string,int&gt;::iterator Miteartor;</span><br><span class="line"></span><br><span class="line">    //自定义的比较函数</span><br><span class="line">    struct Compare</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        bool operator()(Miteartor x,Miteartor y)</span><br><span class="line">        &#123;</span><br><span class="line">            return x-&gt;second &gt; y-&gt;second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    vector&lt;string&gt; topKFrequent(vector&lt;string&gt;&amp; words, int k) &#123;</span><br><span class="line">        map&lt;string,int&gt; m;</span><br><span class="line">        //map接收单词及技术</span><br><span class="line">        for(auto str:words)</span><br><span class="line">        &#123;</span><br><span class="line">            m[str]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 用来排序的数组</span><br><span class="line">        vector&lt;Miteartor&gt; v;</span><br><span class="line">        vector&lt;string&gt; vs;</span><br><span class="line">        // 将map里面的数据放到vector里面</span><br><span class="line">        auto it = m.begin();</span><br><span class="line">        while(it != m.end())</span><br><span class="line">        &#123;</span><br><span class="line">            v.push_back(it);</span><br><span class="line">            it++;</span><br><span class="line">        &#125;</span><br><span class="line">        //为了稳定，用stable_sort</span><br><span class="line">        stable_sort(v.begin(),v.end(),Compare());</span><br><span class="line"></span><br><span class="line">        //插入</span><br><span class="line">        for(int i = 0;i&lt;k;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            vs.push_back(v[i]-&gt;first);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return vs;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>感谢您的观看，希望对您学习有所帮助</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/08/01/map_set/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/08/01/map_set/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
