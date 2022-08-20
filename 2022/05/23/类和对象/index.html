@@ -1,0 +1,617 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >类和对象</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h2 id="面向对象和面向过程"><a href="#面向对象和面向过程" class="headerlink" title="面向对象和面向过程"></a>面向对象和面向过程</h2><p>举个例子：</p>
+<p>淘宝这个软件，我要买一个东西，就应该有以下几步：</p>
+<p>上架商品-》下单-》送快递-》收快递-》评价</p>
+<p>C语言关注的就是这个过程</p>
+<p>而C++关注的更多是对象：</p>
+<p>平台-》快递-》用户</p>
+<p>这就是面向对象，将上面繁琐的过程总结为三个对象</p>
+<p>这样再来看解释是不是会更好理解：</p>
+<blockquote>
+<p>C语言是面向过程的，关注的是过程，分析出求解问题的步骤，通过函数调用逐步解决问题。</p>
+<p>C++是基于面向对象的，关注的是对象，将一件事情拆分成不同的对象，靠对象之间的交互完成。</p>
+</blockquote>
+<h2 id="类的引用"><a href="#类的引用" class="headerlink" title="类的引用"></a>类的引用</h2><p>既然C++是靠对象交互实现的功能，那类，就是必须要掌握的知识，在C语言里面，结构体一般是这样的：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054716.png"></p>
+<p>里面定义的都是变量，但是在C++里面就不是这样的，C++不仅可以定义变量还可以定义函数，就好像下面：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054988.png"></p>
+<p>这个结构体不仅有对象，还有函数，那它的使用就是这样：<img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054550.png"></p>
+<p>先定义一个对象，随后调用这个对象函数。</p>
+<blockquote>
+<p>这个结构体也可以用class来定义，区别下面会提到。</p>
+</blockquote>
+<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>类的定义跟结构体很像，它的格式是这样的：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054949.png"></p>
+<blockquote>
+<p>类中的元素称为类的成员：类中的数据称为类的属性或者成员变量; 类中的函数称为类的方法或者成员函数。</p>
+</blockquote>
+<p>类有两种定义，第一种是先在头文件里面声明，再在.c文件里面实现，另一种是全部写上，这种全部写在类里面的函数会被当成内联函数，要注意 </p>
+<p>第一种：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054501.png"></p>
+<p>在头文件里面声明show函数</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054338.png"></p>
+<p>在.c里面定义函数，这里要注意，在函数名前面一定要加上：：表面它属于这个类，否则它会找不到参数。</p>
+<p>下面就是第二种全部写上：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054454.png"></p>
+<p>那这里多出来一个public，这是什么意思？</p>
+<h2 id="类的访问限定符及封装"><a href="#类的访问限定符及封装" class="headerlink" title="类的访问限定符及封装"></a>类的访问限定符及封装</h2><h3 id="访问限定符"><a href="#访问限定符" class="headerlink" title="访问限定符"></a>访问限定符</h3><p>这里要说一个概念就是访问限定符，当定义出来一个类之后，它会默认有三种权限：</p>
+<p>public（公有）</p>
+<p>protecte（保护）</p>
+<p>private（隐私）</p>
+<hr>
+<p>公有的意思就是在类的外面也可以使用，保护和隐私相反。</p>
+<p>访问限定符它会持续到下一个访问限定符的出现或者是类结束。</p>
+<p>class默认是protected，而struct则是public。</p>
+<p>这些了解一下就可以了，不用想太深。</p>
+<p>这里还有个问题：</p>
+<blockquote>
+<p>C++中struct和class的区别是什么？</p>
+</blockquote>
+<p>因为C++兼容C，所以struct在C++中同样可以创建类，class也可以，而struct的默认权限是public，而class则是protected。</p>
+<hr>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>面向对象的三大特性：封装、继承、多态</p>
+<p>但是在这个阶段，先认识一下封装，封装的本质，是将一些对象的实现方式和参数隐藏，只对外面实现接口调用。</p>
+<p>在创建类的时候那个class就包含这一点，因为class创建的类它里面成员的默认属性是私有，因为是私有所以在类外面是访问不到的，而struct则是公开。</p>
+<h2 id="类的作用域"><a href="#类的作用域" class="headerlink" title="类的作用域"></a>类的作用域</h2><p>当写C++的时候，总会看到这么一句话：</p>
+<p>假设是这样，我在一个头文件里面新建了一个类，这个类里面有一个函数，这个函数代码很长，可能有十几行，那我就可以这么写：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201054473.png"></p>
+<p>我在头文件里面声明，但是在.c里面实现，不过要在实现的函数名前面带上作用域，表示这个函数实现的是这个对象里面的</p>
+<h2 id="类的实例化、计算大小、存储方式"><a href="#类的实例化、计算大小、存储方式" class="headerlink" title="类的实例化、计算大小、存储方式"></a>类的实例化、计算大小、存储方式</h2><p>在说之前，先看一下正式的解释：</p>
+<blockquote>
+<ol>
+<li>类只是一个模型一样的东西，限定了类有哪些成员，定义出一个类并没有分配实际的内存空间来存储它</li>
+<li>一个类可以实例化出多个对象，实例化出的对象 占用实际的物理空间，存储类成员变量 </li>
+<li>做个比方。类实例化出对象就像现实中使用建筑设计图建造出房子，类就像是设计图，只设计出需要什么东西，但是并没有实体的建筑存在，同样类也只是一个设计，实例化出的对象才能实际存储数据，占用物理空间</li>
+</ol>
+</blockquote>
+<p>举个例子，我这里创建了一个日期类，里面有这样的几个参数：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055862.png"></p>
+<p>那这里提一个问，这三个对象有没有占用空间？</p>
+<p>没有，因为它只是声明有这样的三个参数，还没有真的给初始化出来，所以不占用内存空间。</p>
+<p>但如果我们要计算一个类要占用的内存空间，我们该如何计算？</p>
+<p>就好像在C语言里面的，算一个结构体的大小一样，别忘了内存对齐，这里就是</p>
+<p>4*3 &#x3D; 12个字节。</p>
+<p>类里面的函数占不占空间？</p>
+<p>不占，举这样的一个例子，我这里创建了两个对象，一个d1，一个d2：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055548.png"></p>
+<p>它们肯定是两个不同的对象，里面的参数也不一样，但是它们调用的函数，是不是这个类里面的同一个函数？</p>
+<p>是的，所以为了优化，类里面的函数都会放到单独的一块空间，这块空间是公用的，所以计算的时候不算这一块。</p>
+<p>假设这个类里面什么都没有，占用多少个字节？ </p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055324.png"></p>
+<p>一个字节，虽然这个类里面什么都没有 ，但编译器在运行的过程中还是会象征的给它一个字节表示这是一个类。</p>
+<h2 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h2><p>这个，其实不是很好讲，这里我用个例子来说：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055788.png"></p>
+<p>首先，我定义了一个对象，这个对象很简单，一个构造函数一个打印函数，随后，我在主函数里面初始化了a并将其赋值为2，随后我调用打印函数，在屏幕上打印了一个2.</p>
+<p>为什么这里编译器会打印a的2，而不是一些随机值？</p>
+<p>这里就要说到this指针，当写出如上代码的时候，看上其PrintA里面什么参数也没有，实际上，它隐藏的传了一个指针过去，这个指针称为this，*this就是a的地址，所以当我们看到上面的代码的时候，实际上它是这样的：</p>
+<p>这样它在找的时候就能知道该打印哪个，我们还可以通过别的方法看到this指针：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055053.png"></p>
+<p>可以看到，我在类里面打印了this指针的地址，然后在外面打印了a的地址，发现它们两个的地址一样，可以说明确实是传了过去。</p>
+<hr>
+<h2 id="默认成员函数"><a href="#默认成员函数" class="headerlink" title="默认成员函数"></a>默认成员函数</h2><blockquote>
+<p>如果一个类中什么成员都没有，简称为空类。空类中什么都没有吗？并不是的，任何一个类在我们不写的情况下，都会自动生成下面6个默认成员函数。</p>
+</blockquote>
+<p>以我要写的一个对象为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Data</span><br><span class="line">&#123;</span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这个里面看起来是空的，但实际上，它里面会包含以下几个成员函数：</p>
+<p>负责初始化和清理的：构造函数、析构函数</p>
+<p>负责拷贝赋值的：拷贝构造、赋值重载</p>
+<p>负责取地址重载的：普通对象和const对象取地址，但这两个很少用，这里就不考虑</p>
+<p>一个一个来，从构造函数开始：</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>假设我现在写一个简单的对象，日期类：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	void InitDate(int year, int month, int day)</span><br><span class="line">	&#123;</span><br><span class="line">		_year = year;</span><br><span class="line">		_month = month;</span><br><span class="line">		_day = day;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	void Display()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; _year &lt;&lt; &quot;-&quot; &lt;&lt; _month &lt;&lt; &quot;-&quot; &lt;&lt; _day &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这是很简单的一个对象，里面有三个隐私变量的声明，而在变量之上有两个函数。</p>
+<p>那根据上面的对象，我们定义对象应该是这样的：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055664.png"></p>
+<p>不太好用，对吧？</p>
+<p>我们知道整形可以 int a &#x3D; 10；这样定义的时候就给赋值，那Date这样的类能不能也这样呢？</p>
+<p>当然可以，这里就要用到构造函数，这里先看以下构造函数的定义：</p>
+<blockquote>
+<p>构造函数是一个特殊的成员函数，名字与类名相同,创建类类型对象时由编译器自动调用，保证每个数据成员都有 一个合适的初始值，并且在对象的生命周期内只调用一次。</p>
+</blockquote>
+<p>再看一下构造函数的特性：</p>
+<blockquote>
+<p>构造函数是特殊的成员函数，需要注意的是，构造函数的虽然名称叫构造，但是需要注意的是构造函数的主要任务并不是开空间创建对象，而是初始化对象。</p>
+<p>其特征如下： </p>
+<ol>
+<li>函数名与类名相同。</li>
+<li>无返回值。</li>
+<li>对象实例化时编译器自动调用对应的构造函数。</li>
+<li>构造函数可以重载。</li>
+</ol>
+</blockquote>
+<p>看起来有点麻烦，但实际用起来还是比较简单的，首先，它的函数名跟类名一样，不需要返回值，类里面可以进行初始化的赋值。</p>
+<p>这里就示范一个：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055566.png"></p>
+<p>可以看到，这个跟函数有点像的就是构造，它有三个参数，分别对应我们类里面的三个参数，我们在定义类的时候编译器会自己调用这个构造：</p>
+<p>这里再运行看看：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055128.png"></p>
+<p>对象就可以这么写了，初始化的赋值也没问题。</p>
+<p>除此之外，还有两种：</p>
+<p>不给参数，无参的</p>
+<p>编译器自己生成的</p>
+<p>顺着来看看，先看无参的：</p>
+<p>它就可以这么写：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055030.png"></p>
+<p>不给参数，直接赋值，如果需要直接赋值的话，那还是不要用这种：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055818.png"></p>
+<p>再来看看编译器自己生成的，如果我们不写：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055878.png"></p>
+<p>直接就随机值了，这里要说的就是，编译器不会对内置类型处理，比方说int，double这种，它默认构造之后还是一个随机值。</p>
+<p>还是别用，这里我们主要了解是是第一个，给参数的，但是我们可以这么写：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055403.png"></p>
+<p>调用的时候不给参数，它就会在这里的缺省值。</p>
+<p>注意一点，构造函数优先写全缺省的，别写了一个缺省之后再写一个不带参的，会报错</p>
+<p>如果遇到了自定义类型，编译器会调用自定义类型的改造函数，有点类似于套娃，这里看下面的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Time</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Time()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Time()&quot; &lt;&lt; endl;</span><br><span class="line">        _hour = 0;</span><br><span class="line">		_minute = 0;</span><br><span class="line">		_second = 0;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int _hour;</span><br><span class="line">	int _minute;</span><br><span class="line">	int _second;</span><br><span class="line">&#125;;</span><br><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	// 基本类型(内置类型)</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">	// 自定义类型</span><br><span class="line">	Time _t;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Date d;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Date里面有一个自定义类型Time，而当我们定义d这个对象的时候，编译器去找默认构造，发现Date里面的前三个是内置类型，所以它不会做处理，而_t则是自定义类型，那它就会在Time里面去找默认构造，看上面的代码是可以看到Time的默认构造是这个：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Time()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Time()&quot; &lt;&lt; endl;</span><br><span class="line">        _hour = 0;</span><br><span class="line">		_minute = 0;</span><br><span class="line">		_second = 0;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在默认构造里面，打印了一行话，然后我们运行：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055659.png"></p>
+<p>它也确实调用了这个默认构造 。</p>
+<hr>
+<h3 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h3><p>这么说呢，这个其实理解起来跟构造函数是很像的，同样，我们先来看看它的盖帘和特性：</p>
+<blockquote>
+<p>概念 </p>
+<p>与构造函数功能相反，析构函数不是完成对象的销毁，局部对象销毁工作是由编译器完成的。</p>
+<p>而对象在销毁时会自动调用析构函数，完成类的一些资源清理工作。</p>
+</blockquote>
+<blockquote>
+<p>特征 </p>
+<p>其特征如下：</p>
+<ol>
+<li>析构函数名是在类名前加上字符 ~。</li>
+<li>无参数无返回值。</li>
+<li>一个类有且只有一个析构函数。若未显式定义，系统会自动生成默认的析构函数。</li>
+<li>对象生命周期结束时，C++编译系统系统自动调用析构函数。</li>
+</ol>
+</blockquote>
+<p>这个理解起来可以理解为是默认构造的翻版，它在这个对象生命周期到了的时候会自动调用，这里要注意的是它跟默认构造一样，它的析构同样不会对内置类型处理，而对自定义类型调用对应的析构函数。</p>
+<p>如果，在这个对象里面有指针，那编译器也是不会处理的，所以如果写了指针，这个析构函数也是需要自己写的。</p>
+<p>同时，如果一个类里面要自己写析构函数，那拷贝构造和拷贝赋值也是需要自己写的，原因之后再说，这里了解一下就好了。</p>
+<hr>
+<h3 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h3><p>当我们用构造函数的时候，有没有可能，我们有的时候需要拿一个对象初始化另一个对象，那我们就需要用到拷贝构造函数。</p>
+<blockquote>
+<p>构造函数：只有单个形参，该形参是对本类类型对象的引用(一般常用const修饰)，在用已存在的类类型对象创建新对象时由编译器自动调用。</p>
+</blockquote>
+<blockquote>
+<p>拷贝构造函数也是特殊的成员函数，其特征如下：</p>
+<ol>
+<li>拷贝构造函数是构造函数的一个重载形式。</li>
+<li>拷贝构造函数的参数只有一个且必须使用引用传参，使用传值方式会引发无穷递归调用。</li>
+</ol>
+</blockquote>
+<p>这个说来也很简单，看看下面的例子：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201055851.png"></p>
+<p>这看是一个很简单的拷贝构造，需要的参数是一个同类型的对象，同样不需要返回值，只需要很简答的把对方的值给自己就好了。</p>
+<p>不过注意的是特征的第二条，至于为什么会无穷递归，是因为形参是实参的临时拷贝，拷贝就要用到拷贝构造，拷贝构造又传过去参数…</p>
+<p>死循环，注意一下就好了。</p>
+<p>拷贝同样有两种，第一种：</p>
+<p>浅拷贝，一个字节一个字节的拷贝，对于一些简单的int或者是double，很简单，但是如果有指针类型，浅拷贝也会把这个地址拷过去，也就是说，这两个指针指向的是同一块空间，都学到这个地步了，这个后果我就不多说了。</p>
+<p>深拷贝：为了解决指针的这种类似问题，就出现了深拷贝，但我们现在也用不到。</p>
+<p>这里还有一点要注意：</p>
+<p>如果没有写拷贝函数，那编译器自动生成的拷贝构造是浅拷贝。</p>
+<h2 id="———–"><a href="#———–" class="headerlink" title="———–"></a>———–</h2><p>运算符的重载</p>
+<p>我们知道，同一种类型的对象是可以赋值的，那类也不例外，但是我们总不可能直接写：</p>
+<p>int a &#x3D; 10；</p>
+<p>Data.a &#x3D; a；</p>
+<p>首先，类的成员我们是私有的，其次这两类型都不一样，所以要写也是这么写：</p>
+<p>Data a（xxx）；</p>
+<p>Data b；</p>
+<p>b &#x3D; a；</p>
+<p>为了实现这样的操作（指直接用等于），我们就需要这个，运算符的重载：</p>
+<p>我先写一个示范：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201056591.png"></p>
+<p>operator就是关键，其后面跟着的&#x3D;号是你要实现的运算符，然后后面是需要的参数，单目操作符就不需要传参，双目就要一个参数…</p>
+<p>其次，还要考虑的是有连续赋值的可能，所以返回值可以考虑用类型的引用。</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201056592.png"></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201056568.png"></p>
+<p>其他的类似实现的操作符在下面的日期类会依次实现。</p>
+<hr>
+<h2 id="const成员"><a href="#const成员" class="headerlink" title="const成员"></a>const成员</h2><p>这个说起来比较麻烦，所以先看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123; </span><br><span class="line">public :</span><br><span class="line"> void Display ()</span><br><span class="line"> &#123;</span><br><span class="line"> cout&lt;&lt;&quot;Display ()&quot; &lt;&lt;endl;</span><br><span class="line"> cout&lt;&lt;&quot;year:&quot; &lt;&lt;_year&lt;&lt; endl;</span><br><span class="line"> cout&lt;&lt;&quot;month:&quot; &lt;&lt;_month&lt;&lt; endl;</span><br><span class="line"> cout&lt;&lt;&quot;day:&quot; &lt;&lt;_day&lt;&lt; endl&lt;&lt;endl ;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">private :</span><br><span class="line"> int _year ; // 年</span><br><span class="line"> int _month ; // 月</span><br><span class="line"> int _day ; // 日</span><br><span class="line">&#125;;</span><br><span class="line">void Test ()</span><br><span class="line">&#123;</span><br><span class="line"> Date d1 ;</span><br><span class="line"> d1.Display ();</span><br><span class="line"> </span><br><span class="line"> const Date d2;</span><br><span class="line"> d2.Display ();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>d1调用d1.Display肯定是没有问题的，但是d2呢？</p>
+<p>如果运行程序，就会出现这样的错误：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201056934.png"></p>
+<p>因为d2是被const修饰的对象，但如果调用Dsiplay的话，函数隐藏的接受的对象类型是不会附带const的，这就设计到之前C++的基础知识。</p>
+<p>const的对象只有const对象才能接收，如果是普通类型就会设计到一个权限放大的错误。</p>
+<p>为了解决这个问题，所以C++就会有这样的规定：</p>
+<p>在函数的括号后面加一个const：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201056867.png"></p>
+<p>这样不管是普通对象类型还是被const修饰的都可以调用这个函数了。</p>
+<hr>
+<h2 id="取地址及const取地址操作符重载"><a href="#取地址及const取地址操作符重载" class="headerlink" title="取地址及const取地址操作符重载"></a>取地址及const取地址操作符重载</h2><p>这么说呢，这个操作也是类似的，这里简单写一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123; </span><br><span class="line">public :</span><br><span class="line"> Date* operator&amp;()</span><br><span class="line"> &#123;</span><br><span class="line"> return this ;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> const Date* operator&amp;()const</span><br><span class="line"> &#123;</span><br><span class="line"> return this ;</span><br><span class="line"> &#125;</span><br><span class="line">private :</span><br><span class="line"> int _year ; // 年</span><br><span class="line"> int _month ; // 月</span><br><span class="line"> int _day ; // 日</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>大概就是这样类似的操作…</p>
+<hr>
+<h2 id="日期类的实现"><a href="#日期类的实现" class="headerlink" title="日期类的实现"></a>日期类的实现</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/124845089?spm=1001.2014.3001.5502" title="【C++】日期类_ClaudineKnous的博客-CSDN博客">【C++】日期类_ClaudineKnous的博客-CSDN博客</a></p>
+<p>看完了这个就可以去看看这个了，日期类的实现几乎概括了上面的所有知识。</p>
+<hr>
+<p>这是后期的更新，一些补充的知识：</p>
+<h2 id="构造函数体的赋值"><a href="#构造函数体的赋值" class="headerlink" title="构造函数体的赋值"></a>构造函数体的赋值</h2><p>我们知道构造函数赋值的时候应该是这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line"> Date(int year, int month, int day)</span><br><span class="line"> &#123;</span><br><span class="line"> _year = year;</span><br><span class="line"> _month = month;</span><br><span class="line"> _day = day;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line">private:</span><br><span class="line"> int _year;</span><br><span class="line"> int _month;</span><br><span class="line"> int _day;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>虽然调用之后_year _month _day里面都有了一个初始值，但这个操作却并不能称之为初始化，因为里面的式子是：_year &#x3D; year，&#x3D;我们都知道是赋值的意思，也就是说在进入花括号之前_year就已经初始化了。</p>
+<p>初始化只能初始化一次。但却可以多次赋值</p>
+<p>假设有一个变量，它是const修饰的，我们知道const修饰的词是不能在初始化之后再赋值的，所以它唯一的办法就是在初始化的时候赋值，但如果调用上面的构造函数，那const的值无法修改就会出现错误。</p>
+<p>为了解决这种变量必须在初始的时候赋值的问题，这里就有一种办法，叫做：初始化列表</p>
+<p>它是这么写的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line"> Date(int year, int month, int day)</span><br><span class="line"> : _year(year)</span><br><span class="line"> , _month(month)</span><br><span class="line"> , _day(day)</span><br><span class="line"> &#123;&#125;</span><br><span class="line"> </span><br><span class="line">private:</span><br><span class="line"> int _year;</span><br><span class="line"> int _month;</span><br><span class="line"> int _day;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>可以看到在构造函数的花括号之前就已经写了一串代码，这里的意思就是在初始化的时候将括号里面的值给到前面的对象，注意中间是逗号，最后也不要加分号，如果加上了就说明这行语句结束了，会报错。</p>
+<blockquote>
+<p>这里还有几点要注意：</p>
+<ol>
+<li>每个成员变量在初始化列表中只能出现一次(初始化只能初始化一次)</li>
+<li>类中包含以下成员，必须放在初始化列表位置进行初始化：</li>
+</ol>
+<p>引用成员变量</p>
+<p>const成员变量</p>
+<p>自定义类型成员(该类没有默认构造函数)</p>
+</blockquote>
+<p>前面都很好理解，但最后一句：自定义类型成员（该类没有默认构造函数）怎么理解，这里看代码：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201057758.png"></p>
+<p>可以看到这里A里面明明有一个构造函数，但却提醒说没有构造函数，这是一个在进入花括号里面之后_aobj是已经初始化完的状态，在里面的操作仅仅是赋值，所以这里在初始化会报错，正确办法应该是在进入花括号之前就把值给它初始化：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201057094.png"></p>
+<p>总之，就是能用初始化队列的就用初始化队列，包括自定义类型。</p>
+<p>看下面代码：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201057439.png"></p>
+<p>可以看到对于_t它是完成了初始化的，并且它也执行了花括号里面的内容。</p>
+<hr>
+<p>成员变量在类中声明次序就是其在初始化列表中的初始化顺序，与其在初始化列表中的先后次序无关</p>
+<p>看下面的代码，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">public:</span><br><span class="line">	A(int a)</span><br><span class="line">		:_a1(a)</span><br><span class="line">		, _a2(_a1)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">	void Print() &#123;</span><br><span class="line">		cout &lt;&lt; _a1 &lt;&lt; &quot; &quot; &lt;&lt; _a2 &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int _a2;</span><br><span class="line">	int _a1;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	A a(1);</span><br><span class="line">	a.Print();</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里会发生什么？</p>
+<p>先捋一遍思路，首先传过去了一个1，在调用构造函数的时候这个2先给到了_a1,然后_a1的值再给了_a2，按理来说，两个打印的值都应该是1，但实际上呢？</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201057315.png"></p>
+<p>可以看到，_a1的值是1，但是_a2的值却是随机值，这就是上面所说的，会按照声明顺序进行初始化。</p>
+<p>因为_a2声明是_a1前面，所以在初始化的时候_a2会先初始化，_a2的初始化是_a1的拷贝，但此时_a1还没有完成初始化的赋值，所以就把一个随机值拷贝了过去，然后_a1才被初始化为1.</p>
+<hr>
+<h2 id="static成员"><a href="#static成员" class="headerlink" title="static成员"></a>static成员</h2><p>在C语言里面我们就知道static是静态变量，作用域是全局，在C++里面同样也可以使用，但却有一点不一样。</p>
+<p>先看看概念：</p>
+<blockquote>
+<p>声明为static的类成员称为类的静态成员，用static修饰的成员变量，称之为静态成员变量；用static修饰的成员函数，称之为静态成员函数。静态的成员变量一定要在类外进行初始化</p>
+</blockquote>
+<p>简单写个代码方便理解：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201057617.png"></p>
+<p>这里，我的_a2是被static修饰的，如果在构造函数初始化队列里面进行初始化会出现如上图一样的错误，正确方式是：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201057360.png"></p>
+<p>在类外面 是，首先声明这是个什么类型，然后是这个对象属于哪个类，其次再赋值。</p>
+<p>这里要注意对象的几点特性：</p>
+<blockquote>
+<ol>
+<li>静态成员为所有类对象所共享，不属于某个具体的实例</li>
+<li>静态成员变量必须在类外定义，定义时不添加static关键字</li>
+<li>类静态成员即可用类名::静态成员或者对象.静态成员来访问</li>
+<li>静态成员函数没有隐藏的this指针，不能访问任何非静态成员</li>
+<li>静态成员和类的普通成员一样，也有public、protected、private3种访问级别，也可以具有返回值</li>
+</ol>
+</blockquote>
+<p>这里再提出两个问题：</p>
+<p>静态成员函数可不可以调用非静态成员函数，反之呢？</p>
+<p>答：</p>
+<p>静态的不能调用非静态的，但是非静态的可以调用静态的。</p>
+<hr>
+<h2 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h2><p>友元分为两种：友元函数和友元类</p>
+<p>友元提供了一种突破封装的方式，但也正是因为突破了封装，导致代码的耦合性变差了。</p>
+<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Time;</span><br><span class="line"></span><br><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">	friend Time;</span><br><span class="line">public:</span><br><span class="line">	Date(int year = 1, int month = 1, int day = 1)</span><br><span class="line">		:_year(year),</span><br><span class="line">		_month(month),</span><br><span class="line">		_day(day)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Time</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Time(int h = 1,int min = 1,int s = 1)</span><br><span class="line">		:_h(h),</span><br><span class="line">		_min(min),</span><br><span class="line">		_s(s)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">	void printf(Date&amp; d) const</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; d._year &lt;&lt; &quot;-&quot; &lt;&lt; d._month &lt;&lt; &quot;-&quot; &lt;&lt; d._day &lt;&lt; &quot;-&quot; &lt;&lt; this-&gt;_h &lt;&lt; &quot;-&quot; &lt;&lt; this-&gt;_min &lt;&lt; &quot;-&quot; &lt;&lt; this-&gt;_s &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	int _h;</span><br><span class="line">	int _min;</span><br><span class="line">	int _s;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这就是一个友元类。</p>
+<p>首先有两个类，第一个是日期，第二个是时间，我想在时间类里面顺带着一起打印日期，那我就要在时间类里面加上 friend Time，表示Time是Date的友元，那Time就可以访问到Date里面的私有数据。</p>
+<p>但是反过来，Date不是Time的友元，所以Date无法访问到Time里面的对象。</p>
+<p>友元是单向性的</p>
+<p>友元没有传递性 ，如果B是A的友元，C是B的友元，则不能说明C时A的友元</p>
+<p>–</p>
+<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><p>如果知道了友元类，那友元函数就轻松多了。</p>
+<p>这里还是看代码演示比较好：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">	friend void Printf(const Date&amp; d);</span><br><span class="line">public:</span><br><span class="line">	Date(int year = 1, int month = 1, int day = 1)</span><br><span class="line">		:_year(year),</span><br><span class="line">		_month(month),</span><br><span class="line">		_day(day)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void Printf(const Date&amp; d)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; d._year &lt;&lt; &quot;-&quot; &lt;&lt; d._month &lt;&lt; &#x27;-&#x27; &lt;&lt; d._day &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在Dtae里面声明有Printf这个函数，格式是：返回值 函数名（函数参数）</p>
+<p>这样就可以在类外面访问类的私有成员。</p>
+<p>这里要注意几点：</p>
+<blockquote>
+<p>友元函数可以访问类的私有和保护乘员，但是不是类的成员函数</p>
+<p>友元函数不能用const修饰</p>
+<p>友元函数可以定义在类里面的任何地方，不受访问限定符的限制，但最好定义在类的最前面</p>
+<p>一个函数可以是多个类的友元函数</p>
+<p>友元函数的调用和普通函数的调用原理相同</p>
+</blockquote>
+<hr>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>这个比较简单，先看概念和特征：</p>
+<blockquote>
+<p>概念：如果一个类定义在另一个类的内部，这个内部类就叫做内部类。注意此时这个内部类是一个独立的类，它不属于外部类，更不能通过外部类的对象去调用内部类。外部类对内部类没有任何优越的访问权限。</p>
+<p>注意：内部类就是外部类的友元类。注意友元类的定义，内部类可以通过外部类的对象参数来访问外部类中的所有成员。但是外部类不是内部类的友元。</p>
+<hr>
+<p>特性：</p>
+<ol>
+<li>内部类可以定义在外部类的public、protected、private都是可以的。</li>
+<li>注意内部类可以直接访问外部类中的static、枚举成员，不需要外部类的对象&#x2F;类名。</li>
+<li>sizeof(外部类)&#x3D;外部类，和内部类没有任何关系</li>
+</ol>
+</blockquote>
+<p>然后，我们看一段代码演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">private:</span><br><span class="line">	static int k;</span><br><span class="line">	int h;</span><br><span class="line">public:</span><br><span class="line">	class B</span><br><span class="line">	&#123;</span><br><span class="line">	public:</span><br><span class="line">		void foo(const A&amp; a)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; k &lt;&lt; endl;//OK</span><br><span class="line">			cout &lt;&lt; a.h &lt;&lt; endl;//OK</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这个给对象的名字是A，但是在A的里面有有一个对象叫B，我在B里面的函数要访问A的私有成员，运行结果如图：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201057693.png"></p>
+<p>可以直接访问,不受权限的限制 。</p>
+<hr>
+<p>thank watch</p>
+<p>因为最近有考试，所以更新放慢</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/05/23/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/05/23/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

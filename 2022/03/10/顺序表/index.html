@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
 	                    </ul>
 	        </li>
 	        
@@ -139,10 +139,10 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p>我们先来看看顺序表的概念和结构：</p>
-<p>顺序表是用一段<strong>物理地址连续</strong>的存储单元依次存储数据元素的线性结构，一般情况下采用数组存储。在数组上完成数据的增删查改。</p>
+<p>顺序表是用一段物理地址连续的存储单元依次存储数据元素的线性结构，一般情况下采用数组存储。在数组上完成数据的增删查改。</p>
 <p>顺序表一般可以分为：</p>
 <ol>
-<li><strong>静态顺序表：使用定长数组存储元素。</strong></li>
+<li>静态顺序表：使用定长数组存储元素。</li>
 </ol>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200650973.png"></p>
 <p>这里我们就直接开辟了一个数组，但因为是一次性开辟的，就会有几种情况：</p>
@@ -151,7 +151,7 @@
 <p>所以这里就有第二种顺序表，要用到realloc函数。</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200650762.png"></p>
 <p>我们先malloc一个数组，这个数组不用很大，我们先用着，然后我们那size记录要放的数据，然后capicty记录还能放多少进去，如果size &#x3D; capicity，那就说明我们放满了，放满了那就要扩容。</p>
-<p><strong>接口实现</strong></p>
+<p>接口实现</p>
 <p>静态顺序表只适用于确定知道需要存多少数据的场景。静态顺序表的定长数组导致N定大了，空间开多了浪费，开少了不够用。所以现实中基本都是使用动态顺序表，根据需要动态的分配空间大小，所以下面我们实现动态顺序表。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#define MAX 100</span><br><span class="line">//静态</span><br><span class="line">//struct SeqList        </span><br><span class="line">//&#123;</span><br><span class="line">//	int arr[MAX];</span><br><span class="line">//	int size;// 记录存储个数</span><br><span class="line">//&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">struct SeqList</span><br><span class="line">&#123;</span><br><span class="line">	int *a;</span><br><span class="line">	int size;</span><br><span class="line">	int capaity;//数组容量</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 

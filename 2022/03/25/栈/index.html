@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
 	                    </ul>
 	        </li>
 	        
@@ -139,35 +139,35 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <h1 id="栈的概念及结构"><a href="#栈的概念及结构" class="headerlink" title="栈的概念及结构"></a>栈的概念及结构</h1><p>在学习栈前，我们先看一下栈的正式解释：</p>
-<p>栈：一种特殊的线性表，其只允许在固定的一端进行插入和删除元素操作。<strong>进行数据插入和删除操作的一端****称为栈顶，另一端称为栈底。</strong>栈中的数据元素遵守后进先出LIFO（Last In First Out）的原则。</p>
-<p>压栈：栈的插入操作叫做进栈&#x2F;压栈&#x2F;入栈，<strong>入数据在栈顶</strong>。</p>
-<p>出栈：栈的删除操作叫做出栈。<strong>出数据也在栈顶</strong>。</p>
+<p>栈：一种特殊的线性表，其只允许在固定的一端进行插入和删除元素操作。进行数据插入和删除操作的一端称为栈顶，另一端称为栈底。栈中的数据元素遵守后进先出LIFO（Last In First Out）的原则。</p>
+<p>压栈：栈的插入操作叫做进栈&#x2F;压栈&#x2F;入栈，入数据在栈顶。</p>
+<p>出栈：栈的删除操作叫做出栈。出数据也在栈顶。</p>
 <p>来看图：</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200917417.png"></p>
-<p><strong>栈底就是我们栈的开头位置，我们放数据进去，就是以一种往上叠的感觉， 现在栈底已经有a1、a2两个数据，我们现在放a3进去，它就应该在a2的上面。</strong></p>
+<p>栈底就是我们栈的开头位置，我们放数据进去，就是以一种往上叠的感觉， 现在栈底已经有a1、a2两个数据，我们现在放a3进去，它就应该在a2的上面。</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918395.png"></p>
-<p><strong>现在a3已经进栈，我们现在要拿出数据，就从栈顶开始拿，也就是说a3回先被我们拿出来</strong></p>
+<p>现在a3已经进栈，我们现在要拿出数据，就从栈顶开始拿，也就是说a3回先被我们拿出来</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918113.png"></p>
-<p>**然后出栈的顺序就是：a3、a2、a1 **</p>
-<p><strong>这就是栈的后进先出，但是我们没必要全部放进去了再一起拿出来，我们也可以放一个数据拿一个数据出来，比方说；</strong></p>
+<p>然后出栈的顺序就是：a3、a2、a1 </p>
+<p>这就是栈的后进先出，但是我们没必要全部放进去了再一起拿出来，我们也可以放一个数据拿一个数据出来，比方说；</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918245.png"></p>
-<p><strong>现在有a3、a4要进栈，我们让a3先进栈：</strong></p>
+<p>现在有a3、a4要进栈，我们让a3先进栈：</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918825.png"></p>
-<p><strong>但是我们又要用到a3这个数据，我们就直接把a3拿出去，然后把a4压进去：</strong></p>
+<p>但是我们又要用到a3这个数据，我们就直接把a3拿出去，然后把a4压进去：</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918103.png"></p>
-<p><strong>那我们出数据的时候，就变成了：</strong></p>
-<p><strong>a3、a4、a2、a1</strong></p>
+<p>那我们出数据的时候，就变成了：</p>
+<p>a3、a4、a2、a1</p>
 <hr>
-<p><strong>我们来看两道题加深理解：</strong></p>
-<p>*<em>1.一个栈的初始状态为空。现将元素1、2、3、4、5、A、B、C、D、E依次入栈，然后再依次出栈，则元素出</em>***栈的顺序是（ ）。 **</p>
-<p>**A 12345ABCDE **</p>
-<p>**B EDCBA54321 **</p>
-<p>**C ABCDE12345 **</p>
-<p>**D 54321EDCBA **</p>
+<p>我们来看两道题加深理解：</p>
+<p>1.一个栈的初始状态为空。现将元素1、2、3、4、5、A、B、C、D、E依次入栈，然后再依次出栈，则元素出栈的顺序是（ ）。 </p>
+<p>A 12345ABCDE </p>
+<p>B EDCBA54321 </p>
+<p>C ABCDE12345 </p>
+<p>D 54321EDCBA </p>
 <hr>
 <p>想到答案了吗？</p>
-<p><strong>B，题目里面说依次进栈，那它出栈的时候也就是以此出栈，我们把放进去的数据反一遍就好。</strong></p>
-<p><strong>下一题：</strong></p>
+<p>B，题目里面说依次进栈，那它出栈的时候也就是以此出栈，我们把放进去的数据反一遍就好。</p>
+<p>下一题：</p>
 <p>2.若进栈序列为 1,2,3,4 ，进栈过程中可以出栈，则下列不可能的一个出栈序列是（）</p>
 <p>A 1,4,3,2</p>
 <p>B 2,3,4,1</p>
@@ -185,7 +185,7 @@
 <p>–</p>
 <p>D就不分析了，有兴趣可以自己分析一下。</p>
 <hr>
-<h2 id="栈的实现"><a href="#栈的实现" class="headerlink" title="**栈的实现 **"></a>**栈的实现 **</h2><p>我们之前学过数组、链表，这两种都可以用在栈上，栈只需要在栈顶进行操作，我们来看看两种分别怎么实现：</p>
+<h2 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h2><p>我们之前学过数组、链表，这两种都可以用在栈上，栈只需要在栈顶进行操作，我们来看看两种分别怎么实现：</p>
 <p>数组：可以把数组首元素地址看作栈底，而数组之后的位置看作栈顶，这样数组的栈压栈即是在尾补插入数据，也就是top的位置</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200918447.png"></p>
 <p>链表：</p>

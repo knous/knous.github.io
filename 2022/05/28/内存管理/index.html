@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >内存管理</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<p> 在开始阅读之前，先做几道题，来看看自己基础怎么样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">int globalVar = 1;</span><br><span class="line">static int staticGlobalVar = 1;</span><br><span class="line">void Test()</span><br><span class="line">&#123;</span><br><span class="line"> static int staticVar = 1;</span><br><span class="line"> int localVar = 1;</span><br><span class="line"> </span><br><span class="line"> int num1[10] = &#123;1, 2, 3, 4&#125;;</span><br><span class="line"> char char2[] = &quot;abcd&quot;;</span><br><span class="line"> char* pChar3 = &quot;abcd&quot;;</span><br><span class="line"> int* ptr1 = (int*)malloc(sizeof (int)*4);</span><br><span class="line"> int* ptr2 = (int*)calloc(4, sizeof(int));</span><br><span class="line"> int* ptr3 = (int*)realloc(ptr2, sizeof(int)*4);</span><br><span class="line"> free (ptr1);</span><br><span class="line"> free (ptr3);</span><br><span class="line">&#125;</span><br><span class="line">1. 选择题：</span><br><span class="line"> 选项: A.栈 B.堆 C.数据段 D.代码段</span><br><span class="line"> globalVar在哪里？____ staticGlobalVar在哪里？____</span><br><span class="line"> staticVar在哪里？____ localVar在哪里？____</span><br><span class="line"> num1 在哪里？____</span><br><span class="line"> </span><br><span class="line"> char2在哪里？____ *char2在哪里？___</span><br><span class="line"> pChar3在哪里？____ *pChar3在哪里？____</span><br><span class="line"> ptr1在哪里？____ *ptr1在哪里？____</span><br><span class="line"></span><br><span class="line">2. 填空题：</span><br><span class="line"> sizeof(num1) = ____; sizeof(char2) = ____; </span><br><span class="line"> strlen(char2) = ____;sizeof(pChar3) = ____; </span><br><span class="line"> strlen(pChar3) = ____;sizeof(ptr1) = ____;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>先看选择题的第一题：</p>
+<p>globaVal：可以看到这是全局的变量，全局的变量都在数据段（静态区）。</p>
+<p>staticGlobalVar：这同样是一个全局变量，和上面一样选C</p>
+<p>staticticVar：全局变量，不多说</p>
+<p>lovalVar：整形变量，开辟在栈上</p>
+<p>num1：整形数组，还是在栈上</p>
+<p>char2：字符数组，还是在栈上</p>
+<p>*char2：char2是数组char2首元素地址，对这个地址解引用就可以放到到里面的字符串，字符串是储存在代码段里面的</p>
+<p>pchar3：在栈上，因为这是一个指向字符串的指针，指针都开辟在栈上</p>
+<p>*pchar3：数据段，对pchar3解引用就放到了这一串字符，字符都是在代码段里面的</p>
+<p>prt1：栈上，因为它只是一个int*的指针</p>
+<p>*ptr1：堆上，malloc开辟的空间都是在堆上开辟出来的</p>
+<p>sizeof(num1) ：可以看到这里是开辟了十个整形的空间，虽然里面只初始化了四个元素，但空间还是开辟了的，所以是40字节</p>
+<p>sizeof(char2) ：求char2所占内存，虽然这里看上去只有四个字符，但别忘了字符串结尾的\0，所以这里是5</p>
+<p>strlen(char2) ：strlen是碰到\0就停止，所以这里是四个字节</p>
+<p>sizeof(pChar3) ：这里就判断是是一个指针的大小了，所以是4\8字节</p>
+<p>strlen(pChar3) ：这里求的是pchar3对应的字符串长度，所以是4个字节</p>
+<p>sizeof(ptr1) ：这就只是单纯的一个指针了，指着那句是4\8个字节</p>
+<hr>
+<p>这里就总结一下栈\堆\数据段\代码段的区别：</p>
+<blockquote>
+<ol>
+<li>栈又叫堆栈，非静态局部变量&#x2F;函数参数&#x2F;返回值等等，栈是向下增长的。</li>
+<li>内存映射段是高效的I&#x2F;O映射方式，用于装载一个共享的动态内存库。用户可使用系统接口创建共享共享内存，做进程间通信。（Linux课程如果没学到这块，现在只需要了解一下）</li>
+<li>堆用于程序运行时动态内存分配，堆是可以上增长的。</li>
+<li>数据段–存储全局数据和静态数据。</li>
+<li>代码段–可执行的代码&#x2F;只读常量。</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="动态内存管理方式"><a href="#动态内存管理方式" class="headerlink" title="动态内存管理方式"></a>动态内存管理方式</h2><p>我们知道动态内存管理有三种方式：</p>
+<p>malloc：在堆上开辟一块空间并返回开辟空间的地址，如果没有开辟成功则返回空指针</p>
+<p>calloc：在堆上开辟一块空间并初始化，随后返回开辟空间地址，如果开辟失败则返回空指针</p>
+<p>realloc：重新调整给定空间大小，如果给定空间是空指针，则相当了malloc</p>
+<p>free：没什么好说的，开辟的空间用完都要还回去，释放掉一块空间</p>
+<hr>
+<h2 id="C-内存管理方式"><a href="#C-内存管理方式" class="headerlink" title="C++内存管理方式"></a>C++内存管理方式</h2><p>我们知道在C语言里面用malloc后都需要判断一下，否则编译器会报错，用起来就比较麻烦，所以在C++里面，就引出了新的办法：</p>
+<p>new\delete</p>
+<p>用法也很简单：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201105612.png"></p>
+<p>就跟用mallc一样，用完要delete，但用完不需要if判断返回值，因为如果开辟失败它会直接报异常错误。</p>
+<p>用法是在这样的：</p>
+<p>类型指针 对象名 &#x3D; new 类型</p>
+<p>如果类型后面有圆括号就是初始化，如果是方括号就是开辟括号里面个数的空间</p>
+<p>如果是开辟了一个对象，就用delete 对象名</p>
+<p>如果开辟了多个对象空间，就用delete[] 对象名</p>
+<p>[]要对上</p>
+<hr>
+<h3 id="new一个自定义类型"><a href="#new一个自定义类型" class="headerlink" title="new一个自定义类型"></a>new一个自定义类型</h3><p>这也是没问题的，这里我写一个简单的Date来测试：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">	Date()</span><br><span class="line">		:_year(2022),</span><br><span class="line">		_month(5),</span><br><span class="line">		_day(28)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Date()&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~Date()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;~Date()&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这是一个简单的日期类，里面只有构造函数和默认构造，如果我们是用mallc写，应该是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void Test1()</span><br><span class="line">&#123;</span><br><span class="line">	Date* ptr1 = (Date*)malloc(sizeof(Date));</span><br><span class="line">	Date* ptr2 = (Date*)malloc(sizeof(Date) * 10);</span><br><span class="line">	free(ptr1);</span><br><span class="line">	free(ptr2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我这里是vs2013，malloc下面还没有用assert检查，好像bs2019就必须要用assert检查了。</p>
+<p>但如果是new，那就应该这么写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void Test2()</span><br><span class="line">&#123;</span><br><span class="line">	Date* ptr3 = new Date;</span><br><span class="line">	Date* prt4 = new Date[10];</span><br><span class="line"></span><br><span class="line">	delete ptr3;</span><br><span class="line">	delete[] prt4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>为什么要这么写，我们分别测试一下Test1和Test2</p>
+<p>当我们调用Tets1的时候：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201105623.png"></p>
+<p>可以看到里面就是很简单的开辟了一块空间，但是如果我们用Test2，里面的new来开辟空间，则是：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201105083.png"></p>
+<p>可以看到里面开辟好的空间已经全部有了初始值，这个初始值就是类里面写的默认构造的值，当我要delete这个对象的时候，delete也会去调用这个类的析构函数：</p>
+<p><img src="https://img-blog.csdnimg.cn/3371f1b1c69345af9ccb901b22715647.png">编辑</p>
+<p>同时，我也没有用sizeof去求这个类的大小，编译器也自动算出来开辟好了。</p>
+<p>这里的重点是：</p>
+<p>在申请自定义类型的空间时，new会调用构造函数，delete会调用析构函数，而malloc与free不会</p>
+<hr>
+<h2 id="operator-new与operator-delete函数"><a href="#operator-new与operator-delete函数" class="headerlink" title="operator new与operator delete函数"></a>operator new与operator delete函数</h2><p>光是看这个名字就知道这两个肯定跟new和delete有关，事实也确是如此</p>
+<p>先看一下概念：</p>
+<blockquote>
+<p>new和delete是用户进行动态内存申请和释放的操作符，operator new 和operator delete是系统提供的全局函数，new在底层调用operator new全局函数来申请空间，delete在底层通过operator delete全局函数来释放空间。</p>
+</blockquote>
+<p>不好整，直接看源代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void *__CRTDECL operator new(size_t size) _THROW1(_STD bad_alloc) &#123;</span><br><span class="line"> void *p;</span><br><span class="line"> while ((p = malloc(size)) == 0)</span><br><span class="line"> if (_callnewh(size) == 0)</span><br><span class="line"> &#123;</span><br><span class="line"> static const std::bad_alloc nomem;</span><br><span class="line"> _RAISE(nomem);</span><br><span class="line"> &#125;</span><br><span class="line"> return (p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里就可以看到其本质是通过malloc开辟的一块空间，然后进行判断，如果开辟失败就会报出一个bad_alloc的异常，所以我们才不需要跟malloc一样用assert判断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void operator delete(void *pUserData) &#123;</span><br><span class="line"> _CrtMemBlockHeader * pHead;</span><br><span class="line"> RTCCALLBACK(_RTC_Free_hook, (pUserData, 0));</span><br><span class="line"> if (pUserData == NULL)</span><br><span class="line"> return;</span><br><span class="line"> _mlock(_HEAP_LOCK); </span><br><span class="line"> __TRY</span><br><span class="line"> pHead = pHdr(pUserData);</span><br><span class="line"> _ASSERTE(_BLOCK_TYPE_IS_VALID(pHead-&gt;nBlockUse));</span><br><span class="line"> _free_dbg( pUserData, pHead-&gt;nBlockUse );</span><br><span class="line"> __FINALLY</span><br><span class="line"> _munlock(_HEAP_LOCK); </span><br><span class="line"> __END_TRY_FINALLY</span><br><span class="line"> return; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>看着一大串，其实本质还是调用free来清理空间</p>
+<p>顺带看一下free的实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define free(p) _free_dbg(p, _NORMAL_BLOCK)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="new、delete的实现原理"><a href="#new、delete的实现原理" class="headerlink" title="new、delete的实现原理"></a>new、delete的实现原理</h2><h3 id="内置类型"><a href="#内置类型" class="headerlink" title="内置类型"></a>内置类型</h3><p>如果是内置类型，new和malloc，delete和free其实是很像的，不同的是new、delete是申请单个元素的空间，new[]和delete[]申请的一块连续空间，new失败的时候会直接抛异常</p>
+<h3 id="自定义类型"><a href="#自定义类型" class="headerlink" title="自定义类型"></a>自定义类型</h3><p>new的原理：调用operator new函数来申请空间，再在申请的空间上执行构造函数</p>
+<p>delete的原理：在空间上执行析构函数，完成对象里面的清理，在调用free来释放空间、</p>
+<p>new name[N]的原理：调用operator new[]函数，在operator[]里面完成N个对象的空间申请，再在申请的空间里面执行N次构造函数</p>
+<p>delete name[N]的原理：在申请的空间里面执行N次析构函数，完成N个对象的资源清理，随后再调用operator[]释放空间，再在operator delete[]里面调用operator delate释放空间</p>
+<p>总之，就套起来了。</p>
+<hr>
+<h2 id="定位new表达式"><a href="#定位new表达式" class="headerlink" title="定位new表达式"></a>定位new表达式</h2><p>这个，知道就好了，他的作用是在已经开辟好的空间调用初始化函数初始化一个对象。</p>
+<p>这里直接看代码理解就好了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	Date()</span><br><span class="line">		:_year(2022),</span><br><span class="line">		_month(5),</span><br><span class="line">		_day(28)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;Date()&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~Date()</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; &quot;~Date()&quot; &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	Date* ptr1 = (Date*)malloc(sizeof(Date));</span><br><span class="line">	new(ptr1) Date;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>一般来说用不到，看看就好了。</p>
+<p>这里还有一个要注意的，就是如果构造函数里面要参数</p>
+<hr>
+<p>这里有几到很常见的题，了解就好了：</p>
+<p>malloc&#x2F;free和new&#x2F;delete的区别 </p>
+<blockquote>
+<p>malloc&#x2F;free和new&#x2F;delete的共同点是：都是从堆上申请空间，并且需要用户手动释放。不同的地方是：</p>
+<ol>
+<li>malloc和free是函数，new和delete是操作符</li>
+<li>malloc申请的空间不会初始化，new可以初始化</li>
+<li>malloc申请空间时，需要手动计算空间大小并传递，new只需在其后跟上空间的类型即可</li>
+<li>malloc的返回值为void*, 在使用时必须强转，new不需要，因为new后跟的是空间的类型</li>
+<li>malloc申请空间失败时，返回的是NULL，因此使用时必须判空，new不需要，但是new需要捕获异常</li>
+<li>申请自定义类型对象时，malloc&#x2F;free只会开辟空间，不会调用构造函数与析构函数，而new在申请空间后会调用构造函数完成对象的初始化，delete在释放空间前会调用析构函数完成空间中资源的清理</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p>这里就直接看看定义和危害就好了：</p>
+<blockquote>
+<p>什么是内存泄漏：内存泄漏指因为疏忽或错误造成程序未能释放已经不再使用的内存的情况。内存泄漏并不是指内存在物理上的消失，而是应用程序分配某段内存后，因为设计错误，失去了对该段内存的控制，因而造成了内存的浪费。</p>
+<p>内存泄漏的危害：长期运行的程序出现内存泄漏，影响很大，如操作系统、后台服务等等，出现内存泄漏会导致响应越来越慢，最终卡死。</p>
+</blockquote>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/05/28/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/05/28/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

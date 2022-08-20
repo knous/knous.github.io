@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
+	<link rel="shortcut icon" href="/img/Knous.png">
+	
+			    <title>
+    Knous
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Knous" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Knous</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/Learn/" title="学习记录">
+		                学习记录
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >日期类</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<p>既然决定写一个 日期 类，那就需要三个参数：</p>
+<p>年，月，日</p>
+<p>所以先定义出来：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Data</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">public：</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	int _year;</span><br><span class="line">	int _month;</span><br><span class="line">	int _day;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>里面的三个对象就不用公开，有需要可以直接在类里面操作。</p>
+<hr>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>我们知道，有三种构造函数：</p>
+<p>1、无参</p>
+<p>2、缺省</p>
+<p>3、编译器自带</p>
+<p>这里就不适合用编译器自带的，因为编译器自带的对于内置类型（int、double…）不会做处理，所以这里用的是缺省参数。</p>
+<blockquote>
+<p>Data(int year,int month, int day)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> this-&gt;_year = year;</span><br><span class="line"></span><br><span class="line"> this-&gt;_month = month;</span><br><span class="line"></span><br><span class="line"> this-&gt;_day = day;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>为了方便阅读，所以我在这里会用this指针，可以简单理解为就是要改变的参数，假设这是d1要初始化，那this就是d1，this-&gt;_year &#x3D; d1-&gt;year;</p>
+<p>当写出这样的代码的时候，有没有一种可能，就是用户使用的时候他传来一个相对错误的日期，比方说：</p>
+<p>不是闰年的时候传进来2 29号</p>
+<p>一个月的第32天</p>
+<p>公元300年</p>
+<p>…</p>
+<p>显然，这些是我们没有考虑到的，所以为了更合理的使用这个日期类，我们最好加一个判断条件：</p>
+<p>如果年份太离谱，报错</p>
+<p>如果月份日期不对，报错</p>
+<p>但是，要如何来判断这个月份对不对呢？</p>
+<p>可以再套一个函数：</p>
+<blockquote>
+<p>Data(int year,int month, int day)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> if (year &lt; 1900 ||</span><br><span class="line"></span><br><span class="line">     month &lt; 1 ||</span><br><span class="line"></span><br><span class="line">     month&gt;12 ||</span><br><span class="line"></span><br><span class="line">     day&gt;GetMonthDay(year, month))</span><br><span class="line"></span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">     cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> this-&gt;_year = year;</span><br><span class="line"></span><br><span class="line"> this-&gt;_month = month;</span><br><span class="line"></span><br><span class="line"> this-&gt;_day = day;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>稍微改进一下，如果年份小于1900，那就报错，如果月份小于1，如果月份大于12，或者是</p>
+<p>day&gt;GetMonthDay ；</p>
+<p>这个GetMonthDay ，是之后要实现的一个函数，来判断这个月有多少天，具体实现也挺简单的，首先要开辟一个数组，这个数组里面放上每个月的具体天数，然后根据传过去的参数来返回这个月有多少天。</p>
+<p>这里要注意一点，别忘了判断闰年：</p>
+<blockquote>
+<p>int GetMonthDay(int year, int month)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> int MonthDayArray[13] = &#123; 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 &#125;; </span><br><span class="line"></span><br><span class="line"> if (year % 4 == 0 &amp;&amp; year % 100 != 0 ||</span><br><span class="line"></span><br><span class="line">     year % 400 == 0)</span><br><span class="line"></span><br><span class="line">     if (month == 2)</span><br><span class="line"></span><br><span class="line">         return 29;    </span><br><span class="line"></span><br><span class="line"> return MonthDayArray[month];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>这里要注意的一点是，最后返回日期的时候，如果创建的数组的大小是12，那返还的的应该是MonthDayArray[month-1]</p>
+<p>连起来：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201050305.png"></p>
+<p>既然写好了构造函数，那就来用一下：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201050974.png"></p>
+<p>报错，因为2022不是闰年，所以没有29天</p>
+<p>既然创建好了一个初始对象，那我们正好写一个打印函数，来方便我们查看里面的内容：</p>
+<blockquote>
+<p>void printf()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> cout &lt;&lt; this-&gt;_year &lt;&lt; &quot; &quot; &lt;&lt; this-&gt;_month &lt;&lt; &quot; &quot; &lt;&lt; this-&gt;_day &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>很简单的函数，就不细说了。</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201050576.png"></p>
+<p>可以看到，如果是之前的代码来跑这个的话，因为当时写的时候是直接打印error然后返回，所以d1里面的值都是随机值，如果我们写一个正确的值的话：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201050006.png"></p>
+<p>还是没问题的。</p>
+<hr>
+<h2 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h2><p>写不写都可以，这里为了说明写一个简单一点的析构函数：</p>
+<blockquote>
+<p>~Data()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> this-&gt;_day = this-&gt;_month = this-&gt;_year = 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>类名前面加上一个波浪号表示这是一个析构函数，实现方式就是直接讲三个参数重制为零就好了。</p>
+<hr>
+<h2 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h2><p>初始化的时候，我们不止可以用单纯的的类型来初始化，还可以用一个对象来初始化另一个对象，这个操作称之为拷贝构造。</p>
+<p>拷贝分为两种：</p>
+<p>浅拷贝，也称之为值拷贝，它是很简单的一个字节一个字节的拷贝</p>
+<p>对于那些int double 来说它是可以用的，但是假若开辟了一块空间，那浅拷贝的时候它会把这个指针的地址也拷贝过去，也就是说两个对象的指针指向的是同一块空间，就会出现析构两次，或者是操作一个对象另一个对象也出现对应现象的错误。</p>
+<p>为了解决这种错误，出现了另一个，叫做：深拷贝</p>
+<p>深拷贝就不会出现这种问题，但对于我们现在写的日期来说，浅拷贝也已经够用了。</p>
+<p>同样，这里也是可以不写的，这里是为了示范：</p>
+<blockquote>
+<p>Data(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> this-&gt;_year = d._year;</span><br><span class="line"></span><br><span class="line"> this-&gt;_month = d._month;</span><br><span class="line"></span><br><span class="line"> this-&gt;_day = d._day;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>这里要说一点，当我们传参数的时候，假若是要讲d2拷贝为d1的内容，那我们调用类函数的时候是这样的：</p>
+<p>d2（d1）；</p>
+<p>我们传过去的参数只要一个d1，d2它是会被默认传过去的，如果在传一个d2过去就会引发错误，而我们想找d2的时候直接用this就可以了。</p>
+<p>所以这里直接就是this-&gt;_year &#x3D; d._year</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051430.png"></p>
+<hr>
+<h2 id="赋值运算符重载"><a href="#赋值运算符重载" class="headerlink" title="赋值运算符重载"></a>赋值运算符重载</h2><p>这个就好像那些很简单的，用一个对象来赋值给另一个类型的对象，注意以下几点：</p>
+<p>注意传参的时候只用传要赋值的那个就可以了</p>
+<p>注意被赋值的对象跟要赋值的对象应该不一样，如果是自己赋值自己，这种行为还是报错比较好</p>
+<p>注意我们最后要返回这个值本身，因为语言本身支持这样：a &#x3D; b &#x3D; c，这种连续赋值，如果我们不返回值那这种情况就会报错</p>
+<p>注意用引用，如果返回的单纯是一个值，返回中会有拷贝过程，所以这里用引用效率，或者说是速度会更快一点。</p>
+<p>注意this是一个对象指针，指向的是要赋值的那个对象，所以要返回对象的时候应该先解引用。</p>
+<blockquote>
+<p>Data&amp; operator&#x3D;(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> if (this == &amp;d)</span><br><span class="line"></span><br><span class="line">     cout &lt;&lt; &quot;error&quot; &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"> else</span><br><span class="line"></span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">     this-&gt;_year = d._year;</span><br><span class="line"></span><br><span class="line">     this-&gt;_month = d._month;</span><br><span class="line"></span><br><span class="line">     this-&gt;_day = d._day;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> return *this;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051320.png"></p>
+<h2 id="日期-x3D-天数"><a href="#日期-x3D-天数" class="headerlink" title="日期+&#x3D;天数"></a>日期+&#x3D;天数</h2><p>这个其实也很好解决，我们直接将天数加上去，然后进行判断，如果这个天数大于这个月该有的天数，那我们的月份就+1，然后天数-这个月的天数，如果过程中月份到了13，那就应该把月份重制为1.</p>
+<p>简单写一个：</p>
+<blockquote>
+<p>Data&amp; operator+&#x3D;(int day)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> this-&gt;_day += day;</span><br><span class="line"></span><br><span class="line"> while (this-&gt;_day &gt; GetMonthDay(this-&gt;_year, this-&gt;_month))</span><br><span class="line"></span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">     this-&gt;_day -= GetMonthDay(this-&gt;_year, this-&gt;_month);</span><br><span class="line"></span><br><span class="line">     this-&gt;_month += 1;</span><br><span class="line"></span><br><span class="line">     if (this-&gt;_month == 13)</span><br><span class="line"></span><br><span class="line">     &#123;</span><br><span class="line"></span><br><span class="line">         this-&gt;_year += 1;</span><br><span class="line"></span><br><span class="line">         this-&gt;_month = 1;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> return *this;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>目前效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051949.png"></p>
+<h2 id="日期-天数"><a href="#日期-天数" class="headerlink" title="日期+天数"></a>日期+天数</h2><p>既然有+&#x3D;，那就有+，不过这里有一点要注意：</p>
+<p>+不一定是真的+上去，也许是在表达式里面进行的一个判断过程，所以我们不能直接用+&#x3D;的思想。</p>
+<p>这里也简单写一个：</p>
+<blockquote>
+<p>Data&amp; operator+(int day)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> Data tmp(*this);</span><br><span class="line"></span><br><span class="line"> tmp += day;</span><br><span class="line"></span><br><span class="line"> return tmp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>先初始画一个拷贝的值，然后对这个拷贝的值进行操作，再返回，不要对*this操作，注意注意注意。</p>
+<hr>
+<h2 id="日期-x3D-天数-1"><a href="#日期-x3D-天数-1" class="headerlink" title="日期-&#x3D;天数"></a>日期-&#x3D;天数</h2><p>有加就有减，大体思路其实跟日期+差不多，同样是先减，然后再循环判断：</p>
+<p>注意，先减一月，因为在上来的this-&gt;_day -&#x3D; day的时候这个月已经减完了，所以要拿下个月的出来。</p>
+<blockquote>
+<p>Data&amp; operator-&#x3D;(int day)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> this-&gt;_day -= day;</span><br><span class="line"></span><br><span class="line"> while (this-&gt;_day &lt; 0)</span><br><span class="line"></span><br><span class="line"> &#123;    </span><br><span class="line"></span><br><span class="line">     this-&gt;_month -= 1;</span><br><span class="line"></span><br><span class="line">     if (this-&gt;_month == 0)</span><br><span class="line"></span><br><span class="line">     &#123;</span><br><span class="line"></span><br><span class="line">         this-&gt;_year--;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     this-&gt;_day += GetMonthDay(this-&gt;_year, this-&gt;_month);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> return *this;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<h2 id="日期-天数-1"><a href="#日期-天数-1" class="headerlink" title="日期-天数"></a>日期-天数</h2><p>这个，就没什么好说的，如果明白了+，那-应该也明白了。</p>
+<blockquote>
+<p>Data&amp; operator-(int day)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> Data tmp(*this);</span><br><span class="line"></span><br><span class="line"> tmp -= (day);</span><br><span class="line"></span><br><span class="line"> return tmp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<hr>
+<h2 id="gt-运算符重载"><a href="#gt-运算符重载" class="headerlink" title="&gt;运算符重载"></a>&gt;运算符重载</h2><p>作为一个日期类，比较大小还是很简单的，首先比较年，如果年比较不出来大小，那就比较月，如果月比较不出来，那就比较天。</p>
+<p>简单写一下：</p>
+<blockquote>
+<p>bool operator&gt;(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> if (this-&gt;_year &lt; d._year ||</span><br><span class="line"></span><br><span class="line">     this-&gt;_year &lt;= d._year&amp;&amp;this-&gt;_month &lt; d._month ||</span><br><span class="line"></span><br><span class="line">     this-&gt;_year &lt;= d._year&amp;&amp;this-&gt;_month &lt;= d._month&amp;&amp;this-&gt;_day &lt;= d._day)</span><br><span class="line"></span><br><span class="line">     return false;</span><br><span class="line"></span><br><span class="line"> return true;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051280.png"></p>
+<hr>
+<h2 id="x3D-x3D-运算符"><a href="#x3D-x3D-运算符" class="headerlink" title="&#x3D;&#x3D;运算符"></a>&#x3D;&#x3D;运算符</h2><p>这个，算非常简单的那一种，我们直接比较对应的年月日即可：</p>
+<blockquote>
+<p>bool operator&#x3D;&#x3D;(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return this-&gt;_year == d._year&amp;&amp;</span><br><span class="line"></span><br><span class="line">        this-&gt;_month == d._month&amp;&amp;</span><br><span class="line"></span><br><span class="line">        this-&gt;_day == d._day;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051807.png"></p>
+<hr>
+<h2 id="gt-x3D-运算符重载"><a href="#gt-x3D-运算符重载" class="headerlink" title="&gt;&#x3D;运算符重载"></a>&gt;&#x3D;运算符重载</h2><p>这里，&gt;&#x3D;的结果，是不是就是把我们之前写的大于和等于结合起来。</p>
+<p>所以我们直接复用代码：</p>
+<blockquote>
+<p>bool operator&gt;&#x3D;(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return *this &gt; d||*this == d;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051989.png"></p>
+<hr>
+<h2 id="lt-运算符重载"><a href="#lt-运算符重载" class="headerlink" title="&lt;运算符重载"></a>&lt;运算符重载</h2><p>小于，是不是大于等于的结果取反？</p>
+<p>所以还是直接复用代码：</p>
+<blockquote>
+<p>bool operator&lt;(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return !(*this &gt;= d);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051701.png"></p>
+<hr>
+<h2 id="lt-x3D-运算符重载"><a href="#lt-x3D-运算符重载" class="headerlink" title="&lt;&#x3D;运算符重载"></a>&lt;&#x3D;运算符重载</h2><p>小于等于，那不就是大于的取反吗</p>
+<p>继续复用：</p>
+<blockquote>
+<p>bool operator&lt;&#x3D;(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return !(*this&gt;d);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051557.png"></p>
+<hr>
+<h2 id="x3D-运算符重载"><a href="#x3D-运算符重载" class="headerlink" title="!&#x3D;运算符重载"></a>!&#x3D;运算符重载</h2><p>这还用说吗，等于取反：</p>
+<blockquote>
+<p>bool operator!&#x3D;(const Data&amp;d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> return !(*this == d);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051542.png">编辑</p>
+<hr>
+<h2 id="日期-日期-返回天数"><a href="#日期-日期-返回天数" class="headerlink" title="日期-日期 返回天数"></a>日期-日期 返回天数</h2><p>这里有好几种方法实现，比如说：</p>
+<p>1、年减年，月减月，日减日</p>
+<p>2、一直加那个小的直到它们两个相等</p>
+<p>第一种方法是很容易想到但是不容易实现的，因为要考虑到有的年月天数不一样，所以会比较麻烦，这里推荐使用第二种：</p>
+<p>因为不能改变原有数据，所以我们先创建一个对象，让它来表示小的那个，然后循环：</p>
+<blockquote>
+<p>int operator-(const Data&amp; d)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> Data min(*this);</span><br><span class="line"></span><br><span class="line"> Data max(d);</span><br><span class="line"></span><br><span class="line"> int count = 0;</span><br><span class="line"></span><br><span class="line"> if (*this &gt; d)</span><br><span class="line"></span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">     min = d;</span><br><span class="line"></span><br><span class="line">     max = *this;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> while (max != min)</span><br><span class="line"></span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">     count++;</span><br><span class="line"></span><br><span class="line">     min+=1;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> return count;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>默认小的那个是*this，大的那个是d，然后判断如果取反了就交换，再累加计算，效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051527.png"></p>
+<hr>
+<h2 id="前置"><a href="#前置" class="headerlink" title="前置++"></a>前置++</h2><p>这里要注意的一点是，前置++是先++，然后再算。</p>
+<blockquote>
+<p>Data operator++()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> *this += 1;</span><br><span class="line"></span><br><span class="line"> return *this;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051281.png"></p>
+<hr>
+<h2 id="后置"><a href="#后置" class="headerlink" title="后置++"></a>后置++</h2><p>这里要注意一点，因为是后置，所以为了区分前置，它会在参数里面默认传过去一个int，不需要接收，只是为了表明这是后置++。</p>
+<p>注意一点，后置++是先运行完再++，所以不能直接用<em>this，而是用一个对象保存当前</em>this的值饭后，然后再++*this。</p>
+<blockquote>
+<p>Data operator++(int)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> Data tmp(*this);</span><br><span class="line"></span><br><span class="line"> *this += 1;</span><br><span class="line"></span><br><span class="line"> return tmp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051951.png"></p>
+<p>可以看到第一次的时候还不相等，++完就相等了。</p>
+<hr>
+<h2 id="前置–"><a href="#前置–" class="headerlink" title="前置–"></a>前置–</h2><p>跟前置++一样，直接复制过来修改一下就好：</p>
+<blockquote>
+<p>Data operator–()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> *this -= 1;</span><br><span class="line"></span><br><span class="line"> return *this;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="后置–"><a href="#后置–" class="headerlink" title="后置–"></a>后置–</h2><p>同理：</p>
+<blockquote>
+<p>Data operator–(int)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"> Data tmp(*this);</span><br><span class="line"></span><br><span class="line"> *this -= 1;</span><br><span class="line"></span><br><span class="line"> return tmp;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201051007.png"></p>
+<hr>
+<p>支持，日期类就告一段落，希望这篇文章对您有所帮助，下篇文章再见</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2022/05/19/%E6%97%A5%E6%9C%9F%E7%B1%BB/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2022/05/19/%E6%97%A5%E6%9C%9F%E7%B1%BB/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

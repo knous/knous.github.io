@@ -96,7 +96,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
 	                    </ul>
 	        </li>
 	        
@@ -247,12 +247,13 @@
 <p>如果s2里面已经有元素，那我们直接返回即可；</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int myQueuePop(MyQueue* obj)</span><br><span class="line">&#123;</span><br><span class="line">	assert(obj);</span><br><span class="line"></span><br><span class="line">	if (StackEmpty(&amp;obj-&gt;s2))</span><br><span class="line">	&#123;</span><br><span class="line">		while (!StackEmpty(&amp;obj-&gt;s1))</span><br><span class="line">		&#123;</span><br><span class="line">			StackPush(&amp;obj-&gt;s2, StackTop(&amp;obj-&gt;s1));</span><br><span class="line">			StackPop(&amp;obj-&gt;s1);</span><br><span class="line">		&#125;</span><br><span class="line">		int data = StackTop(&amp;obj-&gt;s2);</span><br><span class="line">		StackPop(&amp;obj-&gt;s2);</span><br><span class="line">		return data;</span><br><span class="line">	&#125;</span><br><span class="line">	int data = StackTop(&amp;obj-&gt;s2);</span><br><span class="line">	StackPop(&amp;obj-&gt;s2);</span><br><span class="line">	return data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/%22%E7%82%B9%E5%87%BB%E5%B9%B6%E6%8B%96%E6%8B%BD%E4%BB%A5%E7%A7%BB%E5%8A%A8%22"></p>
+
+
 <h2 id="返回队列开头的元素；"><a href="#返回队列开头的元素；" class="headerlink" title="返回队列开头的元素；"></a>返回队列开头的元素；</h2><p>同样，如果s2里面有元素，我们就返回s2尾部，但如果s2为空。那就返回s1，这里要注意：</p>
-<p><strong>s2的尾部是s1的头，如果s2为空，那我们返回s1的位置就应该是s1数组下标为0的位置</strong></p>
-<p><strong>比方说：压进去 1  2   3  4</strong></p>
+<p>s2的尾部是s1的头，如果s2为空，那我们返回s1的位置就应该是s1数组下标为0的位置</p>
+<p>比方说：压进去 1  2   3  4</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200924922.png"></p>
-<p>**上面我们的操作是把s1的值压到s2里面，根据图示，1的位置是s2的尾部和s1的头，一定注意 **</p>
+<p>上面我们的操作是把s1的值压到s2里面，根据图示，1的位置是s2的尾部和s1的头，一定注意 </p>
 <h2 id="看栈是否为空；"><a href="#看栈是否为空；" class="headerlink" title="看栈是否为空；"></a>看栈是否为空；</h2><p>判断obj里面的s1 和 s2 即可：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bool myQueueEmpty(MyQueue* obj)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	return StackEmpty(&amp;obj-&gt;s1) &amp;&amp; StackEmpty(&amp;obj-&gt;s2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
