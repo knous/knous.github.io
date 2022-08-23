@@ -223,7 +223,94 @@
 
 <p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p>删除就不打算讲了，理解插入就足够了</p>
-<p>感谢您的敢看</p>
+<h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208232032423.png" alt="img"></p>
+<p> 假设这是我们的红黑树，它会拿来实现map&#x2F;set，我们知道这两个容器如果用迭代器访问的话，它会是一个有序的一串数据：5 6 7 8 9 10 11 </p>
+<p>那么，我们如何来完成这样想法？</p>
+<p>先从最简单的获取begin和end开始，这两个其实不算难，begin肯定是指向最小的那一个，而最小的那一个就是树的最左节点，而end就跟它相反，指的是最有节点，我们肯定不能直接返回这个节点，所以我们封装一下一个迭代器出来。</p>
+<p>这一步跟list其实很像，这里简单说一下，通过我们传过去的参数不同来实现非const 和 const的版本，迭代器其本质就是一个节点，不过我们通过重载来让它达成++，–这样的功能。</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208232032861.png" alt="img"></p>
+<p>那简单写一个迭代器出来，不过在此之前，我们要稍微堆RBTree修改一下。</p>
+<blockquote>
+<p>template&lt;class K, class T&gt;</p>
+</blockquote>
+<p> 改成这样，为什么？</p>
+<p>后面的map、set会用到红黑树进行修改，而我们如何让红黑树适配map、set的不同？</p>
+<p>map是key、val对</p>
+<p>set是key、key对</p>
+<p>这怎么办？</p>
+<p>既然都不好办，那就折中一下，我们第一个类型照样接收，但是第二个类型val用来区分。</p>
+<p>如果是set，那val也是key</p>
+<p>如果是map，那val就是pair&lt;k,v&gt;</p>
+<p>到时候我们就可以统一的用第二个参数，这样也比较好写我们的迭代器。</p>
+<p>-–</p>
+<p>正式开始写我们的迭代器</p>
+<h2 id="typedef部分"><a href="#typedef部分" class="headerlink" title="typedef部分"></a>typedef部分</h2><p>我们知道迭代器应该有两个版本，一个是const，另一个是非const，在之前list我们就是通过重定义来区分，这里也一样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedef RBTree_iterator&lt;T, T&amp;, T*&gt; iterator;</span><br><span class="line">typedef RBTree_iterator&lt;T, const T&amp;, const T*&gt; const_iterator;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>这样，它就区分了两个迭代器的区别。</p>
+<h2 id="获取begin和end"><a href="#获取begin和end" class="headerlink" title="获取begin和end"></a>获取begin和end</h2><p>很简单，直接找最左和最右即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">iterator begin()</span><br><span class="line">&#123;</span><br><span class="line">	Node* cur = _root;</span><br><span class="line"></span><br><span class="line">	while (cur &amp;&amp; cur-&gt;left)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;_left;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return iterator(cur);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">iterator end()</span><br><span class="line">&#123;</span><br><span class="line">	Node* cur = _root;</span><br><span class="line"></span><br><span class="line">	while (cur &amp;&amp; cur-&gt;_right)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;_right;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return iterator(cur);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const_iterator begin() const</span><br><span class="line">&#123;</span><br><span class="line">	Node* cur = _root;</span><br><span class="line"></span><br><span class="line">	while (cur &amp;&amp; cur-&gt;left)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;_left;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return iterator(cur);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const_iterator end() const</span><br><span class="line">&#123;</span><br><span class="line">	Node* cur = _root;</span><br><span class="line"></span><br><span class="line">	while (cur &amp;&amp; cur-&gt;_right)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;_right;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return iterator(cur);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>目前为止还没什么好说的，至于为什么返回值是个iterator，直接返回cur行不行？</p>
+<p>从本质上来讲，可以，因为这个迭代器也是一个指针而已，但从使用角度来说，不推荐，因为其是一个迭代器，迭代器直接跟指针比较，多少有点不合适。</p>
+<p>封装一下，好看一点嘛。</p>
+<p>开始写迭代器的类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T, class Ref ,class Ptr&gt;</span><br><span class="line">struct RBTree_iterator</span><br><span class="line">&#123;</span><br><span class="line">	typedef RBTreeNode&lt;T&gt; Node;</span><br><span class="line">	tyoedef RBTree_iterator&lt;T, Ref, Ptr&gt; self;</span><br><span class="line">	Node* _node;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	Node* _node;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>迭代器的构造函数也还算节点，我们其本质也是一个节点的指针，我们把指针的值赋值过去即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RBTree_iterator(Node&amp; node)</span><br><span class="line">	:_node(node)</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title="++"></a>++</h2><p>++有两种，前置和后置，我们只需要写一个前置即可，后置可以复用前置。</p>
+<p>如何写？</p>
+<p>说来也简单，我们知道红黑树的有序要走中序，那我们++就是这个走中序的过程，先是左子树，再是根，再是右子树。</p>
+<p>首先我们判断，右子树走完没有。</p>
+<p>以下图举例：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208232032230.png" alt="img"></p>
+<p>此时，begin是5，5已经打印出来，下一个是6，我们判断一个节点的右边走完没有，如何判断走完没有？</p>
+<p>我们看这个节点的右子树。</p>
+<p>如果这个节点右子树不为空，那我们的cur就要往右子树走，同时找到最左节点。</p>
+<p>如果这个节点的右子树为空，那我们的cur就已经是叶子节点了，都叶子节点了，那它的下一个肯定是它的父亲，那我们就让begin&#x3D;begin-&gt;fater，然后等待下次判断：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208232032162.png" alt="img"></p>
+<p>此时走到了6，6的右子树不为空，走右子树的最左节点，但是7就是叶子节点，所以来到7的位置。</p>
+<p>假设7已经走完，那如何回到6的位置？</p>
+<p>我们发现，6是8的左子树，那我们就可以找，孩子是父亲左边的那个。</p>
+<p>举个例子，现在是7，父亲是6，7不是6的左子树，那7和6都往上走。</p>
+<p>6是不是8的左子树，是。</p>
+<p>但是6是已经访问完成的状态，所以我们要让begin指向父亲，也就是8的位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">self operator++()</span><br><span class="line">&#123;</span><br><span class="line">	Node* cur = _node;</span><br><span class="line"></span><br><span class="line">	if (cur-&gt;_right)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;_right;</span><br><span class="line"></span><br><span class="line">		while (cur-&gt;_left)</span><br><span class="line">		&#123;</span><br><span class="line">			cur = cur-&gt;_left;</span><br><span class="line">		&#125;</span><br><span class="line">		_node = cur;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		Node* parent = cur-&gt;_parent;</span><br><span class="line"></span><br><span class="line">		if (parent &amp;&amp; cur != parent-&gt;_left)</span><br><span class="line">		&#123;</span><br><span class="line">			cur = parent;</span><br><span class="line">			parent = parent-&gt;_parent;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		_node = parent;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>后置版本的就是复用前置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">self operator++(int)</span><br><span class="line">&#123;</span><br><span class="line">	self tmp(*this);</span><br><span class="line">	++(*this);</span><br><span class="line">	return tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="–"><a href="#–" class="headerlink" title="–"></a>–</h2><p>这个跟++完全就是反过来，为什么这么说，看下图</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208232032191.png" alt="img"></p>
+<p>此时 it是8，它的上一个是7，那我们怎么找到7？</p>
+<p>是不是把之前的逻辑反过来即可？</p>
+<p>7是6的右边。</p>
+<p>也就是说，我们要找的是左子树的最右节点。</p>
+<p>但是如果it是9，它的左子树为空，那怎么办？</p>
+<p>我们就找孩子是父亲右边的那个。</p>
+<p>为什么？</p>
+<p>因为9是8通过走右子树然后找最左节点来的，也就是说，如果我父亲是我祖父的右节点，那基本就是一个原路返回。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">self operator--()</span><br><span class="line">&#123;</span><br><span class="line">	Node* cur = _node;</span><br><span class="line">	if (cur-&gt;left)</span><br><span class="line">	&#123;</span><br><span class="line">		cur = cur-&gt;_left;</span><br><span class="line">		while (cur-&gt;_right)</span><br><span class="line">		&#123;</span><br><span class="line">			cur = cur-&gt;_right;</span><br><span class="line">		&#125;</span><br><span class="line">		_node = cur;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		Node* parent = cur-&gt;_parent;</span><br><span class="line"></span><br><span class="line">		while (parent &amp;&amp; parent-&gt;_right != cur)</span><br><span class="line">		&#123;</span><br><span class="line">			cur = parent;</span><br><span class="line">			parent = parent-&gt;_parent;</span><br><span class="line">		&#125;</span><br><span class="line">		_node = cur;</span><br><span class="line">	&#125;</span><br><span class="line">	return *this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">self operator--(int)</span><br><span class="line">&#123;</span><br><span class="line">	self tmp(*this);</span><br><span class="line">	--(*this);</span><br><span class="line">	return tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="、-gt"><a href="#、-gt" class="headerlink" title="*、-&gt;"></a>*、-&gt;</h2><p>*其实就是将这个地址数据返回过去即可。</p>
+<p>-&gt;也只是找到这个地址所指向的数据即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Ref operator*()</span><br><span class="line">&#123;</span><br><span class="line">	return _node-&gt;_kv;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Ptr operator-&gt;()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	return &amp;_node-&gt;_kv;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h2 id="！-x3D-、-x3D-x3D"><a href="#！-x3D-、-x3D-x3D" class="headerlink" title="！&#x3D;、&#x3D;&#x3D;"></a>！&#x3D;、&#x3D;&#x3D;</h2><p>迭代器本质是指针，直接比较</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">bool operator!=(const self&amp; s) const</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	return _node != s._node;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool operator==(const self&amp; s) const</span><br><span class="line">&#123;</span><br><span class="line">	return _node == s._node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>至此迭代器的大部分功能写完，希望对你的学习有所帮助。</p>
 
             </div>
 
