@@ -3,12 +3,25 @@
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  background: var(--background-color);
+  background: url("https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209012059231.jpg");
+/*背景图片不重复多次显示*/
+  background-repeat: no-repeat;
+/*窗口放缩时背景图片中心始终在屏幕中心*/
+  background-position: center;
+/*背景图片固定，不滚动*/
+  background-attachment: fixed;
+/*图片大小自适应窗口大小*/
+  background-size: cover;
 keep-tablet()
 }
 .page-container .page-main-content {
   padding-top: $header-height;
   position: relative;
+  background: url("https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209012059231.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 keep-tablet()
 keep-mobile()
 }

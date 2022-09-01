@@ -1137,11 +1137,15 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  background: var(--background-color);
-  transition-property: color, background, box-shadow, border-color, padding-left;
-  transition-delay: 0s, 0s, 0s, 0s, 0s;
-  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.3s;
-  transition-timing-function: ease, ease, ease, ease, ease-out;
+  background: url("https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209012059231.jpg");
+/*背景图片不重复多次显示*/
+  background-repeat: no-repeat;
+/*窗口放缩时背景图片中心始终在屏幕中心*/
+  background-position: center;
+/*背景图片固定，不滚动*/
+  background-attachment: fixed;
+/*图片大小自适应窗口大小*/
+  background-size: cover;
 }
 @media (max-width: 780px) {
   .page-container {
@@ -1151,6 +1155,11 @@ pre .javascript .function {
 .page-container .page-main-content {
   padding-top: 70px;
   position: relative;
+  background: url("https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209012059231.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .header-shrink .page-container .page-main-content {
   padding-top: 50.4px;
@@ -2088,11 +2097,14 @@ pre .javascript .function {
   height: 90%;
 }
 .first-screen-container .content .description {
+  background: rgba(50,50,50,0.4);
+  padding: 5px 20px;
+  border-radius: 5px;
   font-weight: bold;
   font-size: 2rem;
   line-height: 1.8;
   text-align: center;
-  color: var(--default-text-color);
+  color: #e6e6e6;
 }
 @media (max-width: 780px) {
   .first-screen-container .content .description {
@@ -2292,7 +2304,7 @@ pre .javascript .function {
   margin-bottom: 0;
 }
 .home-content-container {
-  background: var(--background-color);
+  background: rgba(255,255,255,0);
 }
 .home-content-container .home-article-list .home-article-item {
   position: relative;
@@ -2306,6 +2318,7 @@ pre .javascript .function {
   transition-delay: 0s, 0s, 0s, 0s, 0s;
   transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
   transition-timing-function: ease, ease, ease, ease, linear;
+  background: rgba(255,255,255,0.8);
 }
 @media (max-width: 780px) {
   .home-content-container .home-article-list .home-article-item {
@@ -2404,7 +2417,7 @@ pre .javascript .function {
   border: none;
   flex: 1;
   height: 1px;
-  background: var(--border-color);
+  background: rgba(255,255,255,0);
   margin: 0 10px;
 }
 .home-content-container .home-article-list .home-article-item .home-article-meta-info-container a {
