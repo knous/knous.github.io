@@ -1,3 +1,6 @@
+.category-list-container {
+  background: rgba(255,255,255,0.9);
+}
 .category-list-container .category-list-content .all-category-list li.all-category-list-item {
   font-size: 1rem;
   margin-bottom: 15px;
