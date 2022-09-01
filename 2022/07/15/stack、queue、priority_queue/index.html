@@ -206,9 +206,9 @@
 <p>什么是容器适配器</p>
 <hr>
 <h1 id="stack的介绍及使用"><a href="#stack的介绍及使用" class="headerlink" title="stack的介绍及使用"></a>stack的介绍及使用</h1><p>早在几个月前，我就写过一篇文章来讲解和模拟实现stack，当时用的是C语言的版本，这里放上链接：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123730529?spm=1001.2014.3001.5502" title="【数据结构】栈_Knous的博客-CSDN博客_数据结构栈">【数据结构】栈_Knous的博客-CSDN博客_数据结构栈</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123730529?spm=1001.2014.3001.5502"  title="【数据结构】栈_Knous的博客-CSDN博客_数据结构栈">【数据结构】栈_Knous的博客-CSDN博客_数据结构栈<i class="fas fa-external-link-alt"></i></a></p>
 <p>因为现在使用的是C++，这里就重新说一下</p>
-<h2 id="stack的介绍"><a href="#stack的介绍" class="headerlink" title="stack的介绍"></a>stack的介绍</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/stack/stack/?kw=stack" title="stack - C++ Reference (cplusplus.com)">stack - C++ Reference (cplusplus.com)</a></p>
+<h2 id="stack的介绍"><a href="#stack的介绍" class="headerlink" title="stack的介绍"></a>stack的介绍</h2><p><a class="link"   target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/stack/stack/?kw=stack"  title="stack - C++ Reference (cplusplus.com)">stack - C++ Reference (cplusplus.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p>基本可以参考这个网站，但因为是全英文，这里挑一下重点说：</p>
 <blockquote>
 <ol>
@@ -307,9 +307,9 @@
 <p>只要这里的类模板符合stack的需求，即尾部的插入删除，返回尾部元素等，都可以替换 </p>
 <hr>
 <h1 id="queue的介绍和使用"><a href="#queue的介绍和使用" class="headerlink" title="queue的介绍和使用"></a>queue的介绍和使用</h1><p>同样我写了一篇queue的c介绍和模拟实现，这里是链接：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123761379?spm=1001.2014.3001.5502" title="【数据结构】队列_Knous的博客-CSDN博客">【数据结构】队列_Knous的博客-CSDN博客</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123761379?spm=1001.2014.3001.5502"  title="【数据结构】队列_Knous的博客-CSDN博客">【数据结构】队列_Knous的博客-CSDN博客<i class="fas fa-external-link-alt"></i></a></p>
 <p>同样，先放上较为官方的文档介绍，再说一下重点</p>
-<p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/queue/" title="queue - C++ Reference (cplusplus.com)">queue - C++ Reference (cplusplus.com)</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/queue/"  title="queue - C++ Reference (cplusplus.com)">queue - C++ Reference (cplusplus.com)<i class="fas fa-external-link-alt"></i></a></p>
 <blockquote>
 <ol>
 <li>队列是一种容器适配器，专门用于在FIFO上下文(先进先出)中操作，其中从容器一端插入元素，另一端提取元素。</li>
@@ -383,7 +383,7 @@
 <hr>
 <h1 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h1><p>这个名看着挺陌生的，但可以这么理解，这个所谓的优先级_队列，其实就是一个二叉堆，为什么这么说，可以看下面的部分。</p>
 <hr>
-<h2 id="priority-queue的介绍"><a href="#priority-queue的介绍" class="headerlink" title="priority_queue的介绍"></a>priority_queue的介绍</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/priority_queue/" title="priority_queue - C++ Reference (cplusplus.com)">priority_queue - C++ Reference (cplusplus.com)</a></p>
+<h2 id="priority-queue的介绍"><a href="#priority-queue的介绍" class="headerlink" title="priority_queue的介绍"></a>priority_queue的介绍</h2><p><a class="link"   target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/priority_queue/"  title="priority_queue - C++ Reference (cplusplus.com)">priority_queue - C++ Reference (cplusplus.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p>翻译一下，就是；</p>
 <blockquote>
 <ol>
@@ -406,7 +406,7 @@
 <blockquote>
 <p>这是一个由vector或者deque完成的一个容器，里面有一块连续空间来存放数据，为什么不能用list，因为它要完成调整，平时第一个元素是这块连续空间最大的（或者最小的），所以每插入一个元素都要调整，这么看，像不像之前学的堆？</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123940534?spm=1001.2014.3001.5501" title="【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客">【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123940534?spm=1001.2014.3001.5501"  title="【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客">【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客<i class="fas fa-external-link-alt"></i></a></p>
 <p>堆我也写了介绍，这里有兴趣的可以去看看，我们模拟实现其实思路跟那个差不多</p>
 <h2 id="priority-queue的使用"><a href="#priority-queue的使用" class="headerlink" title="priority_queue的使用"></a>priority_queue的使用</h2><table>
 <thead>
@@ -518,7 +518,7 @@
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201148810.png"></p>
 <p>那这个greater是什么？</p>
 <p>其实这就是一个仿函数，这里就简单说一下，这里当然也可以用函数指针来代替，但却过于繁琐，不如我们直接重载一个括号比较，如果有兴趣可以看这篇博客</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/K346K346/article/details/82818801" title="C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数">C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/K346K346/article/details/82818801"  title="C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数">C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数<i class="fas fa-external-link-alt"></i></a></p>
 <p>至此，stack和queue的模拟实现也已经完成，希望这篇文章对你的学习有所帮助</p>
 
         </div>
@@ -533,13 +533,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/07/16/list/"
+                           href="/2022/07/16/reverse_iterator/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">list</span>
+                                <span class="post-nav-title-item">reverse_iterator</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>

@@ -231,7 +231,7 @@
 
 <p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p>然后就可以考虑写插入了，这里需要提醒一下，是否还记得AVL树的旋转，这里红黑树也需要用到，如果不记得，这里放上另一篇博客的链接可供参考：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/126117035?csdn_share_tail=%7B%22type%22:%22blog%22,%22rType%22:%22article%22,%22rId%22:%22126117035%22,%22source%22:%22qq_60306111%22%7D&ctrtid=jnIxW">【C++】AVL_Knous的博客-CSDN博客</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/126117035?csdn_share_tail=%7B%22type%22:%22blog%22,%22rType%22:%22article%22,%22rId%22:%22126117035%22,%22source%22:%22qq_60306111%22%7D&ctrtid=jnIxW" >【C++】AVL_Knous的博客-CSDN博客<i class="fas fa-external-link-alt"></i></a></p>
 <p>ok，最基本的先写上，如果这是一个空树，那最开始插入的就是根节点：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//判断这是否为空树，是就直接插入</span><br><span class="line">if (_root == nullptr)</span><br><span class="line">&#123;</span><br><span class="line">	_root = new Node(kv);</span><br><span class="line">	//根节点一定要是黑色</span><br><span class="line">	_root-&gt;_color = Black;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

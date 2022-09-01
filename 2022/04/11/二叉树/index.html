@@ -203,7 +203,7 @@
             <hr>
 <p> 做的时候总感觉自己掌握的不够深，所以在这里写一篇博客来加深理解。</p>
 <hr>
-<h2 id="单值二叉树"><a href="#单值二叉树" class="headerlink" title="单值二叉树"></a>单值二叉树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/univalued-binary-tree/" title="965. 单值二叉树 - 力扣（LeetCode） (leetcode-cn.com)">965. 单值二叉树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<h2 id="单值二叉树"><a href="#单值二叉树" class="headerlink" title="单值二叉树"></a>单值二叉树</h2><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/univalued-binary-tree/"  title="965. 单值二叉树 - 力扣（LeetCode） (leetcode-cn.com)">965. 单值二叉树 - 力扣（LeetCode） (leetcode-cn.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929934.png"></p>
 <p>二叉树肯定是递归的，但原函数给我们的却是：</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929496.png"></p>
@@ -215,7 +215,7 @@
 
 <p>二叉树的最大深度</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929205.png"></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/" title="104. 二叉树的最大深度 - 力扣（LeetCode） (leetcode-cn.com)">104. 二叉树的最大深度 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/"  title="104. 二叉树的最大深度 - 力扣（LeetCode） (leetcode-cn.com)">104. 二叉树的最大深度 - 力扣（LeetCode） (leetcode-cn.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p>我们先看题目给我们的条件：</p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200929855.png"></p>
 <p>已知根节点，求最大深度</p>
@@ -311,7 +311,7 @@
 
 
 <hr>
-<h2 id="相同的树"><a href="#相同的树" class="headerlink" title="相同的树"></a>相同的树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree/" title="100. 相同的树 - 力扣（LeetCode） (leetcode-cn.com)">100. 相同的树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<h2 id="相同的树"><a href="#相同的树" class="headerlink" title="相同的树"></a>相同的树</h2><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/same-tree/"  title="100. 相同的树 - 力扣（LeetCode） (leetcode-cn.com)">100. 相同的树 - 力扣（LeetCode） (leetcode-cn.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200930336.png"></p>
 <p>我们拿到两棵树的根，开始比较，如果都是空、或者值一样，就递归下去到左节点，左节点递归完再右节点</p>
 <p>过程中如果有不对的地方直接返回false</p>
@@ -320,7 +320,7 @@
 
 
 <hr>
-<h2 id="二叉树是否对称"><a href="#二叉树是否对称" class="headerlink" title="二叉树是否对称"></a>二叉树是否对称</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree/" title="101. 对称二叉树 - 力扣（LeetCode） (leetcode-cn.com)">101. 对称二叉树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<h2 id="二叉树是否对称"><a href="#二叉树是否对称" class="headerlink" title="二叉树是否对称"></a>二叉树是否对称</h2><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/symmetric-tree/"  title="101. 对称二叉树 - 力扣（LeetCode） (leetcode-cn.com)">101. 对称二叉树 - 力扣（LeetCode） (leetcode-cn.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200931287.png"></p>
 <p>确实是有点简单了，根节点不需要比较，我们把左边看成一棵树，右边看成一棵树，然后比较的左边的左子节点和右边的右子节点即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">bool isSameTree(struct TreeNode* p, struct TreeNode* q)&#123;</span><br><span class="line">    if(q == NULL &amp;&amp; p == NULL)</span><br><span class="line">    return true;</span><br><span class="line">    if(q == NULL || p == NULL || q-&gt;val != p-&gt;val)</span><br><span class="line">    return false;</span><br><span class="line">    //注意传过去的是左、右，不要都传一样的</span><br><span class="line">    return isSameTree(q-&gt;left,p-&gt;right) &amp;&amp; isSameTree(q-&gt;right,p-&gt;left);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool isSymmetric(struct TreeNode* root)&#123;</span><br><span class="line">    //空肯定对称</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    return true;</span><br><span class="line">    //递归即可</span><br><span class="line">    return isSameTree(root-&gt;left,root-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -328,7 +328,7 @@
 
 
 <hr>
-<h2 id="另一颗树的子树"><a href="#另一颗树的子树" class="headerlink" title="另一颗树的子树"></a>另一颗树的子树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subtree-of-another-tree/" title="572. 另一棵树的子树 - 力扣（LeetCode） (leetcode-cn.com)">572. 另一棵树的子树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<h2 id="另一颗树的子树"><a href="#另一颗树的子树" class="headerlink" title="另一颗树的子树"></a>另一颗树的子树</h2><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subtree-of-another-tree/"  title="572. 另一棵树的子树 - 力扣（LeetCode） (leetcode-cn.com)">572. 另一棵树的子树 - 力扣（LeetCode） (leetcode-cn.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200931111.png"></p>
 <p>我们拿到节点之后，每一个节点都对比一次，就用上面的是否相同函数，如果不同，我们就递归下去，直到左边的全部节点都走完一遍</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bool isSameTree(struct TreeNode* p, struct TreeNode* q)&#123;</span><br><span class="line">    if(q == NULL &amp;&amp; p == NULL)</span><br><span class="line">    return true;</span><br><span class="line">    if(q == NULL || p == NULL || p-&gt;val != q-&gt;val )</span><br><span class="line">    return false;</span><br><span class="line">    return isSameTree(q-&gt;left,p-&gt;left) &amp;&amp; isSameTree(q-&gt;right,p-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bool isSubtree(struct TreeNode* root, struct TreeNode* subRoot)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    return false;</span><br><span class="line">            //当前节点开始判断、左子树判断、右子树判断</span><br><span class="line">    return isSameTree(root,subRoot)</span><br><span class="line">        || isSubtree(root-&gt;left,subRoot)</span><br><span class="line">        || isSubtree(root-&gt;right,subRoot);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -336,7 +336,7 @@
 
 
 <hr>
-<h2 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree/" title="226. 翻转二叉树 - 力扣（LeetCode） (leetcode-cn.com)">226. 翻转二叉树 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<h2 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h2><p><a class="link"   target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/invert-binary-tree/"  title="226. 翻转二叉树 - 力扣（LeetCode） (leetcode-cn.com)">226. 翻转二叉树 - 力扣（LeetCode） (leetcode-cn.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208200931707.png"></p>
 <p>拿到节点开始判断，如果这个节点为空，我们就返回，如果不为空，我们就直接把它左右子树交换，然后继续递归下去</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct TreeNode* invertTree(struct TreeNode* root)&#123;</span><br><span class="line">    if(root == NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">    //交换</span><br><span class="line">    struct TreeNode* tmp = root-&gt;left;</span><br><span class="line">    root-&gt;left = root-&gt;right;</span><br><span class="line">    root-&gt;right = tmp;</span><br><span class="line">    //递归下去，返回值就不用接收了</span><br><span class="line">    invertTree(root-&gt;left);</span><br><span class="line">    invertTree(root-&gt;right);</span><br><span class="line">    return root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
