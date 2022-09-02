@@ -9,7 +9,7 @@
     
     <title>
         
-            Category: 数据结构 |
+            【剑指office】11. 旋转数组的最小数字 |
         
         Knous
     </title>
@@ -363,91 +363,120 @@ $logo-image-box-width = 46px;
 
                 
                     <div class="fade-in-down-animation">
-    <div class="category-container">
-        <div class="category-name">
-            <i class="fas fa-folder"></i>&nbsp;数据结构
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">【剑指office】11. 旋转数组的最小数字</span>
         </div>
-        <div class="category-post-list">
-            
-<div class="archive-list-container">
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Knous</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-02 00:00:00</span>
+        <span class="mobile">2022-09-02 00:00</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[8]</span>
-            </div>
-            <ul class="article-list">
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/04/23/%E6%8E%92%E5%BA%8F/"
-                        >堆</a>
-                        <span class="article-date">04-23</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/04/11/%E4%BA%8C%E5%8F%89%E6%A0%91/"
-                        >二叉树的练习题</a>
-                        <span class="article-date">04-11</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/04/03/%E5%A0%86/"
-                        >堆</a>
-                        <span class="article-date">04-03</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/03/28/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E4%BA%92%E7%9B%B8%E5%AE%9E%E7%8E%B0/"
-                        >栈和队列的互相实现</a>
-                        <span class="article-date">03-28</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/03/26/%E9%98%9F%E5%88%97/"
-                        >队列</a>
-                        <span class="article-date">03-26</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/03/25/%E6%A0%88/"
-                        >栈</a>
-                        <span class="article-date">03-25</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/03/13/%E9%93%BE%E8%A1%A8/"
-                        >链表</a>
-                        <span class="article-date">03-13</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/03/10/%E9%A1%BA%E5%BA%8F%E8%A1%A8/"
-                        >顺序表</a>
-                        <span class="article-date">03-10</span>
+                    <li>
+                        <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+    
+
+    
+    
+    
     
 </div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209021908885.png" alt="image-20220902190757333"></p>
+<hr>
+<p>看着花，说白了，暴力重新排序或者二分查找，还是那种完全不用变的。</p>
+<p>这里暴力就直接重新排序找第 0 个就好了，不举例。</p>
+<p>举个例子：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209021910358.png" alt="image-20220902191030575"></p>
+<p>此时 Left 应该在 3 的位置上，而 Right 应该在 2 的位置上。</p>
+<p>那么中间位置就是 5 。</p>
+<p>将这个 5 跟最右边判断一下（也可以跟最左边），如果这个位置比 Right 小，就说明最小的那个数肯定不会在右边，同理，如果这个位置比 Right 大，就说明最小的那个数肯定不会在左边。</p>
+<p>现在 Left 是 1 （Left &#x3D; mid+1），Right 是 2 ，中间值是 1 。</p>
+<p>1 &lt; 2</p>
+<p>所以 Right 要变到 1 的位置。</p>
+<p>而二分的前提是 Left &lt; Right</p>
+<p>我们返回 Left即可。</p>
+<p>其他情况也可以根据上面分析。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; numbers)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right = numbers.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(numbers[mid] &lt; numbers[right])</span><br><span class="line">                right = mid;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(numbers[mid] &gt; numbers[right])</span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                right--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> numbers[left];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
         </div>
-    </div>
-    <div class="category-paginator">
-        <div class="paginator">
-    
 
-    
-</div>
+        
 
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/02/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E5%92%8C%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E%20target%20%E7%9A%84%E6%9C%80%E7%9F%AD%E5%AD%90%E6%95%B0%E7%BB%84/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">【剑指 Offer II】008. 和大于等于 target 的最短子数组</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/01/LeetCode1475/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">LeetCode1475</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
 
@@ -480,6 +509,23 @@ $logo-image-box-width = 46px;
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -526,6 +572,14 @@ $logo-image-box-width = 46px;
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -595,6 +649,14 @@ $logo-image-box-width = 46px;
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 
