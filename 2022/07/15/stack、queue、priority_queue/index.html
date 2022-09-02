@@ -1,152 +1,214 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="bookmark"  type="image/x-icon"  href="/img/Knous.png"/>
-	<link rel="shortcut icon" href="/img/Knous.png">
-	
-			    <title>
-    Knous
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Knous">
+    
+    <title>
+        
+            stack、queue、priority_queue |
+        
+        Knous
     </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/css/mic_main.css" />
-    <link rel="stylesheet" href="/css/dropdownMenu.css" />
-    <meta name="keywords" content="Knous" />
     
-    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	 
-    <noscript>
-        <link rel="stylesheet" href="/css/noscript.css" />
-    </noscript>
-    <style type="text/css">
-        body:before {
-          content: ' ';
-          position: fixed;
-          top: 0;
-          background: url('/img/bg.jpg') center 0 no-repeat;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-size: cover; 
-        }
-    </style>
+<link rel="stylesheet" href="/css/style.css">
 
-			    
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
+    <link rel="shortcut icon" href="/images/avatar.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/jquery.scrollex.min.js"></script>
-    <script src="/js/jquery.scrolly.min.js"></script>
-    <script src="/js/skel.min.js"></script>
-    <script src="/js/util.js"></script>
-    <script src="/js/main.js"></script>
-	
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/avatar.png","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/welcome.jpg","description":"Welcome"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
 <meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
     
-		
-<!-- Layouts -->
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
 
 
+<main class="page-container">
 
-<!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_coy.css" />
-<link rel="stylesheet" href="/css/typo.css" />
-<!-- 文章页 -->
-<body class="is-loading">
-    <!-- Wrapper 外包 s-->
-    <div id="wrapper" class="fade-in">
-        <!-- Intro 头部显示 s -->
-        <!-- Intro 头部显示 e -->
-        <!-- Header 头部logo start -->
-        <header id="header">
-    <a href="/" class="logo">Knous</a>
-</header>
-        <!-- Nav 导航条 start -->
-        <nav id="nav" class="special" >
-            <ul class="menu links" >
-			<!-- Homepage  主页  --> 
-			<li >
-	            <a href="/" rel="nofollow">主页</a>
-	        </li>
-			<!-- categories_name  分类   --> 
-	        
-	        <li class="active">
-	            <a href="#s1">分类</a>
-	                    <ul class="submenu">
-	                        <li>
-	                        <a class="category-link" href="/categories/C/">C</a></li><li><a class="category-link" href="/categories/C/">C++</a></li><li><a class="category-link" href="/categories/Linux/">Linux</a></li><li><a class="category-link" href="/categories/test/">test</a></li><li><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-	                    </ul>
-	        </li>
-	        
-	        <!-- archives  归档   --> 
-	        
-	        
-		        <!-- Pages 自定义   -->
-		        
-		        <li>
-		            <a href="/about/" title="关于我">
-		                关于我
-		            </a>
-		        </li>
-		        
-		        <li>
-		            <a href="/Learn/" title="学习记录">
-		                学习记录
-		            </a>
-		        </li>
-		        
+    
 
+    <div class="page-main-content">
 
-            </ul>
-            <!-- icons 图标   -->
-			<ul class="icons">
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Knous
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
                     
-                    <li>
-                        <a title="github" href="https://github.com/knous" target="_blank" rel="noopener">
-                            <i class="icon fa fa-github"></i>
-                        </a>
-                    </li>
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
                     
-			</ul>
-</nav>
-
-        <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >stack、queue、priority_queue</h2></a>
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
             </div>
-            <!-- Post -->
-            <div class="typo" style="padding: 3rem;">
-                <hr>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">stack、queue、priority_queue</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Knous</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-07-15 00:00:00</span>
+        <span class="mobile">2022-07-15 00:00</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/C/">C++</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
 <p>这篇文章主要目标：</p>
 <p>stack、queue、priority_queue的介绍和使用</p>
 <p>什么是容器适配器</p>
 <hr>
 <h1 id="stack的介绍及使用"><a href="#stack的介绍及使用" class="headerlink" title="stack的介绍及使用"></a>stack的介绍及使用</h1><p>早在几个月前，我就写过一篇文章来讲解和模拟实现stack，当时用的是C语言的版本，这里放上链接：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123730529?spm=1001.2014.3001.5502" title="【数据结构】栈_Knous的博客-CSDN博客_数据结构栈">【数据结构】栈_Knous的博客-CSDN博客_数据结构栈</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123730529?spm=1001.2014.3001.5502"  title="【数据结构】栈_Knous的博客-CSDN博客_数据结构栈">【数据结构】栈_Knous的博客-CSDN博客_数据结构栈<i class="fas fa-external-link-alt"></i></a></p>
 <p>因为现在使用的是C++，这里就重新说一下</p>
-<h2 id="stack的介绍"><a href="#stack的介绍" class="headerlink" title="stack的介绍"></a>stack的介绍</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/stack/stack/?kw=stack" title="stack - C++ Reference (cplusplus.com)">stack - C++ Reference (cplusplus.com)</a></p>
+<h2 id="stack的介绍"><a href="#stack的介绍" class="headerlink" title="stack的介绍"></a>stack的介绍</h2><p><a class="link"   target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/stack/stack/?kw=stack"  title="stack - C++ Reference (cplusplus.com)">stack - C++ Reference (cplusplus.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p>基本可以参考这个网站，但因为是全英文，这里挑一下重点说：</p>
 <blockquote>
 <ol>
@@ -245,9 +307,9 @@
 <p>只要这里的类模板符合stack的需求，即尾部的插入删除，返回尾部元素等，都可以替换 </p>
 <hr>
 <h1 id="queue的介绍和使用"><a href="#queue的介绍和使用" class="headerlink" title="queue的介绍和使用"></a>queue的介绍和使用</h1><p>同样我写了一篇queue的c介绍和模拟实现，这里是链接：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123761379?spm=1001.2014.3001.5502" title="【数据结构】队列_Knous的博客-CSDN博客">【数据结构】队列_Knous的博客-CSDN博客</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123761379?spm=1001.2014.3001.5502"  title="【数据结构】队列_Knous的博客-CSDN博客">【数据结构】队列_Knous的博客-CSDN博客<i class="fas fa-external-link-alt"></i></a></p>
 <p>同样，先放上较为官方的文档介绍，再说一下重点</p>
-<p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/queue/" title="queue - C++ Reference (cplusplus.com)">queue - C++ Reference (cplusplus.com)</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/queue/"  title="queue - C++ Reference (cplusplus.com)">queue - C++ Reference (cplusplus.com)<i class="fas fa-external-link-alt"></i></a></p>
 <blockquote>
 <ol>
 <li>队列是一种容器适配器，专门用于在FIFO上下文(先进先出)中操作，其中从容器一端插入元素，另一端提取元素。</li>
@@ -321,7 +383,7 @@
 <hr>
 <h1 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h1><p>这个名看着挺陌生的，但可以这么理解，这个所谓的优先级_队列，其实就是一个二叉堆，为什么这么说，可以看下面的部分。</p>
 <hr>
-<h2 id="priority-queue的介绍"><a href="#priority-queue的介绍" class="headerlink" title="priority_queue的介绍"></a>priority_queue的介绍</h2><p><a target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/priority_queue/" title="priority_queue - C++ Reference (cplusplus.com)">priority_queue - C++ Reference (cplusplus.com)</a></p>
+<h2 id="priority-queue的介绍"><a href="#priority-queue的介绍" class="headerlink" title="priority_queue的介绍"></a>priority_queue的介绍</h2><p><a class="link"   target="_blank" rel="noopener" href="https://m.cplusplus.com/reference/queue/priority_queue/"  title="priority_queue - C++ Reference (cplusplus.com)">priority_queue - C++ Reference (cplusplus.com)<i class="fas fa-external-link-alt"></i></a></p>
 <p>翻译一下，就是；</p>
 <blockquote>
 <ol>
@@ -344,7 +406,7 @@
 <blockquote>
 <p>这是一个由vector或者deque完成的一个容器，里面有一块连续空间来存放数据，为什么不能用list，因为它要完成调整，平时第一个元素是这块连续空间最大的（或者最小的），所以每插入一个元素都要调整，这么看，像不像之前学的堆？</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123940534?spm=1001.2014.3001.5501" title="【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客">【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60306111/article/details/123940534?spm=1001.2014.3001.5501"  title="【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客">【数据结构】实现堆、堆的应用_Knous的博客-CSDN博客<i class="fas fa-external-link-alt"></i></a></p>
 <p>堆我也写了介绍，这里有兴趣的可以去看看，我们模拟实现其实思路跟那个差不多</p>
 <h2 id="priority-queue的使用"><a href="#priority-queue的使用" class="headerlink" title="priority_queue的使用"></a>priority_queue的使用</h2><table>
 <thead>
@@ -456,111 +518,237 @@
 <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202208201148810.png"></p>
 <p>那这个greater是什么？</p>
 <p>其实这就是一个仿函数，这里就简单说一下，这里当然也可以用函数指针来代替，但却过于繁琐，不如我们直接重载一个括号比较，如果有兴趣可以看这篇博客</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/K346K346/article/details/82818801" title="C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数">C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数</a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/K346K346/article/details/82818801"  title="C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数">C++ 仿函数_恋喵大鲤鱼的博客-CSDN博客_c++仿函数<i class="fas fa-external-link-alt"></i></a></p>
 <p>至此，stack和queue的模拟实现也已经完成，希望这篇文章对你的学习有所帮助</p>
 
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/07/16/reverse_iterator/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">reverse_iterator</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/07/11/vector/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">vector</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
             </div>
 
-            <!-- Post Comments -->
-            
-    <!-- 使用 DISQUS_CLICK -->
-<div id="disqus-comment">
-    <div id="disqus_thread"></div>
-
-<!-- add animation -->
-<style>
-	.disqus_click_btn {
-            line-height: 30px;
-            margin: 0;
-            min-width: 50px;
-            padding: 0 14px;
-            display: inline-block;
-            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            overflow: hidden;
-            will-change: box-shadow;
-            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
-            outline: 0;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            vertical-align: middle;
-            border: 0;
-            background: rgba(158, 158, 158, .2);
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-            color: #fff;
-            background-color: #7EC0EE;
-            text-shadow: 0
-        }
-</style>
-	
-<div class="btn_click_load" id="disqus_bt"> 
-    <button class="disqus_click_btn">点击查看评论</button>
-</div>
-
-<!--
-<script type="text/javascript">
-$('.btn_click_load').click(function() {
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    document.getElementById('disqus_bt').style.display = "none";
-});
-</script>
--->
-<script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'http://example.com/2022/07/15/stack%E3%80%81queue%E3%80%81priority_queue/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://example.com/2022/07/15/stack%E3%80%81queue%E3%80%81priority_queue/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-</script>
-
-<script type="text/javascript">
-    $('.btn_click_load').click(function() {  //click to load comments
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document;
-            var s = d.createElement('script');
-            s.src = '//http-miccall-tech.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', + new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-        $('.btn_click_load').css('display','none');
-    });
-</script>
-</div>
-<style>
-    #disqus-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
-
-
         </div>
-        <!-- Copyright 版权 start -->
-                <div id="copyright">
-            <ul>
-                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
-                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
-            </ul>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
             
-                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-			
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
         </div>
     </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#stack%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">stack的介绍及使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stack%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">stack的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">stack的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.3.</span> <span class="nav-text">模拟实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5"><span class="nav-number">1.3.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">1.3.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E9%A1%B6%E7%AB%AF%E5%85%83%E7%B4%A0"><span class="nav-number">1.3.3.</span> <span class="nav-text">返回顶端元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#queue%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">queue的介绍和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#queue%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">queue的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">2.2.</span> <span class="nav-text">模拟实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#priority-queue"><span class="nav-number">3.</span> <span class="nav-text">priority_queue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.1.</span> <span class="nav-text">priority_queue的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.2.</span> <span class="nav-text">priority_queue的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.3.</span> <span class="nav-text">priority_queue的模拟实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%B9%E9%87%8F%E3%80%81%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E3%80%81%E9%A1%B6%E7%AB%AF%E5%85%83%E7%B4%A0"><span class="nav-number">3.3.3.</span> <span class="nav-text">容量、是否为空、顶端元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%8C%BA%E9%97%B4%E6%9D%A5%E6%9E%84%E9%80%A0"><span class="nav-number">3.3.4.</span> <span class="nav-text">用迭代器区间来构造</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
 </body>
-
-
-
- 	
 </html>
