@@ -9,7 +9,7 @@
     
     <title>
         
-            LeetCode1475 |
+            【剑指 Offer II】 10. 和为 k 的子数组 |
         
         Knous
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">LeetCode1475</span>
+            <span class="title-hover-animation">【剑指 Offer II】 10. 和为 k 的子数组</span>
         </div>
 
         
@@ -171,8 +171,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-01 00:00:00</span>
-        <span class="mobile">2022-09-01 00:00</span>
+        <span class="pc">2022-09-03 00:00:00</span>
+        <span class="mobile">2022-09-03 00:00</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -200,13 +200,37 @@
         
 
         <div class="article-content markdown-body">
-            <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209011043424.png" alt="image-20220901104300494"></p>
-<p>这题有多种解法，这里演示的是其中最为简单易懂的那种：双循环</p>
-<p>首先我们拿到的是 i 位置的数据，然后直接在 i+1 后面找比 i 小的数据，然后替换掉当前位置的 i ，同时跳出这次循环</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">finalPrices</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;prices.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i+<span class="number">1</span>;j&lt;prices.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(prices[j]&lt;=prices[i])</span><br><span class="line">                &#123;</span><br><span class="line">                    prices[i] = prices[i]-prices[j];</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> prices;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209030918242.png" alt="image-20220903091818313"></p>
+<hr>
+<p>两种办法，第一种是典中典的暴力，要我说这种题如果暴力能做出来那才叫离谱，这里给一个示例：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209030920416.png" alt="image-20220903092047531"></p>
+<p>全是 0，1，简直阴间。</p>
+<h1 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h1><p>这里还是把暴力的办法写一下，每找到一个位置就开始往前或者往后 +，一直判断值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">subarraySum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i;j&lt;nums.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                sum+=nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum == k)</span><br><span class="line">                &#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>时间复杂度：O（N^2）</p>
-<p>空间复杂度：O（1）</p>
+<p>别用，超时。</p>
+<hr>
+<h1 id="前缀和-map"><a href="#前缀和-map" class="headerlink" title="前缀和+map"></a>前缀和+map</h1><p>这个办法很有意思，先来看看 LeetCode 官方的解释：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209030923484.png" alt="image-20220903092348669"></p>
+<p>它说的可能很复杂，我解释一下。</p>
+<p>假设数组是：1，2，3</p>
+<p>此时我们逻辑走起来，map&lt;int,int&gt; 里面要存放一个值，&lt;0,1&gt;，为什么要存这个，因为我们找的值是前缀和 - k</p>
+<p>举个例子，这里我要找的是 3 ，那我的前缀和就是，0，1，3，6。</p>
+<p>此时逻辑开始走，现在在前缀和里面开始走，0 - 3 &#x3D; -3，那我就要在 map 里面找 -3 有没有，如果没有，说明这个位置肯定不会是符合 k 的区间，于是我在 map 里面加一个 &lt;-3，1&gt;。</p>
+<p>继续往下走，当我拿到这个 3 的时候，我就在 map 里面找 3 - 3 &#x3D; 0，这里就说明为什么了要有 &lt;0，1&gt;，因为只有这样你之后找的时候这里才不会出现明明等于 k 但是没算上。</p>
+<p>此时计数就要 ++。</p>
+<p>然后我们把 3 加到 map 里面 &lt;3，1&gt;。</p>
+<p>继续往后走，6 - 3 &#x3D; 3，此时再去 map 里面找 3 ，找到了就继续++。</p>
+<p>如果上面逻辑听懂了，那之后的代码你也能看懂。</p>
+<p> 不过这里要注意的是，计数不是单纯的每次 ++，而是 + 你要找的值后面的那个计数</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209030946189.png" alt="image-20220903094632187"></p>
+<p>比方说这样，一开始的 map 是 &lt;0，1&gt;。</p>
+<p>1 - 0 &#x3D; 1，没找到，就是在 map 后面多加一个 &lt;1,1&gt;。</p>
+<p>然后重点就来了，现在它到了 -1，-1+1 &#x3D; 0，然后它去找，找到了这个 &lt;0，1&gt;，然后 count ++，但是下一个又是 0，0 - 0 &#x3D; 0，它再去找 0 的时候，&lt;0，1&gt;，它再++，变成 2 ，因为当前缀和 等于 tar 的时候，说明上一个位置到这一个位置（1，-，0）是满足条件的，而这个位置本身也是满足条件的，因为有&lt;0，2&gt;说明当 tar 为 0 的时候有两个位置都满足条件，所以不能只加 1，而是要加 对于的位置数。</p>
+<p>看代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">subarraySum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        map&lt;<span class="type">int</span>,<span class="type">int</span>&gt; m;</span><br><span class="line">        m[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n+<span class="number">1</span>,<span class="number">0</span>)</span></span>;  <span class="comment">//前缀和</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            v[i] = v[i<span class="number">-1</span>]+nums[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(m.<span class="built_in">find</span>(v[i]-k) != m.<span class="built_in">end</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                count+=m[v[i]] ;</span><br><span class="line">            &#125;</span><br><span class="line">            m[v[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -217,29 +241,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/02/LeetCode1470/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">【甜点】重新排列数组</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/01/LeetCode946/"
+                           href="/2022/09/03/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%20%E6%95%B0%E7%BB%84%E4%B8%AD%E5%92%8C%E4%B8%BA%200%20%E7%9A%84%E4%B8%89%E4%B8%AA%E6%95%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">LeetCode946</span>
+                                <span class="post-nav-title-item">【剑指office】7. 数组中和为 0 的三个数</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -351,7 +360,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B"><span class="nav-number">1.</span> <span class="nav-text">暴力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C-map"><span class="nav-number">2.</span> <span class="nav-text">前缀和+map</span></a></li></ol>
     </div>
 </div>
         </aside>

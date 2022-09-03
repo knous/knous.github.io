@@ -9,7 +9,7 @@
     
     <title>
         
-            LeetCode1475 |
+            【甜点】重新排列数组 |
         
         Knous
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">LeetCode1475</span>
+            <span class="title-hover-animation">【甜点】重新排列数组</span>
         </div>
 
         
@@ -171,8 +171,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-01 00:00:00</span>
-        <span class="mobile">2022-09-01 00:00</span>
+        <span class="pc">2022-09-02 00:00:00</span>
+        <span class="mobile">2022-09-02 00:00</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -200,13 +200,12 @@
         
 
         <div class="article-content markdown-body">
-            <p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209011043424.png" alt="image-20220901104300494"></p>
-<p>这题有多种解法，这里演示的是其中最为简单易懂的那种：双循环</p>
-<p>首先我们拿到的是 i 位置的数据，然后直接在 i+1 后面找比 i 小的数据，然后替换掉当前位置的 i ，同时跳出这次循环</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">finalPrices</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;prices.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i+<span class="number">1</span>;j&lt;prices.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(prices[j]&lt;=prices[i])</span><br><span class="line">                &#123;</span><br><span class="line">                    prices[i] = prices[i]-prices[j];</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> prices;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209022113446.png" alt="image-20220902211340161"></p>
+<p>简单到我不知道该说什么。</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">shuffle</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">        <span class="type">int</span> p1 = <span class="number">0</span>,p2 = n;</span><br><span class="line">        <span class="keyword">while</span>(p1&lt;n)</span><br><span class="line">        &#123;</span><br><span class="line">            v.<span class="built_in">push_back</span>(nums[p1++]);</span><br><span class="line">            v.<span class="built_in">push_back</span>(nums[p2++]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>时间复杂度：O（N^2）</p>
-<p>空间复杂度：O（1）</p>
 
         </div>
 
@@ -220,13 +219,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/09/02/LeetCode1470/"
+                           href="/2022/09/02/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">【甜点】重新排列数组</span>
+                                <span class="post-nav-title-item">【剑指office】11. 旋转数组的最小数字</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -236,10 +235,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/01/LeetCode946/"
+                           href="/2022/09/01/LeetCode1475/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">LeetCode946</span>
+                                <span class="post-nav-title-item">LeetCode1475</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
