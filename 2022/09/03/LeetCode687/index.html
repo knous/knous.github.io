@@ -9,7 +9,7 @@
     
     <title>
         
-            【剑指office】数组中和为 0 的三个数 |
+            LeetCode687 |
         
         Knous
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">【剑指office】数组中和为 0 的三个数</span>
+            <span class="title-hover-animation">LeetCode687</span>
         </div>
 
         
@@ -201,27 +201,33 @@
 
         <div class="article-content markdown-body">
             <hr>
-<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209031022123.png" alt="image-20220903102229044"></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209031259555.png" alt="image-20220903125953477"></p>
 <hr>
-<p>首先，一看到这个，暴力肯定是不行的，因为这里要找的可不是一个两个数，是三个，三个就代表着，时间复杂度（N^3），就是十个数字都要找 1000 次，这里就不试了。</p>
-<p>但是要用的办法其实也只能不那么暴力，采用排序+双指针的办法。</p>
-<p>首先我们针对给过来的数组进行排序：</p>
-<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209031025288.png" alt="image-20220903102553292"></p>
-<p>然后我们先找找第一个数字 -4，下一个数字要不等于 -4，那就在 -4 右边找一个 -1，最后一个数字不能等于 -1，那我们就不要再在 -1 右边找了，我们直接从数组最后找 2 。</p>
-<p>为什么？</p>
-<p>i （-4） 肯定是最小的，j （-1）是中间的，而 k（2）是最大的，这三个加起来我结果就会有三种情况。</p>
-<p>sum &gt;0 ，说明这个值大了，那我们就让 K –，然后重新计算</p>
-<p>sum&lt;0，说明这个值小了，那我们就让 J ++，然后计算。</p>
-<p>为什么要动的是 J，K，且 J++呢？J 已经不能再小了，因为它再小就是 i ，条件说不能等于 i ，所以直接pass，当小于 0 的时候， K已经是最大值了，最大值怎么还能变大呢？ 那就只能让中间值继续 ++。</p>
-<p>K 已经是最大的了，当结果大于的时候 J 已经是不能动了，那就只能动 K 了。</p>
-<p>每一次确定 i ，j，k 组合成功之后，就要让 j，k分别移动，这次移动要确保 j，k 不能是已经选好的数字，它要重新找到两个新数字。</p>
-<p>那每一个数字我们要找多少次？</p>
-<p>每一个数字我们都要找完 i 右边的所有数字，J 会一直往右走，而 K 会一直往左走，当 J 不再小于 K 的时候，就说明已经找完了，后面再找也只是重复一遍。</p>
-<p>为了确保这个大逻辑可以走下去，数组里面最起码要有三个元素，同时 i 不能到数组倒数第二或者第一个位置，那样的话 j，k 就无法选出来。</p>
-<p>明白了逻辑之后，我们正式开始写。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">threeSum</span>(vector&lt;<span class="type">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; vv;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;n<span class="number">-2</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp;nums[i] == nums[i<span class="number">-1</span>])</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">            <span class="type">int</span> j = i+<span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> k = n<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span>(j&lt;k)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> sum = nums[i]+nums[j]+nums[k];</span><br><span class="line">                    <span class="keyword">if</span>(sum == <span class="number">0</span>)</span><br><span class="line">                        &#123;</span><br><span class="line">                            vv.<span class="built_in">push_back</span>(&#123;nums[i],nums[j],nums[k]&#125;);</span><br><span class="line">                            <span class="keyword">while</span>(j&lt;k &amp;&amp; nums[j] == nums[j+<span class="number">1</span>])</span><br><span class="line">                            &#123;</span><br><span class="line">                                j++;</span><br><span class="line">                            &#125;</span><br><span class="line">                            j++;</span><br><span class="line">                            <span class="keyword">while</span>(j&lt;k &amp;&amp; nums[k] == nums[k<span class="number">-1</span>])</span><br><span class="line">                            &#123;</span><br><span class="line">                                k--;</span><br><span class="line">                            &#125;</span><br><span class="line">                            k--;</span><br><span class="line">                        &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(sum &gt; <span class="number">0</span>)</span><br><span class="line">                        k--;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> vv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这题就是一个很典型的深度遍历，我们先来到最下面的叶子节点，这里用两个值来记录它的左边路径长度和右边路径长度，然后判断，这个路径长度是否超过当前最大路径长度，如果超过，那我们就要更新最大长度，如果没有就不用更新。</p>
+<p>这里边看代码边解释：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">longestUnivaluePath</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">dps</span>(root);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">dps</span><span class="params">(TreeNode* root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> left = <span class="built_in">dps</span>(root-&gt;left),right = <span class="built_in">dps</span>(root-&gt;right);</span><br><span class="line">        <span class="type">int</span> left_count = <span class="number">0</span>,right_count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;left-&gt;val == root-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            left_count = left+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;right &amp;&amp; root-&gt;right-&gt;val == root-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            right_count = right+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res,left_count+right_count);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(left_count,right_count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>别忘了 j，k 要跟上一次不一样，i 也是，当 i 跟上一次一样的时候我们就直接跳过这次查找，直到找出不一样的。</p>
+<p>首先创建了一个 res 变量，这个变量就是我们最后要返回的值，然后调用一个 dps 函数，这个就是我们递归调用的函数。</p>
+<p>这个递归结束的条件也很简单，当这个节点为空，我们就返回 0 ，因为没有路径可以走。</p>
+<p>如果不为空，就要开始递归了。</p>
+<p>这里有几个值要注意：</p>
+<p>left ，它表示的是当前这个节点左边下面的最长的路径</p>
+<p>right，它表示的是当前这个节点右边下面的最长路径</p>
+<p>left_count ，它表示的是当前这个节点是否也是左边最长相同的值，如果是，那最长路径就要 +1。</p>
+<p>right_count，它表示的当前这个节点是否也是右边最长相同的值，如果是，那最长路径就要 +1。</p>
+<p>如果比较懵，这里我们可以看一下代码的逻辑。</p>
+<p>以下面这个图举例：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209032040371.png" alt="image-20220903204058507"></p>
+<p>我们传入的节点是 5 根节点。</p>
+<p>它不为空，我们用深度遍历，一直遍历到 左边最下面的 1 ，1 是叶子节点，它会继续往下递归，它的left 就是空节点，所以返回 0 ，它的右节点也是 0。</p>
+<p>既然左右节点都不存在，那它的 left_count、right_count 也不会更新，我们就开始返回，返回的时候判断要不要更新最长路径，这里不需要，然后选两条路径里面最长的那个返回，这里两个 count 都是 0，返回的就是 0。</p>
+<p>它作为 4 的左节点返回了 0，4 的右节点也是一个道理，4 两边都是 0，它返回也只能返回 0 ，因为它的 left right 都没有变化。</p>
+<p>它作为 5 的左节点返回 0，5 就开始递归右边，第二个 5 没有左子树，所以它的 left &#x3D; 0，而它的右子树有 5，最下面 5 是叶子节点，返回 0。</p>
+<p>第二个 5 的 right 现在就是 0，但是它作为右子节点且值一样，那 right_count 就有变化，它要在 right 的基础上+1，此时最长路径就是 1。</p>
+<p>此时最长路径就要更新为 1。</p>
+<p>它返回到根节点的 5 ，根节点 5 的 right 就是1，同样它的右子节点存在且值相等，所以 right_count  &#x3D; right+1;</p>
+<p>这样它的最长路径就是 2。</p>
+<p>这题最难的地方就是在这里，多思考，想明白这里就很简单了。</p>
 
         </div>
 
@@ -235,13 +241,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/09/03/%E3%80%90%E5%89%91%E6%8C%87%20Offer%20II%E3%80%91%E5%92%8C%E4%B8%BA%20k%20%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"
+                           href="/2022/09/03/LeetCode19/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">【剑指 Offer II】 和为 k 的子数组</span>
+                                <span class="post-nav-title-item">【甜点】LeetCode 19.删除链表的倒数第 N 个结点</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -251,10 +257,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/03/LeetCode19/"
+                           href="/2022/09/03/%E3%80%90%E5%89%91%E6%8C%87%20Offer%20II%E3%80%910%EF%BD%9En-1%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">【甜点】LeetCode 19.删除链表的倒数第 N 个结点</span>
+                                <span class="post-nav-title-item">【剑指 Offer II】 0～n-1中缺失的数字</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">

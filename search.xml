@@ -5647,4 +5647,84 @@
         <category>每日练习</category>
       </categories>
   </entry>
+  <entry>
+    <title>【甜点】LeetCode 19.删除链表的倒数第 N 个结点</title>
+    <url>/2022/09/03/LeetCode19/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209031930457.png" alt="image-20220903193013381"></p>
+<hr>
+<p>非常简单，如果单链表学的不差的话，这里有多种做法，这里说两种。</p>
+<h1 id="第一种：栈"><a href="#第一种：栈" class="headerlink" title="第一种：栈"></a>第一种：栈</h1><p>我们将链表里面的节点全部放到栈里面，然后再倒数着取出来，重新链接即可。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        stack&lt;ListNode*&gt; st;</span><br><span class="line">        ListNode* new_head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>,head);</span><br><span class="line">        ListNode* cur = new_head;</span><br><span class="line">        <span class="keyword">while</span>(cur)</span><br><span class="line">        &#123;</span><br><span class="line">            st.<span class="built_in">push</span>(cur);</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(--n)</span><br><span class="line">        &#123;</span><br><span class="line">            st.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* del = st.<span class="built_in">top</span>();</span><br><span class="line">        st.<span class="built_in">pop</span>();</span><br><span class="line">        ListNode* del_prev = st.<span class="built_in">top</span>();</span><br><span class="line">        del_prev-&gt;next = del-&gt;next;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> new_head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这里唯一要注意的是，如果它要删除的是头节点，那就有可能出现问题，解决办法是像我代码一样新增一个头节点即可。</p>
+<hr>
+<h1 id="两次遍历"><a href="#两次遍历" class="headerlink" title="两次遍历"></a>两次遍历</h1><p>第一次算出链表长度，然后找到对应节点即可。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeNthFromEnd</span><span class="params">(ListNode* head, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        ListNode* new_head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>,head);</span><br><span class="line">        ListNode* cur = head;</span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(cur)</span><br><span class="line">        &#123;</span><br><span class="line">            count++;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        cur = new_head;</span><br><span class="line">        count-=n;</span><br><span class="line">        <span class="keyword">while</span>(count--)</span><br><span class="line">        &#123;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode* del = cur-&gt;next;</span><br><span class="line">        cur-&gt;next = del-&gt;next;</span><br><span class="line">        <span class="keyword">return</span> new_head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>还是一样要注意头节点即可。</p>
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>LeetCode687</title>
+    <url>/2022/09/03/LeetCode687/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209031259555.png" alt="image-20220903125953477"></p>
+<hr>
+<p>这题就是一个很典型的深度遍历，我们先来到最下面的叶子节点，这里用两个值来记录它的左边路径长度和右边路径长度，然后判断，这个路径长度是否超过当前最大路径长度，如果超过，那我们就要更新最大长度，如果没有就不用更新。</p>
+<p>这里边看代码边解释：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">longestUnivaluePath</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">dps</span>(root);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">dps</span><span class="params">(TreeNode* root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> left = <span class="built_in">dps</span>(root-&gt;left),right = <span class="built_in">dps</span>(root-&gt;right);</span><br><span class="line">        <span class="type">int</span> left_count = <span class="number">0</span>,right_count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;left &amp;&amp; root-&gt;left-&gt;val == root-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            left_count = left+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;right &amp;&amp; root-&gt;right-&gt;val == root-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            right_count = right+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">max</span>(res,left_count+right_count);</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(left_count,right_count);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>首先创建了一个 res 变量，这个变量就是我们最后要返回的值，然后调用一个 dps 函数，这个就是我们递归调用的函数。</p>
+<p>这个递归结束的条件也很简单，当这个节点为空，我们就返回 0 ，因为没有路径可以走。</p>
+<p>如果不为空，就要开始递归了。</p>
+<p>这里有几个值要注意：</p>
+<p>left ，它表示的是当前这个节点左边下面的最长的路径</p>
+<p>right，它表示的是当前这个节点右边下面的最长路径</p>
+<p>left_count ，它表示的是当前这个节点是否也是左边最长相同的值，如果是，那最长路径就要 +1。</p>
+<p>right_count，它表示的当前这个节点是否也是右边最长相同的值，如果是，那最长路径就要 +1。</p>
+<p>如果比较懵，这里我们可以看一下代码的逻辑。</p>
+<p>以下面这个图举例：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209032040371.png" alt="image-20220903204058507"></p>
+<p>我们传入的节点是 5 根节点。</p>
+<p>它不为空，我们用深度遍历，一直遍历到 左边最下面的 1 ，1 是叶子节点，它会继续往下递归，它的left 就是空节点，所以返回 0 ，它的右节点也是 0。</p>
+<p>既然左右节点都不存在，那它的 left_count、right_count 也不会更新，我们就开始返回，返回的时候判断要不要更新最长路径，这里不需要，然后选两条路径里面最长的那个返回，这里两个 count 都是 0，返回的就是 0。</p>
+<p>它作为 4 的左节点返回了 0，4 的右节点也是一个道理，4 两边都是 0，它返回也只能返回 0 ，因为它的 left right 都没有变化。</p>
+<p>它作为 5 的左节点返回 0，5 就开始递归右边，第二个 5 没有左子树，所以它的 left &#x3D; 0，而它的右子树有 5，最下面 5 是叶子节点，返回 0。</p>
+<p>第二个 5 的 right 现在就是 0，但是它作为右子节点且值一样，那 right_count 就有变化，它要在 right 的基础上+1，此时最长路径就是 1。</p>
+<p>此时最长路径就要更新为 1。</p>
+<p>它返回到根节点的 5 ，根节点 5 的 right 就是1，同样它的右子节点存在且值相等，所以 right_count  &#x3D; right+1;</p>
+<p>这样它的最长路径就是 2。</p>
+<p>这题最难的地方就是在这里，多思考，想明白这里就很简单了。</p>
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【剑指 Offer II】 0～n-1中缺失的数字</title>
+    <url>/2022/09/03/%E3%80%90%E5%89%91%E6%8C%87%20Offer%20II%E3%80%910%EF%BD%9En-1%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209031939826.png" alt="image-20220903193903262"></p>
+<p>细说这题，其实有多种办法，这里讲两种，多的有兴趣可以自己想想。</p>
+<hr>
+<h1 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h1><p>别问，问就是只要没超，都可以暴力，更何况是这种时间复杂度O（N）就可以解决的暴力。</p>
+<p>因为每一个数字都对应的是它的下标，如果有一个不是，那它就是缺失的数字。</p>
+<p>直接看代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] != i)</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>如果一次找完了都没找到 i ，说明缺是就是最后一个元素，最后一个元素就是这个数组的长度。</p>
+<hr>
+<h1 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h1><p>我们可以通过二分来快速找到这个缺失的位置的附近，然后进行简单的判断来输出返回值。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">missingNumber</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> right = nums.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid] &gt; mid)</span><br><span class="line">            right = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            left = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[left]==left?left+<span class="number">1</span>:nums[left]<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>如果这个位置相等，就说明这是缺失数字的左边，如果不相等，说明这是缺失数字的右边。</p>
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
 </search>
