@@ -9,7 +9,7 @@
     
     <title>
         
-            Category: 每日练习 |
+            牛客 组队决赛 |
         
         Knous
     </title>
@@ -77,7 +77,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/categories"
                             >
                                 TAGS
@@ -124,7 +124,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/categories">TAGS</a>
                 </li>
             
@@ -149,60 +149,117 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="category-container">
-        <div class="category-name">
-            <i class="fas fa-folder"></i>&nbsp;每日练习
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">牛客 组队决赛</span>
         </div>
-        <div class="category-post-list">
-            
-<div class="archive-list-container">
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Knous</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-04 00:00:00</span>
+        <span class="mobile">2022-09-04 00:00</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[3]</span>
-            </div>
-            <ul class="article-list">
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/01/LeetCode1475/"
-                        >LeetCode1475</a>
-                        <span class="article-date">09-01</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/01/LeetCode946/"
-                        >LeetCode946</a>
-                        <span class="article-date">09-01</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/09/01/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
-                        >【剑指office】数据流的中位数</a>
-                        <span class="article-date">09-01</span>
+                    <li>
+                        <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+    
+
+    
+    
+    
     
 </div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209042115711.png" alt="image-20220904211527683"></p>
+<p>这题就属于那种，看着特别阴间的，实际上如果想过来的话其实还算简单。</p>
+<p>两个值，第一个是有几组，也就是之后要用到的要加几个值。</p>
+<p>第二个是不同的数字，让你分组。</p>
+<p>说是让分组，其实就是让你好好想想每次应该怎么把数字加起来。</p>
+<p>首以上面的 1 2 5 5 5 8 举例子。</p>
+<p>我们排好序之后，从后往前加。</p>
+<p>每次都选的是倒数第二大的。</p>
+<p>可以看图理解：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209042120402.png" alt="image-20220904212006830"></p>
+<p>每次我们都是将最大的两个和最小的分一组，保证中间值是最大的。</p>
+<p>下面看代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span>  <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n*<span class="number">3</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">long</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n;i&lt;v.<span class="built_in">size</span>();i+=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;sum&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
-    </div>
-    <div class="category-paginator">
-        <div class="paginator">
-    
-        <a class="prev btn"
-           href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/"
-        >Prev</a>
-    
 
-    
-</div>
+        
 
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/04/LeetCode24/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">LeetCode24</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/03/%E3%80%90%E5%89%91%E6%8C%87%20Offer%20II%E3%80%91%E5%92%8C%E4%B8%BA%20k%20%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">【剑指 Offer II】 和为 k 的子数组</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
 
@@ -235,6 +292,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -281,6 +355,14 @@
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -350,6 +432,14 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 

@@ -5727,4 +5727,47 @@
         <category>每日练习</category>
       </categories>
   </entry>
+  <entry>
+    <title>LeetCode24</title>
+    <url>/2022/09/04/LeetCode24/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209042128262.png" alt="image-20220904212854302"></p>
+<hr>
+<p>为了防止出现交换头节点的情况，我们要先保存一下头节点的位置，拿什么保存呢？</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209042129513.png" alt="image-20220904212941342"></p>
+<p>它都已经给你了，最后一个构造就可以让新的头节点链接起来。</p>
+<p>每拿到一个节点，我们就判断一下这个节点是否为空，后面是否还有节点可以交换，如果有，我们就让它们交换，然后此时因为是已经交换过的，以上图举例.</p>
+<p>1-&gt;next 本来应该是 2 ，但是交换过后它指向的是 3</p>
+<p>这就方便我们直接让它往后走。</p>
+<p>看代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">swapPairs</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode* new_head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>,head);</span><br><span class="line">        ListNode* prev = new_head;</span><br><span class="line">        ListNode* cur = head;</span><br><span class="line">        <span class="keyword">while</span>(cur &amp;&amp; cur-&gt;next != <span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ListNode* next = cur-&gt;next;</span><br><span class="line">            cur-&gt;next = next-&gt;next;</span><br><span class="line">            next-&gt;next = cur;</span><br><span class="line">            prev-&gt;next = next;</span><br><span class="line">            prev  = cur;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> new_head-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>牛客 组队决赛</title>
+    <url>/2022/09/04/%E7%BB%84%E9%98%9F%E5%86%B3%E8%B5%9B/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209042115711.png" alt="image-20220904211527683"></p>
+<p>这题就属于那种，看着特别阴间的，实际上如果想过来的话其实还算简单。</p>
+<p>两个值，第一个是有几组，也就是之后要用到的要加几个值。</p>
+<p>第二个是不同的数字，让你分组。</p>
+<p>说是让分组，其实就是让你好好想想每次应该怎么把数字加起来。</p>
+<p>首以上面的 1 2 5 5 5 8 举例子。</p>
+<p>我们排好序之后，从后往前加。</p>
+<p>每次都选的是倒数第二大的。</p>
+<p>可以看图理解：</p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209042120402.png" alt="image-20220904212006830"></p>
+<p>每次我们都是将最大的两个和最小的分一组，保证中间值是最大的。</p>
+<p>下面看代码：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span>  <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(n*<span class="number">3</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;v.<span class="built_in">size</span>();i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">long</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n;i&lt;v.<span class="built_in">size</span>();i+=<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=v[i];</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;sum&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
 </search>
