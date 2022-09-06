@@ -5813,4 +5813,59 @@
         <category>每日练习</category>
       </categories>
   </entry>
+  <entry>
+    <title>URL化</title>
+    <url>/2022/09/06/URL%E5%8C%96/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209062140714.png" alt="image-20220906214057786"></p>
+<hr>
+<p>说难嘛，对于新手来说确实。</p>
+<p>这里如果是新手的话，c++里面有一个类型叫做 string，可以去了解一下，了解了这题就轻轻松松。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string replaceSpaces(string S, int length) &#123;</span><br><span class="line">	string s;</span><br><span class="line">	for (int i = 0; i&lt;length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (S[i] ==&#x27; &#x27;)</span><br><span class="line">			s += &quot;%20&quot;;</span><br><span class="line">		else</span><br><span class="line">			s += S[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return s;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果还是不会。</p>
+<p>这样，你先遍历一次看有多少空格，然后开好空间，再遍历一边，遇到空格就在那个位置放上 %20</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">char* replaceSpaces(char* S, int length)&#123;</span><br><span class="line">    char *ans = (char *)malloc(sizeof(char) * (3 * length + 1));</span><br><span class="line">    int i = 0, j = 0;</span><br><span class="line">    for (; i &lt; length; i++) &#123;</span><br><span class="line">        if (S[i] == &#x27; &#x27;) &#123;</span><br><span class="line">            ans[j++] = &#x27;%&#x27;;</span><br><span class="line">            ans[j++] = &#x27;2&#x27;;</span><br><span class="line">            ans[j++] = &#x27;0&#x27;;</span><br><span class="line">        &#125; else ans[j++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    ans[j] = &#x27;\0&#x27;;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【甜点】字符串最长数字字串</title>
+    <url>/2022/09/06/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E9%95%BF%E6%95%B0%E5%AD%97%E5%AD%97%E4%B8%B2/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209062122956.png" alt="image-20220906212231969"></p>
+<p>甜点就足以说明这题的难度。</p>
+<p>先说好，我的解法可能不是最好的，但应该是最好理解的，新手也能明白。</p>
+<hr>
+<p>首先我们拿到输入的字符串，进行判断，如果当前位置是字符，我们就让这个位置一直后移，直到这个位置是个数字。</p>
+<p>如果这个位置是数字，我们就拿一个字符串开始记着，如果这个字符串的长度大于我们当前要返回的字符串长度，就更新返回的字符串。</p>
+<p>具体看代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string s1;//输入的字符串</span><br><span class="line">    string s;//返回的字符串</span><br><span class="line">    int pos = 0;//位置</span><br><span class="line">    </span><br><span class="line">    getline(cin, s1);</span><br><span class="line">    while(pos &lt; s1.size())</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">        if(!isdigit(s1[pos]))//如果这个位置不是字符</span><br><span class="line">        &#123;</span><br><span class="line">            while(pos &lt; s1.size() &amp;&amp; !isdigit(s1[pos]))//不是就一直往后找</span><br><span class="line">            &#123;</span><br><span class="line">                pos++;</span><br><span class="line">            &#125;</span><br><span class="line">             string count;//找到了，开始拿字符串接收</span><br><span class="line">            while(pos &lt; s1.size() &amp;&amp; isdigit(s1[pos]))//一直加到不是数字位置</span><br><span class="line">            &#123;</span><br><span class="line">                count+=s1[pos];</span><br><span class="line">                pos++;</span><br><span class="line">            &#125;</span><br><span class="line">            s = s.size()&gt;count.size()?s:count;//开始判断长度</span><br><span class="line">        &#125;       </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    cout&lt;&lt;s&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>第一个只出现一次的字符</title>
+    <url>/2022/09/06/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209062134807.png" alt="image-20220906213417489"></p>
+<hr>
+<p>两种解法的思路都是一样的，只是实现过程不一样。</p>
+<p>第一种是我们用数组来记录出现的次数，第二种直接是用map。</p>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int FirstNotRepeatingChar(string str) &#123;</span><br><span class="line">        int* a = new int[60];</span><br><span class="line">        for(auto ch:str)</span><br><span class="line">        &#123;</span><br><span class="line">            a[ch-&#x27;A&#x27;]+=1;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0;i&lt;str.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(a[str[i] - &#x27;A&#x27;] == 1)</span><br><span class="line">                return i;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int FirstNotRepeatingChar(string str) &#123;</span><br><span class="line">        map&lt;char,int&gt; m;</span><br><span class="line">        for(auto ch:str)</span><br><span class="line">        &#123;</span><br><span class="line">            m[ch]++;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0;i&lt;str.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(m[str[i]] == 1)</span><br><span class="line">            &#123;</span><br><span class="line">                return i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
 </search>
