@@ -5868,4 +5868,55 @@
         <category>每日练习</category>
       </categories>
   </entry>
+  <entry>
+    <title>两个数组的交集</title>
+    <url>/2022/09/07/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209072227382.png" alt="image-20220907222726420"></p>
+<p>这题是用了 unordered_map 做的，如果不会用这个，可以听了思路之后稍作修改，这里就不演示了，多练练嘛。</p>
+<p>我们将其中一个数组拿一个 map 它的值和它出现的次数，然后遍历另外一个，如果能找到，就在出现的次数那里 –，如果 – 到 0 的位置，说明已经没有这个值了，之后就不用添加到结果里面。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        unordered_map&lt;int,int&gt; m;</span><br><span class="line">        vector&lt;int&gt; v;</span><br><span class="line">    </span><br><span class="line">            for(int i = 0;i&lt;nums1.size();i++)&#123;</span><br><span class="line">                m[nums1[i]]++;</span><br><span class="line">            &#125;</span><br><span class="line">            for(int i = 0;i&lt;nums2.size();i++)&#123;</span><br><span class="line">                if(m[nums2[i]])&#123;</span><br><span class="line">                    v.push_back(nums2[i]);</span><br><span class="line">                    m[nums2[i]]--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">        return v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果对 map 稍有疑问，其实可以用一个数组，用这个数的下标和下标对应的值来存储，然后再遍历这个数组即可。</p>
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>两句话中不常见单词</title>
+    <url>/2022/09/01/%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209072234442.png" alt="image-20220907223423213"></p>
+<hr>
+<p>我们拿到每一个单词，放到 map 里面，如果再次遇到就 ++，最后遍历的时候看对应的出现值，如果是 1 就直接尾插 vector 即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;string&gt; uncommonFromSentences(string s1, string s2) &#123;</span><br><span class="line">        unordered_map&lt;string,int&gt; m;</span><br><span class="line">        string s;</span><br><span class="line">        for(int i = 0;i&lt;s1.size();)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s1[i] != &#x27; &#x27;)</span><br><span class="line">            &#123;</span><br><span class="line">                while(i&lt;s1.size() &amp;&amp; s1[i] != &#x27; &#x27; )</span><br><span class="line">                &#123;</span><br><span class="line">                    s += s1[i];</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            m[s]++;</span><br><span class="line">            s=&quot;&quot;;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0;i&lt;s2.size();)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s2[i] != &#x27; &#x27;)</span><br><span class="line">            &#123;</span><br><span class="line">                while(i&lt;s2.size() &amp;&amp; s2[i] != &#x27; &#x27; )</span><br><span class="line">                &#123;</span><br><span class="line">                    s += s2[i];</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            m[s]++;</span><br><span class="line">            s=&quot;&quot;;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;string&gt; v;</span><br><span class="line">        for(auto e:m)</span><br><span class="line">        &#123;</span><br><span class="line">            if(e.second == 1)</span><br><span class="line">            &#123;</span><br><span class="line">                v.push_back(e.first);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>上面的一大串其实就是在找单词然后插入，因为考虑到 stringstream类 可能还有萌新不太会，这里没有使用。</p>
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>无重复字符的最长子串</title>
+    <url>/2022/09/07/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/</url>
+    <content><![CDATA[<hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209072215778.png" alt="image-20220907221506815"></p>
+<hr>
+<p>这题是因为学到了 unordered_set 写的，这里不用其实也可以，重要的是理解代码的思路。</p>
+<p>我们每拿到一个字符就在 set 里面找，如果能找到，就说明有重复的，就要一直删除到没有重复为止。</p>
+<p>如果没有重复，就将这个值插入到 set 里面。</p>
+<p>如果你不会用 set，那你可以想想，这个 set 是做什么的。</p>
+<p>它保存了我们要比较的字符串，然后还要能查找。</p>
+<p>如果能满足这两个条件，其他都是可以代替的。</p>
+<p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    int lengthOfLongestSubstring(string s) &#123;</span><br><span class="line">        if(s.size() == 0)</span><br><span class="line">            return 0;</span><br><span class="line">        </span><br><span class="line">        unordered_set&lt;char&gt; se;</span><br><span class="line">        int count = 0;</span><br><span class="line">        int left = 0;</span><br><span class="line">        for(int i = 0;i&lt;s.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            while(se.find(s[i]) != se.end())</span><br><span class="line">            &#123;</span><br><span class="line">                se.erase(s[left]);</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            count = max(count,i-left+1);</span><br><span class="line">            se.insert(s[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>每日练习</category>
+      </categories>
+  </entry>
 </search>

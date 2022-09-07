@@ -9,7 +9,7 @@
     
     <title>
         
-            URL化 |
+            两句话中不常见单词 |
         
         Knous
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">URL化</span>
+            <span class="title-hover-animation">两句话中不常见单词</span>
         </div>
 
         
@@ -171,8 +171,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-06 00:00:00</span>
-        <span class="mobile">2022-09-06 00:00</span>
+        <span class="pc">2022-09-01 00:00:00</span>
+        <span class="mobile">2022-09-01 00:00</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -201,17 +201,12 @@
 
         <div class="article-content markdown-body">
             <hr>
-<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209062140714.png" alt="image-20220906214057786"></p>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209072234442.png" alt="image-20220907223423213"></p>
 <hr>
-<p>说难嘛，对于新手来说确实。</p>
-<p>这里如果是新手的话，c++里面有一个类型叫做 string，可以去了解一下，了解了这题就轻轻松松。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string replaceSpaces(string S, int length) &#123;</span><br><span class="line">	string s;</span><br><span class="line">	for (int i = 0; i&lt;length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (S[i] ==&#x27; &#x27;)</span><br><span class="line">			s += &quot;%20&quot;;</span><br><span class="line">		else</span><br><span class="line">			s += S[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return s;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们拿到每一个单词，放到 map 里面，如果再次遇到就 ++，最后遍历的时候看对应的出现值，如果是 1 就直接尾插 vector 即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;string&gt; uncommonFromSentences(string s1, string s2) &#123;</span><br><span class="line">        unordered_map&lt;string,int&gt; m;</span><br><span class="line">        string s;</span><br><span class="line">        for(int i = 0;i&lt;s1.size();)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s1[i] != &#x27; &#x27;)</span><br><span class="line">            &#123;</span><br><span class="line">                while(i&lt;s1.size() &amp;&amp; s1[i] != &#x27; &#x27; )</span><br><span class="line">                &#123;</span><br><span class="line">                    s += s1[i];</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            m[s]++;</span><br><span class="line">            s=&quot;&quot;;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0;i&lt;s2.size();)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s2[i] != &#x27; &#x27;)</span><br><span class="line">            &#123;</span><br><span class="line">                while(i&lt;s2.size() &amp;&amp; s2[i] != &#x27; &#x27; )</span><br><span class="line">                &#123;</span><br><span class="line">                    s += s2[i];</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            m[s]++;</span><br><span class="line">            s=&quot;&quot;;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;string&gt; v;</span><br><span class="line">        for(auto e:m)</span><br><span class="line">        &#123;</span><br><span class="line">            if(e.second == 1)</span><br><span class="line">            &#123;</span><br><span class="line">                v.push_back(e.first);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>如果还是不会。</p>
-<p>这样，你先遍历一次看有多少空格，然后开好空间，再遍历一边，遇到空格就在那个位置放上 %20</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">char* replaceSpaces(char* S, int length)&#123;</span><br><span class="line">    char *ans = (char *)malloc(sizeof(char) * (3 * length + 1));</span><br><span class="line">    int i = 0, j = 0;</span><br><span class="line">    for (; i &lt; length; i++) &#123;</span><br><span class="line">        if (S[i] == &#x27; &#x27;) &#123;</span><br><span class="line">            ans[j++] = &#x27;%&#x27;;</span><br><span class="line">            ans[j++] = &#x27;2&#x27;;</span><br><span class="line">            ans[j++] = &#x27;0&#x27;;</span><br><span class="line">        &#125; else ans[j++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    ans[j] = &#x27;\0&#x27;;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<p>上面的一大串其实就是在找单词然后插入，因为考虑到 stringstream类 可能还有萌新不太会，这里没有使用。</p>
 
         </div>
 
@@ -225,13 +220,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/09/07/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/"
+                           href="/2022/09/01/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">无重复字符的最长子串</span>
+                                <span class="post-nav-title-item">【剑指office】数据流的中位数</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -241,10 +236,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/06/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E9%95%BF%E6%95%B0%E5%AD%97%E5%AD%97%E4%B8%B2/"
+                           href="/2022/08/14/%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">【甜点】字符串最长数字字串</span>
+                                <span class="post-nav-title-item">进程地址空间与虚拟存储空间</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">

@@ -9,7 +9,7 @@
     
     <title>
         
-            URL化 |
+            两个数组的交集 |
         
         Knous
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">URL化</span>
+            <span class="title-hover-animation">两个数组的交集</span>
         </div>
 
         
@@ -171,8 +171,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-09-06 00:00:00</span>
-        <span class="mobile">2022-09-06 00:00</span>
+        <span class="pc">2022-09-07 00:00:00</span>
+        <span class="mobile">2022-09-07 00:00</span>
     </span>
     
         <span class="article-categories article-meta-item">
@@ -201,17 +201,13 @@
 
         <div class="article-content markdown-body">
             <hr>
-<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209062140714.png" alt="image-20220906214057786"></p>
-<hr>
-<p>说难嘛，对于新手来说确实。</p>
-<p>这里如果是新手的话，c++里面有一个类型叫做 string，可以去了解一下，了解了这题就轻轻松松。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string replaceSpaces(string S, int length) &#123;</span><br><span class="line">	string s;</span><br><span class="line">	for (int i = 0; i&lt;length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (S[i] ==&#x27; &#x27;)</span><br><span class="line">			s += &quot;%20&quot;;</span><br><span class="line">		else</span><br><span class="line">			s += S[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return s;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209072227382.png" alt="image-20220907222726420"></p>
+<p>这题是用了 unordered_map 做的，如果不会用这个，可以听了思路之后稍作修改，这里就不演示了，多练练嘛。</p>
+<p>我们将其中一个数组拿一个 map 它的值和它出现的次数，然后遍历另外一个，如果能找到，就在出现的次数那里 –，如果 – 到 0 的位置，说明已经没有这个值了，之后就不用添加到结果里面。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; intersect(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        unordered_map&lt;int,int&gt; m;</span><br><span class="line">        vector&lt;int&gt; v;</span><br><span class="line">    </span><br><span class="line">            for(int i = 0;i&lt;nums1.size();i++)&#123;</span><br><span class="line">                m[nums1[i]]++;</span><br><span class="line">            &#125;</span><br><span class="line">            for(int i = 0;i&lt;nums2.size();i++)&#123;</span><br><span class="line">                if(m[nums2[i]])&#123;</span><br><span class="line">                    v.push_back(nums2[i]);</span><br><span class="line">                    m[nums2[i]]--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        </span><br><span class="line">        return v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>如果还是不会。</p>
-<p>这样，你先遍历一次看有多少空格，然后开好空间，再遍历一边，遇到空格就在那个位置放上 %20</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">char* replaceSpaces(char* S, int length)&#123;</span><br><span class="line">    char *ans = (char *)malloc(sizeof(char) * (3 * length + 1));</span><br><span class="line">    int i = 0, j = 0;</span><br><span class="line">    for (; i &lt; length; i++) &#123;</span><br><span class="line">        if (S[i] == &#x27; &#x27;) &#123;</span><br><span class="line">            ans[j++] = &#x27;%&#x27;;</span><br><span class="line">            ans[j++] = &#x27;2&#x27;;</span><br><span class="line">            ans[j++] = &#x27;0&#x27;;</span><br><span class="line">        &#125; else ans[j++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    ans[j] = &#x27;\0&#x27;;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<p>如果对 map 稍有疑问，其实可以用一个数组，用这个数的下标和下标对应的值来存储，然后再遍历这个数组即可。</p>
 
         </div>
 
@@ -222,29 +218,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/07/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">无重复字符的最长子串</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/06/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E9%95%BF%E6%95%B0%E5%AD%97%E5%AD%97%E4%B8%B2/"
+                           href="/2022/09/07/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">【甜点】字符串最长数字字串</span>
+                                <span class="post-nav-title-item">无重复字符的最长子串</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
