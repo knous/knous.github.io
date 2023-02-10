@@ -200,23 +200,111 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/09/01/LeetCode1475/">
-                        LeetCode1475
+                    <a href="/2022/09/29/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">
+                        智能指针
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
-这题有多种解法，这里演示的是其中最为简单易懂的那种：双循环
-首先我们拿到的是 i 位置的数据，然后直接在 i+1 后面找比 i 小的数据，然后替换掉当前位置的 i ，同时跳出这次循环
-1234567891011121314151617class S...
+1.为什么需要智能指针当我们开辟内存并使用的时候，我们的顺序应该是这样：
+开辟内存-》使用内存-》释放内存
+问题就出现在第三步，开辟好了，也使用了，但是释放的时候出现了问题，可能是malloc没有释放，也可能是抛异常之后跳过了回收，不管怎样，此时就...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 01 2022 00:00:00 GMT+0800">2022-09-01</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 29 2022 00:00:00 GMT+0800">2022-09-29</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/C/">C++</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/09/29/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/09/Hash-Table/">
+                        模拟实现Hash-Table(线性探测)
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+这篇文章都是以如何模拟实现hash，关于其介绍这里只说大概，方便了解。
+概念Hash-Table也叫散列表，哈希表，是根据关键字（key）来直接访问对应存储值的的数据结构。虽然说是根据关键字，但其本质还是通过 vector 的下标来找到对应值。
+构...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Sep 09 2022 00:00:00 GMT+0800">2022-09-09</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/C/">C++</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/09/09/Hash-Table/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/08/%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97/">
+                        最长和谐子序列
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+
+
+em，滑动窗口，先排序，然后我们用一个 begin 来记录最小值，然后判断如果当前值 - begin &gt;1，就说明不和谐，不和谐就开始比较长度，然后让 begin++；
+看代码：
+12345678910111213141516171819...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 08 2022 00:00:00 GMT+0800">2022-09-08</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -233,7 +321,7 @@
         
     </div>
 
-    <a href="/2022/09/01/LeetCode1475/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/08/%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -243,8 +331,8 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/09/01/LeetCode946/">
-                        LeetCode946
+                    <a href="/2022/09/08/%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8C%96/">
+                        进制转化
                     </a>
                 </h3>
 
@@ -252,14 +340,20 @@
                     
                         
 
-验证栈序列，我们只需要模拟栈就可以了，我们先插入一个数据，然后判断这个数据跟要验证的是否相同，如果相同，我们和把顶端的出栈，然后验证下一个，最后判断栈是不是空的就行。
-1234567891011121314151617class Solution...
+
+这一题就属于那种看着很难但实际上很简单的。
+ps：我就是那个被难住的菜鸡
+
+思路：
+以 10 进制转化为 2 进制举例子
+让 7 变为 2进制：
+首先让 7 % 2 &#x3D; 1，那我们字符串就 + 1，再让7 &#x2F; 2 &#x3D...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 01 2022 00:00:00 GMT+0800">2022-09-01</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 08 2022 00:00:00 GMT+0800">2022-09-08</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -276,7 +370,7 @@
         
     </div>
 
-    <a href="/2022/09/01/LeetCode946/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/08/%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8C%96/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -286,8 +380,8 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/09/01/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
-                        【剑指office】数据流的中位数
+                    <a href="/2022/09/07/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/">
+                        两个数组的交集
                     </a>
                 </h3>
 
@@ -295,20 +389,14 @@
                     
                         
 
-题目链接：295. 数据流的中位数 - 力扣（LeetCode）
-
-在说这道题思路之前，我们先看看网上的一些解法：
-@LeetCode官方
-
-@宫水三叶
-
-很复杂，也不好理解，然后我看了半天，发现其实很简单，这里我会用小白也可以理解的话来回答这道...
+这题是用了 unordered_map 做的，如果不会用这个，可以听了思路之后稍作修改，这里就不演示了，多练练嘛。
+我们将其中一个数组拿一个 map 它的值和它出现的次数，然后遍历另外一个，如果能找到，就在出现的次数那里 –，如果 – 到 0 的...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 01 2022 00:00:00 GMT+0800">2022-09-01</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Sep 07 2022 00:00:00 GMT+0800">2022-09-07</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -325,7 +413,7 @@
         
     </div>
 
-    <a href="/2022/09/01/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/07/%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -335,64 +423,33 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/08/21/hello-world/">
-                        Hello World
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, yo...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Aug 21 2022 08:08:04 GMT+0800">2022-08-21</span></span>
-        
-        
-    </div>
-
-    <a href="/2022/08/21/hello-world/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/08/14/%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/">
-                        进程地址空间与虚拟存储空间
+                    <a href="/2022/09/07/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/">
+                        无重复字符的最长子串
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
-前言：
-在之前学编程的时候，我们就知道了数据的几个存储位置，大概是这样的一个图：
 
- 然后我们运行程序：
 
- 我们可以看到内存分布确实是按照左边的表来分配的
-———–  感知地址空间 现在，我们写了这样一段代码：
-
-很简单的代码，创建一个子进程，然...
+这题是因为学到了 unordered_set 写的，这里不用其实也可以，重要的是理解代码的思路。
+我们每拿到一个字符就在 set 里面找，如果能找到，就说明有重复的，就要一直删除到没有重复为止。
+如果没有重复，就将这个值插入到 set 里面。
+...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Aug 14 2022 00:00:00 GMT+0800">2022-08-14</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Sep 07 2022 00:00:00 GMT+0800">2022-09-07</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/Linux/">Linux</a>&nbsp;
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
                         </li>
                     
                     
@@ -402,7 +459,7 @@
         
     </div>
 
-    <a href="/2022/08/14/%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/07/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -412,34 +469,32 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/08/07/makefile/">
-                        makefile
+                    <a href="/2022/09/06/URL%E5%8C%96/">
+                        URL化
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
- 这里简单用Linux写第一个程序和用这个程序来帮我们理解make&#x2F;Makefile
--–
-1printf(&quot;%d\n&quot;,xxx);
 
 
-简单的第一个小程序，首先我们要了解\r和\n的区别：
-\n：直接向下移动一行，并...
+说难嘛，对于新手来说确实。
+这里如果是新手的话，c++里面有一个类型叫做 string，可以去了解一下，了解了这题就轻轻松松。
+1234567891011121314class Solution &#123;public:    string ...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Aug 07 2022 00:00:00 GMT+0800">2022-08-07</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Sep 06 2022 00:00:00 GMT+0800">2022-09-06</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/Linux/">Linux</a>&nbsp;
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
                         </li>
                     
                     
@@ -449,7 +504,7 @@
         
     </div>
 
-    <a href="/2022/08/07/makefile/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/06/URL%E5%8C%96/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -459,31 +514,33 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/08/04/%E7%BA%A2%E9%BB%91%E6%A0%91/">
-                        红黑树
+                    <a href="/2022/09/06/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E9%95%BF%E6%95%B0%E5%AD%97%E5%AD%97%E4%B8%B2/">
+                        【甜点】字符串最长数字字串
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
-什么是红黑树从概念上来讲，它是一种二叉搜索树，但每一个节点不是红色就是黑色，它保证最长路径不会比其他路径长出两倍
-为什么能保证，就要看下面几条性质：
 
-1. 每个结点不是红色就是黑色 \2. 根节点是黑色的 \3. 如果一个节点是红色的，则它的两个...
+甜点就足以说明这题的难度。
+先说好，我的解法可能不是最好的，但应该是最好理解的，新手也能明白。
+
+首先我们拿到输入的字符串，进行判断，如果当前位置是字符，我们就让这个位置一直后移，直到这个位置是个数字。
+如果这个位置是数字，我们就拿一个字符串开始...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Aug 04 2022 00:00:00 GMT+0800">2022-08-04</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Sep 06 2022 00:00:00 GMT+0800">2022-09-06</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/C/">C++</a>&nbsp;
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
                         </li>
                     
                     
@@ -493,7 +550,7 @@
         
     </div>
 
-    <a href="/2022/08/04/%E7%BA%A2%E9%BB%91%E6%A0%91/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/06/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E9%95%BF%E6%95%B0%E5%AD%97%E5%AD%97%E4%B8%B2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -503,29 +560,32 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/08/02/avl/">
-                        avl
+                    <a href="/2022/09/06/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/">
+                        第一个只出现一次的字符
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
-AVL树的概念
-二叉搜索树虽可以缩短查找的效率，但如果数据有序或接近有序二叉搜索树将退化为单支树，查找元素相当于在顺序表中搜索元素，效率低下。因此，两位俄罗斯的数学家G.M.Adelson-Velskii和E.M.Landis在1962年发明了一种...
+
+
+两种解法的思路都是一样的，只是实现过程不一样。
+第一种是我们用数组来记录出现的次数，第二种直接是用map。
+数组12345678910111213141516class Solution &#123;public:    int FirstNo...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Aug 02 2022 00:00:00 GMT+0800">2022-08-02</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Sep 06 2022 00:00:00 GMT+0800">2022-09-06</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/C/">C++</a>&nbsp;
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
                         </li>
                     
                     
@@ -535,7 +595,7 @@ AVL树的概念
         
     </div>
 
-    <a href="/2022/08/02/avl/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/06/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -545,31 +605,35 @@ AVL树的概念
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/08/01/map_set/">
-                        map/set
+                    <a href="/2022/09/05/%E5%80%92%E7%BD%AE%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        倒置字符串
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
-这篇文章主要是讲map、set的接口及应用，模拟实现在之后
--——-
-关联式容器在之前，我们学过vector、list、deque，这些称之为序列式容器，因为其底层是线性的，里面存储的就是元素本身。
-关联式容器的区别就在于，里面存储的不再是单独的一...
+
+
+我的解法只是很多解法的一种，因为这种解法比较方便理解，新手也可以看懂。
+
+首先我们拿到一串字符，然后将他们全部反转：
+
+然后我们从起始位置开始找空格，找到了就反转那一块地方，之后再继续找下一个空格。
+1234567891011121314151...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Aug 01 2022 00:00:00 GMT+0800">2022-08-01</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Sep 05 2022 00:00:00 GMT+0800">2022-09-05</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
                     
                         <li>
                             
-                            <a href="/categories/C/">C++</a>&nbsp;
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
                         </li>
                     
                     
@@ -579,51 +643,7 @@ AVL树的概念
         
     </div>
 
-    <a href="/2022/08/01/map_set/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/07/27/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">
-                        二叉搜索树
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-因为涉及到二叉树的部分知识，建议在有一定的二叉树的基础上再来看这篇文章 
--————-
-二叉搜索树二叉搜索树的概念
-若它的左子树不为空，则左子树上所有节点的值都小于根节点的值 若它的右子树不为空，则右子树上所有节点的值都大于根节点的值 它的左右子树...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Wed Jul 27 2022 00:00:00 GMT+0800">2022-07-27</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/C/">C++</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/07/27/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/09/05/%E5%80%92%E7%BD%AE%E5%AD%97%E7%AC%A6%E4%B8%B2/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -659,7 +679,7 @@ AVL树的概念
               <span>2020</span>
               -
             
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
         </div>
         
         <div class="theme-info info-item">

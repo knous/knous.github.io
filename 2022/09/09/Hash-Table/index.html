@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Knous">
+    
+    <title>
+        
+            模拟实现Hash-Table(线性探测) |
+        
+        Knous
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/avatar.png","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/welcome.jpg","description":"Welcome"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Knous
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">模拟实现Hash-Table(线性探测)</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Knous</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-09 00:00:00</span>
+        <span class="mobile">2022-09-09 00:00</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/C/">C++</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
+<p>这篇文章都是以如何模拟实现hash，关于其介绍这里只说大概，方便了解。</p>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>Hash-Table也叫散列表，哈希表，是根据关键字（key）来直接访问对应存储值的的数据结构。<br>虽然说是根据关键字，但其本质还是通过 vector 的下标来找到对应值。</p>
+<h1 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h1><p>当我们决定构建一个哈希表的时候，就需要用到一个 vector ，vector 里面存储的值为了方便我们之后使用，会有两个参数：<br>1、pair ，为了我们之后放数据使用<br>2、status，这个值的作用就是为了插入数据的时候判断，这个位置能否插入，因为我们插入数据再删除，我们如何把这个位置变为一个不可使用的值？status 就是为了解决这个问题的。</p>
+<p>先将要放的数据类型和一些其他配置写好：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">enum State</span><br><span class="line">&#123;</span><br><span class="line">	EMPTY,</span><br><span class="line">	EXITS,</span><br><span class="line">	DELETE</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">template &lt;class K,class V&gt;</span><br><span class="line">struct HashData</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	pair&lt;K, V&gt; _kv;</span><br><span class="line">	State _state;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>vector 里面要放的数据就是这个 HashData。</p>
+<p>然后我们正式就可以开始写 HashTable 了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class K,class V&gt;</span><br><span class="line">class HashTable</span><br><span class="line">&#123;</span><br><span class="line">	typedef HashData&lt;K,V&gt; Data;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	vector&lt;Data&gt; _table;</span><br><span class="line">	size_t _size = 0;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在插入之前，我们要了解的几点：</p>
+<p>1、如何插入</p>
+<p>通过将传过来的 K （可能是整数，或者是字符串）来进行处理，得到对应的下标，这个下标有一个特点，不同的值要对应不同的下标，然后在下标对应的值放上要存储的数据。</p>
+<p>2、如果插入的位置已经有值了怎么办</p>
+<p>那就有两种办法：</p>
+<p>线性探测和二次探测，这里分别说一下是什么意思。</p>
+<p>线性探测：如果当前位置有值了，就往后面找空位置，然后放上数据，隐患是很容易出现需要找一整个 vector 的情况，但是能用。</p>
+<p>二次探测：如果当前位置有值，就通过平方的办法来找下标，如果平方大了，就取余</p>
+<p>3、空间不够了怎么办</p>
+<p>扩容，然后将原本的数据值交给扩容的空间。</p>
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>思路：</p>
+<p>插入之前，先判断这个数据在表内是否存在，如果存在，就不用放进去（不是mul版本），然后判断一下空间大小，如果空间不是很足，就先扩容，之后再通过传进来的第一个值来找到对应下标。</p>
+<p>这里有一个问题就是，如何确保传进来的第一个数据是 string 类型还能找到其下标，这里就要通过仿函数了。</p>
+<p>就跟之前模拟实现的那些比较大小的值一样，这里我们可以重载 string ，然后找到其对应的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class K&gt;</span><br><span class="line">struct DefaultHash</span><br><span class="line">&#123;</span><br><span class="line">	size_t operator()(const K&amp; key)</span><br><span class="line">	&#123;</span><br><span class="line">		return (size_t)key;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">template&lt;&gt;</span><br><span class="line">struct DefaultHash &lt; string &gt;</span><br><span class="line">&#123;</span><br><span class="line">	size_t operator()(const string&amp; key)</span><br><span class="line">	&#123;</span><br><span class="line">		size_t hash = 0;</span><br><span class="line">		for (auto ch : key)</span><br><span class="line">		&#123;</span><br><span class="line">			hash += hash * 13 + ch;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>通过重载来完成找到下标的办法，这里字符串的计算方法来自《The C Programming Language》，这书很长，但是这个网址找到了常用的几种算法：<a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/-clq/archive/2012/05/31/2528153.html" >各种字符串Hash函数 - clq - 博客园 (cnblogs.com)<i class="fas fa-external-link-alt"></i></a></p>
+<p>这里选取的是第一种。</p>
+<p>如何判断要不要孔扩容，这里就用存储大小来判断，如果一开始空表肯定是要扩容的，当存储的数据大于 7&#x2F;10 也可以扩容。</p>
+<p>扩容就是新开一个table，然后往里面插入当前数组的有效值（不为空或者删除的值），然后交换啷个vector 即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">bool Insert(const pair&lt;K, V&gt;&amp; kv)</span><br><span class="line">&#123;</span><br><span class="line">	if (Find(kv.first))&#123;</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//空vector 或者是存储数据超过七成</span><br><span class="line">	if (_table.size() == 0 || _size * 10 / _table.size() &gt;= 7)</span><br><span class="line">	&#123;</span><br><span class="line">		//判断新开空间大小</span><br><span class="line">		size_t newsize = _size == 0 ? 10 : _size * 2;</span><br><span class="line">		HashTable&lt;K, V&gt; newtable;</span><br><span class="line">		newtable._table.resize(newsize);</span><br><span class="line">		//遍历插入</span><br><span class="line">		for (auto&amp; e : _table)</span><br><span class="line">		&#123;</span><br><span class="line">			if (e._state == EXITS)</span><br><span class="line">				newtable.Insert(e._kv);</span><br><span class="line">		&#125;</span><br><span class="line">		newtable._table.swap(_table);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//通过创建对象来使用仿函数</span><br><span class="line">	Func f;</span><br><span class="line">	size_t pos = f(kv.first);</span><br><span class="line">	pos %= _table.size();</span><br><span class="line">	</span><br><span class="line">	//如果当前位置是已经有值的，就继续往后找，直到为空或者已经删除的位置</span><br><span class="line">	while (_table[pos]._state == EXITS)</span><br><span class="line">	&#123;</span><br><span class="line">		pos++;</span><br><span class="line">		pos %= _table.size();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//将这里的值覆盖即可</span><br><span class="line">	_table[pos]._kv = kv;</span><br><span class="line">	//别忘了打上标记表示这里已经有值</span><br><span class="line">	_table[pos]._state = EXITS;</span><br><span class="line">	_size++;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>查找的思路跟插入差不多，找到下标然后判断，如果这个位置不是就往后找，直到为空</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Data* Find(const K&amp; key) </span><br><span class="line">&#123;</span><br><span class="line">	//为空就不用找了</span><br><span class="line">	if (_table.size() == 0)</span><br><span class="line">		return false;</span><br><span class="line">	//找下标</span><br><span class="line">	Func func;</span><br><span class="line">	size_t pos = func(key);</span><br><span class="line">	pos %= _table.size();</span><br><span class="line">	//一直找到为空的位置</span><br><span class="line">	while (_table[pos]._state != EMPTY)</span><br><span class="line">		&#123;</span><br><span class="line">			if (_table[pos]._state != DELETE &amp;&amp; _table[pos]._kv.first == key)&#123;</span><br><span class="line">			return &amp;_table[pos];</span><br><span class="line">		&#125;</span><br><span class="line">		pos++;</span><br><span class="line">		pos %= _table.size();</span><br><span class="line">	&#125;</span><br><span class="line">	return nullptr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>这…，直接用Find找，找到了就直接将那个位置的 state 置为删除状态即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bool Earse(const K&amp; key)</span><br><span class="line">&#123;</span><br><span class="line">	auto tmp = Find(key);</span><br><span class="line">	if (tmp)&#123;</span><br><span class="line">		tmp._state = DELETE;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">	return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="哈希桶"><a href="#哈希桶" class="headerlink" title="哈希桶"></a>哈希桶</h1><p>之前所使用的 vctor 里面放数据，如果有位置上有数据就往后移，这种办法称之为：闭散列，因为所有的数组都会在 vector 里面不停增长，为了解决这种闭散列可能出现的拥挤问题，这里引出了下面要说的：开散列。</p>
+<p>开散列跟闭散列最大的不同在于，闭散列存放的是值，而开散列存放的是指针，这里说一下，指针也分单向双向之类，这里使用的是单向不循环链表。</p>
+<p>当我们要存放值的位置上有数据了，我们就不需要再往后找空位置了，只需要用指针将它们连接起来即可。</p>
+<p>所以也不需要什么 state 来看当前节点状态，下面就正式来实现一下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class K,class V&gt;</span><br><span class="line">struct HashNode</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	pair&lt;K, V&gt; _kv;</span><br><span class="line">	HashNode&lt;K, V&gt;* _next;</span><br><span class="line"></span><br><span class="line">	HashNode(const pair&lt;K,V&gt;&amp; kv)</span><br><span class="line">		:_kv(kv)</span><br><span class="line">		, _next(nullptr)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="插入-1"><a href="#插入-1" class="headerlink" title="插入"></a>插入</h1><p>思路其实跟之前那个差不多，都是找下标然后插入，空间不够扩容，这里要说一下的是扩容，当我们把原先位置的 vector 交换给新的 vector 之后，原本的 vector 被释放，但是里面存放的值，也就是我们之前节点的数据可不会被释放，就会出现内存泄漏的情况，为了解决这种问题，我们可以直接在新 vector 里面插入旧 vector 的节点，这样即避免了新开辟节点，也避免了上面的内存泄露。</p>
+<p>这里放上代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">bool Insert(const pair&lt;K, V&gt;&amp; kv)</span><br><span class="line">&#123;</span><br><span class="line">	Func Hf;</span><br><span class="line">	if (Find(kv.first))</span><br><span class="line">		return false;</span><br><span class="line">		</span><br><span class="line">	//跟之前的 0.7 不同，这里满了就扩容</span><br><span class="line">	if (_table.size() == _size)</span><br><span class="line">	&#123;</span><br><span class="line">		//算新开的空间大小</span><br><span class="line">		size_t newsize = _table.size() == 0 ? 10 : _table.size() * 2;</span><br><span class="line">		//新开空间</span><br><span class="line">		vector&lt;Node*&gt; newtable;</span><br><span class="line">		newtable.resize(newsize, nullptr);</span><br><span class="line"></span><br><span class="line">		//遍历之前 vector 里面的所有节点	bool Insert(const pair&lt;K, V&gt;&amp; kv)</span><br><span class="line">&#123;</span><br><span class="line">	if (Find(kv.first))</span><br><span class="line">		return false;</span><br><span class="line"></span><br><span class="line">	//跟之前的 0.7 不同，这里满了就扩容</span><br><span class="line">	if (_table.size() == _size)</span><br><span class="line">	&#123;</span><br><span class="line">		//算新开的空间大小</span><br><span class="line">		size_t newsize = _table.size() == 0 ? 10 : _table.size() * 2;</span><br><span class="line">		//新开空间</span><br><span class="line">		vector&lt;Node*&gt; newtable;</span><br><span class="line">		newtable.resize(newsize, nullptr);</span><br><span class="line"></span><br><span class="line">		//遍历之前 vector 里面的所有节点</span><br><span class="line">		for (int i = 0; i &lt; _table.size(); i++)</span><br><span class="line">		&#123;</span><br><span class="line">			Node* cur = _table[i];</span><br><span class="line">			while (cur)</span><br><span class="line">			&#123;</span><br><span class="line">				//当我们插入节点之后，这个节点的 next 就指向了空，为了避免出现这个节点下面还有数据的情况，所以要先保留一下</span><br><span class="line">				Node* next = cur-&gt;_next;</span><br><span class="line"></span><br><span class="line">				size_t pos = (Hf(cur-&gt;_kv.first)) %= newsize;</span><br><span class="line">				cur-&gt;_next = newtable[pos];</span><br><span class="line">				newtable[pos] = cur;</span><br><span class="line"></span><br><span class="line">				cur = next;</span><br><span class="line">			&#125;</span><br><span class="line">			//将原本位置职位空</span><br><span class="line">			_table[i] = nullptr;</span><br><span class="line">		&#125;</span><br><span class="line">		//交换空间</span><br><span class="line">		newtable.swap(_table);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//如果无需扩容/扩容结束，就让新节点的 next 直接指向下标所处的空间，然后让下标所处的空间指向这个即可，相当于链表的头插</span><br><span class="line">	size_t pos = Hf(kv.first);</span><br><span class="line">	pos %= _table.size();</span><br><span class="line">	Node* newnode = new Node(kv);</span><br><span class="line">	newnode-&gt;_next = _table[pos];</span><br><span class="line">	_table[pos] = newnode;</span><br><span class="line">	++_size;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br><span class="line">		for (int i = 0; i &lt; _table.size(); i++)</span><br><span class="line">		&#123;</span><br><span class="line">			Node* cur = _table[i];</span><br><span class="line">			while (cur)</span><br><span class="line">			&#123;</span><br><span class="line">			    //当我们插入节点之后，这个节点的 next 就指向了空，为了避免出现这个节点下面还有数据的情况，所以要先保留一下</span><br><span class="line">				Node* next = cur-&gt;_next;</span><br><span class="line"></span><br><span class="line">				size_t pos = (Func(cur-&gt;_kv.first)) %= newsize;</span><br><span class="line">				cur-&gt;_next = newtable[pos];</span><br><span class="line">				newtable[pos] = cur;</span><br><span class="line"></span><br><span class="line">				cur = next;</span><br><span class="line">			&#125;</span><br><span class="line">			//将原本位置职位空</span><br><span class="line">			_table[i] = nullptr;</span><br><span class="line">		&#125;</span><br><span class="line">		//交换空间</span><br><span class="line">		newtable.swap(_table);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//如果无需扩容/扩容结束，就让新节点的 next 直接指向下标所处的空间，然后让下标所处的空间指向这个即可，相当于链表的头插</span><br><span class="line">	size_t pos = Func(kv.first);</span><br><span class="line">	pos %= _table.size();</span><br><span class="line">	Node* newnode = new Node(kv);</span><br><span class="line">	newnode-&gt;_next = _table[pos];</span><br><span class="line">	_table[pos] = newnode;</span><br><span class="line">	++_size;</span><br><span class="line">	return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找-1"><a href="#查找-1" class="headerlink" title="查找"></a>查找</h2><pre><code>bool Find(const K&amp; key)
+&#123;
+    if (_size == 0)
+        return false;
+
+    Func Hf;
+    size_t pos = (Hf(key)) %= _table.size();
+    Node* cur = _table[pos];
+    while (cur)
+    &#123;
+        if (cur-&gt;_kv.first == key)
+            return true;
+
+        cur = cur-&gt;_next;
+    &#125;
+    return false;
+&#125;
+</code></pre>
+<p>查找就比较简单，所以这里就不打注释了。</p>
+<h2 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h2><pre><code>bool Erase(const K&amp; key)
+&#123;
+    if (_size == 0)
+        return false;
+
+    Func Hf;
+    size_t pos = (Hf(key)) %= _table.size();
+    Node* cur = _table[pos];
+    Node* prev = nullptr;
+    while (cur)
+    &#123;
+        if (cur-&gt;_kv.first == key)
+        &#123;
+            prev == nullptr ? : _table[pos] = nullptr :  _table[pos] = cur-&gt;_next;
+            delete cur;
+            return true;
+        &#125;
+            prev = cur;
+            cur = cur-&gt;_next;
+    &#125;
+
+    return false;
+&#125;
+</code></pre>
+<p>单链表的知识，这里要用一个 prev 来保存 cur 上一个节点的位置，之后我们要跳过 cur 将链表链接起来。</p>
+<p>如果 prev 等于空，就说明这个位置就是我们要找的，所以直接将这个位置置为 cur 的下一个即可。</p>
+<hr>
+<h2 id="析构"><a href="#析构" class="headerlink" title="析构"></a>析构</h2><p>虽然在扩容的时候说不需要写析构，但是我们最后一次使用，它不扩容的时候，那些节点还是需要我们自己释放的，所以析构函数还是有必要的。</p>
+<pre><code>~HashBacket()
+&#123;
+    for (size_t i = 0; i &lt; _table.size(); i++)
+    &#123;
+        Node *cur = _table[i];
+        while (cur)
+        &#123;
+            Node* next = cur-&gt;_next;
+            delete cur;
+            cur = next;
+        &#125;
+        _table[i] = nullptr;
+    &#125;
+&#125;
+</code></pre>
+<hr>
+<h1 id="仿函数的处理部分"><a href="#仿函数的处理部分" class="headerlink" title="仿函数的处理部分"></a>仿函数的处理部分</h1><p>对于 <strong>unordered_map</strong>和<strong>unordered_set</strong>，其底层都是 <strong>Hash_table</strong>，这里需要注意的一个地方是，既然都是用  <strong>Hash_table</strong>，那如何区分这里的 V 是什么呢？</p>
+<p>对于 set 而言，这里的 V 即是 K</p>
+<p>对于 map 而言，这里的 V 是 K 对应的值</p>
+<p>为了区分这里的问题，给出的处理办法是传过去不同的参数类型再调用不同的仿函数来处理这一部分的问题。</p>
+<p>举个例子，当我们用 <strong>unordered_map</strong>的时候，我们就传过去 K,V，用<strong>unordered_set</strong>的时候，我们就传 K,K过去。</p>
+<p>因为我们传过去的内容不同，就可以区分出要用的是  <strong>unordered_map</strong>或者是<strong>unordered_set</strong></p>
+<p>这里看一下传过去的不同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">namespace Knous</span><br><span class="line">&#123;</span><br><span class="line">	template&lt; class K, class V, class Func = DefaultHash&lt;K&gt;&gt;</span><br><span class="line">	class Unordered_Map</span><br><span class="line">	&#123;</span><br><span class="line">		struct KeyOfT</span><br><span class="line">		&#123;</span><br><span class="line">			const K&amp; operator()(const pair&lt;K, V&gt;&amp; kv)</span><br><span class="line">			&#123;</span><br><span class="line">				return kv.first;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">	public:</span><br><span class="line">		bool Insert(const pair&lt;K, V&gt;&amp; kv)</span><br><span class="line">		&#123;</span><br><span class="line">			return _ht.Insert(kv);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	private:</span><br><span class="line">		Bucket::HashTable&lt;K, pair&lt;K, V&gt;, KeyOfT, Func&gt; _ht;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里传过去的不再是单纯的 K,V，而是 K，pair，再将我们的仿函数传过去，通过调用这个仿函数，我们就可以知道 kv 对应 K 的位置，然后再根据那个位置放入对应的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	class unordered_set</span><br><span class="line">	&#123;</span><br><span class="line">		struct KeyOfT</span><br><span class="line">		&#123;</span><br><span class="line">			const K&amp; operator()(const K&amp; key)</span><br><span class="line">			&#123;</span><br><span class="line">				return key;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">	private:</span><br><span class="line">		Bucket::HashTable&lt;K, K, KeyOfT, HashFunc&gt; _ht;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于 Set，这里传过去的就是两个 K，同样通过调用 KeyOfT 取出对应的值，只不过对于上面的 map取出的是 pair 里面的 first，而这里的 Set 取出的是 K。</p>
+<p>这样就解决了同时适配两个的问题</p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>Hash&#x2F;散列，建立映射关系</strong>。</p>
+<p><strong>通过对应的 Key，直接在对应位置获取到值</strong>，相较于红黑树，其效率更高，理想情况：<strong>一次找到对应的元素</strong></p>
+<p><strong>哈希冲突：对于任意两个元素之间，如果出现对应位置的值相同，就会出现哈希冲突。</strong></p>
+<p><strong>可能原因：对应位置函数设置问题，其应该能将位置较为均匀的分布在整个空间。</strong></p>
+<p><strong>几种哈希函数：</strong></p>
+<p><strong>1、开很大的空间，然后直接将对应的值放上去，优点是快，缺点是如果数据上下值差的太大，很浪费空间</strong></p>
+<p><strong>2、开好一块空间，然后让对应的值除以空间的大小，得到余数再放上去，缺点是很容易出现哈希冲突</strong></p>
+<p><strong>如何解决哈希冲突</strong>：</p>
+<p><strong>1、线性探测：对于有冲突的位置往后找，直到为空，将数据放进去</strong></p>
+<p><strong>2、二次探测：对于冲突位置，直接在其平方位置找，如果还是冲突，就继续平方找</strong></p>
+<p><strong>对于开散列，这里的冲突就不用担心，其结构特征让冲突更易处理</strong></p>
+<p><strong>负载因子：当存放的数据较多，就可以考虑扩容，负载因子就可以帮我们记录存放比例</strong></p>
+<p><strong>对于实现map、set的不同，我们可以通过仿函数解决，通过仿函数取出不同的key来找到不同的位置</strong></p>
+<p><strong>对于一些其他类型，也可以单独设计仿函数解决</strong></p>
+
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/29/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">智能指针</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/08/%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">最长和谐子序列</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE"><span class="nav-number">2.2.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">2.3.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E6%A1%B6"><span class="nav-number">3.</span> <span class="nav-text">哈希桶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%92%E5%85%A5-1"><span class="nav-number">4.</span> <span class="nav-text">插入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE-1"><span class="nav-number">4.1.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4-1"><span class="nav-number">4.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%90%E6%9E%84"><span class="nav-number">4.3.</span> <span class="nav-text">析构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BF%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86"><span class="nav-number">5.</span> <span class="nav-text">仿函数的处理部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

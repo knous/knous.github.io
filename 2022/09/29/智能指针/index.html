@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Knous">
+    
+    <title>
+        
+            智能指针 |
+        
+        Knous
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/avatar.png","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/welcome.jpg","description":"Welcome"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Knous
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">智能指针</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Knous</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-29 00:00:00</span>
+        <span class="mobile">2022-09-29 00:00</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/C/">C++</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
+<h1 id="1-为什么需要智能指针"><a href="#1-为什么需要智能指针" class="headerlink" title="1.为什么需要智能指针"></a>1.为什么需要智能指针</h1><p>当我们开辟内存并使用的时候，我们的顺序应该是这样：</p>
+<p>开辟内存-》使用内存-》释放内存</p>
+<p>问题就出现在第三步，开辟好了，也使用了，但是释放的时候出现了问题，可能是malloc没有释放，也可能是抛异常之后跳过了回收，不管怎样，此时就会发生内存泄漏。</p>
+<hr>
+<h1 id="2-内存泄漏之后"><a href="#2-内存泄漏之后" class="headerlink" title="2.内存泄漏之后"></a>2.内存泄漏之后</h1><p>内存使用空间的减小，运行卡顿，死机等。</p>
+<p>内存泄漏可以分为：</p>
+<p>堆内存泄漏(Heap leak) 堆内存指的是程序执行中依据须要分配通过malloc &#x2F; calloc &#x2F; realloc &#x2F; new等从堆中分配的一块内存， 用完后必须通过调用相应的 free或者delete 删掉。假设程序的设计错误导致这部分内存没有被释放，那 么以后这部分空间将无法再被使用，就会产生Heap Leak。</p>
+<p>系统资源泄漏 指程序使用系统分配的资源，比方套接字、文件描述符、管道等没有使用对应的函数释放掉，导致系统 资源的浪费，严重可导致系统效能减少，系统执行不稳定。</p>
+<p>解决办法（知道即可）</p>
+<p>通过内存泄漏的一些检查工具，这里可以参考其他博客，此篇不做详解。</p>
+<hr>
+<h1 id="3-如何避免内存泄漏"><a href="#3-如何避免内存泄漏" class="headerlink" title="3.如何避免内存泄漏"></a>3.如何避免内存泄漏</h1><p>\1. 工程前期良好的设计规范，养成良好的编码规范，申请的内存空间记着匹配的去释放。ps：这个理想状 态。但是如果碰上异常时，就算注意释放了，还是可能会出问题。需要下一条智能指针来管理才有保证。 2. 采用RAII思想或者智能指针来管理资源。 3. 有些公司内部规范使用内部实现的私有内存管理库。这套库自带内存泄漏检测的功能选项。 4. 出问题了使用内存泄漏工具检测。ps：不过很多工具都不够靠谱，或者收费昂贵。</p>
+<p>简单可以分为内存泄漏之前的预防，事后的检查，这里要讲的就是事前的预防。</p>
+<hr>
+<h1 id="4-智能指针"><a href="#4-智能指针" class="headerlink" title="4.智能指针"></a>4.智能指针</h1><p>我们知道，在类创建的时候会调用构造函数，在析构的时候会调用析构函数，所谓的智能指针，其实就是将创建的对象并不直接创建，而是交给一个模板类，通过这个模板类来帮助我们管理。</p>
+<p>这里说三种智能指针的设计，</p>
+<p><strong>auto_ptr</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// C++库中的智能指针都定义在memory这个头文件中</span><br><span class="line">#include &lt;memory&gt;</span><br><span class="line">class Date</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line"> Date() &#123; cout &lt;&lt; &quot;Date()&quot; &lt;&lt; endl;&#125;</span><br><span class="line"> ~Date()&#123; cout &lt;&lt; &quot;~Date()&quot; &lt;&lt; endl;&#125;</span><br><span class="line"> int _year;</span><br><span class="line"> int _month</span><br><span class="line"> int _day;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"> auto_ptr&lt;Date&gt; ap(new Date);</span><br><span class="line"> auto_ptr&lt;Date&gt; copy(ap);</span><br><span class="line"> ap-&gt;_year = 2018;</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是它的使用，下面看一下源代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt; </span><br><span class="line">class auto_ptr </span><br><span class="line">&#123; </span><br><span class="line">    T* p; </span><br><span class="line">public: </span><br><span class="line">    auto_ptr(T* s) :p(s) &#123;&#125; </span><br><span class="line">    ~auto_ptr() &#123; delete p; &#125; </span><br><span class="line">     </span><br><span class="line">    auto_ptr(auto_ptr&amp; a) &#123; </span><br><span class="line">      p = a.p; </span><br><span class="line">      a.p = NULL; </span><br><span class="line">    &#125; </span><br><span class="line">    auto_ptr&amp; operator=(auto_ptr&amp; a) &#123; </span><br><span class="line">      delete p; </span><br><span class="line">      p=a.p; </span><br><span class="line">      a.p = NULL; </span><br><span class="line">      return *this; </span><br><span class="line">    &#125; </span><br><span class="line"> </span><br><span class="line">    T&amp; operator*() const &#123; return *p; &#125; </span><br><span class="line">    T* operator-&gt;() const &#123; return p; &#125; </span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure>
+
+<p>可以看到，当它作为智能指针赋值的时候，会出现讲前面置空的情况，如果我们之后还需要使用前面一个，就会发生报错。</p>
+<p>不过这里简单的模拟实现一个：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class K&gt;</span><br><span class="line">class auto_ptr</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	auto_ptr(K* ptr)</span><br><span class="line">		:_ptr(ptr)</span><br><span class="line">	&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	~auto_ptr</span><br><span class="line">	&#123;</span><br><span class="line">		if (_ptr)</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; &quot;delate&quot; &lt;&lt; endl;</span><br><span class="line">			delete _ptr;</span><br><span class="line">			_ptr = nullptr;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//auto k(auto k1)</span><br><span class="line">		auto_ptr(auto_ptr&lt;K&gt;&amp; k1)</span><br><span class="line">		:_ptr(k1._ptr)</span><br><span class="line">	&#123;</span><br><span class="line">		k1._ptr = nullptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	//一些指针的操作</span><br><span class="line">	K&amp; operator&amp;()</span><br><span class="line">	&#123;</span><br><span class="line">		return *_ptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	K* operator*()</span><br><span class="line">	&#123;</span><br><span class="line">		return _ptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	K* _ptr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>不推荐，平时也不会用，看看就好。</p>
+<p><strong>shared_ptr</strong></p>
+<p>顾名思义，分享指针，相比上一个，它的原理就简单得多，首先接管一个对象，如果同时有多个对象一起管理，那就在这个对象的计数器上+1，在取消管理的时候计数器-1，如果为0，则没有对象需要管理，进行析构。</p>
+<p>这里直接进行模拟实现，原理比较简单，就不再细说，看代码了解即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">	shared_ptr(K* ptr)</span><br><span class="line">		:_ptr(ptr)</span><br><span class="line">		,_count(new int (1))</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">	~shared_ptr()</span><br><span class="line">	&#123;</span><br><span class="line">		Release();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	shared_ptr(const shared_ptr&lt;K&gt;&amp; k1)</span><br><span class="line">		:_ptr(k1._ptr)</span><br><span class="line">		, _count(k1.count)</span><br><span class="line">	&#123;</span><br><span class="line">		(*_count)++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	shared_ptr operator=(const shared_ptr&lt;K&gt;&amp; k1)</span><br><span class="line">	&#123;</span><br><span class="line">		if (k1._ptr != _ptr)</span><br><span class="line">		&#123;</span><br><span class="line">			Release();</span><br><span class="line"></span><br><span class="line">			_ptr = k1._ptr;</span><br><span class="line">			_count = k1._count;</span><br><span class="line">			(*_count)++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	K&amp; operator&amp;()</span><br><span class="line">	&#123;</span><br><span class="line">		return *_ptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	K* operator*()</span><br><span class="line">	&#123;</span><br><span class="line">		return _ptr;</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	K* get()</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		return _ptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	K* _ptr;</span><br><span class="line">	int* _count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这里要注意的一点是：</p>
+<p>shared_ptr并不是完全都是好的，比方说下面这种场景：</p>
+<p>有一个双向链表的两个节点 K,K1</p>
+<p>K的下一个节点是K1,也就是说现在K的计数应该为2。</p>
+<p>K1的上一个节点是K,也就是说现在K1的计数也为2。</p>
+<p>此时，如果我要析构K,K1,首先应该析构K，但是K的析构只会减一，因为它的地址还被K1保留，那我要析构就要先去析构K1，但是K1的节点也被K保留，就会出现循环引用导致报错。</p>
+<p>为了解决这个问题，shared_ptr又加了一种指针——week_ptr,即弱指针，它使用的时候并不会将count++，也就解决了析构的时候出现的减不到零的情况。</p>
+<p>模拟实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class K&gt;</span><br><span class="line">class weak_ptr</span><br><span class="line">&#123;</span><br><span class="line">	weak_ptr()</span><br><span class="line">		:_ptr(nullptr)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">	weak_ptr(const shared_ptr&lt;K&gt;&amp; K1)</span><br><span class="line">		:_ptr(ptr)</span><br><span class="line">	&#123;&#125;</span><br><span class="line"></span><br><span class="line">		weak_ptr operator(const shared_ptr&lt;K&gt;&amp; K1)</span><br><span class="line">	&#123;</span><br><span class="line">		if (K1.get() != _ptr)</span><br><span class="line">		&#123;</span><br><span class="line">			_ptr = K1._ptr;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return *this;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	K&amp; operator&amp;()</span><br><span class="line">	&#123;</span><br><span class="line">		return *_ptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	K* operator*()</span><br><span class="line">	&#123;</span><br><span class="line">		return _ptr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">	K* _ptr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这样就不会出现循环引用的问题，感谢观看，希望这篇文章能带你初步了解智能指针的思想和模拟实现。</p>
+
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/09/Hash-Table/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">模拟实现Hash-Table(线性探测)</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">1.</span> <span class="nav-text">1.为什么需要智能指针</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E4%B9%8B%E5%90%8E"><span class="nav-number">2.</span> <span class="nav-text">2.内存泄漏之后</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">3.如何避免内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">4.</span> <span class="nav-text">4.智能指针</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

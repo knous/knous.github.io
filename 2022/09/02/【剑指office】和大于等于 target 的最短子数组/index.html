@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Knous">
+    
+    <title>
+        
+            【剑指 Offer II】和大于等于 target 的最短子数组 |
+        
+        Knous
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/avatar.png","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/welcome.jpg","description":"Welcome"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Knous
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">【剑指 Offer II】和大于等于 target 的最短子数组</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Knous</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-02 00:00:00</span>
+        <span class="mobile">2022-09-02 00:00</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209021920011.png" alt="image-20220902192036528"></p>
+<hr>
+<p>三种办法，这里都说一下。</p>
+<h1 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h1><p>直接每一个字串全部加起来，然后算第一个大于 target 的下标减去刚开始加的下标，得到长度之后开始比较找最小。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = INT_MAX;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i;j&lt;nums.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                sum+=nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum &gt;= target)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans = <span class="built_in">min</span>(ans,j-i+<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == INT_MAX?<span class="number">0</span>:ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>其实你要是跟我说这个不超时的话我是不信的。</p>
+<p>每次 LeetCode 针对这种暴力都是直接上很大一串代码的。</p>
+<hr>
+<h1 id="前缀和-二分"><a href="#前缀和-二分" class="headerlink" title="前缀和+二分"></a>前缀和+二分</h1><p>这里就可以用上前缀和了。</p>
+<p>细说前缀和。</p>
+<p>看起来好像很厉害的样子，实际上还算简单。</p>
+<p>假设有一个数组 a ，这个数组里面是：2，3，1，2，4，3</p>
+<p>​								那它的前缀和就是：0，2，5，6，8，12，15</p>
+<p>第一个位置是 0 ，因为我们是从 1 开始加的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V[I] = V[I-1]+a[i-1];</span><br></pre></td></tr></table></figure>
+
+<p>有了这个前缀和，我们就可以继续往后写了。</p>
+<p>-找位置-</p>
+<p>C++里面有一个函数，叫做：lower_bound</p>
+<p>JAVA里面叫做：Arrays.binarySearch</p>
+<p>C#称之为：Array.BinarySearch</p>
+<p>Python：bisect.bisect_left</p>
+<p>其实它们都是一样的，就是找这一串数字里面第一个大于等于要找数字的位置。</p>
+<p>返回的是一这个位置的迭代器，这里如果用上，如果熟悉的话会很简单，但是如果不熟悉，建议自己写一个二分。</p>
+<p>其实也简单，找一个 &gt;&#x3D; tar 的元素，那就把判断条件改为 &gt;&#x3D; tar，其他的不变即可。</p>
+<p>重新说回前缀和。</p>
+<p>我们要找第一个元素它大于等于 tar 的区间长度，那我们就在前缀和里面找 &gt;&#x3D; tar 的元素即可。</p>
+<p>假设：tar &#x3D; 7</p>
+<p>第一个元素是  2 ,它的前缀和是 0 ，那它要找的 tar就是 0+7 &#x3D; 7，tar 就是它的前缀和+它本身， 区间应该是： 2，3，1，2，加起来结果是8，最后 2 的下标是 4 ，所以这段区间的长度就是 4 - 1 + 1。</p>
+<p>这里的 -1 是因为是从第一个元素开始找的， +1 是因为别忘了这个元素也是要算在长度里面的。</p>
+<p>第二个元素就跟第一个元素不一样了。</p>
+<p>它是 3 ，它的前缀和是 2 ，所以它要找的 tar 是 2 + 7 &#x3D; 9，为什么不一样？因为从这里开始算的话他是已经 +2 的结果（加了前面一个值），那它找的结果也要加前面的值，所以它找的是区间是：3，1，2，4，算下来也是 4 .</p>
+<p>这里直接跳到 4 的位置。</p>
+<p>4 的前缀和是 8 ，也就是说它要找的 tar 值是 8 + 7 &#x3D; 15，那往后找找到结尾的 15，此时长度是 5 - 4 + 1  &#x3D;  2，再将它与前面的比较即可。</p>
+<p>思路说完了，来看一下代码怎么写。</p>
+<p>第一种，调用 lower_bound：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(nums.size()+<span class="number">1</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="type">int</span> ans = INT_MAX;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            v[i] = v[i<span class="number">-1</span>] + nums[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> tar = v[i<span class="number">-1</span>]+target;</span><br><span class="line">            <span class="keyword">auto</span> pos = <span class="built_in">lower_bound</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>(),tar);</span><br><span class="line">            <span class="keyword">if</span>(pos != v.<span class="built_in">end</span>())</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, <span class="built_in">static_cast</span>&lt;<span class="type">int</span>&gt;((pos - v.<span class="built_in">begin</span>()) - (i - <span class="number">1</span>)));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans == INT_MAX?<span class="number">0</span>:ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>static_cast<int> 就是强制类型转换，因为它是两个迭代器相减。</p>
+<p>然后我们再自己写一个 lower_bound：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">v</span><span class="params">(nums.size()+<span class="number">1</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="type">int</span> ans = INT_MAX;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            v[i] = v[i<span class="number">-1</span>] + nums[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;=v.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> tar = v[i<span class="number">-1</span>]+target;</span><br><span class="line">            <span class="type">int</span> pos = <span class="built_in">my_lower_bound</span>(v,tar);</span><br><span class="line">            <span class="keyword">if</span>(pos != <span class="number">-1</span>)</span><br><span class="line">            ans = <span class="built_in">min</span>(ans,pos-i+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == INT_MAX?<span class="number">0</span>:ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">my_lower_bound</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; v,<span class="type">int</span> tar)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="type">int</span> left = <span class="number">0</span>,right = v.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(v[right] &lt; tar)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> mid = (left+right)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(v[mid] &gt;= tar)</span><br><span class="line">            &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                left = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> right;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><p>直接上代码吧…这个就是一直 + ，+ 到大于 tar 的时候就可以算区间长度，然后 区间右移，继续 + ，其实思路跟前缀和有那么点像。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> start = <span class="number">0</span>,end = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = INT_MAX;</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(end &lt; nums.<span class="built_in">size</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            sum+=nums[end];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= target)&#123;</span><br><span class="line">                ans = <span class="built_in">min</span>(ans,end-start+<span class="number">1</span>);</span><br><span class="line">                sum -= nums[start];</span><br><span class="line">                start++;</span><br><span class="line">            &#125;</span><br><span class="line">            end++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans == INT_MAX ? <span class="number">0</span> : ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>拿这个举例：2，3，1，2，4，3</p>
+<p>start 和 end 都从 0 开始，一直加到 大于 tar（7），区间是：2，3，1，2，end 在 2 的位置，然后end - start +1 注意 start 还在 0 没动，所以它的长度是 4 ，然后我们要做的就是将这个区间重新变为小于 tar 的状态，start - end 区间里面，end 可能很大，就让 start 一直往后移，每一次移动都减去start，直到它小于 tar，然后再继续加…</p>
+<p>如果还看不懂也必要紧，这题 LeetCode 考点是 用 N*logN，也就是用第二种办法…</p>
+<p>滑动窗口多看几遍，实在看不懂可以走读一下，加强自己的代码阅读能力。</p>
+<hr>
+
+        </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/02/LeetCode1470/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">【甜点】重新排列数组</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/02/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">【剑指office】旋转数组的最小数字</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B"><span class="nav-number">1.</span> <span class="nav-text">暴力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C-%E4%BA%8C%E5%88%86"><span class="nav-number">2.</span> <span class="nav-text">前缀和+二分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">滑动窗口</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

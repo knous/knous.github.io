@@ -9,7 +9,7 @@
     
     <title>
         
-            about knous |
+            URL化 |
         
         Knous
     </title>
@@ -149,58 +149,114 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="page-template-container">
-        
-        
-        <div class="page-template-content markdown-body">
-            
-                <h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><table>
-<thead>
-<tr>
-<th>基本信息</th>
-<th>可能正确的答案</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>性别</td>
-<td>男</td>
-</tr>
-<tr>
-<td>年龄</td>
-<td>18</td>
-</tr>
-<tr>
-<td>爱好</td>
-<td>电影、漫画，喜欢的作家的藤本树没事的时候会敲一点代码</td>
-</tr>
-<tr>
-<td>目标</td>
-<td>朝九晚五，工作地点离家近</td>
-</tr>
-</tbody></table>
-<h2 id="个人属性"><a href="#个人属性" class="headerlink" title="个人属性"></a>个人属性</h2><ul>
-<li>严重的矛盾结合体，尴尬症晚期，极度懒癌患者</li>
-<li>不喜欢很努力，但不会不努力</li>
-<li>喜欢独处</li>
-</ul>
-<h2 id="代码学习"><a href="#代码学习" class="headerlink" title="代码学习"></a>代码学习</h2><ul>
-<li>C（完成）</li>
-<li>初阶数据结构（完成）</li>
-<li>C++（正在）</li>
-<li>Linux（正在）</li>
-<li>Mysql（未开始）</li>
-<li>JAVA（未开始）</li>
-</ul>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>QQ：2625466117</li>
-<li>邮箱：<a class="link"   href="mailto:&#x32;&#x36;&#x32;&#x35;&#52;&#54;&#54;&#x31;&#49;&#x37;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;" >&#x32;&#x36;&#x32;&#x35;&#52;&#54;&#54;&#x31;&#49;&#x37;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;<i class="fas fa-external-link-alt"></i></a> &#x2F; <a class="link"   href="mailto:&#x6b;&#110;&#111;&#x75;&#x73;&#64;&#x67;&#x61;&#x6d;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;" >&#x6b;&#110;&#111;&#x75;&#x73;&#64;&#x67;&#x61;&#x6d;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;<i class="fas fa-external-link-alt"></i></a></li>
-</ul>
+    <div class="article-content-container">
 
-            
+        <div class="article-title">
+            <span class="title-hover-animation">URL化</span>
         </div>
-        <div class="page-template-comments">
-            
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Knous</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-09-06 00:00:00</span>
+        <span class="mobile">2022-09-06 00:00</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <hr>
+<p><img src="https://knous.oss-cn-nanjing.aliyuncs.com/PicGo/202209062140714.png" alt="image-20220906214057786"></p>
+<hr>
+<p>说难嘛，对于新手来说确实。</p>
+<p>这里如果是新手的话，c++里面有一个类型叫做 string，可以去了解一下，了解了这题就轻轻松松。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string replaceSpaces(string S, int length) &#123;</span><br><span class="line">	string s;</span><br><span class="line">	for (int i = 0; i&lt;length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (S[i] ==&#x27; &#x27;)</span><br><span class="line">			s += &quot;%20&quot;;</span><br><span class="line">		else</span><br><span class="line">			s += S[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return s;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>如果还是不会。</p>
+<p>这样，你先遍历一次看有多少空格，然后开好空间，再遍历一边，遇到空格就在那个位置放上 %20</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">char* replaceSpaces(char* S, int length)&#123;</span><br><span class="line">    char *ans = (char *)malloc(sizeof(char) * (3 * length + 1));</span><br><span class="line">    int i = 0, j = 0;</span><br><span class="line">    for (; i &lt; length; i++) &#123;</span><br><span class="line">        if (S[i] == &#x27; &#x27;) &#123;</span><br><span class="line">            ans[j++] = &#x27;%&#x27;;</span><br><span class="line">            ans[j++] = &#x27;2&#x27;;</span><br><span class="line">            ans[j++] = &#x27;0&#x27;;</span><br><span class="line">        &#125; else ans[j++] = S[i];</span><br><span class="line">    &#125;</span><br><span class="line">    ans[j] = &#x27;\0&#x27;;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
         </div>
+
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/07/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">无重复字符的最长子串</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/06/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9C%80%E9%95%BF%E6%95%B0%E5%AD%97%E5%AD%97%E4%B8%B2/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">【甜点】字符串最长数字字串</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
 
@@ -219,7 +275,7 @@
               <span>2020</span>
               -
             
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
         </div>
         
         <div class="theme-info info-item">
@@ -233,6 +289,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -279,6 +352,14 @@
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -348,6 +429,14 @@
 
 
 <div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 

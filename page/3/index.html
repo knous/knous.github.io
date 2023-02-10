@@ -154,28 +154,376 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/05/19/%E6%97%A5%E6%9C%9F%E7%B1%BB/">
-                        日期类
+                    <a href="/2022/09/02/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/">
+                        【剑指office】旋转数组的最小数字
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
                         
-既然决定写一个 日期 类，那就需要三个参数：
-年，月，日
-所以先定义出来：
-12345678910class Data&#123;public：private:	int _year;	int _month;	int _day;&#125;;
 
 
+看着花，说白了，暴力重新排序或者二分查找，还是那种完全不用变的。
+这里暴力就直接重新排序找第 0 个就好了，不举例。
+举个例子：
 
-...
+此时 Left 应该在 3 的位置上，而 Right 应该在 2 的位置上。
+那么中间位置就是 5 。
+将这个 ...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu May 19 2022 00:00:00 GMT+0800">2022-05-19</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Sep 02 2022 00:00:00 GMT+0800">2022-09-02</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/09/02/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/01/LeetCode1475/">
+                        LeetCode1475
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+这题有多种解法，这里演示的是其中最为简单易懂的那种：双循环
+首先我们拿到的是 i 位置的数据，然后直接在 i+1 后面找比 i 小的数据，然后替换掉当前位置的 i ，同时跳出这次循环
+1234567891011121314151617class S...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 01 2022 00:00:00 GMT+0800">2022-09-01</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/09/01/LeetCode1475/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/01/LeetCode946/">
+                        LeetCode946
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+
+验证栈序列，我们只需要模拟栈就可以了，我们先插入一个数据，然后判断这个数据跟要验证的是否相同，如果相同，我们和把顶端的出栈，然后验证下一个，最后判断栈是不是空的就行。
+1234567891011121314151617class Solution...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 01 2022 00:00:00 GMT+0800">2022-09-01</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/09/01/LeetCode946/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/01/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
+                        【剑指office】数据流的中位数
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+
+题目链接：295. 数据流的中位数 - 力扣（LeetCode）
+
+在说这道题思路之前，我们先看看网上的一些解法：
+@LeetCode官方
+
+@宫水三叶
+
+很复杂，也不好理解，然后我看了半天，发现其实很简单，这里我会用小白也可以理解的话来回答这道...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 01 2022 00:00:00 GMT+0800">2022-09-01</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/09/01/%E3%80%90%E5%89%91%E6%8C%87office%E3%80%91%E6%95%B0%E6%8D%AE%E6%B5%81%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/09/01/%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/">
+                        两句话中不常见单词
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+
+
+我们拿到每一个单词，放到 map 里面，如果再次遇到就 ++，最后遍历的时候看对应的出现值，如果是 1 就直接尾插 vector 即可。
+12345678910111213141516171819202122232425262728293031...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Sep 01 2022 00:00:00 GMT+0800">2022-09-01</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0/">每日练习</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/09/01/%E4%B8%A4%E5%8F%A5%E8%AF%9D%E4%B8%AD%E4%B8%8D%E5%B8%B8%E8%A7%81%E5%8D%95%E8%AF%8D/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/08/21/hello-world/">
+                        Hello World
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, yo...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Aug 21 2022 08:08:04 GMT+0800">2022-08-21</span></span>
+        
+        
+    </div>
+
+    <a href="/2022/08/21/hello-world/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/08/14/%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/">
+                        进程地址空间与虚拟存储空间
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+前言：
+在之前学编程的时候，我们就知道了数据的几个存储位置，大概是这样的一个图：
+
+ 然后我们运行程序：
+
+ 我们可以看到内存分布确实是按照左边的表来分配的
+———–  感知地址空间 现在，我们写了这样一段代码：
+
+很简单的代码，创建一个子进程，然...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Aug 14 2022 00:00:00 GMT+0800">2022-08-14</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Linux/">Linux</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/08/14/%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/08/07/makefile/">
+                        makefile
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+ 这里简单用Linux写第一个程序和用这个程序来帮我们理解make&#x2F;Makefile
+-–
+1printf(&quot;%d\n&quot;,xxx);
+
+
+简单的第一个小程序，首先我们要了解\r和\n的区别：
+\n：直接向下移动一行，并...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Aug 07 2022 00:00:00 GMT+0800">2022-08-07</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/Linux/">Linux</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/2022/08/07/makefile/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2022/08/04/%E7%BA%A2%E9%BB%91%E6%A0%91/">
+                        红黑树
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        
+什么是红黑树从概念上来讲，它是一种二叉搜索树，但每一个节点不是红色就是黑色，它保证最长路径不会比其他路径长出两倍
+为什么能保证，就要看下面几条性质：
+
+1. 每个结点不是红色就是黑色 \2. 根节点是黑色的 \3. 如果一个节点是红色的，则它的两个...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Aug 04 2022 00:00:00 GMT+0800">2022-08-04</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -192,7 +540,7 @@
         
     </div>
 
-    <a href="/2022/05/19/%E6%97%A5%E6%9C%9F%E7%B1%BB/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/08/04/%E7%BA%A2%E9%BB%91%E6%A0%91/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -202,22 +550,22 @@
                 
 
                 <h3 class="home-article-title">
-                    <a href="/2022/05/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                        基础知识
+                    <a href="/2022/08/02/avl/">
+                        avl
                     </a>
                 </h3>
 
                 <div class="home-article-content markdown-body">
                     
-                        test
-C++是什么：用较为简单易懂的话来解释，就是在C的基础上改进的新语言，+的意思就是PLUS，因为是基于C语言的改进，所以引入了一些新的概念、语法，同时它也兼容C。
-关键字跟C语言一样，C++同样有一些平时常用的单词，例如int char之类...
+                        
+AVL树的概念
+二叉搜索树虽可以缩短查找的效率，但如果数据有序或接近有序二叉搜索树将退化为单支树，查找元素相当于在顺序表中搜索元素，效率低下。因此，两位俄罗斯的数学家G.M.Adelson-Velskii和E.M.Landis在1962年发明了一种...
                     
                 </div>
 
                 <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu May 12 2022 00:00:00 GMT+0800">2022-05-12</span></span>
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Tue Aug 02 2022 00:00:00 GMT+0800">2022-08-02</span></span>
         
             <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
                 <ul>
@@ -234,372 +582,7 @@ C++是什么：用较为简单易懂的话来解释，就是在C的基础上改�
         
     </div>
 
-    <a href="/2022/05/12/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/04/23/%E6%8E%92%E5%BA%8F/">
-                        堆
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-1.插入排序
-2.希尔排序
-3.选择排序
-4.堆排序
-5.冒泡排序
-6.快速排序
-7.归并排序
-8.计数排序
-
-插入排序这个排序原来很简单，如图演示：
-
-我们先把 9 看作有序数组插入，它比8大，那就交换位置
-
-此时，8前面没有数字了，所以它就停下...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Apr 23 2022 00:00:00 GMT+0800">2022-04-23</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/04/23/%E6%8E%92%E5%BA%8F/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/04/11/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                        二叉树的练习题
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
- 做的时候总感觉自己掌握的不够深，所以在这里写一篇博客来加深理解。
-
-单值二叉树965. 单值二叉树 - 力扣（LeetCode） (leetcode-cn.com)
-
-二叉树肯定是递归的，但原函数给我们的却是：
-
-这个函数的参数却只有一个root...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Apr 11 2022 00:00:00 GMT+0800">2022-04-11</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/04/11/%E4%BA%8C%E5%8F%89%E6%A0%91/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/04/03/%E5%A0%86/">
-                        堆
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        
-建议先明白二叉树的基本概念之后来看这个，二叉树我会单独另写一篇专栏。
-
-
-这个看着比较麻烦，不好理解，不过可以直接解释为：
-用数组的形式存储一个完全二叉树，这个二叉树是大根或者小根
-
-如果明白顺序表的增删查改，那这个会很好理解，对顺序表有兴趣可以点...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Apr 03 2022 00:00:00 GMT+0800">2022-04-03</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/04/03/%E5%A0%86/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/03/28/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E4%BA%92%E7%9B%B8%E5%AE%9E%E7%8E%B0/">
-                        栈和队列的互相实现
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                         
-225. 用队列实现栈 - 力扣（LeetCode） (leetcode-cn.com)
-先看题目要求，用两个队列实现栈，我们先把之前写过的队列相关的一些函数拿来：
-1234567891011121314151617181920212223242...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Mon Mar 28 2022 00:00:00 GMT+0800">2022-03-28</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/03/28/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E4%BA%92%E7%9B%B8%E5%AE%9E%E7%8E%B0/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/03/26/%E9%98%9F%E5%88%97/">
-                        队列
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        在学习队列前，我们还是先来看看什么是队列：
-**队列的概念及结构 **队列：只允许在一端进行插入数据操作，在另一端进行删除数据操作的特殊线性表，队列具有先进先出FIFO(First In First Out)
-入队列：进行插入操作的一端称为**队尾 ...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Mar 26 2022 00:00:00 GMT+0800">2022-03-26</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/03/26/%E9%98%9F%E5%88%97/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/03/25/%E6%A0%88/">
-                        栈
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        栈的概念及结构在学习栈前，我们先看一下栈的正式解释：
-栈：一种特殊的线性表，其只允许在固定的一端进行插入和删除元素操作。进行数据插入和删除操作的一端称为栈顶，另一端称为栈底。栈中的数据元素遵守后进先出LIFO（Last In First Out）的原...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Fri Mar 25 2022 00:00:00 GMT+0800">2022-03-25</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/03/25/%E6%A0%88/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/03/13/%E9%93%BE%E8%A1%A8/">
-                        链表
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        单链表
-这张图是我们待会要实现的功能，我会尽可能的将每一步都说的很详细，方便理解。
-链表的概念及结构 
-概念：链表是一种物理存储结构上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的 。 
-这是较为书面的解释，这里我画个图...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sun Mar 13 2022 00:00:00 GMT+0800">2022-03-13</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/03/13/%E9%93%BE%E8%A1%A8/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2022/03/10/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">
-                        顺序表
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        顺序表我们先来看看顺序表的概念和结构：
-顺序表是用一段物理地址连续的存储单元依次存储数据元素的线性结构，一般情况下采用数组存储。在数组上完成数据的增删查改。
-顺序表一般可以分为：
-
-静态顺序表：使用定长数组存储元素。
-
-
-这里我们就直接开辟了一个数组...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Mar 10 2022 00:00:00 GMT+0800">2022-03-10</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/2022/03/10/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+    <a href="/2022/08/02/avl/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -639,7 +622,7 @@ C++是什么：用较为简单易懂的话来解释，就是在C的基础上改�
               <span>2020</span>
               -
             
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Knous</a>
         </div>
         
         <div class="theme-info info-item">
